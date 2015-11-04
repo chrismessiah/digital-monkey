@@ -1,0 +1,42 @@
+<!ELEMENT party (
+	title,
+	date,
+	starttime,
+	endtime?,
+	arranger,
+	location,
+	price?,
+	OSAdate?,
+	description?,
+	contact?,
+	host*,
+	toastmaster*,
+	endtime?,
+)>
+
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price unit PCDATA #IMPLIED>
+
+<!ELEMENT contact (
+	firstname,
+	lastname,
+	phone,
+	email
+)>
+
+<!ELEMENT host (
+	firstname,
+	lastname
+)>
+
+<!ELEMENT toastmaster (
+	firstname,
+	lastname
+)>
+
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+
+
+
+

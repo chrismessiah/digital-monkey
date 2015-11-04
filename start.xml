@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE person SYSTEM "http://xml.csc.kth.se/~chrabd/DM2517/lab-dtd/start.dtd">
+<person>
+  <fornamn>Bjorn</fornamn>
+  <efternamn>Hedin</efternamn>
+</person>

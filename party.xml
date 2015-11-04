@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE person SYSTEM "http://xml.csc.kth.se/~chrabd/DM2517/lab-dtd/party.dtd">
+<party>
+  <title>Amphiox Gasque</title>
+	<date>2001-09-08</date>
+	<starttime>18:00:00</starttime>
+
+	<endtime>03:00:00</endtime>
+	<arranger>MF</arranger>
+  <location>MF</location>
+  <price unit="sek">195</price>
+
+  <OSAdate>2001-08-24</OSAdate>
+  <description>Party for the new students at Medicinska F&ouml;reningen.</description>
+	<contact>
+  	<firstname>Berra</firstname>
+  	<lastname>Berrasson</lastname>
+  	<phone>08-123456</phone>
+  	<email>berra@mf.ki.se</email>
+	</contact>
+
+	<host>
+  	<firstname>Anna</firstname>
+  	<lastname>Jerresand-&Ouml;hrstr&ouml;m</lastname>
+	</host>
+
+	<toastmaster>
+  	<firstname>Miranda</firstname>
+  	<lastname>Michanek</lastname>
+	</toastmaster>
+	
+	<toastmaster>
+  	<firstname>Johannes</firstname>
+  	<lastname>Linde</lastname>
+	</toastmaster>
+</party>
+
+
+
