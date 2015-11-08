@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="nyheter-html.xsl"?>
+<page>
+
+ <title>XPUB-kuriren</title>
+ <author>Bj&#246;rn Hedin</author>
+ <version>1.0 2002/09/05</version>
+  
+ <newscolumn>
+  <news>
+   <title>Nytt n&#228;tv&#228;g h&#229;ller inte m&#229;ttet</title>
+   <link>http://www.dn.se</link>
+   <date>
+     <year>2002</year>
+     <month>September</month>
+     <day>8</day>
+   </date>
+   <content>
+     Dr&#246;mmer du om att kunna surfa snabbt och billigt p&#229; Internet? 
+     Nu kommer
+     lockrop fr&#229;n alla h&#229;ll men det finns all anledning att fundera
+     &#246;ver vad man f&#229;r f&#246;r pengarna.
+   </content>
+  </news>
+  <news>
+   <title>Miljm&#246;m&#229;l faller p&#229; ogr&#228;smedel</title>
+   <link>http://www.aftonbladet.se</link>
+   <date>
+     <year>2002</year>
+     <month>September</month>
+     <day>6</day>
+   </date>
+   <content>
+     Jordbruket anv&#228;nder rekordmycket av ogr&#228;smedlet glyfosat, mest
+     k&#228;nt som Roundup. En anledning &#228;r att ju mer 
+     jorden bearbetas f&#246;r
+     att ta bort ogr&#228;s mekaniskt, desto mer 
+     l&#228;cker g&#246;dande kv&#228;ve
+     ut fr&#229;n &#229;kermarkerna till &#246;stersj&#246;n...
+   </content>
+  </news>
+  <news>
+   <title>Ekologisk st&#228;mpel s&#228;ljer allt</title>
+   <link>http://www.expressen.se</link>
+   <date>
+     <year>2002</year>
+     <month>September</month>
+     <day>6</day>
+   </date>
+   <content>
+     En g&#229;ng i tiden var ekologi bara en 
+     vetenskap. Nu betecknar oret mer &#228;n
+     s&#229;. Marknadsf&#246;rarna &#228;lskar det. 
+     Snart sagt allting g&#229;r att
+     s&#228;lja, bara det &#228;r ekologiskt...
+   </content>
+  </news>
+  <news>
+   <title>Genv&#228;g till n&#228;ringsris</title>
+   <link>http://www.svd.se</link>
+   <date>
+     <year>2002</year>
+     <month>September</month>
+     <day>5</day>
+   </date>
+   <content>
+     Inom ett par &#229;r kan ett nytt genmodifierat 
+     ris vara p&#229; v&#228;g in i
+     var mans mun. Riset har berikats med s&#229;v&#228;l 
+     A-vitamin som j&#228;rn, och
+     f&#246;r&#228;ndrats genetiskt s&#229; att 
+     dessa tillskott kommer &#228;taren
+     till del...
+   </content>
+  </news>
+ </newscolumn>
+ 
+ <statuscolumn>
+ 
+  <project>
+   <title>Lab-hemsidan</title>
+   <link>http://www.nada.kth.se/kurser/kth/2D1517/lab/lab2/index.php</link>
+   
+   <release>
+    <version>1.0</version>
+    <status type="available">Klar</status>
+    <comment>
+      Version 1.0 av labsidan sl&#228;ppt den 14/9 2002.
+    </comment>
+   </release>
+   
+   <release>
+    <version>0.9</version>
+    <status type="available">Halvklar</status>
+    <comment>
+      Inneh&#229;llet i labben klar. Servers installerade den 13/9.
+    </comment>
+   </release>
+ 
+  </project>
+ 
+  <project>
+   <title>Ny website</title>
+   <link>http://www.gt.kth.se</link>
+   
+   <release>
+    <version>0.1</version>
+    <status type="available">Under utveckling</status>
+    <comment>
+      Test att konvertera delar av gamla websiten f&#246;r att
+      anv&#228;nda Cocoon lyckat. Konvertering av en sida tog ca
+      3 minuter.
+    </comment>
+   </release>
+  </project> 
+ </statuscolumn>
+ 
+ <legal>
+  Copyright Bj&#246;rn Hedin, NADA, september 2002.
+ </legal>
+ 
+</page>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml">
+<wml>
+ <template>
+  <do label="tillbaka" type="accept"><prev/></do>
+ </template>
+ 
+ <card id="main" title="XPUB-kuriren">
+  <p>
+   <a href="#newscolumn">News Column</a>
+  </p>
+  <p>
+   <a href="#statuscolumn">Status Column</a>
+  </p>
+ </card>
+ 
+ <card title="News Column" id="newscolumn">
+  <p>
+   <big><big>Choose a headline:</big></big>
+  </p>
+  <p>
+   <a href="#news1">Nytt nätväg håller inte måttet</a>
+  </p>
+  <p>
+   <a href="#news2">Miljmömål faller på ogräsmedel</a>
+  </p>
+  <p>
+   <a href="#news3">Ekologisk stämpel säljer allt</a>
+  </p>
+  <p>
+   <a href="#news4">Genväg till näringsris</a>
+  </p>
+ </card>
+ 
+ <card id="news1" title="Nytt nätväg håller inte måttet">
+  <p>
+   <big><big>Nytt nätväg håller inte måttet</big></big>
+  </p>
+  <p>
+   <big>2002 September 8</big>
+  </p>
+  <p>
+   <a href="http://www.dn.se">Go to the news site!</a>
+  </p>
+  <p>Drömmer du om att kunna surfa snabbt och billigt på Internet? Nu kommer lockrop från alla håll men det finns all anledning att fundera över vad man får för pengarna.</p>
+ </card>
+ 
+ <card id="news2" title="Miljmömål faller på ogräsmedel">
+  <p>
+   <big><big>Miljmömål faller på ogräsmedel</big></big>
+  </p>
+  <p>
+   <big>2002 September 6</big>
+  </p>
+  <p>
+   <a href="http://www.aftonbladet.se">Go to the news site!</a>
+  </p>
+  <p>Jordbruket använder rekordmycket av ogräsmedlet glyfosat, mest känt som Roundup. En anledning är att ju mer jorden bearbetas för att ta bort ogräs mekaniskt, desto mer läcker gödande kväve
+     ut från åkermarkerna till östersjön...</p>
+ </card>
+ 
+ <card id="news3" title="Ekologisk stämpel säljer allt">
+  <p>
+   <big><big>Ekologisk stämpel säljer allt</big></big>
+  </p>
+  <p>
+   <big>2002 September 6</big>
+  </p>
+  <p>
+   <a href="http://www.expressen.se">Go to the news site!</a>
+  </p>
+  <p>
+     En gång i tiden var ekologi bara en 
+     vetenskap. Nu betecknar oret mer än
+     så. Marknadsförarna älskar det. 
+     Snart sagt allting går att
+     sälja, bara det är ekologiskt...
+  </p>
+ </card>
+ <card id="news4" title="Genväg till näringsris">
+  <p>
+   <big><big>Genväg till näringsris</big></big>
+  </p>
+  <p>
+   <big>2002 September 5</big>
+  </p>
+  <p>
+   <a href="http://www.svd.se">Go to the news site!</a>
+  </p>
+  <p>
+     Inom ett par år kan ett nytt genmodifierat 
+     ris vara på väg in i
+     var mans mun. Riset har berikats med såväl 
+     A-vitamin som järn, och
+     förändrats genetiskt så att 
+     dessa tillskott kommer ätaren
+     till del...
+  </p>
+ </card>
+ 
+ <card title="Status Column" id="statuscolumn">
+  <p>
+   <big><big>Choose a project:</big></big>
+  </p>
+  <p>
+   <a href="#project1">Lab-hemsidan</a>
+  </p>
+  <p>
+   <a href="#project2">Ny website</a>
+  </p>
+ </card>
+ 
+ <card id="project1" title="Lab-hemsidan">
+  <p>
+   <big>Project: <big>Lab-hemsidan</big></big>
+  </p>
+  <p>
+   <a href="http://www.nada.kth.se/kurser/kth/2D1517/lab/lab2/index.php">Go to the project site!</a>
+  </p>
+  <p>Version <b>1.0</b> (<b>Klar</b>): Version 1.0 av labsidan släppt den 14/9 2002.</p>
+  <p>Version <b>0.9</b> (<b>Halvklar</b>): Innehållet i labben klar. Servers installerade den 13/9.</p>
+ </card>
+ 
+ <card id="project2" title="Ny website">
+  <p>
+   <big>Project: <big>Ny website</big></big>
+  </p>
+  <p>
+   <a href="http://www.gt.kth.se">Go to the project site!</a>
+  </p>
+  <p>Version <b>0.1</b> (<b>Under utveckling</b>): Test att konvertera delar av gamla websiten för att använda Cocoon lyckat. Konvertering av en sida tog ca 3 minuter.</p>
+ </card>
+</wml>
