@@ -1,7 +1,10 @@
-<!ENTITY ouml "#246;">
-<!ENTITY Ouml "#214;">
-<!ENTITY brkbar "#166;">
-<!ENTITY ccedil "#231;">
+
+
+<!ENTITY % Ouml "&#214;">
+<!ENTITY % ouml "&#246;">
+<!ENTITY % brkbar "&#166;">
+
+<!ENTITY % ccedil "&#231;">
 
 <!ENTITY % name "firstname, lastname">
 
