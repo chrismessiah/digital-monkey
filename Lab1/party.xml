@@ -57,20 +57,19 @@
       <placementpreferences>
         <id nextto="yes" id="pnr760101-0101" />
       </placementpreferences>
+      
       <foodrestrictions>
-
         <ingredient>garlic</ingredient>
         <ingredient>meat</ingredient>
       </foodrestrictions>
       <drinkrestrictions>
         <drink type="red_wine" />
-
         <drink type="beer" />
       </drinkrestrictions>
+
     </guest>
     <guest id="pnr760101-0101" sex="female">
       <firstname>Anna</firstname>
-
       <lastname>Karlsson</lastname>
       <affiliation>MF</affiliation>
       <placementpreferences>
@@ -80,6 +79,7 @@
       <drinkrestrictions>
         <drink type="beer" />
       </drinkrestrictions>
+
     </guest>
   </guestlist>
 
