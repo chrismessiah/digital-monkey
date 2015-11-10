@@ -11,7 +11,10 @@
   <body>
     <xsl:apply-templates/>
   </body>
- </html>
+
+</html>
+
+
 </xsl:template>
 
 <xsl:template match="title">
