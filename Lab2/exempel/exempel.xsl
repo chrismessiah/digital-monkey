@@ -4,11 +4,11 @@
 	<xsl:template match="teacher">
 		<p><u><xsl:value-of select="."/></u></p>
 	</xsl:template>
-	
+
 	<xsl:template match="student">
 		<p><b><xsl:value-of select="."/></b></p>
 	</xsl:template>
-	
+
 	<xsl:template match="/">
 		<html>
 			<body>
@@ -16,5 +16,5 @@
 			</body>
 		</html>
 	</xsl:template>
-	
+
 </xsl:stylesheet>

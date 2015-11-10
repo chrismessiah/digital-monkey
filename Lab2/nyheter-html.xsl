@@ -4,10 +4,9 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				
-
 				<title><xsl:value-of select="./page/title"/></title>
 
+				<!-- Fråga om meta taggar -->
 				<meta>
 					<xsl:attribute name="name">
 						<xsl:value-of select="name(./page/author)"/>
@@ -28,20 +27,43 @@
 
 			</head>
 			<body>
-	    		<xsl:apply-templates/>
-	    	</body>
+
+
+
+				<xsl:apply-templates/>
+
+
+
+			</body>
 		</html>
 	</xsl:template>
 
-<!-- 	
-	<xsl:template match="page/title">
-	 	<title>
-	 		<xsl:value-of select="."/>
-	 	</title>
+
+	<xsl:template match="page/newscolumn/news">
+		<ul><li>
+
+		<a>
+			<xsl:attribute name="href">
+				<xsl:value-of select="link"/>
+			</xsl:attribute>
+			<strong><xsl:value-of select="title"/></strong>
+		</a>
+		<p> - 
+			<strong>
+				<xsl:value-of select="date/year"/>
+				<xsl:text>&#xA0;</xsl:text>
+				<xsl:value-of select="date/month"/>
+				<xsl:text>&#xA0;</xsl:text>
+				<xsl:value-of select="date/day"/>.
+			</strong>
+			<xsl:value-of select="content"/>
+		</p>
+
+		</li></ul>
 	</xsl:template>
 
 
- -->
+
 
 
 
