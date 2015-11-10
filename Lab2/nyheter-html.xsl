@@ -9,16 +9,18 @@
 				<title><xsl:value-of select="./page/title"/></title>
 
 				<meta>
-					<xsl:attribute name="name">author</xsl:attribute>
-
+					<xsl:attribute name="name">
+						<xsl:value-of select="name(./page/author)"/>
+					</xsl:attribute>
 					<xsl:attribute name="content">
 						<xsl:value-of select="./page/author"/>
 					</xsl:attribute>
 				</meta>
 
 				<meta>
-					<xsl:attribute name="name">version</xsl:attribute>
-
+					<xsl:attribute name="name">
+						<xsl:value-of select="name(./page/version)"/>
+					</xsl:attribute>
 					<xsl:attribute name="content">
 						<xsl:value-of select="./page/version"/>
 					</xsl:attribute>
