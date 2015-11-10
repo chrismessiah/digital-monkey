@@ -1,9 +1,8 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="Party.xsl"?>
-<!DOCTYPE party SYSTEM "party.dtd">
-<party>
-	<title>Amphiox Gasque</title>
-	<date>2001-09-08</date>
-	<starttime>18.00</starttime>
-	<endtime>03.00</endtime>
-</party>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exempel.xsl"?>
+<class>
+	<student>Jack</student>
+	<student>Harry</student>
+	<student>Rebecca</student>
+	<teacher>Mr. Bean</teacher>
+</class>
