@@ -3,21 +3,43 @@
 
 	<xsl:template match="/">
 		<html>
-	 		<head>
-				<!-- <xsl:apply-templates/> -->
-	  		</head>
+			<head>
+				
+
+				<title><xsl:value-of select="./page/title"/></title>
+
+				<meta>
+					<xsl:attribute name="name">author</xsl:attribute>
+
+					<xsl:attribute name="content">
+						<xsl:value-of select="./page/author"/>
+					</xsl:attribute>
+				</meta>
+
+				<meta>
+					<xsl:attribute name="name">version</xsl:attribute>
+
+					<xsl:attribute name="content">
+						<xsl:value-of select="./page/version"/>
+					</xsl:attribute>
+				</meta>
+
+			</head>
 			<body>
 	    		<xsl:apply-templates/>
-			</body>
+	    	</body>
 		</html>
 	</xsl:template>
 
-	<xsl:template match="title">
-	 	<p><xsl:value-of select="."/></p>
+<!-- 	
+	<xsl:template match="page/title">
+	 	<title>
+	 		<xsl:value-of select="."/>
+	 	</title>
 	</xsl:template>
 
 
-
+ -->
 
 
 
