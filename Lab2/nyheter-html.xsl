@@ -6,7 +6,6 @@
 			<head>
 				<title><xsl:value-of select="./page/title"/></title>
 
-				<!-- Fråga om meta taggar -->
 				<meta>
 					<xsl:attribute name="name">
 						<xsl:value-of select="name(./page/author)"/>
@@ -52,15 +51,13 @@
 			</xsl:attribute>
 			<strong><xsl:value-of select="title"/></strong>
 		</a>
-		<p style="margin:0px;"> - <strong><xsl:value-of select="date/year"/>
+		 - <strong><xsl:value-of select="date/year"/>
 				<xsl:text>&#xA0;</xsl:text>
 				<xsl:value-of select="date/month"/>
 				<xsl:text>&#xA0;</xsl:text>
 				<xsl:value-of select="date/day"/>.
 			</strong>
 			<xsl:value-of select="content"/>
-		</p>
-
 		</li>
 	</xsl:template>
 
@@ -82,13 +79,11 @@
 	</xsl:template>
 
 	<xsl:template match="release">
-		<li>
-		<p style="margin:0px;"><strong><xsl:value-of select="version"/> - 
+		<li><strong><xsl:value-of select="version"/> - 
 				<xsl:value-of select="status"/>
 				<xsl:text>&#xA0;</xsl:text></strong>
 				<xsl:value-of select="comment"/>
 			<xsl:value-of select="content"/>
-		</p>
 		</li>
 	</xsl:template>
 
