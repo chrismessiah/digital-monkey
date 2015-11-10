@@ -27,20 +27,24 @@
 
 			</head>
 			<body>
-
-
-
-				<xsl:apply-templates/>
-
-
+				<h1 style="margin:0px;">Nyheter</h1>
+				<xsl:apply-templates select="./page/newscolumn"/>
+				<h1>Projektstatus</h1>
+				<xsl:apply-templates select="./page/statuscolumn"/>
 
 			</body>
 		</html>
 	</xsl:template>
 
 
-	<xsl:template match="page/newscolumn/news">
-		<ul><li>
+	<xsl:template match="newscolumn|statuscolumn">
+		<ul>
+			<xsl:apply-templates select="news|project"/>
+		</ul>
+	</xsl:template>
+
+	<xsl:template match="news">
+		<li>
 
 		<a>
 			<xsl:attribute name="href">
@@ -48,9 +52,7 @@
 			</xsl:attribute>
 			<strong><xsl:value-of select="title"/></strong>
 		</a>
-		<p> - 
-			<strong>
-				<xsl:value-of select="date/year"/>
+		<p style="margin:0px;"> - <strong><xsl:value-of select="date/year"/>
 				<xsl:text>&#xA0;</xsl:text>
 				<xsl:value-of select="date/month"/>
 				<xsl:text>&#xA0;</xsl:text>
@@ -59,15 +61,36 @@
 			<xsl:value-of select="content"/>
 		</p>
 
-		</li></ul>
+		</li>
 	</xsl:template>
 
 
 
+	<xsl:template match="project">
+		<li>
 
+		<a>
+			<xsl:attribute name="href">
+				<xsl:value-of select="link"/>
+			</xsl:attribute>
+			<strong><xsl:value-of select="title"/></strong>
+		</a>
+		<ul>
+			<xsl:apply-templates select="release"/>
+		</ul>
+		</li>
+	</xsl:template>
 
-
-
+	<xsl:template match="release">
+		<li>
+		<p style="margin:0px;"><strong><xsl:value-of select="version"/> - 
+				<xsl:value-of select="status"/>
+				<xsl:text>&#xA0;</xsl:text></strong>
+				<xsl:value-of select="comment"/>
+			<xsl:value-of select="content"/>
+		</p>
+		</li>
+	</xsl:template>
 
 
 
