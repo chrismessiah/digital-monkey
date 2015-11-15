@@ -1,4 +1,5 @@
-<?php header("Content-type: text/html; charset=utf-8"); ?>
+<?php header("Content-type: text/xml; charset=utf-8"); ?>
+
 <html>
   <head>
     <title>Kaffelista</title>
@@ -10,7 +11,9 @@
         <th>Vecka</th>
         <th>Namn</th>
       </tr>
+      
 <?php
+
     // Connect using host, username, password and databasename
     $link = mysqli_connect('localhost', 'rsslab', 'rsslab', 'rsslab');
 
