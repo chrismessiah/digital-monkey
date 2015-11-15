@@ -20,7 +20,7 @@
 	toastmaster*,
 	endtime?,
 	menu?,
-	guestlist
+	guestlist?
 )>
 
 <!ELEMENT title (#PCDATA)>
