@@ -24,9 +24,7 @@
     }
 
     // The SQL query
-    $query = "SELECT name, week, year
-            FROM calendar
-            ORDER BY year, week ASC";
+    $query = "SELECT link, title, description, creator, feeddate FROM exjobbsfeed ORDER BY feeddate;";
 
     // Execute the query
     if (($result = mysqli_query($link, $query)) === false) {
@@ -38,17 +36,22 @@
     // Loop over the resulting lines
     while ($line = $result->fetch_object()) {
         // Store results from each row in variables
-        $year = $line->year;
-        $week = $line->week;
-        $name = $line->name;
+        $link = $line->link;
+        $title = $line->title;
+        $description = $line->description;
+        $creator = $line->creator;
+        $feeddate = $line->feeddate;
 
         // Store the result we want by appending strings to the variable $returnstring
         $returnstring .= "<tr>";
-        $returnstring .= "<td>$year</td>";
-        $returnstring .= "<td>$week</td>";
-        $returnstring .= "<td>$name</td>";
+        $returnstring .= "<td>$link</td>";
+        $returnstring .= "<td>$title</td>";
+        $returnstring .= "<td>$description</td>";
+        $returnstring .= "<td>$creator</td>";
+        $returnstring .= "<td>$feeddate</td>";
         $returnstring .= "</tr>";
     }
+
 
     // Free result and just in case encode result to utf8 before returning
     mysqli_free_result($result);
