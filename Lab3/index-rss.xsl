@@ -7,16 +7,29 @@
                 version="1.0">
 <xsl:output indent="yes"/> 
 
-<xsl:template match="rdf:RDF">
-   <html>
-     <head>
-       <title>Lab 3 feed</title>
-     </head>
-     <body>
-       <xsl:apply-templates />
-     </body>
-   </html>
-</xsl:template>
+
+
+	<xsl:template match="rdf:RDF">
+	   <html>
+	     <head>
+	       <title>Lab 3 feed</title>
+	     </head>
+	     <body>
+	       <xsl:apply-templates select="rss:item"/>
+	     </body>
+	   </html>
+	</xsl:template>
+
+	<xsl:template match="rss:item">
+		<a>
+			<xsl:attribute name="href">
+				<xsl:value-of select="rss:link"/>
+			</xsl:attribute>
+			<h2><xsl:value-of select="rss:title"/></h2>
+		</a>
+		<p><xsl:value-of select="rss:description"/></p>
+	</xsl:template>
+
 
 </xsl:stylesheet>
 
