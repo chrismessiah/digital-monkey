@@ -23,7 +23,7 @@
         <items>
             <rdf:Seq>
                 <?php
-                    $query = "SELECT link FROM exjobbsfeed;";
+                    $query = "SELECT link, feeddate FROM exjobbsfeed ORDER BY feeddate;";
                     
                     $result = mysqli_query($db_link, $query);
 
@@ -47,7 +47,7 @@
 
 
     <?php
-        $query = "SELECT link, title, description, creator FROM exjobbsfeed;";
+        $query = "SELECT link, title, description, creator, feeddate FROM exjobbsfeed ORDER BY feeddate;";
         $result = mysqli_query($db_link, $query);
 
         while ($line = $result->fetch_object()) {
