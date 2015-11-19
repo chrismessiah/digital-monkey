@@ -1,3 +1,4 @@
+<?php include 'prefix.php'; ?>
 <?php 
     # DO NOT TOUCH THIS
     header("Content-type: text/xml; charset=utf-8"); 
@@ -95,3 +96,4 @@
     ?>
 
 </rdf:RDF>
+<?php include 'postfix.php'; ?>
