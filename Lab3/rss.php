@@ -1,41 +1,98 @@
 <?php 
     # DO NOT TOUCH THIS
     header("Content-type: text/xml; charset=utf-8"); 
-    require('functions.php');
+    $db_link = mysqli_connect('localhost', 'rsslab', 'rsslab', 'rsslab');
+
 ?>
 
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/">
+    <channel rdf:about="http://www.nada.kth.se/media/Theses/"> 
+        <title>Examensarbeten medieteknik</title>
+        <link>http://www.nada.kth.se/media/Theses/</link>
+        <description>Examensarbeten inom medieteknik.</description>
+        <dc:language>sv</dc:language>
+        <dc:rights>Copyright KTH/Nada/Media</dc:rights>
+        <dc:date><?php $date = date("c"); echo $date; ?></dc:date>
 
-<?php  
-    $link = connect_to_db();
+        <dc:publisher>KTH/Nada/Media</dc:publisher>
+        <dc:creator>bjornh@kth.se</dc:creator>
+        <syn:updatePeriod>daily</syn:updatePeriod>
+        <syn:updateFrequency>1</syn:updateFrequency>
+        <syn:updateBase><?php $date = date("c"); echo $date; ?></syn:updateBase>
+        <items>
+            <rdf:Seq>
+                <?php
+                    $query = "SELECT link FROM exjobbsfeed;";
+                    
+                    $result = mysqli_query($db_link, $query);
 
-    // The SQL query
-    $query = "SELECT link, title, description, creator, feeddate FROM exjobbsfeed ORDER BY feeddate;";
-    $result = run_query($link, $query);
+                    while ($line = $result->fetch_object()) {
+                        $link = $line->link;
+                        $output = "<rdf:li rdf:resource='";
 
-    // Loop over the resulting lines
-    while ($line = $result->fetch_object()) {
-        
-        // Store results from each row in variables
-        $link = $line->link;
-        $title = $line->title;
-        $description = $line->description;
-        $creator = $line->creator;
-        $feeddate = $line->feeddate;
+                        $link = str_replace(' ','%20', $link);
+                        $output .= $link;
 
-        // Make variables to string and use UTF8 encoding
-        $link_string = utf8_encode("$link");
-        $title_string = utf8_encode("$title");
-        $description_string = utf8_encode("$description");
-        $creator_string = utf8_encode("$creator");
-        $feeddate_string = utf8_encode("$feeddate");
+                        $output .= "'/>";
+                        echo $output;
+                    }
 
-    }
-
-    // Clear the query result
-    mysqli_free_result($result);
-    
-?>
-
+                    mysqli_free_result($result);
+                ?>
+            </rdf:Seq>
+        </items>
+        <image rdf:resource="http://www.nada.kth.se/media/images/kth.png"/>
+    </channel>
 
 
+    <?php
+        $query = "SELECT link, title, description, creator FROM exjobbsfeed;";
+        $result = mysqli_query($db_link, $query);
 
+        while ($line = $result->fetch_object()) {
+
+            $link = $line->link;
+            $title = utf8_encode("$line->title;");
+            $description = utf8_encode("$line->description;");
+            $creator = utf8_encode("$line->creator;");
+            $feeddate = date("c");
+
+            $output = "<item rdf:about='";
+            $link = str_replace(' ', '%20', $link);
+            $output .= $link;
+            $output .= "'>";
+
+            $output .= "<title>";
+            $output .= $title;
+            $output .= "</title>";
+
+            $output .= "<link>";
+
+            $link = str_replace(' ', '%20', $link);
+            $output .= $link;
+
+            $output .= "</link>";
+
+            $output .= "<description>";
+            
+            // $output .= preg_replace("&","&amp;",$description);
+            $output .= htmlspecialchars($description);
+
+            
+            $output .= "</description>";
+
+            $output .= "<dc:creator>";
+            $output .= $creator;
+            $output .= "</dc:creator>";
+
+            $output .= "<dc:date>";
+            $output .= $feeddate;
+            $output .= "</dc:date>";
+            $output .= "</item>";
+            echo $output;
+        }
+
+        mysqli_free_result($result);
+    ?>
+
+</rdf:RDF>
