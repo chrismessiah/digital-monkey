@@ -1,9 +1,13 @@
-http://xml.csc.kth.se/~ditt-användarnamn/DM2517/lab-rss/coffee.php
-http://xml.csc.kth.se/~ditt-användarnamn/DM2517/lab-rss/rss.php
+
+Länk (1) ska bli länk (2) efter transformationen så mata in det i webbläsaren och kolla i granskaren
+
+	1. http://xml.csc.kth.se/~chrabd/DM2517/lab-rss/rss.php
+	2. http://xml.csc.kth.se/~chrabd/DM2517/lab-rss/index.xml 
+
+Labblydelse
+	https://www.kth.se/social/course/DM2517/subgroup/ht-2015-xmlpub15/page/lab-3-rdf-och-rss-med-php-och-databaser-2/
+
+Kontroll av RSS
+	http://feedvalidator.org
 
 
-
-https://www.kth.se/social/course/DM2517/subgroup/ht-2015-xmlpub15/page/lab-3-rdf-och-rss-med-php-och-databaser-2/
-
-
-http://feedvalidator.org
