@@ -53,9 +53,9 @@
         while ($line = $result->fetch_object()) {
 
             $link = $line->link;
-            $title = utf8_encode("$line->title;");
-            $description = utf8_encode("$line->description;");
-            $creator = utf8_encode("$line->creator;");
+            $title = utf8_encode($line->title);
+            $description = utf8_encode($line->description);
+            $creator = utf8_encode($line->creator);
             $feeddate = date("c");
 
             $output = "<item rdf:about='";
