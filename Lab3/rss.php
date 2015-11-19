@@ -1,36 +1,23 @@
-<?php header("Content-type: text/xml; charset=utf-8"); ?>
+<?php 
+    # DO NOT TOUCH THIS
+    header("Content-type: text/xml; charset=utf-8"); 
+?>
 
 <html>
-  <head>
-    <title>Kaffelista</title>
-  </head>
-  <body>
-    <table>
-      <tr>
-        <th>År</th>
-        <th>Vecka</th>
-        <th>Namn</th>
-      </tr>
-      
-<?php
+<head>
+    <title>HTML Stuff</title>
+</head>
+<body>
+<table>
 
-    // Connect using host, username, password and databasename
-    $link = mysqli_connect('localhost', 'rsslab', 'rsslab', 'rsslab');
-
-    // Check connection
-    if (mysqli_connect_errno()) {
-        printf("Connect failed: %s\n", mysqli_connect_error());
-        exit();
-    }
+<?php  
+    require('functions.php');
+    $link = connect_to_db();
 
     // The SQL query
     $query = "SELECT link, title, description, creator, feeddate FROM exjobbsfeed ORDER BY feeddate;";
+    $result = run_query($link, $query);
 
-    // Execute the query
-    if (($result = mysqli_query($link, $query)) === false) {
-       printf("Query failed: %s<br />\n%s", $query, mysqli_error($link));
-       exit();
-    }
 
     $returnstring = '';
     // Loop over the resulting lines
@@ -55,8 +42,12 @@
 
     // Free result and just in case encode result to utf8 before returning
     mysqli_free_result($result);
-    print utf8_encode($returnstring);
+    echo utf8_encode($returnstring);
 ?>
-    </table>
-  </body>
+
+</table>
+</body>
 </html>
+
+
+
