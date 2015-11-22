@@ -26,11 +26,10 @@
 
 			</head>
 			<body>
-				<h1 style="margin:0px;">Nyheter</h1>
+				<h1>Nyheter</h1>
 				<xsl:apply-templates select="./page/newscolumn"/>
 				<h1>Projektstatus</h1>
 				<xsl:apply-templates select="./page/statuscolumn"/>
-
 			</body>
 		</html>
 	</xsl:template>
@@ -51,11 +50,11 @@
 			</xsl:attribute>
 			<strong><xsl:value-of select="title"/></strong>
 		</a>
-		 - <strong><xsl:value-of select="date/year"/>
+		 - <strong><xsl:value-of select="date/day"/>
 				<xsl:text>&#xA0;</xsl:text>
 				<xsl:value-of select="date/month"/>
 				<xsl:text>&#xA0;</xsl:text>
-				<xsl:value-of select="date/day"/>.
+				<xsl:value-of select="date/year"/>.
 			</strong>
 			<xsl:value-of select="content"/>
 		</li>
