@@ -79,8 +79,7 @@
 
 	<xsl:template match="release">
 		<li><strong><xsl:value-of select="version"/> - 
-				<xsl:value-of select="status"/>
-				<xsl:text>&#xA0;</xsl:text></strong>
+				<xsl:value-of select="status"/></strong>
 				<xsl:value-of select="comment"/>
 			<xsl:value-of select="content"/>
 		</li>
