@@ -1,0 +1,35 @@
+university
+	students
+		student
+			personal_data
+			attended_courses
+				s_course
+					course_code
+					final_grade
+					submittions
+						submittion
+							grade
+							timedate
+							comment
+							status
+							document_name
+							given_points
+						task_id
+	teachers
+		teacher
+			personal_data
+			teacher_in_courses
+				t_course
+					course_code
+					privileges
+	courses
+		course
+			course_code
+			name
+			credits
+			description
+
+
+
+	
+

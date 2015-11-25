@@ -1,0 +1,39 @@
+Users (
+	user_id,			-- primary key, string, tahiri
+	firstname,
+	lastname,
+	password,			-- char(64), SHA-256 hashed value
+	pic_name,
+	about				-- string, displayed on profile
+	student				-- boolean
+	teacher				-- boolean
+) AttendingStudents (
+	user_id,			-- foreign key
+	course_code,		-- foreign key
+	final_grade			-- string, A to F or null
+) SubmittedTasks (
+	user_id,			-- foreign key
+	course_code,		-- foreign key
+	task_id,			-- primary key
+	timedate,			-- för att hålla koll på kompletteringar
+	grade,
+	document_name,
+	comment,
+	status,
+	given_points
+) Teachers (
+	user_id,			-- foreign key
+	course_code,		-- foreign key
+	teacher_privileges	-- string, examinator, asse ...
+) Blog (
+	blogpost_id,		-- primary key, integer
+	image_name,
+	heading,
+	intro,
+	body
+) Courses (
+	course_code,		-- primary key
+	name,
+	credits,			-- float, ex. 7.5
+	description
+)
