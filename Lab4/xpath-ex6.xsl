@@ -3,6 +3,8 @@
 	<xsl:output method="html"/>
 
 	<xsl:template match="/">
-  		<p>Hello world excercise 6!</p>
+  		<xsl:value-of select="sum(.//PERSONELECTION[@NAME = 'Fredrik Reinfeldt']/@PERSONALVOTES)"/>
 	</xsl:template>
+
+
 </xsl:stylesheet>
