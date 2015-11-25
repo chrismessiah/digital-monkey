@@ -3,6 +3,7 @@
 	<xsl:output method="html"/>
 
 	<xsl:template match="/">
-  		<p>Hello world excercise 5!</p>
+  		<p><xsl:value-of select="./ELECTION/PARTY[@SHORTNAME = 'ENH']/@REALNAME"/></p>
 	</xsl:template>
+
 </xsl:stylesheet>

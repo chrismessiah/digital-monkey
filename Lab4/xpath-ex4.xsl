@@ -3,13 +3,7 @@
 	<xsl:output method="html"/>
 
 	<xsl:template match="/">
-  		
-
-  		<xsl:value-of select="count(.//ELECTORAL[VALID/@PARTY = 'M' and VALID/@PERCENTAGE > 18])"/>
-
-
+  		<p><xsl:value-of select="count(.//ELECTORAL[VALID/@PARTY = 'M' and VALID/@PERCENTAGE > 18])"/></p>
 	</xsl:template>
-
-
 
 </xsl:stylesheet>
