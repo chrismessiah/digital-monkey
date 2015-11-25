@@ -2,7 +2,8 @@
    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html"/>
 
-	<xsl:template match="/">
-  		<p>Hello world excercise 3!</p>
+	<xsl:template match="//ELECTORAL[VALID/@PARTY = 'M' and VALID/@PERCENTAGE > 18]">
+  		<p><xsl:value-of select="@NAME"/></p>
 	</xsl:template>
+
 </xsl:stylesheet>
