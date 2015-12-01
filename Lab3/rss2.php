@@ -19,7 +19,7 @@
         <dc:creator>bjornh@kth.se</dc:creator>
         <syn:updatePeriod>daily</syn:updatePeriod>
         <syn:updateFrequency>1</syn:updateFrequency>
-        <syn:updateBase><?php $date = date("c"); echo $date; ?></syn:updateBase>
+        <syn:updateBase>2006-01-01T00:00+00:00</syn:updateBase>
         <items>
             <rdf:Seq>
                 <?php
@@ -56,7 +56,10 @@
             $title = utf8_encode($line->title);
             $description = utf8_encode($line->description);
             $creator = utf8_encode($line->creator);
-            $feeddate = date("c");
+            
+            $date = substr($line->feeddate,0,10);
+            $time = substr($line->feeddate,11,19);
+            $feeddate = $date."T".$time;
 
             $output = "<item rdf:about='";
             $link = str_replace(' ', '%20', $link);
