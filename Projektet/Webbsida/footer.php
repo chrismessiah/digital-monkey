@@ -6,8 +6,14 @@
 	<div id="foot_textbox">
 		<p id="foot_p"><?=$footer_text?></p>
 	</div>
-	<div id="foot_chris"></div>
-	<div id="foot_adde"></div>
+	
+	<a href="https://se.linkedin.com/in/christianabdelmassih">
+		<div id="foot_chris"></div>
+	</a>
+	
+	<a href="https://se.linkedin.com/in/adelina-tahiri-728b55a1">
+		<div id="foot_adde"></div>
+	</a>
 </div>
 
 <style type="text/css">

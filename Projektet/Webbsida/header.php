@@ -34,7 +34,8 @@
 	
 	<?php } else { ?>
 	
-	<p class="head_menu">Log in</p>
+	<a href="login.php"><p class="head_menu">Log in</p></a>
+	
 	<style>
 		.head_menu {
 			display: inline-block;
