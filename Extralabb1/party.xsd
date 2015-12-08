@@ -1,0 +1,52 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:party="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/" elementFormDefault="qualified" targetNamespace="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/">
+
+
+  <element name="party" type="party:PartyType"/>
+
+  <element name="title" type="string"/>
+  <element name="date" type="date"/>
+  <element name="starttime" type="time"/>
+  <element name="endtime" type="time"/>
+  <element name="arranger" type="string"/>
+  <element name="location" type="string"/>
+
+  <element name="price" type="party:priceType"/>
+
+  <element name="OSAdate" type="date"/>
+  <element name="description" type="string"/>
+
+  <element name="contact" type="string"/>
+  <element name="host" type="string"/>
+  <element name="toastmaster" type="string"/>
+  <element name="menu" type="string"/>
+  <element name="guestlist" type="string"/>
+
+
+  <complexType name="PartyType">
+    <sequence>
+      <element ref="party:title"/>
+      <element ref="party:date"/>
+      <element ref="party:starttime"/>
+      <element ref="party:endtime"/>
+      <element ref="party:arranger"/>
+      <element ref="party:location"/>
+      <element ref="party:price"/>
+      <element ref="party:OSAdate"/>
+      <element ref="party:description"/>
+      <element ref="party:contact"/>
+      <element ref="party:host"/>
+      <element ref="party:toastmaster"/>
+      <element ref="party:menu"/>
+      <element ref="party:guestlist"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="priceType">
+    <simpleContent>
+      <extension base="integer">
+        <attribute name="unit" type="string" />
+      </extension>
+    </simpleContent>
+  </complexType>
+
+</schema>

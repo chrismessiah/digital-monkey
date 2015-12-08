@@ -1,0 +1,55 @@
+LINE {
+  	display:block;
+}
+
+MAINTITLE {
+	font-size: 100px;
+}
+
+TITLE {
+	text-transform: uppercase;
+}
+
+PERSONA {
+	display: inline;
+}
+
+TITLE:after, GRPDESCR:after, PERSONA:after, SCNDESCR:after, PLAYSUBT:after, STAGEDIR:before, SCENE > TITLE:after {
+    content:"\a";
+    white-space: pre;
+}
+
+MAINTITLE:after, STAGEDIR:after {
+    content:"\a\a";
+    white-space: pre;
+}
+
+PLAYSUBT {
+	font-size: 50px;
+}
+
+ACT > TITLE:before {
+	content:"			     ";
+    white-space: pre;
+}
+
+SCENE > TITLE:before {
+	content:" ";
+    white-space: pre;	
+}
+
+STAGEDIR {
+	font-style: italic;
+}
+
+SPEECH > LINE:before {
+	content:"   ";
+    white-space: pre;
+}
+
+SPEECH > LINE:after {
+    white-space: pre;
+}
+
+
+
