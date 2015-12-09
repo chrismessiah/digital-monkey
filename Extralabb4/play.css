@@ -1,5 +1,9 @@
+PERSONA, LINE, PERSONAE, PLAYSUBT, ACT > TITLE, STAGEDIR {
+    display:block;   
+}
+
 LINE {
-  	display:block;
+    text-indent: 10px;
 }
 
 MAINTITLE {
@@ -8,48 +12,39 @@ MAINTITLE {
 
 TITLE {
 	text-transform: uppercase;
+    display: block;
+    margin: 5pt 0px 0px 0px;
+    font-size: 17px;
 }
 
-PERSONA {
-	display: inline;
-}
-
-TITLE:after, GRPDESCR:after, PERSONA:after, SCNDESCR:after, PLAYSUBT:after, STAGEDIR:before, SCENE > TITLE:after {
-    content:"\a";
-    white-space: pre;
-}
-
-MAINTITLE:after, STAGEDIR:after {
-    content:"\a\a";
-    white-space: pre;
+PERSONAE {
+    margin: 100px 0px 0px 0px;
 }
 
 PLAYSUBT {
-	font-size: 50px;
+    margin: 10px 0px 0px 0px;
+    font-size:30px;
 }
 
-ACT > TITLE:before {
-	content:"			     ";
-    white-space: pre;
+ACT > TITLE {
+    text-align:center;
+    width: 40%;
 }
 
-SCENE > TITLE:before {
-	content:" ";
-    white-space: pre;	
+SCENE > TITLE {
+    margin: 0px;
 }
 
 STAGEDIR {
-	font-style: italic;
+    font-style: italic;
+    margin: 10px 0px 10px 0px;
 }
 
-SPEECH > LINE:before {
-	content:"   ";
-    white-space: pre;
+SCENE {
+    counter-reset: row;
 }
 
-SPEECH > LINE:after {
-    white-space: pre;
+LINE:after{
+    counter-increment: row;
+    content: "  " counter(row);
 }
-
-
-
