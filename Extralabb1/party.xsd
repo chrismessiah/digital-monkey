@@ -1,52 +1,171 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:party="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/" elementFormDefault="qualified" targetNamespace="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/">
-
-
-  <element name="party" type="party:PartyType"/>
-
-  <element name="title" type="string"/>
-  <element name="date" type="date"/>
-  <element name="starttime" type="time"/>
-  <element name="endtime" type="time"/>
-  <element name="arranger" type="string"/>
-  <element name="location" type="string"/>
-
-  <element name="price" type="party:priceType"/>
-
-  <element name="OSAdate" type="date"/>
-  <element name="description" type="string"/>
-
-  <element name="contact" type="string"/>
-  <element name="host" type="string"/>
-  <element name="toastmaster" type="string"/>
-  <element name="menu" type="string"/>
-  <element name="guestlist" type="string"/>
-
-
-  <complexType name="PartyType">
+  
+  <element name="party" type="party:partyType"/>
+  <complexType name="partyType">
     <sequence>
-      <element ref="party:title"/>
-      <element ref="party:date"/>
-      <element ref="party:starttime"/>
-      <element ref="party:endtime"/>
-      <element ref="party:arranger"/>
-      <element ref="party:location"/>
-      <element ref="party:price"/>
-      <element ref="party:OSAdate"/>
-      <element ref="party:description"/>
-      <element ref="party:contact"/>
-      <element ref="party:host"/>
-      <element ref="party:toastmaster"/>
-      <element ref="party:menu"/>
-      <element ref="party:guestlist"/>
+      <element name="title" type="string"/>
+      <element name="date" type="date"/>
+      <element name="starttime" type="time"/>
+      <element name="endtime" type="time" minOccurs="0" maxOccurs="1"/>
+      <element name="arranger" type="string"/>
+      <element name="location" type="string"/>
+      <element name="price" type="party:priceType" minOccurs="0" maxOccurs="1"/>
+      <element name="OSAdate" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="description" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="contact" type="party:contactType" minOccurs="0" maxOccurs="1"/>
+      <element name="host" type="party:personType" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="toastmaster" type="party:personType" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="menu" type="party:menuType" minOccurs="0" maxOccurs="1"/>
+      <element name="guestlist" type="party:guestlistType" minOccurs="0" maxOccurs="1"/>
     </sequence>
   </complexType>
 
   <complexType name="priceType">
     <simpleContent>
       <extension base="integer">
-        <attribute name="unit" type="string" />
+        <attribute name="unit" type="string" use="optional"/>
       </extension>
     </simpleContent>
   </complexType>
+
+  <complexType name="personType">
+    <sequence>
+      <element name="firstname" type="string"/>
+      <element name="lastname" type="string"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="contactType">
+    <complexContent>
+      <extension base="party:personType">
+        <sequence>
+          <element name="phone" type="party:phoneType"/>
+          <element name="email" type="party:emailType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+   <simpleType name="phoneType">
+    <restriction base="string">
+      <pattern value="0[0-9]{1,3}-[0-9]{5,8})"/>
+    </restriction>
+  </simpleType>
+
+  <simpleType name="emailType">
+    <restriction base="string">
+      <pattern value="\w+@(\w+\.)+\w{2,}"/>
+    </restriction>
+  </simpleType>  
+
+  <complexType name="menuType">
+    <sequence>
+      <element name="starter" type="party:dishType" minOccurs="0" maxOccurs="1"/>
+      <element name="main_course" type="party:dishType"/>
+      <element name="dessert" type="party:dishType" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="dishType">
+    <sequence>
+      <element name="food" type="party:foodType" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="drink" type="party:drinkType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="foodType">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="type" type="party:specific_foodType" use="optional"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+
+  <simpleType name="specific_foodType">
+    <restriction base="string">
+      <pattern value="shellfish|fish|meat|vegetarian|dairy|other"/>
+    </restriction>
+  </simpleType>
+
+  <complexType name="drinkType">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="type" type="party:specific_drinkType" use="optional"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+
+  <simpleType name="specific_drinkType">
+    <restriction base="string">
+      <pattern value="beer|red_wine|white_wine|coffee|cognac|tea|punch|other"/>
+    </restriction>
+  </simpleType>
+
+  <complexType name="guestlistType">
+    <sequence>
+      <element name="guest" type="party:guestType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="guestType">
+    <complexContent>
+      <extension base="party:personType">
+        <sequence>
+          <element name="affiliation" type="string"/>
+          <element name="placementpreferences" type="party:placementType"/>
+          <element name="foodrestrictions" type="party:f_restrType" minOccurs="0" maxOccurs="1"/>
+          <element name="drinkrestrictions" type="party:d_restrType" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+        <attribute name="id" type="party:idDefType" use="required"/>
+        <attribute name="sex" type="party:genderType" use="required"/>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="placementType">
+    <sequence>
+      <element name="id" type="party:guestIDType" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <simpleType name="idDefType">
+    <restriction base="string">
+      <pattern value="pnr[0-9]{6}-[0-9]{4}"/>
+    </restriction>
+  </simpleType>
+
+
+  <complexType name="f_restrType">
+    <sequence>
+      <element name="ingredient" type="string" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="d_restrType">
+    <sequence>
+      <element name="drink" type="party:drinkType" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <simpleType name="genderType">
+    <restriction base="string">
+      <pattern value="male|female|unknown"/>
+    </restriction>
+  </simpleType>
+
+    <complexType name="guestIDType">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="nextto" type="party:nexttoType" use="required"/>
+        <attribute name="id" type="IDREF" use="required"/> <!-- ska vara referes -->
+      </extension>
+    </simpleContent>
+  </complexType>
+  
+  <simpleType name="nexttoType">
+    <restriction base="string">
+      <pattern value="yes|no"/>
+    </restriction>
+  </simpleType>
 
 </schema>

@@ -1,8 +1,4 @@
 http://www.freeformatter.com/xml-validator-xsd.html
 
-(Bättre)
-http://www.utilities-online.info/xsdvalidation
-
-
 
 http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/party.xsd
