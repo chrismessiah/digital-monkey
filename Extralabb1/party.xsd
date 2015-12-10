@@ -112,7 +112,7 @@
       <extension base="party:personType">
         <sequence>
           <element name="affiliation" type="string"/>
-          <element name="placementpreferences" type="party:placementType"/>
+          <element name="placementpreferences" type="party:placementprefType"/>
           <element name="foodrestrictions" type="party:f_restrType" minOccurs="0" maxOccurs="1"/>
           <element name="drinkrestrictions" type="party:d_restrType" minOccurs="0" maxOccurs="1"/>
         </sequence>
@@ -122,9 +122,9 @@
     </complexContent>
   </complexType>
 
-  <complexType name="placementType">
+  <complexType name="placementprefType">
     <sequence>
-      <element name="id" type="party:guestIDType" minOccurs="0" maxOccurs="1"/>
+      <element name="id" type="party:guestIDType" minOccurs="0" maxOccurs="unbounded"/>
     </sequence>
   </complexType>
 

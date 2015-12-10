@@ -10,7 +10,7 @@
   <price unit="sek">195</price>
 
   <OSAdate>2001-08-24</OSAdate>
-  <description>Party for the new students at Medicinska Freningen.</description>
+  <description>Party for the new students at Medicinska F&ouml;reningen.</description>
 	<contact>
   	<firstname>Berra</firstname>
   	<lastname>Berrasson</lastname>
@@ -20,7 +20,7 @@
 
 	<host>
   	<firstname>Anna</firstname>
-  	<lastname>Jerresand-hrstrm</lastname>
+  	<lastname>Jerresand-&Ouml;hrstr&ouml;m</lastname>
 	</host>
 
 	<toastmaster>
@@ -38,7 +38,7 @@
       <drink type="beer">Carlsberg Hof</drink>
     </starter>
     <main_course>
-      <food type="meat">Bruf Nilosie</food>
+      <food type="meat">B&brkbar;uf Ni&ccedil;osie</food>
       <drink type="red_wine">Castillo de Benizar</drink>
     </main_course>
     <dessert>
