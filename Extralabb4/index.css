@@ -1,20 +1,19 @@
-h1 {
+* {
+    background-color: #ffffff;
+} h1 {
     color: #003366;
     font-family: Arial, Helvetica;
     font-size: 21px;
-    background-color: #ffffff;
     font-weight: normal;
 } h2 {
     color: #003366;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 14px;
-    background-color: #ffffff;
     font-weight: bold;
 } p {
 	color: #000000;
-	font-family: verdana, arial, helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 9px;
-	background-color: #ffffff;
 } p.kalle {
 	color: #ff0000;
 }
