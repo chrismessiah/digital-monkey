@@ -1,5 +1,88 @@
-<party xmlns="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/party.xsd">
-	<title>
-    	Amphiox Gasque
-	</title>
+<party xsi:schemaLocation="http://xml.csc.kth.se/~chrabd/DM2517/lab-lab-xmlschemas/ http://xml.csc.kth.se/~chrabd/DM2517/lab-lab-xmlschemas/party.xsd">
+  <title>Amphiox Gasque</title>
+	<date>2001-09-08</date>
+	<starttime>18:00:00</starttime>
+	<endtime>03:00:00</endtime>
+	<arranger>MF</arranger>
+  <location>MF</location>
+  <price unit="sek">195</price>
+
+  <OSAdate>2001-08-24</OSAdate>
+  <description>Party for the new students at Medicinska Föreningen.</description>
+	<contact>
+  	<firstname>Berra</firstname>
+  	<lastname>Berrasson</lastname>
+  	<phone>08-123456</phone>
+  	<email>berra@mf.ki.se</email>
+	</contact>
+
+	<host>
+  	<firstname>Anna</firstname>
+  	<lastname>Jerresand-Öhrström</lastname>
+	</host>
+
+	<toastmaster>
+  	<firstname>Miranda</firstname>
+  	<lastname>Michanek</lastname>
+	</toastmaster>
+	
+	<toastmaster>
+  	<firstname>Johannes</firstname>
+  	<lastname>Linde</lastname>
+	</toastmaster>
+  <menu>
+    <starter>
+      <food type="shellfish">Toast Skagen</food>
+      <drink type="beer">Carlsberg Hof</drink>
+    </starter>
+    <main_course>
+      <food type="meat">B¦;uf Niçosie</food>
+      <drink type="red_wine">Castillo de Benizar</drink>
+    </main_course>
+    <dessert>
+      <food type="dairy">Vanilla icecream</food>
+      <drink type="coffee">Espresso</drink>
+      <drink type="cognac">Napoleon Cognac</drink>
+    </dessert>
+  </menu>
+
+<guestlist>
+    <guest id="pnr771212-1212" sex="male">
+      <firstname>Sven</firstname>
+      <lastname>Svensson</lastname>
+
+      <affiliation>KTH</affiliation>
+      <placementpreferences>
+        <id nextto="yes" id="pnr760101-0101" />
+      </placementpreferences>
+      
+      <foodrestrictions>
+        <ingredient>garlic</ingredient>
+        <ingredient>meat</ingredient>
+      </foodrestrictions>
+      <drinkrestrictions>
+        <drink type="red_wine" />
+        <drink type="beer" />
+      </drinkrestrictions>
+
+    </guest>
+    <guest id="pnr760101-0101" sex="female">
+      <firstname>Anna</firstname>
+      <lastname>Karlsson</lastname>
+      <affiliation>MF</affiliation>
+      <placementpreferences>
+        <id nextto="no"  id="pnr771212-1212" />
+      </placementpreferences>
+
+      <drinkrestrictions>
+        <drink type="beer" />
+      </drinkrestrictions>
+
+    </guest>
+  </guestlist>
+
+
 </party>
+
+
+
