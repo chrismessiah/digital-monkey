@@ -1,4 +1,8 @@
-<party xsi:schemaLocation="http://xml.csc.kth.se/~chrabd/DM2517/lab-lab-xmlschemas/ http://xml.csc.kth.se/~chrabd/DM2517/lab-lab-xmlschemas/party.xsd">
+<party xmlns="http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation=
+       "http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/
+        http://xml.csc.kth.se/~chrabd/DM2517/lab-xmlschemas/party.xsd">
   <title>Amphiox Gasque</title>
 	<date>2001-09-08</date>
 	<starttime>18:00:00</starttime>
