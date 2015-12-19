@@ -1,9 +1,17 @@
-<?php ?>
-<style>
-	body {
-		margin: 0px;
+<?php 
+	echo session_status();
+	session_start();
+	if  (!isset($_COOKIE['logged_in']) && !isset($_COOKIE['username'])) {
+		echo "Session now started";
+    	$_SESSION["logged_in"] = false;
+    	$_SESSION["username"] = "";
+	} else {
+		echo "Session ALREADY STARTED";
+		echo session_status();
+		echo $_SESSION["logged_in"];
+		echo $_SESSION["username"];
 	}
-</style>
+?>
 
 <div id="head_div">
 	<a href="index.php">
@@ -11,10 +19,25 @@
 	</a>
 
 	<?php 
-		// Set to false just to get something
-		$logged_in = FALSE;
-		if ($logged_in) {
+		if ( !$_SESSION["logged_in"] ) {
 	?>
+			<a href="login_page.php"><p class="head_menu">Log in</p></a>
+		
+			<style>
+				.head_menu {
+					display: inline-block;
+					font-family: Helvetica;
+					font-size: 24px;
+					color: #FFFFFF;
+					line-height: 29px;
+					position: relative;
+					left: 80%;
+					display: inline-block;
+				}
+			</style>
+	
+	<?php } else { ?>
+
 			<p class="head_menu">Kurser</p>
 			<p class="head_menu">Schema</p>
 			<p class="head_menu">Resultat</p>
@@ -31,29 +54,15 @@
 					position: relative;
 				} 
 			</style>
-	
-	<?php } else { ?>
-	
-	<a href="login_page.php"><p class="head_menu">Log in</p></a>
-	
-	<style>
-		.head_menu {
-			display: inline-block;
-			font-family: Helvetica;
-			font-size: 24px;
-			color: #FFFFFF;
-			line-height: 29px;
-			position: relative;
-			left: 80%;
-			display: inline-block;
-		}
-	</style>
 	<?php } ?>
 
 </div>
 
 
 <style>
+	body {
+		margin: 0px;
+	}
 	#kth_logo {
 		background-image: url("public/header/kth.png");
 		width: 60px;

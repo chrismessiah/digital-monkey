@@ -16,6 +16,11 @@
 	</a>
 </div>
 
+
+<?php
+	# phpinfo()
+?>
+
 <style type="text/css">
 	#foot_div {
 		background: #353535;

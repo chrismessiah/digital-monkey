@@ -6,10 +6,10 @@
 <div id="login-bg">
 	
 	<div id="login_wrapper">
-		<form method="post"> <!-- collects user input -->
+		<form method="post" action="login.php"> <!-- collects user input -->
 			<input type="text" name="field1" placeholder="Username" >
 
-			<input type="text" name="field2" placeholder="Password" >
+			<input type="password" name="field2" placeholder="Password" >
 			<p id="login_pass_forgot">Forgot password?</p>
 			<input type="submit" value="Submit">
 		</form>
@@ -41,7 +41,7 @@
 		background-size: 1294px;
 		background-repeat: no-repeat;
 	}
-	input[type="text"] {
+	input[type="text"], input[type="password"] {
 		background: #FFFFFF;
 		border: 1px solid #979797;
 		border-radius: 40px;
@@ -68,7 +68,7 @@
 	}
 
 	/* Hides placeholden */
-	input[type="text"]:focus::-webkit-input-placeholder { 
+	input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder { 
 		color:transparent; 
 	}
 </style>
@@ -78,3 +78,45 @@
 <?php
 	require 'footer.php';
 ?>
+
+<?php
+	if ($_GET["error"] == "hacker" || $_GET["error"] == "pwd_fail") {
+		if ($_GET["error"] == "hacker") {
+			$error_message = "You're trying to beat the system? This IS the system. Beating you back!";
+		} else {
+			$error_message = "Wrong username/password combination!";
+		}
+	?>
+		<script src="modules/sweetAlert/dist/sweetalert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="modules/sweetAlert/dist/sweetalert.css">
+		<script type="text/javascript">
+			swal({
+				title: "Error!",
+				text: "<?=$error_message?>",
+				type: "error",
+				confirmButtonText: "Next"
+			});
+		</script>
+	<?php
+	}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

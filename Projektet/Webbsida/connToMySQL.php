@@ -12,7 +12,7 @@ class MySQL_Handler {
 
 		$username = "test";
 		$password = "hello67";
-		$db_name = "testDB";
+		$db_name = "proj_xml";
 		$port = 3306;
 		$socket = "/var/run/mysqld/mysqld.sock";
 
@@ -39,7 +39,18 @@ class MySQL_Handler {
 		}
 	}
 
+	function selectFromDB($column_names, $table_name, $condition = "") {
+		if ($condition != "") {
+			$condition = " WHERE ".$condition;
+		}
+		$sql = "SELECT ".$column_names." FROM ".$table_name.$condition.";"; // Select 
+		$result = $this->conn->query($sql);
+		return $result;
+	}
+
 }
+
+
 
 ?>
 
