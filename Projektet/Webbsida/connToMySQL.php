@@ -7,14 +7,20 @@ class MySQL_Handler {
 	}
 
 	function mysql_connect($print_status = false) {
-		$hostname = "127.0.0.1";
+		//$hostname = "127.0.0.1";
 		// $hostname = "localhost"; // Oddly enough does not work
 
-		$username = "test";
-		$password = "hello67";
-		$db_name = "proj_xml";
-		$port = 3306;
-		$socket = "/var/run/mysqld/mysqld.sock";
+		// $username = "test";
+		// $password = "hello67";
+		// $db_name = "proj_xml";
+		// $port = 3306;
+		// $socket = "/var/run/mysqld/mysqld.sock";
+
+		$hostname = "localhost";
+		$username = "chrabd";
+		$password = "chrabd-xmlpub13";
+		$db_name = "chrabd";
+
 
 		// Create connection
 		$conn = mysqli_connect($hostname, $username, $password, $db_name, $port, $socket);

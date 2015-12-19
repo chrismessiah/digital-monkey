@@ -1,8 +1,9 @@
 <?php 
-	echo session_status();
 	session_start();
+	error_reporting(E_ALL); // To see all errors
 	if  (!isset($_COOKIE['logged_in']) && !isset($_COOKIE['username'])) {
-		echo "Session now started";
+		echo "Session now started<br>";
+		echo session_id()."<br>";
     	$_SESSION["logged_in"] = false;
     	$_SESSION["username"] = "";
 	} else {
@@ -11,6 +12,7 @@
 		echo $_SESSION["logged_in"];
 		echo $_SESSION["username"];
 	}
+	var_dump($_SESSION);
 ?>
 
 <div id="head_div">
