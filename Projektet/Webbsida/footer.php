@@ -21,7 +21,7 @@
 	# phpinfo()
 ?>
 
-<style type="text/css">
+<style>
 	#foot_div {
 		background: #353535;
 	}

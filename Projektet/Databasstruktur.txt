@@ -27,8 +27,8 @@ Users (
 	teacher_privileges	-- string, examinator, asse ...
 ) Blog (
 	blogpost_id,		-- primary key, integer
-	image_name,
-	heading,
+	image_path,
+	title,
 	intro,
 	body
 ) Courses (
@@ -37,3 +37,26 @@ Users (
 	credits,			-- float, ex. 7.5
 	description
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,10 +1,14 @@
+<?php
+	require 'session.php';
+?>
+
 <div id="head_div">
 	<a href="index.php">
 		<div id="kth_logo"></div>
 	</a>
 
 	<?php 
-		if ( !$_SESSION["logged_in"] ) {
+		if ( $_SESSION["logged_in"] == false ) {
 	?>
 			<a href="login_page.php"><p class="head_menu">Log in</p></a>
 		
@@ -18,11 +22,15 @@
 		} else { 
 	?>
 
-			<a href=""><p class="head_menu">Kurser</p></a>
-			<a href=""><p class="head_menu">Schema</p></a>
-			<a href=""><p class="head_menu">Resultat</p></a>
-			<a href=""><p class="head_menu">Översikt</p></a>
-			<a href=""><p class="head_menu">Övrigt</p></a>
+			<a href="courses.php"><p class="head_menu">Kurser</p></a>
+			<a href="schedule.php"><p class="head_menu">Schema</p></a>
+			<a href="results.php"><p class="head_menu">Resultat</p></a>
+			<a href="index.php"><p class="head_menu">Översikt</p></a>
+			<a href="other.php"><p class="head_menu">Övrigt</p></a>
+
+			<a href="index.php">
+				<div id="profile_pic"></div>
+			</a>
 	<?php 
 		} 
 	?>
@@ -41,9 +49,12 @@
 		color: #FFFFFF;
 		position: relative;
 		line-height: 29px;
+		margin-left: 20px;
 	}
-	#kth_logo {
-		background-image: url("public/header/kth.png");
+	#head_div {
+		background: #525259;
+	}
+	#profile_pic, #kth_logo {
 		width: 60px;
 		height: 60px;
 		display: inline-block;
@@ -51,9 +62,32 @@
 		left: 15px;
 		top: 15px;
 	}
-	#head_div {
-		background: #525259;
+	#kth_logo {
+		background-image: url("public/header/kth.png");
+		left: 15px;
+		top: 15px;
+	}
+	#profile_pic {
+		background-image: url("<?=$_SESSION['pic_path']?>");
+		left: 47%;
+		top: 15px;
 	}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
