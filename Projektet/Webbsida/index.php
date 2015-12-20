@@ -12,8 +12,7 @@
 	$result = $MySQLObj->selectFromDB("*", "Blog");
 
 	for ($i=0; $i < $count; $i++) { 
-		# code...
-	
+
 		$dict = $result->fetch_assoc();
 
 		$dict["blogpost_id"];
@@ -26,13 +25,14 @@
 		$css_blog_intro = 'blog_article_'.$dict["blogpost_id"]."_intro";
 
 ?>
-
+		<a href="articles.php?article=<?=$dict["blogpost_id"]?>">
 		<div id="<?=$css_blog_id?>">
 			<div> <!-- color overlay -->
 				<p id="<?=$css_blog_title?>"><?=$dict["title"]?></p>
 				<p id="<?=$css_blog_intro?>"><?=$dict["intro"]?></p>
 			</div>
 		</div>
+		</a>
 
 		<style>
 			<?="#".$css_blog_id?> {
@@ -61,7 +61,9 @@
 			<?="#".$css_blog_intro?> {
 				font-size: 22px;
 			}
-
+			a {
+				text-decoration: none;
+			}
 		</style>
 
 <?php
