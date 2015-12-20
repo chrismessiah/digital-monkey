@@ -3,6 +3,7 @@
 session_start();
 // store session data
 $_SESSION["username"] = "Oddity";
+$_SESSION["superbool"] = true;
 
-header("location:some.php")
+header("location:started.php")
 ?>

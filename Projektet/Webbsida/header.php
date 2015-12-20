@@ -1,20 +1,3 @@
-<?php 
-	session_start();
-	error_reporting(E_ALL); // To see all errors
-	if  (!isset($_COOKIE['logged_in']) && !isset($_COOKIE['username'])) {
-		echo "Session now started<br>";
-		echo session_id()."<br>";
-    	$_SESSION["logged_in"] = false;
-    	$_SESSION["username"] = "";
-	} else {
-		echo "Session ALREADY STARTED";
-		echo session_status();
-		echo $_SESSION["logged_in"];
-		echo $_SESSION["username"];
-	}
-	var_dump($_SESSION);
-?>
-
 <div id="head_div">
 	<a href="index.php">
 		<div id="kth_logo"></div>
@@ -27,36 +10,22 @@
 		
 			<style>
 				.head_menu {
-					display: inline-block;
-					font-family: Helvetica;
-					font-size: 24px;
-					color: #FFFFFF;
-					line-height: 29px;
-					position: relative;
 					left: 80%;
-					display: inline-block;
 				}
 			</style>
 	
-	<?php } else { ?>
+	<?php 
+		} else { 
+	?>
 
-			<p class="head_menu">Kurser</p>
-			<p class="head_menu">Schema</p>
-			<p class="head_menu">Resultat</p>
-			<p class="head_menu">Översikt</p>
-			<p class="head_menu">Övrigt</p>
-
-			<style>
-				.head_menu {
-					display: inline-block;
-					font-family: Helvetica;
-					font-size: 24px;
-					color: #FFFFFF;
-					line-height: 29px;
-					position: relative;
-				} 
-			</style>
-	<?php } ?>
+			<a href=""><p class="head_menu">Kurser</p></a>
+			<a href=""><p class="head_menu">Schema</p></a>
+			<a href=""><p class="head_menu">Resultat</p></a>
+			<a href=""><p class="head_menu">Översikt</p></a>
+			<a href=""><p class="head_menu">Övrigt</p></a>
+	<?php 
+		} 
+	?>
 
 </div>
 
@@ -64,6 +33,14 @@
 <style>
 	body {
 		margin: 0px;
+	}
+	.head_menu {
+		display: inline-block;
+		font-family: Helvetica;
+		font-size: 24px;
+		color: #FFFFFF;
+		position: relative;
+		line-height: 29px;
 	}
 	#kth_logo {
 		background-image: url("public/header/kth.png");

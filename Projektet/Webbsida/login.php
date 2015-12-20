@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	error_reporting(E_ALL); // To see all errors
 	require 'connToMySQL.php';
 
@@ -10,24 +9,25 @@
 	if ( (preg_match('/[^A-Za-z]/', $username)) || (preg_match('/[^A-Za-z0-9]/', $password)) ) { 
 		# if bad input
 		header('location:login_page.php?error=hacker');
-		exit;
+		exit();
 	} else {
 		# good input
 		$MySQLObj = new MySQL_Handler();
 		$MySQLObj->mysql_connect();
-		$result = $MySQLObj->selectFromDB("count(1)", "Users", "username="."'".$username."'"." AND password="."'".$password."'");
+		$result = $MySQLObj->selectFromDB("COUNT(1)", "Users", "username="."'".$username."'"." AND password="."'".$password."'");
 		$boolean = $result->fetch_row()[0];
 		$MySQLObj->mysql_close();
 		if ($boolean == 1) {
 			# correct password
+			require 'session.php';
 			$_SESSION["logged_in"] = true;
 			$_SESSION["username"] = $username;
 			header('location:index.php');
-			exit;
+			exit();
 		} else {
 			# wrong password
 			header('location:login_page.php?error=pwd_fail');
-			exit;
+			exit();
 		}
 	}
 ?>
