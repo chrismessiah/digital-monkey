@@ -28,7 +28,7 @@
 			<a href="index.php"><p class="head_menu">Översikt</p></a>
 			<a href="other.php"><p class="head_menu">Övrigt</p></a>
 
-			<a href="index.php">
+			<a href="profile.php">
 				<div id="profile_pic"></div>
 			</a>
 	<?php 
@@ -50,6 +50,7 @@
 		position: relative;
 		line-height: 29px;
 		margin-left: 20px;
+		bottom: 10px;
 	}
 	#head_div {
 		background: #525259;
@@ -61,16 +62,22 @@
 		position: relative;
 		left: 15px;
 		top: 15px;
+		background-repeat: no-repeat;
 	}
 	#kth_logo {
 		background-image: url("public/header/kth.png");
 		left: 15px;
 		top: 15px;
+		background-size: 50px 50px;
 	}
 	#profile_pic {
 		background-image: url("<?=$_SESSION['pic_path']?>");
 		left: 47%;
 		top: 15px;
+		overflow:hidden;
+		border-radius: 100px;
+		background-size: 60px 60px;
+
 	}
 </style>
 
