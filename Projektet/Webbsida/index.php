@@ -15,11 +15,12 @@
 
 		$dict = $result->fetch_assoc();
 
-		$dict["blogpost_id"];
-		$dict["image_path"];
-		$dict["title"];
-		$dict["intro"];
-		$dict["overlay_color"];
+		// $dict["blogpost_id"];
+		// $dict["image_path"];
+		// $dict["title"];
+		// $dict["intro"];
+		// $dict["overlay_color"];
+		
 		$css_blog_id = 'blog_article_'.$dict["blogpost_id"];
 		$css_blog_title = 'blog_article_'.$dict["blogpost_id"]."_title";
 		$css_blog_intro = 'blog_article_'.$dict["blogpost_id"]."_intro";
@@ -81,3 +82,8 @@
 		bottom: 20px;
 	}
 </style>
+
+
+<?php
+	require 'error.php';
+?>

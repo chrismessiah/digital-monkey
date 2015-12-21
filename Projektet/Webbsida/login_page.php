@@ -77,33 +77,8 @@
 
 <?php
 	require 'footer.php';
+	require 'error.php';
 ?>
-
-<?php
-	if ( isset($_GET["error"])) {
-		if ($_GET["error"] == "hacker" || $_GET["error"] == "pwd_fail") {
-			if ($_GET["error"] == "hacker") {
-				$error_message = "You're trying to beat the system? This IS the system. Beating you back!";
-			} else {
-				$error_message = "Wrong username/password combination!";
-			}
-		?>
-			<script src="modules/sweetAlert/dist/sweetalert.min.js"></script>
-			<link rel="stylesheet" type="text/css" href="modules/sweetAlert/dist/sweetalert.css">
-			<script type="text/javascript">
-				swal({
-					title: "Error!",
-					text: "<?=$error_message?>",
-					type: "error",
-					confirmButtonText: "Next"
-				});
-			</script>
-		<?php
-		}
-	}
-?>
-
-
 
 
 
