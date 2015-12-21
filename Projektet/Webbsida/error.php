@@ -24,6 +24,24 @@
 			$message = "Please contact KTH/CSC";
 			$type = "warning";
 		}
+		elseif ($_GET["error"] == "file_not_image") {
+			$message = "The file you uploaded is not an image!";
+		}
+		elseif ($_GET["error"] == "file_exists") {
+			$message = "The there is already an image with the same name, please change it!";
+		}
+		elseif ($_GET["error"] == "file_too_large") {
+			$message = "Sorry, the image has way too large size to be transfered";
+		}
+		elseif ($_GET["error"] == "unknown_filetype") {
+			$message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed";
+		}
+		elseif ($_GET["error"] == "file_not_uploaded") {
+			$message = "Sorry, the file was not uploaded!";
+		}
+		elseif ($_GET["error"] == "file_upload_fail") {
+			$message = "Some random upload fail";
+		}
 		else {
 			$message = "Oh no! Some unknown error occurred!";
 		}

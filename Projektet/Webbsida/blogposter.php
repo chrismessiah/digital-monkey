@@ -47,8 +47,8 @@
 
 	$result = $MySQLObj->insertIntoDB($columns, "Blog", $values);
 
-	#header('location:articles.php?article='.$blogpostid);
-	#exit();
+	header('location:articles.php?article='.$blogpostid);
+	exit();
 ?>
 
 
