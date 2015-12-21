@@ -15,9 +15,9 @@
 		}
 	}
 
-	if (  !isset($_POST["fileToUpload"])   ) {
-		$_POST["fileToUpload"] = "public/blog/o-WORK-FRIENDS-facebook.jpg";
-	}
+	// if (  !isset($_POST["fileToUpload"])   ) {
+	// 	$_POST["fileToUpload"] = "public/blog/o-WORK-FRIENDS-facebook.jpg";
+	// }
 	if ( !isset($_POST["newpost_title"]) ) {
 		$_POST["newpost_title"] = "";
 	}
@@ -27,8 +27,6 @@
 	if ( !isset($_POST["newpost_body"]) ) {
 		$_POST["newpost_body"] = "";
 	}
-	
-	
 
 	# Check for good input
 	$_POST["newpost_title"];
@@ -37,19 +35,20 @@
 
 
 
-
+	require 'upload.php';
 
 
 
 
 
 	$columns = "blogpost_id, image_path, title, intro, body, datetime";
-	$values = "'".$blogpostid."','".$_POST["fileToUpload"]."','".$_POST["newpost_title"]."','".$_POST["newpost_intro"]."','".$_POST["newpost_body"]."','".$datetime."'";
+	$values = "'".$blogpostid."','".$target_file."','".$_POST["newpost_title"]."','".$_POST["newpost_intro"]."','".$_POST["newpost_body"]."','".$datetime."'";
 	#$_POST["fileToUpload"] = "hello";
 
 	$result = $MySQLObj->insertIntoDB($columns, "Blog", $values);
 
-	header('location:articles.php?article='.$blogpostid);
+	#header('location:articles.php?article='.$blogpostid);
+	#exit();
 ?>
 
 

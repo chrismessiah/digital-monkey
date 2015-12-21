@@ -20,7 +20,7 @@
 					<div id="menu_wrapper">
 						<p id="page_title">Make new blogpost</p>
 
-						<form method="post" action="blogposter.php">
+						<form method="post" action="blogposter.php" enctype="multipart/form-data">
 							<p class="input_descr">Title</p>
 							<input type="text" name="newpost_title" placeholder="What will you call it?"/>
 							<p class="input_descr">Introduction</p>
@@ -31,7 +31,7 @@
 							<textarea name="newpost_body" placeholder="Now write something nice!"></textarea>
 							
 							<p class="input_descr">Image</p>
-							<input type="file" name="fileToUpload" id="fileToUpload"/>
+							<input type="file" name="fileToUpload" id="fileToUpload" />
 							
 							<input type="submit" value="Post!"/>
 						</form>
@@ -105,17 +105,9 @@
 					<?php
 				} elseif ($_GET["choice"] == "add_user") {
 					# choice 2
-					
+
 				} else {
 					# invalid choice
-
-
-
-
-
-
-
-
 					header('location:control_panel.php?error=some_error');
 					exit();
 				}
