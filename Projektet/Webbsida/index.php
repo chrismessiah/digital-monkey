@@ -9,7 +9,7 @@
 	$count = $result->fetch_row()[0];
 
 	# Get each blogpost
-	$result = $MySQLObj->selectFromDB("*", "Blog");
+	$result = $MySQLObj->selectFromDB("*", "Blog", "","datetime");
 
 	for ($i=0; $i < $count; $i++) { 
 

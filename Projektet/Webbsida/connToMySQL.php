@@ -46,11 +46,20 @@ class MySQL_Handler {
 		}
 	}
 
-	function selectFromDB($column_names, $table_name, $condition = "") {
+	function selectFromDB($column_names, $table_name, $condition = "", $sorting_conditon = "") {
 		if ($condition != "") {
 			$condition = " WHERE ".$condition;
 		}
-		$sql = "SELECT ".$column_names." FROM ".$table_name.$condition.";"; // Select 
+		if ($sorting_conditon != "") {
+			$sorting_conditon = " ORDER BY ".$sorting_conditon;
+		}
+		$sql = "SELECT ".$column_names." FROM ".$table_name.$condition.$sorting_conditon.";"; // Select 
+		$result = $this->conn->query($sql);
+		return $result;
+	}
+
+	function insertIntoDB($column_names, $table_name, $value_names) {
+		$sql = "INSERT INTO ".$table_name." (".$column_names.") VALUES (".$value_names.");";
 		$result = $this->conn->query($sql);
 		return $result;
 	}

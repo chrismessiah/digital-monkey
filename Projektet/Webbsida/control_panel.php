@@ -45,6 +45,7 @@
 	    					font-size: 30px;
 	    					font-family: Helvetica;
 	    					text-align: center;
+	    					margin-top: 50px;
 						}
 						input[type="file"] {
 							position: relative;
@@ -63,6 +64,7 @@
 							position: relative;
 							left: 100px;
 							margin-top: 100px;
+							margin-bottom: 60px;
 						}
 						input[type="submit"]:hover {
 							cursor: pointer; 
