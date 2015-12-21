@@ -4,7 +4,7 @@
 
 <div id="foot_div">
 	<div id="foot_textbox">
-		<p id="foot_p"><?=$footer_text?></p>
+		<p id="foot_p"><?= $footer_text ?></p>
 	</div>
 	
 	<a href="https://se.linkedin.com/in/christianabdelmassih">
@@ -15,11 +15,6 @@
 		<div id="foot_adde"></div>
 	</a>
 </div>
-
-
-<?php
-	# phpinfo()
-?>
 
 <style>
 	#foot_div {
@@ -37,7 +32,10 @@
 		width: 246px;
 		height: 246px;
 		position: relative;
-		left: 5%
+		left: 5%;
+		border-radius: 100px;
+		background-size: 246px 246px;
+		overflow:hidden;
 		
 	}
 	

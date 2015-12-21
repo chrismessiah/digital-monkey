@@ -44,6 +44,7 @@
 			# 3 = Examinator
 			# 4 = Course admin
 			# 0 = System admin
+			
 			$_SESSION["user_type"] = $dict["user_type"];
 
 			$MySQLObj->mysql_close();

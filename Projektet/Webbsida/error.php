@@ -15,6 +15,9 @@
 		elseif ($_GET["error"] == "article_non_selection") {
 			$error_message = "No article selected!";
 		}
+		else {
+			$error_message = "Oh no! Some unknown error occurred!";
+		}
 		require 'quickSwal.php';
 	}
 ?>
