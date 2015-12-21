@@ -105,6 +105,7 @@
 					<?php
 				} elseif ($_GET["choice"] == "add_user") {
 					# choice 2
+					
 				} else {
 					# invalid choice
 
@@ -128,7 +129,7 @@
 					<p id="control_menu">Menu</p>
 
 					<a href="control_panel.php?choice=blogpost"><p class="p_choices">Make new blogpost</p></a>
-					<a href="control_panel.php?choice=create_user"><p class="p_choices">Create user</p></a>
+					<a href="control_panel.php?choice=add_user"><p class="p_choices">Create user</p></a>
 				</div>
 				
 				
