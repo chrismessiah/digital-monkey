@@ -10,6 +10,8 @@ class MySQL_Handler {
 		
 		// $hostname = "localhost"; // Oddly enough does not work
 		
+
+		// For running locally		
 		$hostname = "127.0.0.1";
 		$username = "test";
 		$password = "hello67";
@@ -17,6 +19,8 @@ class MySQL_Handler {
 		$port = 3306;
 		$socket = "/var/run/mysqld/mysqld.sock";
 
+
+		// For runnting at KTH/CSC
 		// $hostname = "localhost";
 		// $username = "chrabd";
 		// $password = "chrabd-xmlpub13";
