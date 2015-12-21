@@ -1,22 +1,31 @@
 <?php
+	$message = "";
+	$title = "Error!";
+	$type = "error";
+	$button_text = "Okay";
+
 	if ( isset($_GET["error"])) {
 		if ($_GET["error"] == "hacker") {
-			$error_message = "You're trying to beat the system? This IS the system. Beating you back!";
+			$message = "You're trying to beat the system? This IS the system. Beating you back!";
 		}
 		elseif ($_GET["error"] == "pwd_fail") {
-			$error_message = "Wrong username/password combination!";
+			$message = "Wrong username/password combination!";
 		}
 		elseif ($_GET["error"] == "article_input_error") {
-			$error_message = "No article found! (Did you make a nauhty command?)";
+			$message = "No article found! (Did you make a nauhty command?)";
 		}
 		elseif ($_GET["error"] == "article_404") {
-			$error_message = "No article not found!";
+			$message = "No article not found!";
 		}
 		elseif ($_GET["error"] == "article_non_selection") {
-			$error_message = "No article selected!";
+			$message = "No article selected!";
+		}
+		elseif ($_GET["error"] == "forgot_pwd") {
+			$message = "Please contact KTH/CSC";
+			$type = "warning";
 		}
 		else {
-			$error_message = "Oh no! Some unknown error occurred!";
+			$message = "Oh no! Some unknown error occurred!";
 		}
 		require 'quickSwal.php';
 	}

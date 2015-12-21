@@ -2,9 +2,9 @@
 <link rel="stylesheet" type="text/css" href="modules/sweetAlert/dist/sweetalert.css">
 <script type="text/javascript">
 	swal({
-		title: "Error!",
-		text: "<?=$error_message?>",
-		type: "error",
-		confirmButtonText: "Next"
+		title: "<?=$title?>",
+		text: "<?=$message?>",
+		type: "<?=$type?>",
+		confirmButtonText: "<?=$button_text?>"
 	});
 </script>

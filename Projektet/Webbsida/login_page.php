@@ -7,11 +7,11 @@
 	
 	<div id="login_wrapper">
 		<form method="post" action="login.php"> <!-- collects user input -->
-			<input type="text" name="field1" placeholder="Username" >
+			<input type="text" name="field1" placeholder="Username"/>
 
-			<input type="password" name="field2" placeholder="Password" >
-			<p id="login_pass_forgot">Forgot password?</p>
-			<input type="submit" value="Login">
+			<input type="password" name="field2" placeholder="Password"/>
+			<a href="login_page.php?error=forgot_pwd"><p id="login_pass_forgot">Forgot password?</p></a>
+			<input type="submit" value="Login"/>
 		</form>
 	</div>
 
@@ -66,8 +66,11 @@
 		position: relative;
 		left: 150px;
 	}
+	a {
+		text-decoration: none;
+	}
 
-	/* Hides placeholden */
+	/* Hides placeholder */
 	input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder { 
 		color:transparent; 
 	}
