@@ -1,6 +1,10 @@
 <?php
 
     $target_dir = "public/blog/";
+    // if (  strpos( basename($_FILES["fileToUpload"]["name"]," ") !== false)) {
+    //     header('location:http://localhost/projects/XML/Webbsida/control_panel.php?choice=blogpost&error=filename_contains_space');
+    //     exit();
+    // }
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

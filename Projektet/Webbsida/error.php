@@ -29,6 +29,7 @@
 		}
 		elseif ($_GET["error"] == "file_exists") {
 			$message = "The there is already an image with the same name, please change it!";
+			$type = "warning";
 		}
 		elseif ($_GET["error"] == "file_too_large") {
 			$message = "Sorry, the image has way too large size to be transfered";
@@ -41,6 +42,10 @@
 		}
 		elseif ($_GET["error"] == "file_upload_fail") {
 			$message = "Some random upload fail";
+		}
+		elseif ($_GET["error"] == "filename_contains_space") {
+			$message = "The filename contains a space! Remove it!";
+			$type = "warning";
 		}
 		else {
 			$message = "Oh no! Some unknown error occurred!";
