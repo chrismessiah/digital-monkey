@@ -1,5 +1,5 @@
 <?php
-
+    # Renaming file using MD5 method
     $target_dir = "public/blog/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $md5_string = md5_file($_FILES["fileToUpload"]["tmp_name"]); # md5 of file
