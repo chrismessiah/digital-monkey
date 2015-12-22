@@ -12,6 +12,28 @@
 		}
 	}
 
+	function color_fix($string)
+	{
+		if (!isset($_POST[$string])) {
+			$var = 0;
+		} else {
+			if (good_integers($_POST[$string])) {
+				$var = $_POST[$string];
+			} else {
+				$var = 0;
+			}
+		}
+		return $var;
+	}
+	
+	function is_set_checker($string)
+	{
+		if ( !isset($_POST[$string]) ) {
+			$_POST[$string] = "";
+		}
+	}
+
+
 	ob_start();
 	error_reporting(E_ALL); // To see all errors
 	date_default_timezone_set('Europe/Stockholm');
@@ -30,62 +52,18 @@
 		}
 	}
 
-	// if (  !isset($_POST["fileToUpload"])   ) {
-	// 	$_POST["fileToUpload"] = "public/blog/o-WORK-FRIENDS-facebook.jpg";
-	// }
-	if ( !isset($_POST["newpost_title"]) ) {
-		$_POST["newpost_title"] = "";
-	}
 
-	if ( !isset($_POST["newpost_intro"]) ) {
-		$_POST["newpost_intro"] = "";
-	}
+	is_set_checker("newpost_title");
+	is_set_checker("newpost_intro");
+	is_set_checker("newpost_body");
 
-	if ( !isset($_POST["newpost_body"]) ) {
-		$_POST["newpost_body"] = "";
-	}
-	
-
-	if (!isset($_POST["in_red"])) {
-		echo "111111";
-		$r = 0;
-	} else {
-		if (good_integers($_POST["in_red"])) {
-			echo "22222";
-			$r = $_POST["in_red"];
-		} else {
-			echo "33333";
-			$r = 0;
-		}
-	}
-
-
-	if (!isset($_POST["in_green"])) {
-		$g = 0;
-	} else {
-		if (good_integers($_POST["in_green"])) {
-			$g = $_POST["in_green"];
-		} else {
-			$g = 0;
-		}
-	}
-
-
-
-		if (!isset($_POST["in_blue"])) {
-		$b = 0;
-	} else {
-		if (good_integers($_POST["in_blue"])) {
-			$b = $_POST["in_blue"];
-		} else {
-			$b = 0;
-		}
-	}
+	$r = color_fix("in_red");
+	$b = color_fix("in_blue");
+	$g = color_fix("in_green");
+	$aplha = 0.3;
 
 	if ($r == 0 && $b == 0 && $g == 0) {
 		$aplha = 0;
-	} else {
-		$aplha = 0.3;
 	}
 
 	$colors = $r.", ".$g.", ".$b.", ".$aplha;
