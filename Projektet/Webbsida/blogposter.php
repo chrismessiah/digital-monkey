@@ -10,7 +10,8 @@
 	while (true) {
 		$blogpostid = rand(1, 99999999);
 		$result = $MySQLObj->selectFromDB("COUNT(1)", "Blog", "blogpost_id="."'".$blogpostid."'");
-		$boolean = $result->fetch_row()[0];
+		$boolean = $result->fetch_row();
+		$boolean = $boolean[0];
 		if ($boolean == 0) {
 			break;
 		}
@@ -35,10 +36,12 @@
 	$_POST["newpost_body"];
 
 
-
-	require 'upload.php';
-
-
+	if ($_FILES["fileToUpload"]["name"] != "") {
+		require 'upload.php';
+	}
+	else {
+		$target_file = "public/blog/o-WOMEN-AT-WORK-facebook.jpg";
+	}
 
 
 
