@@ -27,7 +27,6 @@
 							<input type="text" name="newpost_intro" placeholder="Make it interesting!"/>
 							<p class="input_descr">Body</p>
 							
-							<!-- <input type="text" name="newpost_body" placeholder="Now write something nice!"/> -->
 							<textarea name="newpost_body" placeholder="Now write something nice!"></textarea>
 							
 							<p class="input_descr">Image</p>

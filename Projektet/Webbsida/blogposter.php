@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	error_reporting(E_ALL); // To see all errors
 	date_default_timezone_set('Europe/Stockholm');
 	$datetime = date('Y-m-d h:i:s', time());
