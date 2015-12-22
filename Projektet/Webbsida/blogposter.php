@@ -38,7 +38,6 @@
 
 	if ($_FILES["fileToUpload"]["name"] != "") {
 		require 'upload.php';
-
 	}
 	else {
 		$target_file = "public/blog/o-WOMEN-AT-WORK-facebook.jpg";
