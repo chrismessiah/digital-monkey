@@ -38,6 +38,7 @@
 
 	if ($_FILES["fileToUpload"]["name"] != "") {
 		require 'upload.php';
+
 	}
 	else {
 		$target_file = "public/blog/o-WOMEN-AT-WORK-facebook.jpg";
@@ -50,7 +51,7 @@
 
 	$result = $MySQLObj->insertIntoDB($columns, "Blog", $values);
 
-	#header('location:articles.php?article='.$blogpostid);
+	header('location:articles.php?article='.$blogpostid);
 	exit();
 ?>
 
