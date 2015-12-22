@@ -1,5 +1,6 @@
 <?php
 	require 'header.php';
+	require 'text_formatter.php';
 	
 	if ( isset($_GET["article"]) ) {
 		# if the variable has a value
@@ -37,7 +38,7 @@
 				<div id="article_body_wrapper">
 					<p id="article_title"><?php echo $dict["title"]; ?></p>
 					<p id="article_intro"><?php echo $dict["intro"]; ?></p>
-					<p id="article_body"><?php echo $dict["body"]; ?></p>
+					<p id="article_body"><?php echo text_format_this($dict["body"]); ?></p>
 				</div>
 
 				<style>

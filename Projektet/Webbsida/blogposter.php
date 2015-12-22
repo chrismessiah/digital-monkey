@@ -1,4 +1,5 @@
 <?php
+	require 'connToMySQL.php';
 	function good_integers($value)
 	{
 		if (is_numeric($value)) {
@@ -39,9 +40,10 @@
 	date_default_timezone_set('Europe/Stockholm');
 	$datetime = date('Y-m-d h:i:s', time());
 
-	require 'connToMySQL.php';
 	$MySQLObj = new MySQL_Handler();
 	$MySQLObj->mysql_connect();
+
+
 	while (true) {
 		$blogpostid = rand(1, 99999999);
 		$result = $MySQLObj->selectFromDB("COUNT(1)", "Blog", "blogpost_id="."'".$blogpostid."'");
@@ -81,15 +83,15 @@
 		$target_file = "public/blog/o-WOMEN-AT-WORK-facebook.jpg";
 	}
 
-
-
-	$columns = "blogpost_id, image_path, title, intro, body, datetime, overlay_color";
-	$values = "'".$blogpostid."','".$target_file."','".$_POST["newpost_title"]."','".$_POST["newpost_intro"]."','".$_POST["newpost_body"]."','".$datetime."','".$colors."'";
-
-	$result = $MySQLObj->insertIntoDB($columns, "Blog", $values);
-
-	#header('location:articles.php?article='.$blogpostid);
-	exit();
+	$MySQLstatement = $MySQLObj->conn->prepare("INSERT INTO Blog (blogpost_id, image_path, title, intro, body, datetime, overlay_color) VALUES (?, ?, ?, ?, ?, ?, ?)");
+	$MySQLstatement->bind_param("sssssss", $blogpostid, $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors);
+	$state = $MySQLstatement->execute();
+	if (!$state) {
+		echo "ERROR???";
+	} else {
+		header('location:articles.php?article='.$blogpostid);
+		exit();
+	}
 ?>
 
 

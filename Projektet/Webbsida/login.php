@@ -2,12 +2,13 @@
 	ob_start();
 	error_reporting(E_ALL); // To see all errors
 	require 'connToMySQL.php';
+	require 'input_data_checker.php';
 
 	$username = strtolower($_POST["field1"]);
 	$password = $_POST["field2"];
 
 	# MAKE CHECK ON DATA HERE
-	if ( (preg_match('/[^A-Za-z]/', $username)) || (preg_match('/[^A-Za-z0-9]/', $password)) ) { 
+	if ( check_string($username,1) || check_string($password,2) ) { 
 		# if bad input
 		header('location:login_page.php?error=hacker');
 		exit();
