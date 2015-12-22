@@ -47,11 +47,10 @@
 
 	$columns = "blogpost_id, image_path, title, intro, body, datetime";
 	$values = "'".$blogpostid."','".$target_file."','".$_POST["newpost_title"]."','".$_POST["newpost_intro"]."','".$_POST["newpost_body"]."','".$datetime."'";
-	#$_POST["fileToUpload"] = "hello";
 
 	$result = $MySQLObj->insertIntoDB($columns, "Blog", $values);
 
-	header('location:articles.php?article='.$blogpostid);
+	#header('location:articles.php?article='.$blogpostid);
 	exit();
 ?>
 
