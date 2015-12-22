@@ -31,11 +31,45 @@
 							
 							<p class="input_descr">Image</p>
 							<input type="file" name="fileToUpload" id="fileToUpload" />
+
+							<p class="input_descr">Color banner</p>
+							<p class="input_descr3">Please enter values from 0 to 255 for each color</p>
 							
+							<div class="box">
+								<p class="input_descr2">Red:</p>
+								<input type="text" name="in_red"/>
+							</div>
+							
+							<div class="box">
+								<p class="input_descr2">Green:</p>
+								<input type="text" name="in_green"/>
+							</div>
+							
+							<div class="box">
+								<p class="input_descr2">Blue:</p>
+								<input type="text" name="in_blue"/>
+							</div>
+
 							<input type="submit" value="Post!"/>
 						</form>
 					</div>
 					<style>
+
+						.input_descr, .input_descr2, .input_descr3 {
+							font-family: sans-serif;
+						}
+						.input_descr {
+							font-size: 18px;
+							margin-top: 30px;
+						}
+						.input_descr2, .input_descr3 {
+							font-size: 14px;
+						}
+						.box {
+							display: inline-block;
+							position: relative;
+							bottom: 50px;
+						}
 						#menu_wrapper {
 							margin: auto;
 	    					width: 60%;
@@ -89,15 +123,19 @@
 						input[type="text"]:focus, textarea:focus {
 							outline: none;
 						}
-						.input_descr {
-							font-family: sans-serif;
-							font-size: 18px;
-						}
 						textarea {
-							height: 300px
+							height: 300px;
+							margin-bottom: 50px;
 						}
 						input[type="text"]:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { 
 							color:transparent; 
+						}
+						input[name="in_red"], input[name="in_green"], input[name="in_blue"] {
+							width: 3em;
+						}
+						input[type="file"] {
+							position: relative;
+							top: 1px;
 						}
 					</style>
 
