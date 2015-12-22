@@ -2,9 +2,9 @@
 <link rel="stylesheet" type="text/css" href="modules/sweetAlert/dist/sweetalert.css">
 <script type="text/javascript">
 	swal({
-		title: "<?=$title?>",
-		text: "<?=$message?>",
-		type: "<?=$type?>",
-		confirmButtonText: "<?=$button_text?>"
+		title: "<?php echo $title; ?>",
+		text: "<?php echo $message; ?>",
+		type: "<?php echo $type; ?>",
+		confirmButtonText: "<?php echo $button_text; ?>"
 	});
 </script>

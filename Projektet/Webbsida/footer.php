@@ -4,7 +4,7 @@
 
 <div id="foot_div">
 	<div id="foot_textbox">
-		<p id="foot_p"><?= $footer_text ?></p>
+		<p id="foot_p"><?php echo $footer_text; ?></p>
 	</div>
 	
 	<a href="https://se.linkedin.com/in/christianabdelmassih">

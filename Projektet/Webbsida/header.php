@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	require 'session.php';
 
 	# HANTERA DESSA. 
@@ -118,7 +119,7 @@
 		display: inline-block;
 		width: 60px;
 		height: 60px;
-		background-image: url("<?=$_SESSION['pic_path']?>");
+		background-image: url("<?php echo $_SESSION['pic_path']; ?>");
 		overflow:hidden;
 		border-radius: 100px;
 		background-size: 60px 60px;

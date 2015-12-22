@@ -10,25 +10,29 @@ class MySQL_Handler {
 		
 		// $hostname = "localhost"; // Oddly enough does not work
 		
-
-		// For running locally		
-		$hostname = "127.0.0.1";
-		$username = "test";
-		$password = "hello67";
-		$db_name = "proj_xml";
-		$port = 3306;
-		$socket = "/var/run/mysqld/mysqld.sock";
+		$connect = "local";
+		#$connect = "CSC";
 
 
-		// For runnting at KTH/CSC
-		// $hostname = "localhost";
-		// $username = "chrabd";
-		// $password = "chrabd-xmlpub13";
-		// $db_name = "chrabd";
 
-
-		// Create connection
-		$conn = mysqli_connect($hostname, $username, $password, $db_name, $port, $socket);
+		if ($connect == "local") {
+			// For running locally		
+			$hostname = "127.0.0.1";
+			$username = "test";
+			$password = "hello67";
+			$db_name = "proj_xml";
+			$port = 3306;
+			$socket = "/var/run/mysqld/mysqld.sock";
+			$conn = mysqli_connect($hostname, $username, $password, $db_name, $port, $socket);
+		}
+		elseif ($connect == "CSC") {
+			//For runnting at KTH/CSC
+			$hostname = "localhost";
+			$username = "chrabd";
+			$password = "chrabd-xmlpub13";
+			$db_name = "chrabd";
+			$conn = mysqli_connect($hostname, $username, $password, $db_name);
+		}
 
 		// Check connection
 		if ($print_status) {
@@ -73,13 +77,3 @@ class MySQL_Handler {
 
 
 ?>
-
-
-
-
-
-
-
-
-
-

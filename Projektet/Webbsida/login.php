@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	error_reporting(E_ALL); // To see all errors
 	require 'connToMySQL.php';
 
@@ -15,7 +16,8 @@
 		$MySQLObj = new MySQL_Handler();
 		$MySQLObj->mysql_connect();
 		$result = $MySQLObj->selectFromDB("COUNT(1)", "Users", "username="."'".$username."'"." AND password="."'".$password."'");
-		$boolean = $result->fetch_row()[0];
+		$boolean = $result->fetch_row();
+		$boolean = $boolean[0];
 		
 		if ($boolean == 1) {
 			# correct password

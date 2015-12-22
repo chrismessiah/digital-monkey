@@ -11,7 +11,8 @@
 			$MySQLObj = new MySQL_Handler();
 			$MySQLObj->mysql_connect();
 			$result = $MySQLObj->selectFromDB("COUNT(1)", "Blog", "blogpost_id="."'".$articleid."'");
-			$boolean = $result->fetch_row()[0];
+			$boolean = $result->fetch_row();
+			$boolean = $boolean[0];
 			if ($boolean == 0) {
 				# article id does not exist
 				$MySQLObj->mysql_close();
@@ -34,16 +35,16 @@
 				<div id="article_banner"></div>
 
 				<div id="article_body_wrapper">
-					<p id="article_title"><?=$dict["title"]?></p>
-					<p id="article_intro"><?=$dict["intro"]?></p>
-					<p id="article_body"><?=$dict["body"]?></p>
+					<p id="article_title"><?php echo $dict["title"]; ?></p>
+					<p id="article_intro"><?php echo $dict["intro"]; ?></p>
+					<p id="article_body"><?php echo $dict["body"]; ?></p>
 				</div>
 
 				<style>
 					#article_banner {
 						width: 100%;
 						height: 400px;
-						background-image: url("<?=$dict["image_path"]?>");
+						background-image: url("<?php echo $dict["image_path"]; ?>");
 						background-size: 100% 400px;
 					}
 					#article_title, #article_body, #article_intro {

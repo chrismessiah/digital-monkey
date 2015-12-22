@@ -6,7 +6,8 @@
 
 	# Count no of blogposts
 	$result = $MySQLObj->selectFromDB("count(*)", "Blog");
-	$count = $result->fetch_row()[0];
+	$count = $result->fetch_row();
+	$count = $count[0];
 
 	# Get each blogpost
 	$result = $MySQLObj->selectFromDB("*", "Blog", "","datetime");
@@ -26,29 +27,29 @@
 		$css_blog_intro = 'blog_article_'.$dict["blogpost_id"]."_intro";
 
 ?>
-		<a href="articles.php?article=<?=$dict["blogpost_id"]?>">
-		<div id="<?=$css_blog_id?>">
+		<a href="articles.php?article=<?php echo $dict["blogpost_id"]; ?>">
+		<div id="<?php echo $css_blog_id; ?>">
 			<div> <!-- color overlay -->
-				<p id="<?=$css_blog_title?>"><?=$dict["title"]?></p>
-				<p id="<?=$css_blog_intro?>"><?=$dict["intro"]?></p>
+				<p id="<?php echo $css_blog_title; ?>"><?php echo $dict["title"]; ?></p>
+				<p id="<?php echo $css_blog_intro; ?>"><?php echo $dict["intro"]; ?></p>
 			</div>
 		</div>
 		</a>
 
 		<style>
-			<?="#".$css_blog_id?> {
+			<?php echo "#".$css_blog_id ?> {
 				height: 400px;
-				background-image: url(<?=$dict['image_path']?>);
+				background-image: url(<?php echo $dict['image_path']; ?>);
 				background-size: 100% 400px;
 				background-repeat: no-repeat;
 			}
-			<?="#".$css_blog_id?> > div {
-				background-color: rgba(<?=$dict["overlay_color"]?>);
+			<?php echo "#".$css_blog_id ?> > div {
+				background-color: rgba(<?php echo $dict["overlay_color"]; ?>);
 				height: 200px;
 				position: relative;
 				top: 200px;
 			}
-			<?="#".$css_blog_id?> > div > p {
+			<?php echo "#".$css_blog_id ?> > div > p {
 				position: relative;
 				left: 40px;
 				top: 30px;
@@ -56,10 +57,10 @@
 				color: #FFFFFF;
 				padding-bottom: 20px;
 			}
-			<?="#".$css_blog_title?> {
+			<?php echo "#".$css_blog_title ?> {
 				font-size: 40px;
 			}
-			<?="#".$css_blog_intro?> {
+			<?php echo "#".$css_blog_intro ?> {
 				font-size: 22px;
 			}
 			a {
