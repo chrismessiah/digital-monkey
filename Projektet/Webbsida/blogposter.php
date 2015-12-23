@@ -86,6 +86,8 @@
 	$MySQLstatement = $MySQLObj->conn->prepare("INSERT INTO Blog (blogpost_id, image_path, title, intro, body, datetime, overlay_color) VALUES (?, ?, ?, ?, ?, ?, ?)");
 	$MySQLstatement->bind_param("sssssss", $blogpostid, $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors);
 	$state = $MySQLstatement->execute();
+	$MySQLstatement->close();
+	$MySQLObj->mysql_close();
 	if (!$state) {
 		echo "ERROR???";
 	} else {

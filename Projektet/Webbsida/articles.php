@@ -11,25 +11,29 @@
 			include 'connToMySQL.php';
 			$MySQLObj = new MySQL_Handler();
 			$MySQLObj->mysql_connect();
-			$result = $MySQLObj->selectFromDB("COUNT(1)", "Blog", "blogpost_id="."'".$articleid."'");
+			$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Blog WHERE blogpost_id=?");
+			$MySQLstatement->bind_param("s", $articleid);
+			$MySQLstatement->execute();
+			$result = $MySQLstatement->get_result();
+			
 			$boolean = $result->fetch_row();
 			$boolean = $boolean[0];
 			if ($boolean == 0) {
 				# article id does not exist
+				$MySQLstatement->close();
 				$MySQLObj->mysql_close();
 				header('location:index.php?error=article_404');
 				exit();
 			} else {
+				$MySQLstatement->close();
 				# article exists! Yaay!
-				$result = $MySQLObj->selectFromDB("*", "Blog", "blogpost_id="."'".$articleid."'");
+
+				$MySQLstatement = $MySQLObj->conn->prepare("SELECT * FROM Blog WHERE blogpost_id=?");
+				$MySQLstatement->bind_param("s", $articleid);
+				$MySQLstatement->execute();
+				$result = $MySQLstatement->get_result();
+
 				$dict = $result->fetch_assoc();
-
-				// $dict["image_path"];
-				// $dict["title"];
-				// $dict["intro"];
-				// $dict["body"];
-				// $dict["datetime"];
-
 				?>
 
 
@@ -71,6 +75,8 @@
 
 				<?php
 				require 'footer.php';
+				$MySQLstatement->close();
+				$MySQLObj->mysql_close();
 
 			}
 

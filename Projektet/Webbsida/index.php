@@ -4,13 +4,13 @@
 	$MySQLObj = new MySQL_Handler();
 	$MySQLObj->mysql_connect();
 
-	# Count no of blogposts
-	$result = $MySQLObj->selectFromDB("count(*)", "Blog");
+	# Count no. of blogposts
+	$result = $MySQLObj->conn->query("SELECT count(*) FROM Blog;");
 	$count = $result->fetch_row();
 	$count = $count[0];
 
 	# Get each blogpost
-	$result = $MySQLObj->selectFromDB("*", "Blog", "","datetime");
+	$result = $MySQLObj->conn->query("SELECT * FROM Blog ORDER BY datetime;");
 
 	for ($i=0; $i < $count; $i++) { 
 
