@@ -46,7 +46,13 @@
 
 	while (true) {
 		$blogpostid = rand(1, 99999999);
-		$result = $MySQLObj->selectFromDB("COUNT(1)", "Blog", "blogpost_id="."'".$blogpostid."'");
+		$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Blog WHERE blogpost_id=?");
+		$MySQLstatement->bind_param("s", $blogpostid);
+		$state = $MySQLstatement->execute();
+		$result = $MySQLstatement->get_result();
+		$MySQLstatement->close();
+
+
 		$boolean = $result->fetch_row();
 		$boolean = $boolean[0];
 		if ($boolean == 0) {
