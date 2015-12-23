@@ -45,6 +45,48 @@
 					<p id="article_body"><?php echo text_format_this($dict["body"]); ?></p>
 				</div>
 
+				<?php
+					if ($_SESSION["user_type"] == 0) {
+				?>
+
+				<div id="buttons">
+					<a href="control_panel.php?id=<?php echo $articleid ?>&mode=edit&choice=blogpost"><div id="button1"><p>Edit</p></div></a>
+					<a href="delete_blogpost.php?id=<?php echo $articleid; ?>"><div id="button2"><p>Delete</p></div></a>
+				</div>
+				<style>
+					#buttons {
+						width: 30%;
+						margin: auto;
+						position: relative;
+						left: 50px;
+					}
+					#buttons > a > div > p {
+						text-align: center;
+						color: #FFFFFF;
+						font-size: 17px;
+						font-family: Helvetica;
+					}
+					#button1 {
+						background-color: rgba(65, 165, 155, 0.7);
+					}
+					#button2 {
+						background-color: rgba(177, 0, 0, 0.7);
+					}
+					#button1, #button2 {
+						border-radius: 60px;
+						padding: 5px;
+						padding-left: 20px;
+						padding-right: 20px;
+						width: 80px;
+						display: inline-block;
+						margin: 10px;
+						margin-bottom: 50px;
+					}
+				</style>
+				<?php
+					}
+				?>
+
 				<style>
 					#article_banner {
 						width: 100%;

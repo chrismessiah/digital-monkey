@@ -47,6 +47,10 @@
 			$message = "The filename contains a space! Remove it!";
 			$type = "warning";
 		}
+		elseif ($_GET["error"] == "blogpost_deleted") {
+			$message = "The blogpost was deleted!";
+			$type = "success";
+		}
 		else {
 			$message = "Oh no! Some unknown error occurred!";
 		}

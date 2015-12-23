@@ -45,17 +45,27 @@
 
 
 	while (true) {
-		$blogpostid = rand(1, 99999999);
+		if (isset($_GET["mode"]) && isset($_GET["id"])) {
+			if ($_GET["mode"] == "alter" && is_numeric($_GET["id"])) { 
+				$blogpostid = $_GET["id"];
+				break;
+			}
+		} else {
+			$blogpostid = rand(1, 99999999);
+		}
+
 		$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Blog WHERE blogpost_id=?");
 		$MySQLstatement->bind_param("s", $blogpostid);
 		$state = $MySQLstatement->execute();
 		$result = $MySQLstatement->get_result();
 		$MySQLstatement->close();
 
-
 		$boolean = $result->fetch_row();
 		$boolean = $boolean[0];
-		if ($boolean == 0) {
+		if ($boolean == 0 && !isset($_GET["id"])) {
+			break;
+		}
+		if ($boolean == 1 && isset($_GET["id"])) {
 			break;
 		}
 	}
@@ -76,21 +86,40 @@
 
 	$colors = $r.", ".$g.", ".$b.", ".$aplha;
 
-	# Check for good input
-	$_POST["newpost_title"];
-	$_POST["newpost_intro"];
-	$_POST["newpost_body"];
 
 
 	if ($_FILES["fileToUpload"]["name"] != "") {
 		require 'upload.php';
 	}
 	else {
-		$target_file = "public/blog/o-WOMEN-AT-WORK-facebook.jpg";
+		if (isset($_GET["mode"])) {
+			if ($_GET["mode"] == "alter") {
+				$MySQLstatement = $MySQLObj->conn->prepare("SELECT image_path FROM Blog WHERE blogpost_id=?");
+				$MySQLstatement->bind_param("s", $blogpostid);
+				$state = $MySQLstatement->execute();
+				$result = $MySQLstatement->get_result();
+				$MySQLstatement->close();
+				$arr = $result->fetch_row();
+				$target_file = $arr[0];
+			}
+		} else {
+			$target_file = "public/blog/o-WOMEN-AT-WORK-facebook.jpg";
+		}
 	}
 
-	$MySQLstatement = $MySQLObj->conn->prepare("INSERT INTO Blog (blogpost_id, image_path, title, intro, body, datetime, overlay_color) VALUES (?, ?, ?, ?, ?, ?, ?)");
-	$MySQLstatement->bind_param("sssssss", $blogpostid, $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors);
+
+	if (isset($_GET["mode"])) {
+		if ($_GET["mode"] == "alter") {
+			$sql = "UPDATE Blog SET image_path=?, title=?, intro=?, body=?, datetime=?, overlay_color=? WHERE blogpost_id=?;";
+			$MySQLstatement = $MySQLObj->conn->prepare($sql);
+			$MySQLstatement->bind_param("sssssss", $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors, $blogpostid);
+		}
+	} else {
+		$sql = "INSERT INTO Blog (blogpost_id, image_path, title, intro, body, datetime, overlay_color) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$MySQLstatement = $MySQLObj->conn->prepare($sql);
+		$MySQLstatement->bind_param("sssssss", $blogpostid, $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors);
+	}
+
 	$state = $MySQLstatement->execute();
 	$MySQLstatement->close();
 	$MySQLObj->mysql_close();

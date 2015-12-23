@@ -1,5 +1,15 @@
 <?php
 	require 'header.php';
+	require 'text_formatter.php';
+
+	$current_title = "";
+	$current_intro = "";
+	$current_body = "";
+	$current_image_path = "";
+	$r = "";
+	$g = "";
+	$b = "";
+	$mode = "";
 
 	if ($_SESSION["logged_in"] == false) {
 		# Not logged in
@@ -14,20 +24,56 @@
 				# has selected from menu
 				if ($_GET["choice"] == "blogpost") {
 					# choice 1
+					if (isset($_GET["id"]) && isset($_GET["mode"]) )  {
+						if (is_numeric($_GET["id"]) && $_GET["mode"] == "edit") {
+							require 'connToMySQL.php';
+							$MySQLObj = new MySQL_Handler();
+							$MySQLObj->mysql_connect();
+							$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Blog WHERE blogpost_id=?");
+							$MySQLstatement->bind_param("s", $_GET["id"]);
+							$MySQLstatement->execute();
+							$result = $MySQLstatement->get_result();
+							$boolean = $result->fetch_row();
+							$boolean = $boolean[0];
+							if ($boolean == 1) {
+								$MySQLstatement->close();
+								$MySQLstatement = $MySQLObj->conn->prepare("SELECT * FROM Blog WHERE blogpost_id=?");
+								$MySQLstatement->bind_param("s", $_GET["id"]);
+								$MySQLstatement->execute();
+								$result = $MySQLstatement->get_result();
+								$dict = $result->fetch_assoc();
+								
+								$current_title = $dict["title"];
+								$current_intro = $dict["intro"];
+								$current_body = un_text_format_this($dict["body"]);
+								$current_image_path = $dict["image_path"];
+
+								$current_overlay_color = $dict["overlay_color"];
+								$color_array = explode(", ", $current_overlay_color);
+								$r = $color_array[0];
+								$g = $color_array[1];
+								$b = $color_array[2];
+								$mode = "?mode=alter&id=".$_GET["id"];
+
+							}
+						}
+					}
+
+
 					?>
 
 
 					<div id="menu_wrapper">
 						<p id="page_title">Make new blogpost</p>
 
-						<form method="post" action="blogposter.php" enctype="multipart/form-data">
+						<form method="post" action="blogposter.php<?php echo $mode; ?>" enctype="multipart/form-data">
 							<p class="input_descr">Title</p>
-							<input type="text" name="newpost_title" placeholder="What will you call it?"/>
+							<input type="text" name="newpost_title" placeholder="What will you call it?" value="<?php echo $current_title; ?>" />
 							<p class="input_descr">Introduction</p>
-							<input type="text" name="newpost_intro" placeholder="Make it interesting!"/>
+							<input type="text" name="newpost_intro" placeholder="Make it interesting!" value="<?php echo $current_intro; ?>"/>
 							<p class="input_descr">Body</p>
 							
-							<textarea name="newpost_body" placeholder="Now write something nice!"></textarea>
+							<textarea name="newpost_body" placeholder="Now write something nice!"><?php echo $current_body; ?></textarea>
 							
 							<p class="input_descr">Image</p>
 							<input type="file" name="fileToUpload" id="fileToUpload" />
@@ -37,17 +83,17 @@
 							
 							<div class="box">
 								<p class="input_descr2">Red:</p>
-								<input type="text" name="in_red"/>
+								<input type="text" name="in_red" value="<?php echo $r; ?>"/>
 							</div>
 							
 							<div class="box">
 								<p class="input_descr2">Green:</p>
-								<input type="text" name="in_green"/>
+								<input type="text" name="in_green" value="<?php echo $g; ?>"/>
 							</div>
 							
 							<div class="box">
 								<p class="input_descr2">Blue:</p>
-								<input type="text" name="in_blue"/>
+								<input type="text" name="in_blue" value="<?php echo $b; ?>"/>
 							</div>
 
 							<input type="submit" value="Post!"/>
