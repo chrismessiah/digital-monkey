@@ -10,7 +10,7 @@
 	$count = $count[0];
 
 	# Get each blogpost
-	$result = $MySQLObj->conn->query("SELECT * FROM Blog ORDER BY datetime;");
+	$result = $MySQLObj->conn->query("SELECT * FROM Blog ORDER BY datetime DESC;");
 
 	for ($i=0; $i < $count; $i++) { 
 
