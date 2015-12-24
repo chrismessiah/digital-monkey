@@ -59,7 +59,6 @@
 						}
 					}
 
-
 					?>
 
 
@@ -187,7 +186,103 @@
 
 					<?php
 				} elseif ($_GET["choice"] == "add_user") {
-					# choice 2
+					
+					?>
+
+
+					<div id="menu_wrapper">
+						<p id="page_title">Create new user</p>
+
+						<form method="post" action="edit_users.php?mode=create">
+							<p class="input_descr">Username</p>
+							<p class="input_descr2">Has to be unique!</p>
+							<input type="text" name="new_user_username" placeholder="What will you call him/her?" value="<?php echo $current_title; ?>" />
+							<p class="input_descr">Firstname</p>
+							<input type="text" name="new_user_firstname" placeholder="What is his/her name?" value="<?php echo $current_intro; ?>"/>
+							<p class="input_descr">Lastname</p>
+							<input type="text" name="new_user_lastname" placeholder="Make is his/her family name?" value="<?php echo $current_intro; ?>"/>
+							<p class="input_descr">Password</p>
+							<input type="password" name="new_user_password" placeholder="Give him/her a password!" value="<?php echo $current_intro; ?>"/>
+							<div id="center">
+							<input type="submit" value="Create!"/>
+							</div>
+						</form>
+					</div>
+					<style>
+						#center {
+							width: 20%;
+							margin: auto;
+						}
+
+						.input_descr {
+							font-family: sans-serif;
+							font-size: 18px;
+							margin-top: 30px;
+						}
+						.input_descr2 { 
+							font-family: sans-serif;
+							font-size: 14px;
+							color: #747474;
+						}
+						#menu_wrapper {
+							margin: auto;
+	    					width: 60%;
+						}
+						#page_title {
+	    					font-size: 30px;
+	    					font-family: Helvetica;
+	    					text-align: center;
+	    					margin-top: 50px;
+						}
+						input[type="submit"] {
+							text-align: center;
+							color: #FFFFFF;
+							background-color: #525259;
+							border-radius: 40px;
+							border: 1px solid #979797;
+							font-size: 17px;
+							padding: 12px;
+							padding-left: 30px;
+							padding-right: 30px;
+							position: relative;
+							margin-top: 100px;
+							margin-bottom: 60px;
+
+						}
+						input[type="submit"]:hover {
+							cursor: pointer; 
+							cursor: hand;
+						}
+						input[type="text"], input[type="password"] {
+							padding: 10px;
+							border: solid 1px #dcdcdc;
+							transition: box-shadow 0.3s, border 0.3s;
+							display: block;
+							margin: 0;
+							width: 100%;
+							font-family: sans-serif;
+							font-size: 18px;
+							appearance: none;
+							box-shadow: none;
+							border-radius: none;
+						}
+						input[type="text"]:focus, input[type="text"].focus, input[type="password"]:focus, input[type="password"].focus {
+							border: solid 1px #707070;
+							box-shadow: 0 0 5px 1px #969696;
+						}
+						input[type="text"]:focus, input[type="password"]:focus {
+							outline: none;
+						}
+						input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder { 
+							color:transparent; 
+						}
+					</style>
+
+
+
+
+					<?php
+
 
 				} else {
 					# invalid choice

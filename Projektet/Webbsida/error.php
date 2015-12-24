@@ -21,6 +21,7 @@
 			$message = "No article selected!";
 		}
 		elseif ($_GET["error"] == "forgot_pwd") {
+			$title = "Hmm..";
 			$message = "Please contact KTH/CSC";
 			$type = "warning";
 		}
@@ -44,11 +45,18 @@
 			$message = "Some random upload fail";
 		}
 		elseif ($_GET["error"] == "filename_contains_space") {
+			$title = "Hmm..";
 			$message = "The filename contains a space! Remove it!";
 			$type = "warning";
 		}
 		elseif ($_GET["error"] == "blogpost_deleted") {
+			$title = "Success!";
 			$message = "The blogpost was deleted!";
+			$type = "success";
+		}
+		elseif ($_GET["error"] == "user_created") {
+			$title = "Success!";
+			$message = "The user was created!";
 			$type = "success";
 		}
 		else {
