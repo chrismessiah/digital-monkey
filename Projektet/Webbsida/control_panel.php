@@ -288,6 +288,7 @@
 
 						<div id="menu_wrapper">
 						<p id="page_title">Users</p>
+						<form method="post" action="">
 					<?php
 					require 'connToMySQL.php';
 					$MySQLObj = new MySQL_Handler();
@@ -308,12 +309,11 @@
 							<p>Username: <?php echo $dict["username"];?></p>
 							<p>Firstname: <?php echo $dict["firstname"];?></p>
 							<p>Lastname: <?php echo $dict["lastname"];?></p>
+							<p>Delete: </p><input type="checkbox" name="delete_user_id_<?php echo $dict["user_id"]; ?>" />
 						</div>
 
 						<?php
 							if ($i != $count -1) {
-								# code...
-							
 						?>
 						<div class="separator"></div>
 						<?php
@@ -323,9 +323,37 @@
 					<?php
 						}
 					?>
+					<div id="input_boxes"><input type="submit" value="Delete"/></div>
+					</form>
 					</div>
 					
 					<style>
+						input[type="submit"] {
+							text-align: center;
+							color: #FFFFFF;
+							background-color: rgba(177, 0, 0, 0.7);
+							border-radius: 40px;
+							border: 1px solid rgba(177, 0, 0, 0.7);
+							font-size: 17px;
+							padding: 12px;
+							padding-left: 30px;
+							padding-right: 30px;
+							position: relative;
+							top: 40px;
+							
+						}
+
+						input[type="submit"]:hover {
+							cursor: pointer; 
+							cursor: hand;
+						}
+						#input_boxes {
+							width: 15%;
+							margin: auto; 
+							margin-bottom: 100px;
+							margin-top: 20px;
+
+						}
 						#page_title {
 							text-align: center;
 							font-size: 24px;
@@ -336,7 +364,7 @@
 							margin: 10px;
 						}
 						.user_box {
-							width: 80%;
+							width: 90%;
 							margin: auto;
 						}
 						.separator {
