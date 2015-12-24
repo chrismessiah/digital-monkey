@@ -283,7 +283,73 @@
 
 					<?php
 
+				} elseif ($_GET["choice"] == "delete_user") {
+					?>
 
+						<div id="menu_wrapper">
+						<p id="page_title">Users</p>
+					<?php
+					require 'connToMySQL.php';
+					$MySQLObj = new MySQL_Handler();
+					$MySQLObj->mysql_connect();
+					
+					$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_type=1;");
+					$count = $result->fetch_row();
+					$count = $count[0];
+
+					$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname FROM Users WHERE user_type=1");
+
+					for ($i=0; $i < $count; $i++) { 
+						$dict = $result->fetch_assoc();
+					?>
+
+						<div class="user_box">
+							<p>Userid: <?php echo $dict["user_id"];?></p>
+							<p>Username: <?php echo $dict["username"];?></p>
+							<p>Firstname: <?php echo $dict["firstname"];?></p>
+							<p>Lastname: <?php echo $dict["lastname"];?></p>
+						</div>
+
+						<?php
+							if ($i != $count -1) {
+								# code...
+							
+						?>
+						<div class="separator"></div>
+						<?php
+							}
+						?>
+					
+					<?php
+						}
+					?>
+					</div>
+					
+					<style>
+						#page_title {
+							text-align: center;
+							font-size: 24px;
+							margin: 40px;
+						}
+						.user_box > p {
+							display: inline-block;
+							margin: 10px;
+						}
+						.user_box {
+							width: 80%;
+							margin: auto;
+						}
+						.separator {
+							width: 100%;
+							background-color: black;
+							height: 2px;
+						}
+						#menu_wrapper {
+							margin: auto;
+	    					width: 60%;
+						}
+					</style>
+					<?php
 				} else {
 					# invalid choice
 					header('location:control_panel.php?error=some_error');
@@ -300,6 +366,7 @@
 
 					<a href="control_panel.php?choice=blogpost"><p class="p_choices">Make new blogpost</p></a>
 					<a href="control_panel.php?choice=add_user"><p class="p_choices">Create user</p></a>
+					<a href="control_panel.php?choice=delete_user"><p class="p_choices">Delete user</p></a>
 				</div>
 				
 				

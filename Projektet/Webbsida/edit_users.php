@@ -22,7 +22,7 @@
 						break;
 					}
 				}
-				
+
 				$user_type = 1;
 
 				$sql = "INSERT INTO Users (user_id, username, firstname, lastname, password, user_type) VALUES (?, ?, ?, ?, ?, ?)";
@@ -35,16 +35,13 @@
 			elseif ($_GET["mode"] == "delete") {
 
 			} else {
-				echo "1";
-				#header('location:control_panel.php?choice=add_user&error=some_error');
+				header('location:control_panel.php?choice=add_user&error=some_error');
 			}
 		} else {
-			echo "2";
-			#header('location:index.php?error=some_error');
+			header('location:index.php?error=some_error');
 		}
 	} else {
-		echo "3";
-		#header('location:control_panel.php?choice=add_user&error=some_error');
+		header('location:control_panel.php?choice=add_user&error=some_error');
 	}
 
 ?>
