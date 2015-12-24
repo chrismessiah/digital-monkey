@@ -1,6 +1,7 @@
 <?php
 	require 'header.php';
 	require 'text_formatter.php';
+	error_reporting(E_ALL);
 
 	$current_title = "";
 	$current_intro = "";
@@ -288,7 +289,7 @@
 
 						<div id="menu_wrapper">
 						<p id="page_title">Users</p>
-						<form method="post" action="">
+						<form method="post" action="edit_users.php?mode=delete">
 					<?php
 					require 'connToMySQL.php';
 					$MySQLObj = new MySQL_Handler();
@@ -305,10 +306,9 @@
 					?>
 
 						<div class="user_box">
-							<p>Userid: <?php echo $dict["user_id"];?></p>
+							<p>Name: <?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
 							<p>Username: <?php echo $dict["username"];?></p>
-							<p>Firstname: <?php echo $dict["firstname"];?></p>
-							<p>Lastname: <?php echo $dict["lastname"];?></p>
+							<p>Userid: <?php echo $dict["user_id"];?></p>
 							<p>Delete: </p><input type="checkbox" name="delete_user_id_<?php echo $dict["user_id"]; ?>" />
 						</div>
 
@@ -364,7 +364,7 @@
 							margin: 10px;
 						}
 						.user_box {
-							width: 90%;
+							width: 70%;
 							margin: auto;
 						}
 						.separator {

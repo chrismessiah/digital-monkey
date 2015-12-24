@@ -59,6 +59,21 @@
 			$message = "The user was created!";
 			$type = "success";
 		}
+		elseif ($_GET["error"] == "no_user_deleted") {
+			$title = "Hmm..";
+			$message = "No user was deleted, did you really select any user to delete?";
+			$type = "warning";
+		}
+		elseif ($_GET["error"] == "one_user_deleted") {
+			$title = "Success!";
+			$message = "The user was deleted!";
+			$type = "success";
+		}
+		elseif ($_GET["error"] == "X_user_deleted") {
+			$title = "Success!";
+			$message = "Multiple users was deleted!";
+			$type = "success";
+		}
 		else {
 			$message = "Oh no! Some unknown error occurred!";
 		}
