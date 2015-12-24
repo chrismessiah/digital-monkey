@@ -3,7 +3,7 @@
 	error_reporting(E_ALL); // To see all errors
 	date_default_timezone_set('Europe/Stockholm');
 
-
+	require 'session.php';
 	require 'connToMySQL.php';
 
 	
@@ -118,16 +118,16 @@
 			$MySQLstatement->bind_param("sssssss", $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors, $blogpostid);
 		}
 	} else {
-		$sql = "INSERT INTO Blog (blogpost_id, image_path, title, intro, body, datetime, overlay_color) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO Blog (blogpost_id, image_path, title, intro, body, datetime, overlay_color, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		$MySQLstatement = $MySQLObj->conn->prepare($sql);
-		$MySQLstatement->bind_param("sssssss", $blogpostid, $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors);
+		$MySQLstatement->bind_param("ssssssss", $blogpostid, $target_file, $_POST["newpost_title"], $_POST["newpost_intro"], $_POST["newpost_body"], $datetime, $colors, $_SESSION["user_id"]);
 	}
 
 	$state = $MySQLstatement->execute();
 	$MySQLstatement->close();
 	$MySQLObj->mysql_close();
 	if (!$state) {
-		echo "ERROR???";
+		header('location:articles.php?error=some_error');
 	} else {
 		header('location:articles.php?article='.$blogpostid);
 		exit();

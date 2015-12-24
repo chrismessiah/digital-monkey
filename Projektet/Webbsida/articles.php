@@ -46,7 +46,7 @@
 				</div>
 
 				<?php
-					if ($_SESSION["user_type"] == 0) {
+					if ($_SESSION["user_type"]== 0||$dict["created_by"] == $_SESSION["user_id"]) {
 				?>
 
 				<div id="buttons">

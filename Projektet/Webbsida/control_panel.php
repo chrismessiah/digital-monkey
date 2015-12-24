@@ -19,8 +19,6 @@
 	}
 	else {
 		# Is logged in
-		if ($_SESSION["user_type"] == 0) {
-			# Is admin
 			if (isset($_GET["choice"])) {
 				# has selected from menu
 				if ($_GET["choice"] == "blogpost") {
@@ -186,7 +184,8 @@
 					</style>
 
 					<?php
-				} elseif ($_GET["choice"] == "add_user") {
+					
+				} elseif ($_GET["choice"] == "add_user" && $_SESSION["user_type"] == 0) {
 					
 					?>
 
@@ -284,7 +283,7 @@
 
 					<?php
 
-				} elseif ($_GET["choice"] == "delete_user") {
+				} elseif ($_GET["choice"] == "delete_user" && $_SESSION["user_type"] == 0) {
 					?>
 
 						<div id="menu_wrapper">
@@ -386,17 +385,35 @@
 				?>
 
 				<?php
-			} else {
+
+			} elseif ($_SESSION["user_type"] == 0||$_SESSION["user_type"] == 1) {
+				
 				# Hasnt selected from menu
 				?>
 				<div id="menu_wrapper">
 					<p id="control_menu">Menu</p>
 
 					<a href="control_panel.php?choice=blogpost"><p class="p_choices">Make new blogpost</p></a>
+					<style>
+					#menu_wrapper {
+    					width: 47%;
+					}
+					</style>
+					<?php 
+						if ($_SESSION["user_type"] == 0) {
+					?>
+
 					<a href="control_panel.php?choice=add_user"><p class="p_choices">Create user</p></a>
 					<a href="control_panel.php?choice=delete_user"><p class="p_choices">Delete user</p></a>
+					<style>
+					#menu_wrapper {
+    					width: 78%;
+					}
+					</style>
+					<?php
+						}
+					?>
 				</div>
-				
 				
 				<style>
 					#control_menu {
@@ -406,7 +423,6 @@
 					}
 					#menu_wrapper {
 						margin: auto;
-    					width: 60%;
 					}
 					.p_choices {
 						font-family: Helvetica;
@@ -424,16 +440,13 @@
 				</style>
 
 			<?php
+			} else {
+				header('location:index.php?error=some_error');
 			}
 			?>
 
 
 	<?php
-		} else {
-			# Isnt admin
-			header('location:login_page.php?error=some_error');
-			exit();
-		}
 	}
 	
 ?>

@@ -1,10 +1,18 @@
 <?php
 	require 'session.php';
 	require 'connToMySQL.php';
-	if ($_SESSION["user_type"] == 0 && isset($_GET["id"])) {
-		if (is_numeric($_GET["id"])) {
-			$MySQLObj = new MySQL_Handler();
-			$MySQLObj->mysql_connect();
+	if (isset($_GET["id"])) {
+		$MySQLObj = new MySQL_Handler();
+		$MySQLObj->mysql_connect();
+		$MySQLstatement = $MySQLObj->conn->prepare("SELECT created_by FROM Blog WHERE blogpost_id=?");
+		$MySQLstatement->bind_param("s", $_GET["id"]);
+		$MySQLstatement->execute();
+		$result = $MySQLstatement->get_result();
+
+		$foo = $result->fetch_row();
+		$created_by_user = $foo[0];
+
+		if (($_SESSION["user_type"] == 0 || $_SESSION["user_id"] == $created_by_user) && is_numeric($_GET["id"])) {
 			$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Blog WHERE blogpost_id=?");
 			$MySQLstatement->bind_param("s", $_GET["id"]);
 			$MySQLstatement->execute();

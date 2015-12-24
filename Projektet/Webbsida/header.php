@@ -28,31 +28,8 @@
 	
 	<?php 
 		} else { 
-			if ($_SESSION["user_type"] == 1) {
-				# Ordinary user
-	?>
-
-				<a href="courses.php"><p class="head_menu">Kurser</p></a>
-				<a href="schedule.php"><p class="head_menu">Schema</p></a>
-				<a href="results.php"><p class="head_menu">Resultat</p></a>
-				<a href="index.php"><p class="head_menu">Översikt</p></a>
-				<a href="other.php"><p class="head_menu">Övrigt</p></a>
-
-				<a href="profile.php">
-					<div id="profile_pic"></div>
-				</a>
-
-				<style>
-					#profile_pic {
-						position: relative;
-						left: 550px;
-						top: 15px;
-					}
-				</style>
-	<?php 
-			}
-			if ( $_SESSION["user_type"] == 0 ) {
-				# admin
+			if ( $_SESSION["user_type"] == 0||$_SESSION["user_type"] == 1 ) {
+				# admin or logged in
 				?>
 
 				<a href="control_panel.php"><p class="head_menu">Kontrollpanel</p></a>
@@ -72,13 +49,8 @@
 
 			<?php
 			}
-			?>
-
-
-
-
-
-		<?php } ?>
+		} 
+		?>
 
 </div>
 
