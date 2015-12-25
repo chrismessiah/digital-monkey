@@ -12,7 +12,19 @@
 	<a href="index.php">
 		<div id="kth_logo"></div>
 	</a>
-	<a href="export_xml.php"><p class="head_menu">Export to XML</p></a>
+	<a href="export_xml.php"><p id="head_menu2">Export to XML</p></a>
+	<style>
+		#head_menu2 {
+			display: inline-block;
+			font-family: Helvetica;
+			font-size: 24px;
+			color: #FFFFFF;
+			position: relative;
+			line-height: 29px;
+			bottom: 10px;
+			left: 30px;
+		}
+	</style>
 
 	<?php 
 		if ( $_SESSION["logged_in"] == false ) {
@@ -21,7 +33,7 @@
 		
 			<style>
 				.head_menu {
-					left: 80%;
+					left: 70%;
 				}
 			</style>
 	
@@ -32,16 +44,16 @@
 				?>
 
 				<a href="control_panel.php"><p class="head_menu">Kontrollpanel</p></a>
-				<a href="profile.php">
+				<a href="">
 					<div id="profile_pic"></div>
 				</a>
 				<style>
 					.head_menu {
-						left: 37%;
+						left: 30%;
 					}
 					#profile_pic {
 						position: relative;
-						left: 900px;
+						left: 800px;
 						top: 15px;
 					}
 				</style>
