@@ -41,7 +41,7 @@ class MySQL_Handler {
 			} else {echo "Connection to DB success<br><br>";}
 		}
 
-
+		mysqli_set_charset($conn, 'utf8');
 		$this->conn = $conn;
 	}
 

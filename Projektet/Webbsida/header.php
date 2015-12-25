@@ -1,5 +1,6 @@
 <?php
 	ob_start();
+	header('Content-Type: text/html; charset=utf-8');
 	require 'session.php';
 
 	# HANTERA DESSA. 
@@ -10,6 +11,10 @@
 	# 0 = System admin
 ?>
 
+<!-- <head>
+	<meta charset="UTF-8">
+</head>
+ -->
 <div id="head_div">
 	<a href="index.php">
 		<div id="kth_logo"></div>
@@ -18,7 +23,7 @@
 	<?php 
 		if ( $_SESSION["logged_in"] == false ) {
 	?>
-			<a href="login_page.php"><p class="head_menu">Log in</p></a>
+			<a href="login_page.php"><p class="head_menu">Log inää</p></a>
 		
 			<style>
 				.head_menu {
