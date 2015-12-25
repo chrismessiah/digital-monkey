@@ -12,7 +12,7 @@
 	<a href="index.php">
 		<div id="kth_logo"></div>
 	</a>
-	<a href="export_xml.php"><p id="head_menu2">Export to XML</p></a>
+	<a href="xml_validate.php"><p id="head_menu2">Export to XML</p></a>
 	<style>
 		#head_menu2 {
 			display: inline-block;

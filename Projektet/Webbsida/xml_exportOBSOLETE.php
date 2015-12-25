@@ -1,3 +1,6 @@
+
+
+
 <?php
 	header ("Content-Type:text/xml");
 	require 'connToMySQL.php';
@@ -16,12 +19,10 @@
 
 	$user_result = $MySQLObj->conn->query("SELECT * FROM Users;");
 	$blog_result = $MySQLObj->conn->query("SELECT * FROM Blog;");
-	//$dict = $result->fetch_assoc();
 ?>
 
-
+<!DOCTYPE website SYSTEM "xml_export.dtd">
 <website>
-
 	<users>
 	<?php
 		for ($i=0; $i < $user_count; $i++) { 
@@ -31,7 +32,7 @@
 				echo "<username>".$dict["username"]."</username>";
 				echo "<firstname>".$dict["firstname"]."</firstname>";
 				echo "<lastname>".$dict["lastname"]."</lastname>";
-				echo "<password>"."PROTECTED"."</password>";
+				echo "<password>"."*PROTECTED-BY-DEV*"."</password>";
 				echo "<picture_path>".$dict["pic_name"]."</picture_path>";
 				echo "<user_type>".$dict["user_type"]."</user_type>";
 			echo "</user>";
@@ -50,21 +51,15 @@
 					echo "<intro>".$dict["intro"]."</intro>";
 					echo "<body>".preg_replace('/&(?!#?[a-z0-9]+;)/', '&amp;', un_text_format_this($dict["body"]))."</body>";
 					echo "<datetime>".$dict["datetime"]."</datetime>";
-					echo "<bannner_color>";
+					echo "<banner_color>";
 						echo "<r>".$color_array[0]."</r>";
 						echo "<g>".$color_array[1]."</g>";
 						echo "<b>".$color_array[2]."</b>";
 						echo "<alpha>".$color_array[3]."</alpha>";	
-					echo "</bannner_color>";
+					echo "</banner_color>";
 					echo "<author_id>".$dict["created_by"]."</author_id>";
 				echo "</blogpost>";
 			}
 		?>
 	</blogposts>
-
-
-
-
-
-
 </website>
