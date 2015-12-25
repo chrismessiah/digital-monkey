@@ -4,26 +4,20 @@
 	require 'session.php';
 
 	# HANTERA DESSA. 
-	# 1 = Student
-	# 2 = Teacher
-	# 3 = Examinator
-	# 4 = Course admin
+	# 1 = Editor
 	# 0 = System admin
 ?>
 
-<!-- <head>
-	<meta charset="UTF-8">
-</head>
- -->
 <div id="head_div">
 	<a href="index.php">
 		<div id="kth_logo"></div>
 	</a>
+	<a href="export_xml.php"><p class="head_menu">Export to XML</p></a>
 
 	<?php 
 		if ( $_SESSION["logged_in"] == false ) {
 	?>
-			<a href="login_page.php"><p class="head_menu">Log inää</p></a>
+			<a href="login_page.php"><p class="head_menu">Log in</p></a>
 		
 			<style>
 				.head_menu {
