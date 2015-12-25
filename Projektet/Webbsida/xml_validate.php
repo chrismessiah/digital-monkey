@@ -64,6 +64,7 @@ $old->loadXML($xml);
 
 $creator = new DOMImplementation;
 $doctype = $creator->createDocumentType($root, null, 'xml_validate.dtd');
+
 $new = $creator->createDocument(null, null, $doctype);
 $new->encoding = "utf-8";
 
@@ -75,7 +76,18 @@ $new->appendChild($newNode);
 $state = $new->validate();
 if ($state) {
 	header ("Content-Type:text/xml");
-	echo $xml;
+	
+	$xml_document = new DOMDocument;
+	$xml_document->loadXML($xml);
+
+	$xsl_document = new DOMDocument;
+	$xsl_document->load('xml_validate.xsl');
+
+	// Configure the transformer
+	$proc = new XSLTProcessor;
+	$proc->importStyleSheet($xsl_document); // attach the xsl rules
+	//echo $xml;
+	echo $proc->transformToXML($xml_document);
 } else {
 	echo "XML DOES NOT VALIDATE";
 }
