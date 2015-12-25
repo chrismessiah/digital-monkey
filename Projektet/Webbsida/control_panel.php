@@ -65,9 +65,9 @@
 						<p id="page_title">Make new blogpost</p>
 
 						<form method="post" action="blogposter.php<?php echo $mode; ?>" enctype="multipart/form-data">
-							<p class="input_descr">Title</p>
+							<p class="input_descr">Title (tops 50 characters)</p>
 							<input type="text" name="newpost_title" placeholder="What will you call it?" value="<?php echo $current_title; ?>" />
-							<p class="input_descr">Introduction</p>
+							<p class="input_descr">Introduction (tops 200 characters)</p>
 							<input type="text" name="newpost_intro" placeholder="Make it interesting!" value="<?php echo $current_intro; ?>"/>
 							<p class="input_descr">Body</p>
 							
