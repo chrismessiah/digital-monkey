@@ -210,7 +210,6 @@
 						<div class="user_box">
 							<p>Name: <?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
 							<p>Username: <?php echo $dict["username"];?></p>
-							<p>Userid: <?php echo $dict["user_id"];?></p>
 							<?php
 								if ($dict["user_type"] == 0) {
 									echo "<p>Superuser: Yes</p>";
@@ -239,9 +238,10 @@
 								margin: auto;
 							}
 							.separator {
-								width: 100%;
+								width: 80%;
 								background-color: black;
 								height: 2px;
+								margin: auto;
 							}
 						</style>
 
