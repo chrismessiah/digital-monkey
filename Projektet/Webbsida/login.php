@@ -2,7 +2,7 @@
 	ob_start();
 	error_reporting(E_ALL); // To see all errors
 	require 'connToMySQL.php';
-	require 'input_data_checker.php';
+	//require 'input_data_checker.php';
 
 	$username = strtolower($_POST["field1"]);
 	$password = $_POST["field2"];
@@ -31,7 +31,7 @@
 		$_SESSION["logged_in"] = true;
 		$_SESSION["username"] = $username;
 
-		$MySQLstatement = $MySQLObj->conn->prepare("SELECT user_id, firstname, lastname, pic_name, user_type, about FROM Users WHERE username=? AND password=?");
+		$MySQLstatement = $MySQLObj->conn->prepare("SELECT user_id, firstname, lastname, pic_name, user_type FROM Users WHERE username=? AND password=?");
 		$MySQLstatement->bind_param("ss", $username, $password);
 		$state = $MySQLstatement->execute();
 		$result = $MySQLstatement->get_result();

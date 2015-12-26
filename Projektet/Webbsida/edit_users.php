@@ -24,8 +24,12 @@
 					}
 				}
 
-				$user_type = 1;
-
+				if (isset($_POST["superuser_priv"])) {
+					$user_type = 0;
+				} else {
+					$user_type = 1;
+				}
+				
 				$sql = "INSERT INTO Users (user_id, username, firstname, lastname, password, user_type) VALUES (?, ?, ?, ?, ?, ?)";
 				$MySQLstatement = $MySQLObj->conn->prepare($sql);
 				$MySQLstatement->bind_param("ssssss", $user_id, $_POST["new_user_username"], $_POST["new_user_firstname"], $_POST["new_user_lastname"], $_POST["new_user_password"], $user_type);

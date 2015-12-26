@@ -189,9 +189,61 @@
 					
 					?>
 
-
 					<div id="menu_wrapper">
 						<p id="page_title">Create new user</p>
+						<p id="page_title2">Current users</p>
+
+						<?php
+							require 'connToMySQL.php';
+							$MySQLObj = new MySQL_Handler();
+							$MySQLObj->mysql_connect();
+							$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
+							$count = $result->fetch_row();
+							$count = $count[0];
+
+							$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname, user_type FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
+
+							for ($i=0; $i < $count; $i++) { 
+							$dict = $result->fetch_assoc();
+						?>
+
+						<div class="user_box">
+							<p>Name: <?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
+							<p>Username: <?php echo $dict["username"];?></p>
+							<p>Userid: <?php echo $dict["user_id"];?></p>
+							<?php
+								if ($dict["user_type"] == 0) {
+									echo "<p>Superuser: Yes</p>";
+								}
+							?>
+						</div>
+
+						<?php
+							if ($i != $count -1) {
+						?>
+						<div class="separator"></div>
+						<?php
+							}
+						?>
+					
+					<?php
+						}
+					?>
+						<style>
+							.user_box > p {
+								display: inline-block;
+								margin: 10px;
+							}
+							.user_box {
+								width: 80%;
+								margin: auto;
+							}
+							.separator {
+								width: 100%;
+								background-color: black;
+								height: 2px;
+							}
+						</style>
 
 						<form method="post" action="edit_users.php?mode=create">
 							<p class="input_descr">Username</p>
@@ -203,22 +255,31 @@
 							<input type="text" name="new_user_lastname" placeholder="Make is his/her family name?" value="<?php echo $current_intro; ?>"/>
 							<p class="input_descr">Password</p>
 							<input type="password" name="new_user_password" placeholder="Give him/her a password!" value="<?php echo $current_intro; ?>"/>
+							<p class="input_descr3">Superuser privilages: </p><input type="checkbox" name="superuser_priv" />
 							<div id="center">
 							<input type="submit" value="Create!"/>
 							</div>
 						</form>
 					</div>
 					<style>
+						form {
+							margin-top: 70px;
+						}
 						#center {
 							width: 20%;
 							margin: auto;
 						}
 
-						.input_descr {
+						.input_descr, .input_descr3 {
 							font-family: sans-serif;
 							font-size: 18px;
 							margin-top: 30px;
 						}
+						.input_descr3 {
+							display: inline-block;
+							margin-right: 15px;
+						}
+						
 						.input_descr2 { 
 							font-family: sans-serif;
 							font-size: 14px;
@@ -233,6 +294,11 @@
 	    					font-family: Helvetica;
 	    					text-align: center;
 	    					margin-top: 50px;
+						}
+						#page_title2 {
+							font-size: 22px;
+							font-family: Helvetica;
+							margin-top: 70px;
 						}
 						input[type="submit"] {
 							text-align: center;
@@ -294,11 +360,11 @@
 					$MySQLObj = new MySQL_Handler();
 					$MySQLObj->mysql_connect();
 					
-					$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_type=1;");
+					$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
 					$count = $result->fetch_row();
 					$count = $count[0];
 
-					$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname FROM Users WHERE user_type=1");
+					$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname, user_type FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
 
 					for ($i=0; $i < $count; $i++) { 
 						$dict = $result->fetch_assoc();
@@ -308,6 +374,11 @@
 							<p>Name: <?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
 							<p>Username: <?php echo $dict["username"];?></p>
 							<p>Userid: <?php echo $dict["user_id"];?></p>
+							<?php
+								if ($dict["user_type"] == 0) {
+									echo "<p>Superuser: Yes</p>";
+								}
+							?>
 							<p>Delete: </p><input type="checkbox" name="delete_user_id_<?php echo $dict["user_id"]; ?>" />
 						</div>
 
@@ -367,13 +438,14 @@
 							margin: auto;
 						}
 						.separator {
-							width: 100%;
+							width: 80%;
 							background-color: black;
 							height: 2px;
+							margin: auto;
 						}
 						#menu_wrapper {
 							margin: auto;
-	    					width: 60%;
+	    					width: 80%;
 						}
 					</style>
 					<?php
