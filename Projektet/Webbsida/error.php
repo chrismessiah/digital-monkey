@@ -64,6 +64,14 @@
 			$title = "Hmm..";
 			$message = "No user was selected, please select a user to edit!";
 			$type = "warning";
+		} elseif ($_GET["error"] == "blogpost_posted") {
+			$title = "Success!";
+			$message = "The blogpost was posted!";
+			$type = "success";
+		} elseif ($_GET["error"] == "blogpost_updated") {
+			$title = "Success!";
+			$message = "The blogpost was updated!";
+			$type = "success";
 		} else {
 			$message = "Oh no! Some unknown error occurred!";
 		}

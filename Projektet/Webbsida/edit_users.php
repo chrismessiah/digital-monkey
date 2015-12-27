@@ -54,9 +54,9 @@
 
 
 					if ($users_deleted == 0) {
-						header('location:control_panel.php?choice=add_user&error=no_user_deleted');
+						header('location:control_panel.php?choice=edit_user&error=no_user_deleted');
 					} elseif ($users_deleted == 1) {
-						header('location:control_panel.php?choice=add_user&error=one_user_deleted');
+						header('location:control_panel.php?choice=edit_user&error=one_user_deleted');
 					}
 
 				}

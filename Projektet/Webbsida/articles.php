@@ -119,6 +119,7 @@
 				require 'footer.php';
 				$MySQLstatement->close();
 				$MySQLObj->mysql_close();
+				require 'error.php';
 
 			}
 

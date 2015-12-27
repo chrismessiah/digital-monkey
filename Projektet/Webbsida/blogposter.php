@@ -129,7 +129,11 @@
 	if (!$state) {
 		header('location:articles.php?error=some_error');
 	} else {
-		header('location:articles.php?article='.$blogpostid);
+		if (isset($_GET["mode"])) {
+			header('location:articles.php?article='.$blogpostid.'&error=blogpost_updated');
+		} else {
+			header('location:articles.php?article='.$blogpostid.'&error=blogpost_posted');
+		}
 		exit();
 	}
 ?>
