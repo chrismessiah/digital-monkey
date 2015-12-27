@@ -8,10 +8,10 @@
 	<div id="login_wrapper">
 		<form method="post" action="login.php"> <!-- collects user input -->
 			<div id="input_boxes">
-				<input type="text" name="field1" placeholder="Username"/>
-				<input type="password" name="field2" placeholder="Password"/>
-				<a href="login_page.php?error=forgot_pwd" id="login_pass_forgot">Forgot password?</a>
-				<div><input type="submit" value="Login"/></div>
+				<input type="text" name="field1" placeholder="<?php echo $lang["user_create_username"];?>"/>
+				<input type="password" name="field2" placeholder="<?php echo $lang["user_create_pwd"];?>"/>
+				<a href="login_page.php?error=forgot_pwd" id="login_pass_forgot"><?php echo $lang["user_create_pwd_fgt"];?></a>
+				<div><input type="submit" value="<?php echo $lang['log_in'];?>"/></div>
 			</div>
 
 		</form>

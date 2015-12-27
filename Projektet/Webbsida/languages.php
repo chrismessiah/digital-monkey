@@ -44,7 +44,7 @@ if ($_SESSION["lang"] == "swe") {
 	$lang["blogpost_banner_r"] = "Röd";
 	$lang["blogpost_banner_g"] = "Grön";
 	$lang["blogpost_banner_b"] = "Blå";
-
+	$lang["user_create_pwd_fgt"] = "Glömt lösenordet?";
 		# control_panel.php?choice=add_user
 	$lang["user_create_title"] = "Skapa ny användare";
 	$lang["user_create_current"] = "Nuvarande användare";
@@ -130,6 +130,7 @@ if ($_SESSION["lang"] == "swe") {
 	$lang["user_create_select"] = "Select";
 	$lang["user_username_descr"] = "Has to be unique!";
 	$lang["user_create_pwd"] = "Password";
+	$lang["user_create_pwd_fgt"] = "Forgot password?";
 	$lang["user_create_su"] = "Superuser privilages";
 
 
