@@ -13,6 +13,7 @@ if ($_SESSION["lang"] == "swe") {
 	$lang['log_in'] = "Logga in";
 	$lang['control_panel'] = "Kontrollpanel";
 	$lang['log_out'] = "Logga ut";
+	$lang['change_lange'] = "Change to English";
 
 	# footer
 	$lang["footer_text"] = "<p class='foot_p'>Denna hemsida är gjord i samband med kursen XML för publicering på Kungliga Tekniska Högskolan i Stockholm. Detta är resultatet av kursens slutprojekt där var student har följande lärandeändamål:</p>
@@ -40,7 +41,7 @@ if ($_SESSION["lang"] == "swe") {
 	$lang["blogpost_image"] = "Bild";
 	$lang["blogpost_banner"] = "Färgöverdrag";
 	$lang["blogpost_banner_descr"] = "Var god mata in värden från 0 till 255 för varje färg.";
-	$lang["blogpost_banner_r"] = "Röd:";
+	$lang["blogpost_banner_r"] = "Röd";
 	$lang["blogpost_banner_g"] = "Grön";
 	$lang["blogpost_banner_b"] = "Blå";
 
@@ -48,14 +49,18 @@ if ($_SESSION["lang"] == "swe") {
 	$lang["user_create_title"] = "Skapa ny användare";
 	$lang["user_create_current"] = "Nuvarande användare";
 	$lang["user_create_name"] = "Namn: ";
-	$lang["user_create_username"] = "Användarnamn: ";
+	$lang["user_create_username"] = "Användarnamn";
 	$lang["user_create_super"] = "Superanvändare: Ja";
-	$lang["user_create_id"] = "Användarid: ";
-	$lang["user_create_select"] = "Välj: ";
+	$lang["user_create_id"] = "Användarid";
+	$lang["user_create_select"] = "Välj";
 
 	$lang["user_username_descr"] = "Måste vara unik!";
 	$lang["user_create_pwd"] = "Lösenord";
 	$lang["user_create_su"] = "Superanvändarrättigheter";
+	$lang["user_create_firstname"] = "Förnamn";
+	$lang["user_create_lastname"] = "Efternamn";
+	$lang["user_create_button"] = "Skapa!";
+	$lang["user_edit_button"] = "Verkställ!";
 
 
 	$lang["user_username_placeholder"] = "Ge ett användarnamn!";
@@ -69,6 +74,10 @@ if ($_SESSION["lang"] == "swe") {
 
 	# control_panel.php?choice=edit_user
 	$lang["user_edit_title"] = "Redigare användare";
+
+	$lang["blogpost_placeholder_title"] = "Vad ska du kalla den?";
+	$lang["blogpost_placeholder_intro"] = "Få det att låta intressant!";
+	$lang["blogpost_placeholder_body"] = "Skriv nu något najjs!";
 } else {
 	# Language: English
 
@@ -77,6 +86,7 @@ if ($_SESSION["lang"] == "swe") {
 	$lang['log_in'] = "Log in";
 	$lang['control_panel'] = "Control panel";
 	$lang['log_out'] = "Log out";
+	$lang['change_lange'] = "Byt till Svenska";
 
 	# footer
 	$lang["footer_text"] = "<p class='foot_p'>This website has been developed in connection with the course XML for Publishing at KTH Royal Institute of Technology. This is the result of the final project where each student has to provide evidence of achievement in the following areas:</p>
@@ -104,14 +114,14 @@ if ($_SESSION["lang"] == "swe") {
 	$lang["blogpost_image"] = "Image";
 	$lang["blogpost_banner"] = "Color banner";
 	$lang["blogpost_banner_descr"] = "Please enter values from 0 to 255 for each color";
-	$lang["blogpost_banner_r"] = "Red:";
-	$lang["blogpost_banner_g"] = "Green:";
-	$lang["blogpost_banner_b"] = "Blue:";
+	$lang["blogpost_banner_r"] = "Red";
+	$lang["blogpost_banner_g"] = "Green";
+	$lang["blogpost_banner_b"] = "Blue";
 
 	# control_panel.php?choice=add_user
 	$lang["user_create_title"] = "Create new user";
 	$lang["user_create_current"] = "Current users";
-	$lang["user_create_name"] = "Name";
+	$lang["user_create_name"] = "Name: ";
 	$lang["user_create_firstname"] = "Firstname";
 	$lang["user_create_lastname"] = "Lastname";
 	$lang["user_create_username"] = "Username";
@@ -133,6 +143,12 @@ if ($_SESSION["lang"] == "swe") {
 	$lang["user_edit_title"] = "Edit user";
 	$lang["button_edit"] = "Edit";
 	$lang["button_delete"] = "Delete";
+	$lang["user_create_button"] = "Create!";
+	$lang["user_edit_button"] = "Apply!";
+
+	$lang["blogpost_placeholder_title"] = "What will you call it?";
+	$lang["blogpost_placeholder_intro"] = "Make it interesting!";
+	$lang["blogpost_placeholder_body"] = "Now write something nice!";
 
 }
 

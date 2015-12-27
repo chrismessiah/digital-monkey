@@ -1,6 +1,5 @@
 <?php
 	require 'header.php';
-	require 'text_formatter.php';
 	
 	if ( isset($_GET["article"]) ) {
 		# if the variable has a value
@@ -50,8 +49,8 @@
 				?>
 
 				<div id="buttons">
-					<a href="control_panel.php?id=<?php echo $articleid ?>&mode=edit&choice=blogpost"><div id="button1"><p>Edit</p></div></a>
-					<a href="delete_blogpost.php?id=<?php echo $articleid; ?>"><div id="button2"><p>Delete</p></div></a>
+					<a href="control_panel.php?id=<?php echo $articleid ?>&mode=edit&choice=blogpost"><div id="button1"><p><?php echo $lang["button_edit"]; ?></p></div></a>
+					<a href="delete_blogpost.php?id=<?php echo $articleid; ?>"><div id="button2"><p><?php echo $lang["button_delete"]; ?></p></div></a>
 				</div>
 				<style>
 					#buttons {

@@ -3,6 +3,7 @@
 	header('Content-Type: text/html; charset=utf-8');
 	require 'session.php';
 	require 'languages.php';
+	require 'text_formatter.php';
 
 	# HANTERA DESSA. 
 	# 1 = Editor
@@ -35,6 +36,14 @@
 			<style>
 				.head_menu {
 					left: 70%;
+				} #head_menu4 {
+					display: inline-block;
+					font-family: Helvetica;
+					font-size: 24px;
+					color: #FFFFFF;
+					position: relative;
+					line-height: 29px;
+					bottom: 10px;
 				}
 			</style>
 	
@@ -57,9 +66,27 @@
 						left: 47%;
 					}
 					#profile_pic {
+						display: inline-block;
+						width: 60px;
+						height: 60px;
+						background-image: url("<?php echo $_SESSION['pic_path']; ?>");
+						overflow:hidden;
+						border-radius: 100px;
+						background-size: 60px 60px;
+						background-repeat: no-repeat;
 						position: relative;
 						left: 800px;
 						top: 15px;
+					}
+					#head_menu4 {
+						display: inline-block;
+						font-family: Helvetica;
+						font-size: 24px;
+						color: #FFFFFF;
+						position: relative;
+						line-height: 29px;
+						bottom: 10px;
+						right: 20%
 					}
 				</style>
 
@@ -67,11 +94,7 @@
 			}
 		} 
 		?>
-
-<a href="">
-	<div id="flag"></div>
-</a>
-
+<a href="set_lang.php"><p id="head_menu4"><?php echo $lang['change_lange']; ?></p></a>
 </div>
 
 
@@ -106,26 +129,6 @@
 		left: 15px;
 		top: 15px;
 		background-size: 50px 50px;
-	}
-	#profile_pic {
-		display: inline-block;
-		width: 60px;
-		height: 60px;
-		background-image: url("<?php echo $_SESSION['pic_path']; ?>");
-		overflow:hidden;
-		border-radius: 100px;
-		background-size: 60px 60px;
-		background-repeat: no-repeat;
-	}
-	#flag {
-		display: inline-block;
-		width: 60px;
-		height: 60px;
-		overflow:hidden;
-		border-radius: 100px;
-		background-size: 60px 60px;
-		background-repeat: no-repeat;
-		background-image: url("public/flags/uk.jpg");
 	}
 </style>
 

@@ -1,7 +1,3 @@
-<?php
-	require 'text_formatter.php';
-?>
-
 <div id="foot_div">
 	<div id="text_wrapper">
 		<?php echo text_format_this($lang["footer_text"]); ?>
