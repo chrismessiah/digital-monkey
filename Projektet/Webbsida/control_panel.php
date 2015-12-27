@@ -56,6 +56,7 @@
 
 							}
 						}
+
 					}
 
 					?>
@@ -185,12 +186,21 @@
 
 					<?php
 					
-				} elseif ($_GET["choice"] == "add_user" && $_SESSION["user_type"] == 0) {
-					
+				} elseif (($_GET["choice"] == "add_user"||$_GET["choice"] == "change_user") && $_SESSION["user_type"] == 0) {
+					if (isset($_GET["id"])) {
+						if (!is_numeric($_GET["id"])) {
+							header('location:http://localhost/projects/XML/Webbsida/control_panel.php?choice=edit_user&error=no_user_edited');
+						}
+					}
+					$page_title = "Create new user";
+					if ($_GET["choice"] == "change_user") {
+						$page_title = "Edit user";
+					}
+
 					?>
 
 					<div id="menu_wrapper">
-						<p id="page_title">Create new user</p>
+						<p id="page_title"><?php echo $page_title; ?></p>
 						<p id="page_title2">Current users</p>
 
 						<?php
@@ -245,19 +255,50 @@
 							}
 						</style>
 
-						<form method="post" action="edit_users.php?mode=create">
+						<?php
+						$container_username = "";
+						$container_firstname = "";
+						$container_lastname = "";
+						$container_su = "";
+						$form_action = "edit_users.php?mode=create";
+						if ($_GET["choice"] == "change_user") {						
+							if (is_numeric($_GET["id"])) {
+								$form_action = "edit_users.php?mode=edit&id=".$_GET["id"];
+								$MySQLstatement = $MySQLObj->conn->prepare("SELECT username, firstname, lastname, user_type FROM Users WHERE user_id=?");
+								$MySQLstatement->bind_param("s", $_GET["id"]);
+								$MySQLstatement->execute();
+								$result = $MySQLstatement->get_result();
+								$dict = $result->fetch_assoc();
+								$container_username = $dict["username"];
+								$container_firstname = $dict["firstname"];
+								$container_lastname = $dict["lastname"];
+								if ($dict["user_type"] == 0) {
+									$container_su = "checked";
+								}
+							}
+						}
+						?>
+
+						<form method="post" action="<?php echo $form_action; ?>">
 							<p class="input_descr">Username</p>
 							<p class="input_descr2">Has to be unique!</p>
-							<input type="text" name="new_user_username" placeholder="What will you call him/her?" value="<?php echo $current_title; ?>" />
+							<input type="text" name="new_user_username" placeholder="What will you call him/her?" value="<?php echo $container_username; ?>" />
 							<p class="input_descr">Firstname</p>
-							<input type="text" name="new_user_firstname" placeholder="What is his/her name?" value="<?php echo $current_intro; ?>"/>
+							<input type="text" name="new_user_firstname" placeholder="What is his/her name?" value="<?php echo $container_firstname; ?>"/>
 							<p class="input_descr">Lastname</p>
-							<input type="text" name="new_user_lastname" placeholder="Make is his/her family name?" value="<?php echo $current_intro; ?>"/>
+							<input type="text" name="new_user_lastname" placeholder="Make is his/her family name?" value="<?php echo $container_lastname; ?>"/>
 							<p class="input_descr">Password</p>
-							<input type="password" name="new_user_password" placeholder="Give him/her a password!" value="<?php echo $current_intro; ?>"/>
-							<p class="input_descr3">Superuser privilages: </p><input type="checkbox" name="superuser_priv" />
+							<input type="password" name="new_user_password" placeholder="Give him/her a password!"/>
+							<p class="input_descr3">Superuser privilages: </p><input type="checkbox" name="superuser_priv" <?php echo $container_su; ?> />
 							<div id="center">
-							<input type="submit" value="Create!"/>
+
+							<?php
+								$val = "Create!";
+								if ($_GET["choice"] == "change_user") {
+									$val = "Apply!";
+								}
+							?>
+							<input type="submit" value="<?php echo $val; ?>"/>
 							</div>
 						</form>
 					</div>
@@ -349,12 +390,12 @@
 
 					<?php
 
-				} elseif ($_GET["choice"] == "delete_user" && $_SESSION["user_type"] == 0) {
+				} elseif ($_GET["choice"] == "edit_user" && $_SESSION["user_type"] == 0) {
 					?>
 
 						<div id="menu_wrapper">
 						<p id="page_title">Users</p>
-						<form method="post" action="edit_users.php?mode=delete">
+						<form method="post" action="edit_users.php?mode=edit">
 					<?php
 					require 'connToMySQL.php';
 					$MySQLObj = new MySQL_Handler();
@@ -379,7 +420,7 @@
 									echo "<p>Superuser: Yes</p>";
 								}
 							?>
-							<p>Delete: </p><input type="checkbox" name="delete_user_id_<?php echo $dict["user_id"]; ?>" />
+							<p>Select: </p><input type="radio" name="selected_user_id" value="<?php echo $dict["user_id"]; ?>" />
 						</div>
 
 						<?php
@@ -393,7 +434,8 @@
 					<?php
 						}
 					?>
-					<div id="input_boxes"><input type="submit" value="Delete"/></div>
+					<div id="input_boxes"><input type="submit" value="Edit" name="edit" /></div>
+					<div id="input_boxes"><input type="submit" value="Delete" name="delete" /></div>
 					</form>
 					</div>
 					
@@ -422,7 +464,13 @@
 							margin: auto; 
 							margin-bottom: 100px;
 							margin-top: 20px;
-
+							display: inline-block;
+							position: relative;
+							left: 40%
+						}
+						input[value="Edit"] {
+							background-color: rgba(101, 180, 169, 0.7);
+							border: 1px solid rgba(101, 180, 169, 0.7);
 						}
 						#page_title {
 							text-align: center;
@@ -449,6 +497,7 @@
 						}
 					</style>
 					<?php
+
 				} else {
 					# invalid choice
 					header('location:control_panel.php?error=some_error');
@@ -476,7 +525,7 @@
 					?>
 
 					<a href="control_panel.php?choice=add_user"><p class="p_choices">Create user</p></a>
-					<a href="control_panel.php?choice=delete_user"><p class="p_choices">Delete user</p></a>
+					<a href="control_panel.php?choice=edit_user"><p class="p_choices">Edit user</p></a>
 					<style>
 					#menu_wrapper {
     					width: 78%;

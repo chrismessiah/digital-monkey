@@ -22,7 +22,7 @@
 			position: relative;
 			line-height: 29px;
 			bottom: 10px;
-			left: 30px;
+			left: 10px;
 		}
 	</style>
 
@@ -47,9 +47,13 @@
 				<a href="">
 					<div id="profile_pic"></div>
 				</a>
+				<a href="log_out.php"><p id="head_menu3">Log out</p></a>
 				<style>
 					.head_menu {
-						left: 30%;
+						left: 25%;
+					}
+					#head_menu3 {
+						left: 47%;
 					}
 					#profile_pic {
 						position: relative;
@@ -70,7 +74,7 @@
 	body {
 		margin: 0px;
 	}
-	.head_menu {
+	.head_menu, #head_menu2, #head_menu3 {
 		display: inline-block;
 		font-family: Helvetica;
 		font-size: 24px;

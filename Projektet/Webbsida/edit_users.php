@@ -2,8 +2,10 @@
 	require 'session.php';
 	require 'connToMySQL.php';
 	error_reporting(E_ALL);
+
 	if (isset($_GET["mode"])) {
 		if ($_SESSION["user_type"] == 0) {
+			
 			if ($_GET["mode"] == "create" && $_POST["new_user_username"] != "" && $_POST["new_user_firstname"] != "" && $_POST["new_user_lastname"] != "" && $_POST["new_user_password"] != "") {
 				
 				$MySQLObj = new MySQL_Handler();
@@ -36,42 +38,90 @@
 				$state = $MySQLstatement->execute();
 				$MySQLstatement->close();
 				header('location:control_panel.php?error=user_created');
-			}
-			elseif ($_GET["mode"] == "delete") {
-				$MySQLObj = new MySQL_Handler();
-				$MySQLObj->mysql_connect();
-				$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_type=1;");
-				$count = $result->fetch_row();
-				$count = $count[0];
-				$users_deleted = 0;
-				
-				$result = $MySQLObj->conn->query("SELECT user_id FROM Users WHERE user_type=1;");
 
-				for ($i=0; $i < $count; $i++) { 
-					$foo = $result->fetch_row();
-					$current_user_id = $foo[0];
-					if (isset($_POST["delete_user_id_".$current_user_id])) {
-						$MySQLObj->conn->query("DELETE FROM Users WHERE user_type=1 AND user_id='".$current_user_id."';");
-						$users_deleted = $users_deleted + 1;
+			}
+
+			elseif ($_GET["mode"] == "edit") {
+
+				if (isset($_POST["delete"])) {
+					$users_deleted = 0;
+					if (isset($_POST["selected_user_id"])) {
+						$MySQLObj = new MySQL_Handler();
+						$MySQLObj->mysql_connect();
+						$MySQLObj->conn->query("DELETE FROM Users WHERE user_id='".$_POST["selected_user_id"]."';");
+						$users_deleted = 1;
+					}
+
+
+					if ($users_deleted == 0) {
+						header('location:control_panel.php?choice=add_user&error=no_user_deleted');
+					} elseif ($users_deleted == 1) {
+						header('location:control_panel.php?choice=add_user&error=one_user_deleted');
 					}
 
 				}
 
-				if ($users_deleted == 0) {
-					header('location:control_panel.php?choice=add_user&error=no_user_deleted');
-				} elseif ($users_deleted == 1) {
-					header('location:control_panel.php?choice=add_user&error=one_user_deleted');
-				} else {
-					header('location:control_panel.php?choice=add_user&error=X_user_deleted');
+				else {
+					if (isset($_GET["id"])) {
+						if (is_numeric($_GET["id"])) {
+							$MySQLObj = new MySQL_Handler();
+							$MySQLObj->mysql_connect();
+
+							$MySQLstatement = $MySQLObj->conn->prepare("SELECT password FROM Users WHERE user_id=?");
+							$MySQLstatement->bind_param("s", $_GET["id"]);
+							$state = $MySQLstatement->execute();
+							$result = $MySQLstatement->get_result();
+							$MySQLstatement->close();
+
+							$foo = $result->fetch_row();
+							$pwd = $foo[0];
+
+							$priv = 1;
+
+							$MySQLstatement = $MySQLObj->conn->prepare("UPDATE Users SET username=?, firstname=?, lastname=?, password=?, user_type=? WHERE user_id=?;");							
+
+							if ($_POST["new_user_password"] != "") {
+								$pwd = $_POST["new_user_password"];
+							}
+							
+							if (isset($_POST["superuser_priv"])) {
+								$priv = 0;
+							}
+
+							$MySQLstatement->bind_param("ssssss", $_POST["new_user_username"], $_POST["new_user_firstname"], $_POST["new_user_lastname"], $pwd, $priv, $_GET["id"]);
+							$state = $MySQLstatement->execute();
+							if ($state) {
+								header('location:control_panel.php?error=user_updated');
+							}
+
+						} else {
+							header('location:control_panel.php?error=no_user_edited');
+						}
+					} else {
+						$MySQLObj = new MySQL_Handler();
+						$MySQLObj->mysql_connect();
+						$result = $MySQLObj->conn->query("SELECT count(*) FROM Users;");
+						$count = $result->fetch_row();
+						$count = $count[0];
+						
+						if (isset($_POST["selected_user_id"])) {
+							$selected_user = $_POST["selected_user_id"];
+							header('location:control_panel.php?choice=change_user&id='.$selected_user);
+						} else {
+							header('location:control_panel.php?error=no_user_selected');
+						}
+					}
+
 				}
+
 			} else {
-				header('location:control_panel.php?choice=add_user&error=some_error');
+				header('location:control_panel.php?error=some_error');
 			}
 		} else {
 			header('location:index.php?error=some_error');
 		}
 	} else {
-		header('location:control_panel.php?choice=add_user&error=some_error');
+		header('location:control_panel.php?error=some_error');
 	}
 
 ?>
