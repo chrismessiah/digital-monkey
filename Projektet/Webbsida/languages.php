@@ -1,4 +1,4 @@
-<?
+<?php
 
 $lang = array();
 if (!isset($_SESSION["lang"])) {
