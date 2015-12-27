@@ -2,6 +2,7 @@
 	ob_start();
 	header('Content-Type: text/html; charset=utf-8');
 	require 'session.php';
+	require 'languages.php';
 
 	# HANTERA DESSA. 
 	# 1 = Editor
@@ -12,7 +13,7 @@
 	<a href="index.php">
 		<div id="kth_logo"></div>
 	</a>
-	<a href="xml_validate.php"><p id="head_menu2">Export to XML</p></a>
+	<a href="xml_validate.php"><p id="head_menu2"><?php echo $lang['xml_export']; ?></p></a>
 	<style>
 		#head_menu2 {
 			display: inline-block;
@@ -29,7 +30,7 @@
 	<?php 
 		if ( $_SESSION["logged_in"] == false ) {
 	?>
-			<a href="login_page.php"><p class="head_menu">Log in</p></a>
+			<a href="login_page.php"><p class="head_menu"><?php echo $lang['log_in']; ?></p></a>
 		
 			<style>
 				.head_menu {
@@ -43,11 +44,11 @@
 				# admin or logged in
 				?>
 
-				<a href="control_panel.php"><p class="head_menu">Kontrollpanel</p></a>
+				<a href="control_panel.php"><p class="head_menu"><?php echo $lang['control_panel']; ?></p></a>
 				<a href="">
 					<div id="profile_pic"></div>
 				</a>
-				<a href="log_out.php"><p id="head_menu3">Log out</p></a>
+				<a href="log_out.php"><p id="head_menu3"><?php echo $lang['log_out']; ?></p></a>
 				<style>
 					.head_menu {
 						left: 25%;
@@ -66,6 +67,10 @@
 			}
 		} 
 		?>
+
+<a href="">
+	<div id="flag"></div>
+</a>
 
 </div>
 
@@ -111,7 +116,16 @@
 		border-radius: 100px;
 		background-size: 60px 60px;
 		background-repeat: no-repeat;
-
+	}
+	#flag {
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		overflow:hidden;
+		border-radius: 100px;
+		background-size: 60px 60px;
+		background-repeat: no-repeat;
+		background-image: url("public/flags/uk.jpg");
 	}
 </style>
 

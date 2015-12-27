@@ -1,6 +1,5 @@
 <?php
 	require 'header.php';
-	require 'text_formatter.php';
 	error_reporting(E_ALL);
 
 	$current_title = "";
@@ -63,35 +62,35 @@
 
 
 					<div id="menu_wrapper">
-						<p id="page_title">Make new blogpost</p>
+						<p id="page_title"><?php echo $lang["menu_new_blogpost"];?></p>
 
 						<form method="post" action="blogposter.php<?php echo $mode; ?>" enctype="multipart/form-data">
-							<p class="input_descr">Title (tops 50 characters)</p>
+							<p class="input_descr"><?php echo $lang["blogpost_title"];?></p>
 							<input type="text" name="newpost_title" placeholder="What will you call it?" value="<?php echo $current_title; ?>" />
-							<p class="input_descr">Introduction (tops 200 characters)</p>
+							<p class="input_descr"><?php echo $lang["blogpost_intro"];?></p>
 							<input type="text" name="newpost_intro" placeholder="Make it interesting!" value="<?php echo $current_intro; ?>"/>
-							<p class="input_descr">Body</p>
+							<p class="input_descr"><?php echo $lang["blogpost_body"]; ?></p>
 							
 							<textarea name="newpost_body" placeholder="Now write something nice!"><?php echo $current_body; ?></textarea>
 							
-							<p class="input_descr">Image</p>
+							<p class="input_descr"><?php echo $lang["blogpost_image"]; ?></p>
 							<input type="file" name="fileToUpload" id="fileToUpload" />
 
-							<p class="input_descr">Color banner</p>
-							<p class="input_descr3">Please enter values from 0 to 255 for each color</p>
+							<p class="input_descr"><?php echo $lang["blogpost_banner"]; ?></p>
+							<p class="input_descr3"><?php echo $lang["blogpost_banner_descr"]; ?></p>
 							
 							<div class="box">
-								<p class="input_descr2">Red:</p>
+								<p class="input_descr2"><?php echo $lang["blogpost_banner_r"]; ?></p>
 								<input type="text" name="in_red" value="<?php echo $r; ?>"/>
 							</div>
 							
 							<div class="box">
-								<p class="input_descr2">Green:</p>
+								<p class="input_descr2"><?php echo $lang["blogpost_banner_g"]; ?></p>
 								<input type="text" name="in_green" value="<?php echo $g; ?>"/>
 							</div>
 							
 							<div class="box">
-								<p class="input_descr2">Blue:</p>
+								<p class="input_descr2"><?php echo $lang["blogpost_banner_b"];?></p>
 								<input type="text" name="in_blue" value="<?php echo $b; ?>"/>
 							</div>
 
@@ -192,16 +191,17 @@
 							header('location:http://localhost/projects/XML/Webbsida/control_panel.php?choice=edit_user&error=no_user_edited');
 						}
 					}
-					$page_title = "Create new user";
+
+					$page_title = $lang["user_create_title"];
 					if ($_GET["choice"] == "change_user") {
-						$page_title = "Edit user";
+						$page_title = $lang["user_edit_title"];
 					}
 
 					?>
 
 					<div id="menu_wrapper">
 						<p id="page_title"><?php echo $page_title; ?></p>
-						<p id="page_title2">Current users</p>
+						<p id="page_title2"><?php echo $lang["user_create_current"]; ?></p>
 
 						<?php
 							require 'connToMySQL.php';
@@ -218,11 +218,11 @@
 						?>
 
 						<div class="user_box">
-							<p>Name: <?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
-							<p>Username: <?php echo $dict["username"];?></p>
+							<p><?php echo $lang["user_create_name"].": ".$dict["firstname"];?> <?php echo $dict["lastname"];?></p>
+							<p><?php echo $lang["user_create_username"].": ".$dict["username"];?></p>
 							<?php
 								if ($dict["user_type"] == 0) {
-									echo "<p>Superuser: Yes</p>";
+									echo "<p>".$lang["user_create_super"]."</p>";
 								}
 							?>
 						</div>
@@ -280,16 +280,16 @@
 						?>
 
 						<form method="post" action="<?php echo $form_action; ?>">
-							<p class="input_descr">Username</p>
-							<p class="input_descr2">Has to be unique!</p>
-							<input type="text" name="new_user_username" placeholder="What will you call him/her?" value="<?php echo $container_username; ?>" />
-							<p class="input_descr">Firstname</p>
-							<input type="text" name="new_user_firstname" placeholder="What is his/her name?" value="<?php echo $container_firstname; ?>"/>
-							<p class="input_descr">Lastname</p>
-							<input type="text" name="new_user_lastname" placeholder="Make is his/her family name?" value="<?php echo $container_lastname; ?>"/>
-							<p class="input_descr">Password</p>
-							<input type="password" name="new_user_password" placeholder="Give him/her a password!"/>
-							<p class="input_descr3">Superuser privilages: </p><input type="checkbox" name="superuser_priv" <?php echo $container_su; ?> />
+							<p class="input_descr"><?php echo $lang["user_create_username"]; ?></p>
+							<p class="input_descr2"><?php echo $lang["user_username_descr"];?></p>
+							<input type="text" name="new_user_username" placeholder="<?php echo $lang['user_username_placeholder'];?>" value="<?php echo $container_username; ?>" />
+							<p class="input_descr"><?php echo $lang["user_create_firstname"];?></p>
+							<input type="text" name="new_user_firstname" placeholder="<?php echo $lang['user_firstname_placeholder'];?>" value="<?php echo $container_firstname; ?>"/>
+							<p class="input_descr"><?php echo $lang["user_create_lastname"]; ?></p>
+							<input type="text" name="new_user_lastname" placeholder="<?php echo $lang['user_lastname_placeholder'];?>" value="<?php echo $container_lastname; ?>"/>
+							<p class="input_descr"><?php echo $lang["user_create_pwd"];?></p>
+							<input type="password" name="new_user_password" placeholder="<?php echo $lang['user_password_placeholder']; ?>"/>
+							<p class="input_descr3"><?php echo $lang["user_create_su"];?>: </p><input type="checkbox" name="superuser_priv" <?php echo $container_su; ?> />
 							<div id="center">
 
 							<?php
@@ -412,15 +412,15 @@
 					?>
 
 						<div class="user_box">
-							<p>Name: <?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
-							<p>Username: <?php echo $dict["username"];?></p>
-							<p>Userid: <?php echo $dict["user_id"];?></p>
+							<p><?php echo $lang["user_create_name"].$dict["firstname"];?> <?php echo $dict["lastname"];?></p>
+							<p><?php echo $lang["user_create_username"].": ".$dict["username"];?></p>
+							<p><?php echo $lang["user_create_id"].": ".$dict["user_id"];?></p>
 							<?php
 								if ($dict["user_type"] == 0) {
-									echo "<p>Superuser: Yes</p>";
+									echo "<p>".$lang["user_create_super"]."</p>";
 								}
 							?>
-							<p>Select: </p><input type="radio" name="selected_user_id" value="<?php echo $dict["user_id"]; ?>" />
+							<p><?php echo $lang["user_create_select"].": "; ?></p><input type="radio" name="selected_user_id" value="<?php echo $dict["user_id"]; ?>" />
 						</div>
 
 						<?php
@@ -434,8 +434,8 @@
 					<?php
 						}
 					?>
-					<div id="input_boxes"><input type="submit" value="Edit" name="edit" /></div>
-					<div id="input_boxes"><input type="submit" value="Delete" name="delete" /></div>
+					<div id="input_boxes"><input type="submit" value="<?php echo $lang["button_edit"]; ?>" name="edit" /></div>
+					<div id="input_boxes"><input type="submit" value="<?php echo $lang["button_delete"]; ?>" name="delete" /></div>
 					</form>
 					</div>
 					
@@ -512,9 +512,9 @@
 				# Hasnt selected from menu
 				?>
 				<div id="menu_wrapper">
-					<p id="control_menu">Menu</p>
+					<p id="control_menu"><?php echo $lang["menu"]; ?></p>
 
-					<a href="control_panel.php?choice=blogpost"><p class="p_choices">Make new blogpost</p></a>
+					<a href="control_panel.php?choice=blogpost"><p class="p_choices"><?php echo $lang["menu_new_blogpost"]; ?></p></a>
 					<style>
 					#menu_wrapper {
     					width: 47%;
@@ -524,8 +524,8 @@
 						if ($_SESSION["user_type"] == 0) {
 					?>
 
-					<a href="control_panel.php?choice=add_user"><p class="p_choices">Create user</p></a>
-					<a href="control_panel.php?choice=edit_user"><p class="p_choices">Edit user</p></a>
+					<a href="control_panel.php?choice=add_user"><p class="p_choices"><?php echo $lang["menu_new_c_user"]; ?></p></a>
+					<a href="control_panel.php?choice=edit_user"><p class="p_choices"><?php echo $lang["menu_new_e_user"]; ?></p></a>
 					<style>
 					#menu_wrapper {
     					width: 78%;

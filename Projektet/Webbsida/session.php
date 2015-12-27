@@ -6,6 +6,7 @@
     	$_SESSION["username"] = "";
     	$_SESSION["user_type"] = 99999999;
     	$_SESSION["user_id"] = "XXXXXXX";
+    	$_SESSION["lang"] = "en";
 	}
 	# var_dump($_SESSION);
 ?>

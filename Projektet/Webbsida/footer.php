@@ -1,10 +1,10 @@
 <?php
-	$footer_text = "Labore admodum quo ea. Prima rationibus sit at, eam iudico veniam eloquentiam cu. Putent cetero electram et eam, mea cu integre aliquando vulputate. Te ius alia soluta patrioque, ad debet paulo vituperata per, nostrud utroque voluptua mei ne.Mel nullam bonorum ad, quo utamur patrioque scribentur an. Vel et facer apeirian interesset, id vis porro vulputate, est nemore persius inciderint ei. Eu graeci dictas vis. In nostro praesent sea, ei quas disputando suscipiantur sea, mei choro dolor dissentiet ad.";
+	require 'text_formatter.php';
 ?>
 
 <div id="foot_div">
 	<div id="text_wrapper">
-		<p class="foot_p"><?php echo $footer_text; ?></p>
+		<?php echo text_format_this($lang["footer_text"]); ?>
 	</div>
 
 	<div id="images_block">
@@ -25,6 +25,19 @@
 </div>
 
 <style>
+	ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+	}
+	li { 
+	    padding-left: 2em; 
+	    text-indent: -.7em;
+	}
+	li:before {
+	    content: "• ";
+	    color: white; /* or whatever color you prefer */
+	}
 	.foot_p, .person_text {
 		font-family: Helvetica;
 		color: #FFFFFF;
