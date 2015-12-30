@@ -48,7 +48,7 @@
 					if (isset($_POST["selected_user_id"])) {
 						$MySQLObj = new MySQL_Handler();
 						$MySQLObj->mysql_connect();
-						$MySQLObj->conn->query("DELETE FROM Users WHERE user_id='".$_POST["selected_user_id"]."';");
+						$MySQLObj->conn->query("DELETE FROM Users WHERE user_id='".$_POST["selected_user_id"]."' AND username<>'admin';");
 						$users_deleted = 1;
 					}
 
@@ -78,7 +78,7 @@
 
 							$priv = 1;
 
-							$MySQLstatement = $MySQLObj->conn->prepare("UPDATE Users SET username=?, firstname=?, lastname=?, password=?, user_type=? WHERE user_id=?;");							
+							$MySQLstatement = $MySQLObj->conn->prepare("UPDATE Users SET username=?, firstname=?, lastname=?, password=?, user_type=? WHERE user_id=? AND username<>'admin';");							
 
 							if ($_POST["new_user_password"] != "") {
 								$pwd = $_POST["new_user_password"];
