@@ -94,7 +94,7 @@
 								<input type="text" name="in_blue" value="<?php echo $b; ?>"/>
 							</div>
 
-							<input type="submit" value="Post!"/>
+							<button type="submit"><tag class="post_blogpost">Post!</tag></button>
 						</form>
 					</div>
 					<style>
@@ -128,7 +128,7 @@
 							position: relative;
 							bottom: 100px;
 						}
-						input[type="submit"] {
+						button[type="submit"] {
 							text-align: center;
 							color: #FFFFFF;
 							background-color: #525259;
@@ -143,7 +143,7 @@
 							margin-top: 100px;
 							margin-bottom: 60px;
 						}
-						input[type="submit"]:hover {
+						button[type="submit"]:hover {
 							cursor: pointer; 
 							cursor: hand;
 						}

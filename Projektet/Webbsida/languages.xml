@@ -224,4 +224,8 @@
     	<swe>Skriv nu något najjs!</swe>
     	<en>Now write something nice!</en>
     </translation>
+    <translation id="post_blogpost">
+        <swe>Skicka!</swe>
+        <en>Post!</en>
+    </translation>
 </translations>
