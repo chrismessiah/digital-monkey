@@ -8,10 +8,12 @@
 	<div id="login_wrapper">
 		<form method="post" action="login.php"> <!-- collects user input -->
 			<div id="input_boxes">
-				<input type="text" name="field1" placeholder="<?php echo $lang["user_create_username"];?>"/>
-				<input type="password" name="field2" placeholder="<?php echo $lang["user_create_pwd"];?>"/>
-				<a href="login_page.php?error=forgot_pwd" id="login_pass_forgot"><?php echo $lang["user_create_pwd_fgt"];?></a>
-				<div><input type="submit" value="<?php echo $lang['log_in'];?>"/></div>
+				<p class="login_pass_forgot2"><tag class="user_create_username"></tag></p>
+				<input type="text" name="field1"/>
+				<p class="login_pass_forgot2"><tag class="user_create_pwd"></tag></p>
+				<input type="password" name="field2"/>
+				<a href="login_page.php?error=forgot_pwd" class="login_pass_forgot"><tag class="user_create_pwd_fgt"></tag></a>
+				<div><button type="submit"><tag class="log_in"></tag></button></div>
 			</div>
 
 		</form>
@@ -26,7 +28,7 @@
 		margin: auto;
 	}
 
-	#input_boxes > input {
+	#input_boxes > input, #input_boxes > button {
 		margin: 10px; 
 	}
 	#input_boxes > div {
@@ -40,7 +42,7 @@
 	    width: 32%;
 	    top: 420px;
 	}
-	#login_pass_forgot {
+	.login_pass_forgot {
 		color: #FFFFFF;
 		font-family: Helvetica;
 		position: relative;
@@ -48,7 +50,16 @@
 		font-size: 12px;
 		margin: 0px;
 	}
-	input[type="submit"]:hover {
+	.login_pass_forgot2 {
+		color: #FFFFFF;
+		font-family: Helvetica;
+		position: relative;
+		font-size: 14px;
+		left: 20px;
+		top: 15px;
+	}
+	
+	button[type="submit"]:hover {
 		cursor: pointer; 
 		cursor: hand;
 	}
@@ -70,7 +81,7 @@
     	color:#525259; /* Textcolor */
 	}
 
-	input[type="submit"] {
+	button[type="submit"] {
 		text-align: center;
 		color: #FFFFFF;
 		background-color: #525259;

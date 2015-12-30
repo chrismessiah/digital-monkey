@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+	<!-- Header -->
+    <translation id="xml_export">
+    	<swe>Exportera till XML</swe>
+        <en>Export to XML</en>
+    </translation>
+    <translation id="log_in">
+    	<swe>Logga in</swe>
+    	<en>Log in</en>
+    </translation>
+    <translation id="control_panel">
+    	<swe>Kontrollpanel</swe>
+    	<en>Control panel</en>
+    </translation>
+    <translation id="log_out">
+    	<swe>Logga ut</swe>
+    	<en>Log out</en>
+    </translation>
+    <translation id="change_lange">
+    	<swe>Change to English</swe>
+    	<en>Byt till Svenska</en>
+    </translation>
+
+	<!-- Footer -->
+	<translation id="footer_text1">
+    	<swe>Denna hemsida är gjord i samband med kursen XML för publicering på Kungliga Tekniska Högskolan i Stockholm. Detta är resultatet av kursens slutprojekt där var student har följande lärandeändamål:</swe>
+    	<en>This website has been developed in connection with the course XML for Publishing at KTH Royal Institute of Technology. This is the result of the final project where each student has to provide evidence of achievement in the following areas:</en>
+    </translation>
+	<translation id="footer_text2">
+    	<swe>Utveckla XML-baserade interaktiva webbinformationssystem som använder W3Cs principer för Device Independence</swe>
+    	<en>Develop XML based interactive web systems using W3C's principles for Device Independence.</en>
+    </translation>
+	<translation id="footer_text3">
+    	<swe>Analysera och modellera innehålls-, navigations- och interaktionsmodellen för ett informationssystem och implementera detta i XML-termer och databastermer</swe>
+    	<en>Analyze and model the content-, navigation- and interaction models for an information system, and implement this in XML and database terms.</en>
+    </translation>
+	<translation id="footer_text4">
+    	<swe>Praktiskt använda relationsdatabaser för webbprogrammering</swe>
+    	<en>Use relational databases for web programming</en>
+    </translation>
+	<translation id="footer_text5">
+    	<swe>Redogöra för och tillämpa XML-begreppen valid, well formed, xslt-transformationer, dtd samt några exempel på XML-baserade vokabulärer inom medieteknik</swe>
+    	<en>Account for and apply the XML concepts valid, well formed, xslt-transformations, dtd and some examples of XML bases vocabularies used in media technology.</en>
+    </translation>
+	<translation id="footer_text6">
+    	<swe>Redogöra för skillnader mellan att modellera information i en relationsdatabas och att modellera information i en XML-struktur</swe>
+    	<en>Account for differences between modeling information in a relational database and modeling information in an XML structure.</en>
+    </translation>
+	<translation id="footer_text7">
+    	<swe>Formulera, planera och genomföra en större egendefinierad webbprogrammeringsuppgift</swe>
+    	<en>Formulate, plan and implement an information system development</en>
+    </translation>
+	<translation id="footer_text8">
+    	<swe>Finna lösningar på programmeringsproblem på Internet</swe>
+    	<en>Find solutions to programming problems on the internet</en>
+    </translation>
+	<translation id="footer_text9">
+    	<swe>Vi som varit utvecklat sidan är</swe>
+    	<en>We who made this site are:</en>
+    </translation>
+
+
+    <!-- Buttons -->
+    <translation id="button_edit">
+    	<swe>Redigera</swe>
+        <en>Edit</en>
+    </translation>
+    <translation id="button_delete">
+    	<swe>Radera</swe>
+    	<en>Delete</en>
+    </translation>
+    
+
+    <!-- Menu -->
+    <translation id="menu">
+    	<swe>Meny</swe>
+    	<en>Menu</en>
+    </translation>
+    <translation id="menu_new_blogpost">
+    	<swe>Skapa blogginlägg</swe>
+    	<en>Make new blogpost</en>
+    </translation>
+    <translation id="menu_new_c_user">
+    	<swe>Skapa användare</swe>
+    	<en>Create user</en>
+    </translation>
+    <translation id="menu_new_e_user">
+    	<swe>Redigera användare</swe>
+    	<en>Edit user</en>
+    </translation>
+
+    <!-- Blogposting -->
+    <translation id="blogpost_title">
+    	<swe>Titel (högst 50 tecken)</swe>
+    	<en>Title (tops 50 characters)</en>
+    </translation>
+    <translation id="blogpost_intro">
+    	<swe>Ingress (högst 200 tecken)</swe>
+    	<en>Introduction (tops 200 characters)</en>
+    </translation>
+    <translation id="blogpost_body">
+    	<swe>Brödtext</swe>
+    	<en>Body</en>
+    </translation>
+    <translation id="blogpost_image">
+    	<swe>Bild</swe>
+    	<en>Image</en>
+    </translation>
+    <translation id="blogpost_banner">
+    	<swe>Färgöverdrag</swe>
+    	<en>Color banner</en>
+    </translation>
+    <translation id="blogpost_banner_descr">
+    	<swe>Var god mata in värden från 0 till 255 för varje färg.</swe>
+    	<en>Please enter values from 0 to 255 for each color</en>
+    </translation>
+    <translation id="blogpost_banner_r">
+    	<swe>Röd</swe>
+    	<en>Red</en>
+    </translation>
+    <translation id="blogpost_banner_g">
+    	<swe>Grön</swe>
+    	<en>Green</en>
+    </translation>
+    <translation id="blogpost_banner_b">
+    	<swe>Blå</swe>
+    	<en>Blue</en>
+    </translation>
+
+    <translation id="user_create_pwd_fgt">
+    	<swe>Glömt lösenordet?</swe>
+    	<en>Forgot password?</en>
+    </translation>
+
+    <translation id="user_create_title">
+    	<swe>Skapa ny användare</swe>
+    	<en>Create new user</en>
+    </translation>
+    <translation id="user_create_current">
+    	<swe>Nuvarande användare</swe>
+    	<en>Current users</en>
+    </translation>
+    <translation id="user_create_name">
+    	<swe>Namn: </swe>
+    	<en>Name: </en>
+    </translation>
+    <translation id="user_create_username">
+    	<swe>Användarnamn</swe>
+    	<en>Username</en>
+    </translation>
+    <translation id="user_create_super">
+    	<swe>Superanvändare: Ja</swe>
+    	<en>Superuser: Yes</en>
+    </translation>
+    <translation id="user_create_id">
+    	<swe>Användarid</swe>
+    	<en>Userid</en>
+    </translation>
+    <translation id="user_create_select">
+    	<swe>Välj</swe>
+    	<en>Select</en>
+    </translation>
+    <translation id="user_username_descr">
+    	<swe>Måste vara unik!</swe>
+    	<en>Has to be unique!</en>
+    </translation>
+    <translation id="user_create_pwd">
+    	<swe>Lösenord</swe>
+    	<en>Password</en>
+    </translation>
+    <translation id="user_create_su">
+    	<swe>Superanvändarrättigheter</swe>
+    	<en>Superuser privilages</en>
+    </translation>
+    <translation id="user_create_firstname">
+    	<swe>Förnamn</swe>
+    	<en>Firstname</en>
+    </translation>
+    <translation id="user_create_lastname">
+    	<swe>Efternamn</swe>
+    	<en>Lastname</en>
+    </translation>
+
+    <translation id="user_create_button">
+    	<swe>Skapa!</swe>
+    	<en>Create!</en>
+    </translation>
+    <translation id="user_edit_button">
+    	<swe>Verkställ!</swe>
+    	<en>Apply!</en>
+    </translation>
+
+    <translation id="user_username_placeholder">
+    	<swe>Ge ett användarnamn!</swe>
+    	<en>What will you call him/her?</en>
+    </translation>
+    <translation id="user_firstname_placeholder">
+    	<swe>Ge ett förnamn!</swe>
+    	<en>What is his/her name?</en>
+    </translation>
+    <translation id="user_lastname_placeholder">
+    	<swe>Ge ett efternamn!</swe>
+    	<en>Make is his/her family name?</en>
+    </translation>
+    <translation id="user_password_placeholder">
+    	<swe>Kom på ett lösenord!</swe>
+    	<en>Give him/her a password!</en>
+    </translation>
+    <translation id="user_edit_title">
+    	<swe>Redigare användare</swe>
+    	<en>Edit user</en>
+    </translation>
+
+    <translation id="blogpost_placeholder_title">
+    	<swe>Vad ska du kalla den?</swe>
+    	<en>What will you call it?</en>
+    </translation>
+    <translation id="blogpost_placeholder_intro">
+    	<swe>Få det att låta intressant!</swe>
+    	<en>Make it interesting!</en>
+    </translation>
+    <translation id="blogpost_placeholder_body">
+    	<swe>Skriv nu något najjs!</swe>
+    	<en>Now write something nice!</en>
+    </translation>
+</translations>
