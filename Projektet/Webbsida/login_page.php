@@ -4,7 +4,6 @@
 
 
 <div id="login-bg">
-	
 	<div id="login_wrapper">
 		<form method="post" action="login.php"> <!-- collects user input -->
 			<div id="input_boxes">

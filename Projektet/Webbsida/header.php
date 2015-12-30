@@ -2,7 +2,6 @@
 	ob_start();
 	header('Content-Type: text/html; charset=utf-8');
 	require 'session.php';
-	require 'languagesOLD.php';
 	require 'text_formatter.php';
 	require 'languages_apply.php';
 
