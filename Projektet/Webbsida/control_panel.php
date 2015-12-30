@@ -207,11 +207,11 @@
 							require 'connToMySQL.php';
 							$MySQLObj = new MySQL_Handler();
 							$MySQLObj->mysql_connect();
-							$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
+							$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_id <>'".$_SESSION["user_id"]."' AND username <>'admin';");
 							$count = $result->fetch_row();
 							$count = $count[0];
 
-							$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname, user_type FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
+							$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname, user_type FROM Users WHERE user_id <>'".$_SESSION["user_id"]."' AND username <>'admin';");
 
 							for ($i=0; $i < $count; $i++) { 
 							$dict = $result->fetch_assoc();
@@ -264,7 +264,7 @@
 						if ($_GET["choice"] == "change_user") {						
 							if (is_numeric($_GET["id"])) {
 								$form_action = "edit_users.php?mode=edit&id=".$_GET["id"];
-								$MySQLstatement = $MySQLObj->conn->prepare("SELECT username, firstname, lastname, user_type FROM Users WHERE user_id=?");
+								$MySQLstatement = $MySQLObj->conn->prepare("SELECT username, firstname, lastname, user_type FROM Users WHERE user_id=? AND username <>'admin';");
 								$MySQLstatement->bind_param("s", $_GET["id"]);
 								$MySQLstatement->execute();
 								$result = $MySQLstatement->get_result();
@@ -401,11 +401,11 @@
 					$MySQLObj = new MySQL_Handler();
 					$MySQLObj->mysql_connect();
 					
-					$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
+					$result = $MySQLObj->conn->query("SELECT count(*) FROM Users WHERE user_id <>'".$_SESSION["user_id"]."' AND username <>'admin';");
 					$count = $result->fetch_row();
 					$count = $count[0];
 
-					$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname, user_type FROM Users WHERE user_id <>'".$_SESSION["user_id"]."';");
+					$result = $MySQLObj->conn->query("SELECT user_id, username, firstname, lastname, user_type FROM Users WHERE user_id <>'".$_SESSION["user_id"]."' AND username <>'admin';");
 
 					for ($i=0; $i < $count; $i++) { 
 						$dict = $result->fetch_assoc();
