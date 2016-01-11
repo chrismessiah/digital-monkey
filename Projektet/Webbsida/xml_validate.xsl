@@ -10,6 +10,34 @@
 				<xsl:apply-templates select="./website/users/user"/>
 				<h2>Blogposts</h2>
 				<xsl:apply-templates select="./website/blogposts/blogpost"/>
+
+				<style>
+					h1 {
+						color: blue;
+						font-size: 72px;
+					}
+					h2 {
+						font-size: 36px;
+						font-family: Helvetica;
+					}
+					h3 {
+						font-size: 22px;
+						font-family: Helvetica;
+						color: red;
+					}
+					h4 {
+						font-size: 18px;
+						font-family: Helvetica;
+						color: red;
+					}
+					li, p {
+						font-size: 18px;
+						font-family: Helvetica;
+						color: gray;
+					}
+				</style>
+
+
 			</body>
 		</html>
 	</xsl:template>
