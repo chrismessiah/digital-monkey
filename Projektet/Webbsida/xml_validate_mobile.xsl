@@ -5,7 +5,7 @@
 		<html>
 			<head></head>
 			<body>
-				<h1>Desktop view</h1>
+				<h1>Mobile view</h1>
 				<h2>Users</h2>
 				<xsl:apply-templates select="./website/users/user"/>
 				<h2>Blogposts</h2>

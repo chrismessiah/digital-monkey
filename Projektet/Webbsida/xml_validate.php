@@ -81,7 +81,16 @@ if ($state) {
 	$xml_document->loadXML($xml);
 
 	$xsl_document = new DOMDocument;
-	$xsl_document->load('xml_validate.xsl');
+
+	include 'modules/Mobile_Detect/Mobile_Detect.php';
+	$detect = new Mobile_Detect();
+	if ($detect->isMobile()) {
+		// Mobile
+		$xsl_document->load('xml_validate_mobile.xsl');
+	} else {
+		// Desktop
+		$xsl_document->load('xml_validate.xsl');	   
+	}
 
 	// Configure the transformer
 	$proc = new XSLTProcessor;
