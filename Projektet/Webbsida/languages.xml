@@ -341,4 +341,8 @@
         <swe>Hmm... (fast på svenska)</swe>
         <en>Hmm...</en>
     </translation>
+     <translation id="map_descr">
+        <swe>Hitta till oss!</swe>
+        <en>Come find us!</en>
+    </translation>
 </translations>

@@ -31,6 +31,52 @@
 			<p class="person_text">Adelina Tahiri<br><a href="mailto:tahiri@kth.se">tahiri@kth.se</a></p>
 		</div>
 	</div>
+
+	<div id="tobecentered"><p id="map-descr"><?php echo $lang["map_descr"]; ?></p></div>
+	<div id="map"></div>
+	<style>
+		#map {
+			height: 300px;
+			width: 300px;
+			border-radius: 100%;
+			overflow:hidden;
+			margin: auto;
+			margin-top: 100px;
+			position: relative;
+			bottom: 50px;
+		}
+		#map-descr {
+			font-family: Helvetica;
+			color: #FFFFFF;
+			line-height: 29px;
+			margin: 0px;
+			font-size: 42px;
+		}
+		#tobecentered {
+			width: 23%;
+			margin: auto;
+			margin-top: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+		    	center: {lat: 59.34947, lng: 18.070814},
+		    	zoom: 13,
+		    	disableDefaultUI: true
+		  	});
+			var marker = new google.maps.Marker({
+  				position: {lat: 59.34947, lng: 18.070814},
+  				animation:google.maps.Animation.BOUNCE
+  			});
+			marker.setMap(map);
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF0oBZVbIkzw6UjY2lNjzmDeWVP7hZKYg&callback=initMap">
+    </script>
+
 </div>
 
 <style>
