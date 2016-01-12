@@ -36,6 +36,7 @@
 	<div id="map"></div>
 	<style>
 		#map {
+			border: 3px solid gray;
 			height: 300px;
 			width: 300px;
 			border-radius: 100%;
@@ -44,6 +45,9 @@
 			margin-top: 100px;
 			position: relative;
 			bottom: 50px;
+			-moz-border-radius: 999px;
+			-webkit-border-radius: 999px;
+			-o-border-radius: 999px;
 		}
 		#map-descr {
 			font-family: Helvetica;
@@ -144,7 +148,6 @@
 	#foot_chris {background-image: url("public/footer/chris.png");}
 	#foot_adde {background-image: url("public/footer/adde.png");}
 </style>
-
 
 
 

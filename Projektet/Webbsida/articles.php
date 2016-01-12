@@ -45,6 +45,45 @@
 				</div>
 
 				<?php
+					$tweet_href = "https://twitter.com/intent/tweet";
+					$tweet_content = "?text=".urlencode($lang["tweet_content"]);
+					$tweet_article = "&url=".urlencode("http://xml.csc.kth.se/~chrabd/DM2517/project/articles.php?article=".$_GET["article"]);
+					$tweet_url = $tweet_href.$tweet_content.$tweet_article;
+				?>
+
+				<!-- Twitter share -->
+				<div id="center_this">
+					<a href="<?php echo $tweet_url; ?>"><div id="share_social_twitter"></div></a>
+					<a href="<?php echo $tweet_url; ?>"><div id="share_social_facebook"></div></a>
+					<a href="<?php echo $tweet_url; ?>"><div id="share_social_twitter"></div></a>
+				</div>
+
+				<style>
+				#center_this {
+					margin: auto;
+					width: 12%;
+					margin-top: 50px;
+					margin-bottom: 50px;
+
+				}
+				#share_social_twitter {
+					background-image: url("public/icons/social/twitter.png");
+				}
+				#share_social_facebook {
+					background-image: url("public/icons/social/facebook.png");
+				}
+				#share_social_twitter, #share_social_facebook {
+					width: 35px;
+					height: 35px;
+					display: block;
+					background-size: 35px;
+					display: inline-block;
+					margin: 5px;
+				}
+
+				</style>
+
+				<?php
 					if ($_SESSION["user_type"]== 0||$dict["created_by"] == $_SESSION["user_id"]) {
 				?>
 

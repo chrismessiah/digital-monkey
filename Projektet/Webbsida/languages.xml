@@ -345,4 +345,9 @@
         <swe>Hitta till oss!</swe>
         <en>Come find us!</en>
     </translation>
+
+    <translation id="tweet_content">
+        <swe>Yo! Läs denna artickel den är typ superintressant!</swe>
+        <en>Hey! I found this article and it was totally interesting!</en>
+    </translation>
 </translations>
