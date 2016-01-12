@@ -1,18 +1,18 @@
 <div id="foot_div">
 	<div id="text_wrapper">
-		<p class='foot_p'><tag class="footer_text1">This website has been developed in connection with the course XML for Publishing at KTH Royal Institute of Technology. This is the result of the final project where each student has to provide evidence of achievement in the following areas:</tag></p>
+		<p class='foot_p'><?php echo $lang["footer_text1"]; ?></p>
 		<br>
 		<ul>
-			<li class='foot_p'><tag class="footer_text2">Develop XML based interactive web systems using W3C's principles for Device Independence.</tag></li>
-			<li class='foot_p'><tag class="footer_text3">Analyze and model the content-, navigation- and interaction models for an information system, and implement this in XML and database terms.</tag></li>
-			<li class='foot_p'><tag class="footer_text4">Use relational databases for web programming</tag></li>
-			<li class='foot_p'><tag class="footer_text5">Account for and apply the XML concepts valid, well formed, xslt-transformations, dtd and some examples of XML bases vocabularies used in media technology.</tag></li>
-			<li class='foot_p'><tag class="footer_text6">Account for differences between modeling information in a relational database and modeling information in an XML structure.</tag></li>
-			<li class='foot_p'><tag class="footer_text7">Formulate, plan and implement an information system development</tag></li>
-			<li class='foot_p'><tag class="footer_text8">Find solutions to programming problems on the internet</tag></li>
+			<li class='foot_p'><?php echo $lang["footer_text2"]; ?></li>
+			<li class='foot_p'><?php echo $lang["footer_text3"]; ?></li>
+			<li class='foot_p'><?php echo $lang["footer_text4"]; ?></li>
+			<li class='foot_p'><?php echo $lang["footer_text5"]; ?></li>
+			<li class='foot_p'><?php echo $lang["footer_text6"]; ?></li>
+			<li class='foot_p'><?php echo $lang["footer_text7"]; ?></li>
+			<li class='foot_p'><?php echo $lang["footer_text8"]; ?></li>
 		</ul>
 		<br>
-		<p class='foot_p'><tag class="footer_text9">We who made this site are:</tag></p>
+		<p class='foot_p'><?php echo $lang["footer_text9"]; ?></p>
 
 	</div>
 

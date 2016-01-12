@@ -3,7 +3,7 @@
 	header('Content-Type: text/html; charset=utf-8');
 	require 'session.php';
 	require 'text_formatter.php';
-	require 'languages_apply.php';
+	require 'languages_apply2.php';
 
 	# HANTERA DESSA. 
 	# 1 = Editor
@@ -15,7 +15,7 @@
 	<a href="index.php">
 		<div id="kth_logo"></div>
 	</a>
-	<a href="xml_validate.php"><p id="head_menu2"><tag class="xml_export">Export to XML</tag></p></a>
+	<a href="xml_validate.php"><p id="head_menu2"><?php echo $lang['xml_export']; ?></p></a>
 	<style>
 		#head_menu2 {
 			display: inline-block;
@@ -32,7 +32,7 @@
 	<?php 
 		if ( $_SESSION["logged_in"] == false ) {
 	?>
-			<a href="login_page.php"><p class="head_menu"><tag class="log_in">Log in</tag></p></a>
+			<a href="login_page.php"><p class="head_menu"><?php echo $lang['log_in']; ?></p></a>
 		
 			<style>
 				.head_menu {
@@ -54,11 +54,11 @@
 				# admin or logged in
 				?>
 
-				<a href="control_panel.php"><p class="head_menu"><tag class="control_panel">Control panel</tag></p></a>
+				<a href="control_panel.php"><p class="head_menu"><?php echo $lang['control_panel']; ?></p></a>
 				<a href="">
 					<div id="profile_pic"></div>
 				</a>
-				<a href="log_out.php"><p id="head_menu3"><tag class="log_out">Log out</tag></p></a>
+				<a href="log_out.php"><p id="head_menu3"><?php echo $lang['log_out']; ?></p></a>
 				<style>
 					.head_menu {
 						left: 25%;
@@ -95,7 +95,7 @@
 			}
 		} 
 		?>
-		<a href="set_lang.php"><p id="head_menu4"><tag class="change_lange">Byt till Svenska</tag></p></a>
+		<a href="set_lang.php"><p id="head_menu4"><?php echo $lang['change_lange']; ?></p></a>
 </div>
 
 

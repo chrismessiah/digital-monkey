@@ -228,4 +228,117 @@
         <swe>Skicka!</swe>
         <en>Post!</en>
     </translation>
+
+
+
+
+    <translation id="error_hacker">
+        <swe>Försöker du knäcka systemet? Detta ÄR systemet. Systemet knäcker dig!</swe>
+        <en>You're trying to beat the system? This IS the system. Beating you back!</en>
+    </translation>
+    <translation id="error_pwd_fail">
+        <swe>Fel användarnamns- och lösenordskombination!</swe>
+        <en>Wrong username/password combination!</en>
+    </translation>
+    <translation id="error_article_input_error">
+        <swe>Ingen artickel hittades! (Försökte du skriva ett fult kommando?)</swe>
+        <en>No article found! (Did you make a nauhty command?)</en>
+    </translation>
+    <translation id="error_article_404">
+        <swe>Ingen artickel hittades!</swe>
+        <en>No article not found!</en>
+    </translation>
+    <translation id="error_article_non_selection">
+        <swe>Ingen artickel vald!</swe>
+        <en>No article selected!</en>
+    </translation>
+    <translation id="error_forgot_pwd">
+        <swe>Var god kontakta KTH/CSC</swe>
+        <en>Please contact KTH/CSC</en>
+    </translation>
+    <translation id="error_file_not_image">
+        <swe>Filen du laddade upp var inte en bildfil!</swe>
+        <en>The file you uploaded is not an image!</en>
+    </translation>
+    <translation id="error_file_exists">
+        <swe>Detta meddelande borde inte kunna ses!</swe>
+        <en>The there is already an image with the same name, please change it!</en>
+    </translation>
+    <translation id="error_file_too_large">
+        <swe>Aj då, bildfilen är för stor för att kunna skickas!</swe>
+        <en>Sorry, the image has way too large size to be transfered</en>
+    </translation>
+    <translation id="error_unknown_filetype">
+        <swe>Aj då, bara JPG, JPEG, PNG och GIF filer är tillåtna</swe>
+        <en>Sorry, only JPG, JPEG, PNG and GIF files are allowed</en>
+    </translation>
+    <translation id="error_file_not_uploaded">
+        <swe>Aj då, filen laddades inte upp!</swe>
+        <en>Sorry, the file was not uploaded!</en>
+    </translation>
+    <translation id="error_file_upload_fail">
+        <swe>Aj då, något okänt uppladdningsfel!</swe>
+        <en>Some random upload fail</en>
+    </translation>
+    <translation id="error_filename_contains_space">
+        <swe>Filnamnet innehåller mellanslag, var god radera detta!</swe>
+        <en>The filename contains a space! Remove it!</en>
+    </translation>
+    <translation id="error_blogpost_deleted">
+        <swe>Bloginlägget har raderats</swe>
+        <en>The blogpost was deleted!</en>
+    </translation>
+    <translation id="error_user_created">
+        <swe>Användaren har skapats!</swe>
+        <en>The user was created!</en>
+    </translation>
+    <translation id="error_no_user_deleted">
+        <swe>Ingen användare har raderats, valde du verkligen en användare att radera?</swe>
+        <en>No user was deleted, did you really select any user to delete?</en>
+    </translation>
+    <translation id="error_one_user_deleted">
+        <swe>Användaren har raderats!</swe>
+        <en>The user was deleted!</en>
+    </translation>
+    <translation id="error_X_user_deleted">
+        <swe>Flera användare har raderats!</swe>
+        <en>Multiple users was deleted!</en>
+    </translation>
+    <translation id="error_user_updated">
+        <swe>Användardatan har uppdaterats!</swe>
+        <en>The user-data was updated!</en>
+    </translation>
+    <translation id="error_no_user_edited">
+        <swe>Ingen användare har valts, var god välj en användare att redigera</swe>
+        <en>No user was selected, please select a user to edit!</en>
+    </translation>
+    <translation id="error_blogpost_posted">
+        <swe>Bloginlägget har postats!</swe>
+        <en>The blogpost was posted!</en>
+    </translation>
+    <translation id="error_blogpost_updated">
+        <swe>Blogginlägget har uppdaterats</swe>
+        <en>The blogpost was updated!</en>
+    </translation>
+    <translation id="error_standard">
+        <swe>Åh nej! Något okänt fel har uppstått!</swe>
+        <en>Oh no! Some unknown error occurred!</en>
+    </translation>
+
+    <translation id="error_title_error">
+        <swe>Felmeddelande!</swe>
+        <en>Error!</en>
+    </translation>
+    <translation id="error_button_okay">
+        <swe>Okej</swe>
+        <en>Okay</en>
+    </translation>
+    <translation id="error_title_success">
+        <swe>Lyckans ost</swe>
+        <en>Success</en>
+    </translation>
+    <translation id="error_title_warning">
+        <swe>Hmm... (fast på svenska)</swe>
+        <en>Hmm...</en>
+    </translation>
 </translations>

@@ -1,79 +1,100 @@
 <?php
 	$message = "";
-	$title = "Error!";
+	$title = $lang["error_title_error"];
 	$type = "error";
-	$button_text = "Okay";
+	$button_text = $lang["error_button_okay"];
 
 	if ( isset($_GET["error"])) {
 		if ($_GET["error"] == "hacker") {
-			$message = "You're trying to beat the system? This IS the system. Beating you back!";
+			$message = $lang["error_hacker"];
 		} elseif ($_GET["error"] == "pwd_fail") {
-			$message = "Wrong username/password combination!";
+			$message = $lang["error_pwd_fail"];
+
 		} elseif ($_GET["error"] == "article_input_error") {
-			$message = "No article found! (Did you make a nauhty command?)";
+			$message = $lang["error_article_input_error"];
+
 		} elseif ($_GET["error"] == "article_404") {
-			$message = "No article not found!";
+			$message = $lang["error_article_404"];
+
 		} elseif ($_GET["error"] == "article_non_selection") {
-			$message = "No article selected!";
+			$message = $lang["error_article_non_selection"];
+
 		} elseif ($_GET["error"] == "forgot_pwd") {
-			$title = "Hmm..";
-			$message = "Please contact KTH/CSC";
+			$title = $lang["error_title_warning"];
+			$message = $lang["error_forgot_pwd"];
 			$type = "warning";
+
 		} elseif ($_GET["error"] == "file_not_image") {
-			$message = "The file you uploaded is not an image!";
+			$message = $lang["error_file_not_image"];
+
 		} elseif ($_GET["error"] == "file_exists") {
-			$message = "The there is already an image with the same name, please change it!";
+			$message = $lang["error_file_exists"];
 			$type = "warning";
+
 		} elseif ($_GET["error"] == "file_too_large") {
-			$message = "Sorry, the image has way too large size to be transfered";
+			$message = $lang["error_file_too_large"];
+		
 		} elseif ($_GET["error"] == "unknown_filetype") {
-			$message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed";
+			$message = $lang["error_unknown_filetype"];
+		
 		} elseif ($_GET["error"] == "file_not_uploaded") {
-			$message = "Sorry, the file was not uploaded!";
+			$message = $lang["error_file_not_uploaded"];
+		
 		} elseif ($_GET["error"] == "file_upload_fail") {
-			$message = "Some random upload fail";
+			$message = $lang["error_file_upload_fail"];
+		
 		} elseif ($_GET["error"] == "filename_contains_space") {
-			$title = "Hmm..";
-			$message = "The filename contains a space! Remove it!";
+			$title = $lang["error_title_warning"];
+			$message = $lang["error_filename_contains_space"];
 			$type = "warning";
+		
 		} elseif ($_GET["error"] == "blogpost_deleted") {
-			$title = "Success!";
-			$message = "The blogpost was deleted!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_blogpost_deleted"];
 			$type = "success";
+		
 		} elseif ($_GET["error"] == "user_created") {
-			$title = "Success!";
-			$message = "The user was created!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_user_created"];
 			$type = "success";
+		
 		} elseif ($_GET["error"] == "no_user_deleted") {
-			$title = "Hmm..";
-			$message = "No user was deleted, did you really select any user to delete?";
+			$title = $lang["error_title_warning"];
+			$message = $lang["error_no_user_deleted"];
 			$type = "warning";
+		
 		} elseif ($_GET["error"] == "one_user_deleted") {
-			$title = "Success!";
-			$message = "The user was deleted!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_one_user_deleted"];
 			$type = "success";
+		
 		} elseif ($_GET["error"] == "X_user_deleted") {
-			$title = "Success!";
-			$message = "Multiple users was deleted!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_X_user_deleted"];
 			$type = "success";
+		
 		} elseif ($_GET["error"] == "user_updated") {
-			$title = "Success!";
-			$message = "The user-data was updated!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_user_updated"];
 			$type = "success";
+		
 		} elseif ($_GET["error"] == "no_user_edited") {
-			$title = "Hmm..";
-			$message = "No user was selected, please select a user to edit!";
+			$title = $lang["error_title_warning"];
+			$message = $lang["error_no_user_edited"];
 			$type = "warning";
+		
 		} elseif ($_GET["error"] == "blogpost_posted") {
-			$title = "Success!";
-			$message = "The blogpost was posted!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_blogpost_posted"];
 			$type = "success";
+		
 		} elseif ($_GET["error"] == "blogpost_updated") {
-			$title = "Success!";
-			$message = "The blogpost was updated!";
+			$title = $lang["error_title_success"];
+			$message = $lang["error_blogpost_updated"];
 			$type = "success";
+		
 		} else {
-			$message = "Oh no! Some unknown error occurred!";
+			$message = $lang["error_standard"];
 		}
 		require 'quickSwal.php';
 	}

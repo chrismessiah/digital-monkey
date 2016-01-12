@@ -62,39 +62,39 @@
 
 
 					<div id="menu_wrapper">
-						<p id="page_title"><tag class="menu_new_blogpost">Make new blogpost</tag></p>
+						<p id="page_title"><?php echo $lang["menu_new_blogpost"];?></p>
 
 						<form method="post" action="blogposter.php<?php echo $mode; ?>" enctype="multipart/form-data">
-							<p class="input_descr"><tag class="blogpost_title"></tag></p>
-							<input type="text" name="newpost_title" value="<?php echo $current_title; ?>" />
-							<p class="input_descr"><tag class="blogpost_intro"></tag></p>
-							<input type="text" name="newpost_intro" value="<?php echo $current_intro; ?>"/>
-							<p class="input_descr"><tag class="blogpost_body"></tag></p>
+							<p class="input_descr"><?php echo $lang["blogpost_title"];?></p>
+							<input type="text" name="newpost_title" placeholder="<?php echo $lang["blogpost_placeholder_title"]; ?>" value="<?php echo $current_title; ?>" />
+							<p class="input_descr"><?php echo $lang["blogpost_intro"];?></p>
+							<input type="text" name="newpost_intro" placeholder="<?php echo $lang["blogpost_placeholder_intro"]; ?>" value="<?php echo $current_intro; ?>"/>
+							<p class="input_descr"><?php echo $lang["blogpost_body"]; ?></p>
 							
-							<textarea name="newpost_body"><?php echo $current_body; ?></textarea>
+							<textarea name="newpost_body" placeholder="<?php echo $lang["blogpost_placeholder_body"]; ?>"><?php echo $current_body; ?></textarea>
 							
 							<p class="input_descr"><tag class="blogpost_image"></tag></p>
 							<input type="file" name="fileToUpload" id="fileToUpload" />
 
-							<p class="input_descr"><tag class="blogpost_banner"></tag></p>
-							<p class="input_descr3"><tag class="blogpost_banner_descr"></tag></p>
+							<p class="input_descr"><?php echo $lang["blogpost_banner"]; ?></p>
+							<p class="input_descr3"><?php echo $lang["blogpost_banner_descr"]; ?></p>
 							
 							<div class="box">
-								<p class="input_descr2"><tag class="blogpost_banner_r"></tag></p>
+								<p class="input_descr2"><?php echo $lang["blogpost_banner_r"]; ?></p>
 								<input type="text" name="in_red" value="<?php echo $r; ?>"/>
 							</div>
 							
 							<div class="box">
-								<p class="input_descr2"><tag class="blogpost_banner_g"></tag></p>
+								<p class="input_descr2"><?php echo $lang["blogpost_banner_g"]; ?></p>
 								<input type="text" name="in_green" value="<?php echo $g; ?>"/>
 							</div>
 							
 							<div class="box">
-								<p class="input_descr2"><tag class="blogpost_banner_b"></tag></p>
+								<p class="input_descr2"><?php echo $lang["blogpost_banner_b"];?></p>
 								<input type="text" name="in_blue" value="<?php echo $b; ?>"/>
 							</div>
 
-							<button type="submit"><tag class="post_blogpost">Post!</tag></button>
+							<button type="submit"><?php echo $lang["post_blogpost"]; ?></button>
 						</form>
 					</div>
 					<style>
@@ -192,16 +192,16 @@
 						}
 					}
 
-					$page_title = '<tag class="user_create_title"></tag>';
+					$page_title = $lang["user_create_title"];
 					if ($_GET["choice"] == "change_user") {
-						$page_title = '<tag class="user_edit_title"></tag>';
+						$page_title = $lang["user_edit_title"];
 					}
 
 					?>
 
 					<div id="menu_wrapper">
 						<p id="page_title"><?php echo $page_title; ?></p>
-						<p id="page_title2"><tag class="user_create_current"></tag></p>
+						<p id="page_title2"><?php echo $lang["user_create_current"]; ?></p>
 
 						<?php
 							require 'connToMySQL.php';
@@ -218,12 +218,12 @@
 						?>
 
 						<div class="user_box">
-							<p><tag class="user_create_name"></tag><?php echo $dict["firstname"]; ?> <?php echo $dict["lastname"]; ?></p>
-							<p><tag class="user_create_username"></tag><?php echo ": ".$dict["username"]; ?></p>
+							<p><?php echo $lang["user_create_name"].$dict["firstname"];?> <?php echo $dict["lastname"];?></p>
+							<p><?php echo $lang["user_create_username"].": ".$dict["username"];?></p>
 							<?php
-								if ($dict["user_type"] == 0) { ?>
-									<p><tag class="user_create_super"></tag></p>
-								<?php }
+								if ($dict["user_type"] == 0) {
+									echo "<p>".$lang["user_create_super"]."</p>";
+								}
 							?>
 						</div>
 
@@ -280,25 +280,24 @@
 						?>
 
 						<form method="post" action="<?php echo $form_action; ?>">
-							<p class="input_descr"><tag class="user_create_username"></tag></p>
-							<p class="input_descr2"><tag class="user_username_descr"></tag></p>
-							<input type="text" name="new_user_username" value="<?php echo $container_username; ?>" />
-							<p class="input_descr"><tag class="user_create_firstname"></tag></p>
-							<input type="text" name="new_user_firstname" value="<?php echo $container_firstname; ?>"/>
-							<p class="input_descr"><tag class="user_create_lastname"></tag></p>
-							<input type="text" name="new_user_lastname" value="<?php echo $container_lastname; ?>"/>
-							<p class="input_descr"><tag class="user_create_pwd"></tag></p>
-							<input type="password" name="new_user_password"/>
-							<p class="input_descr3"><tag class="user_create_su"></tag>: </p><input type="checkbox" name="superuser_priv" <?php echo $container_su; ?> />
-							
+							<p class="input_descr"><?php echo $lang["user_create_username"]; ?></p>
+							<p class="input_descr2"><?php echo $lang["user_username_descr"];?></p>
+							<input type="text" name="new_user_username" placeholder="<?php echo $lang['user_username_placeholder'];?>" value="<?php echo $container_username; ?>" />
+							<p class="input_descr"><?php echo $lang["user_create_firstname"];?></p>
+							<input type="text" name="new_user_firstname" placeholder="<?php echo $lang['user_firstname_placeholder'];?>" value="<?php echo $container_firstname; ?>"/>
+							<p class="input_descr"><?php echo $lang["user_create_lastname"]; ?></p>
+							<input type="text" name="new_user_lastname" placeholder="<?php echo $lang['user_lastname_placeholder'];?>" value="<?php echo $container_lastname; ?>"/>
+							<p class="input_descr"><?php echo $lang["user_create_pwd"];?></p>
+							<input type="password" name="new_user_password" placeholder="<?php echo $lang['user_password_placeholder']; ?>"/>
+							<p class="input_descr3"><?php echo $lang["user_create_su"];?>: </p><input type="checkbox" name="superuser_priv" <?php echo $container_su; ?> />
 							<div id="center">
-								<?php
-									$val = '<tag class="user_create_button"></tag>';
+							<?php
+									$val = $lang["user_create_button"];
 									if ($_GET["choice"] == "change_user") {
-										$val = '<tag class="user_edit_button"></tag>';
+										$val = $lang["user_edit_button"];
 									}
 								?>
-								<button type="submit"><?php echo $val; ?></button>
+								<input type="submit" value="<?php echo $val; ?>"/>
 
 							</div>
 						</form>
@@ -342,7 +341,7 @@
 							font-family: Helvetica;
 							margin-top: 70px;
 						}
-						button[type="submit"] {
+						input[type="submit"] {
 							text-align: center;
 							color: #FFFFFF;
 							background-color: #525259;
@@ -357,7 +356,7 @@
 							margin-bottom: 60px;
 
 						}
-						button[type="submit"]:hover {
+						input[type="submit"]:hover {
 							cursor: pointer; 
 							cursor: hand;
 						}
@@ -395,7 +394,7 @@
 					?>
 
 						<div id="menu_wrapper">
-						<p id="page_title"><tag class="user_create_current"></tag></p>
+						<p id="page_title"><?php echo $lang["user_create_current"]; ?></p>
 						<form method="post" action="edit_users.php?mode=edit">
 					<?php
 					require 'connToMySQL.php';
@@ -413,15 +412,15 @@
 					?>
 
 						<div class="user_box">
-							<p><tag class="user_create_name"></tag><?php echo $dict["firstname"];?> <?php echo $dict["lastname"];?></p>
-							<p><tag class="user_create_username"></tag><?php echo ": ".$dict["username"];?></p>
-							<p><tag class="user_create_id"></tag><?php echo ": ".$dict["user_id"];?></p>
+							<p><?php echo $lang["user_create_name"].$dict["firstname"];?> <?php echo $dict["lastname"];?></p>
+							<p><?php echo $lang["user_create_username"].": ".$dict["username"];?></p>
+							<p><?php echo $lang["user_create_id"].": ".$dict["user_id"];?></p>
 							<?php
 								if ($dict["user_type"] == 0) {
-									echo "<p>".'<tag class="user_create_super"></tag>'."</p>";
+									echo "<p>".$lang["user_create_super"]."</p>";
 								}
 							?>
-							<p><tag class="user_create_select"></tag><?php echo ": "; ?></p><input type="radio" name="selected_user_id" value="<?php echo $dict["user_id"]; ?>" />
+							<p><?php echo $lang["user_create_select"].": "; ?></p><input type="radio" name="selected_user_id" value="<?php echo $dict["user_id"]; ?>" />
 						</div>
 
 						<?php
@@ -435,13 +434,13 @@
 					<?php
 						}
 					?>
-					<div id="input_boxes"><button type="submit" name="edit"><tag class='button_edit'></tag></button></div>
-					<div id="input_boxes"><button type="submit" name="delete"><tag class='button_delete'></tag></button></div>
+					<div id="input_boxes"><input type="submit" value="<?php echo $lang["button_edit"]; ?>" name="edit" /></div>
+					<div id="input_boxes"><input type="submit" value="<?php echo $lang["button_delete"]; ?>" name="delete" /></div>
 					</form>
 					</div>
 					
 					<style>
-						button[type="submit"] {
+						input[type="submit"] {
 							text-align: center;
 							color: #FFFFFF;
 							background-color: rgba(177, 0, 0, 0.7);
@@ -456,7 +455,7 @@
 							
 						}
 
-						button[type="submit"]:hover {
+						input[type="submit"]:hover {
 							cursor: pointer; 
 							cursor: hand;
 						}
@@ -469,7 +468,7 @@
 							position: relative;
 							left: 40%
 						}
-						button[name="edit"] {
+						input[value="<?php echo $lang["button_edit"]; ?>"] {
 							background-color: rgba(101, 180, 169, 0.7);
 							border: 1px solid rgba(101, 180, 169, 0.7);
 						}
@@ -513,9 +512,9 @@
 				# Hasnt selected from menu
 				?>
 				<div id="menu_wrapper">
-					<p id="control_menu"><tag class="menu"></tag></p>
+					<p id="control_menu"><?php echo $lang["menu"]; ?></p>
 
-					<a href="control_panel.php?choice=blogpost"><p class="p_choices"><tag class="menu_new_blogpost"></tag></p></a>
+					<a href="control_panel.php?choice=blogpost"><p class="p_choices"><?php echo $lang["menu_new_blogpost"]; ?></p></a>
 					<style>
 					#menu_wrapper {
     					width: 47%;
@@ -525,8 +524,8 @@
 						if ($_SESSION["user_type"] == 0) {
 					?>
 
-					<a href="control_panel.php?choice=add_user"><p class="p_choices"><tag class="menu_new_c_user"></tag></p></a>
-					<a href="control_panel.php?choice=edit_user"><p class="p_choices"><tag class="menu_new_e_user"></tag></p></a>
+					<a href="control_panel.php?choice=add_user"><p class="p_choices"><?php echo $lang["menu_new_c_user"]; ?></p></a>
+					<a href="control_panel.php?choice=edit_user"><p class="p_choices"><?php echo $lang["menu_new_e_user"]; ?></p></a>
 					<style>
 					#menu_wrapper {
     					width: 78%;
