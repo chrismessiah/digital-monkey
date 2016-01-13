@@ -62,9 +62,9 @@
 				?>
 
 				<div id="center_this">
-					<a href="<?php echo $tweet_url; ?>"><div id="share_social_twitter"></div></a>
-					<a href="<?php echo $facebook_url; ?>"><div id="share_social_facebook"></div></a>
-					<a href="<?php echo $google_url; ?>"><div id="share_social_google"></div></a>
+					<a href="<?php echo $tweet_url; ?>" id="share_social_twitter"></a>
+					<a href="<?php echo $facebook_url; ?>" id="share_social_facebook"></a>
+					<a href="<?php echo $google_url; ?>" id="share_social_google"></a>
 				</div>
 
 
@@ -88,7 +88,6 @@
 					#share_social_twitter, #share_social_facebook, #share_social_google {
 						width: 35px;
 						height: 35px;
-						display: block;
 						background-size: 35px;
 						display: inline-block;
 						margin: 5px;
