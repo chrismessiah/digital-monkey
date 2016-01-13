@@ -55,15 +55,16 @@
 					$tweet_url = $tweet_href.$tweet_content."&url=".$article_url;
 
 					$facebook_href = "http://www.facebook.com/sharer/sharer.php";
-					$facebook_url = "?u=".$article_url;
-					$facebook_title = "&title=".urlencode($lang["tweet_content"]);
-					$facebook_url = $facebook_href.$facebook_url.$facebook_title;
+					$facebook_url = $facebook_href."?u=".$article_url;
+
+					$google_href = "https://plus.google.com/share";
+					$google_url = $google_href."?url=".$article_url;
 				?>
 
 				<div id="center_this">
 					<a href="<?php echo $tweet_url; ?>"><div id="share_social_twitter"></div></a>
 					<a href="<?php echo $facebook_url; ?>"><div id="share_social_facebook"></div></a>
-					<a href="<?php echo $tweet_url; ?>"><div id="share_social_twitter"></div></a>
+					<a href="<?php echo $google_url; ?>"><div id="share_social_google"></div></a>
 				</div>
 
 
@@ -81,7 +82,10 @@
 					#share_social_facebook {
 						background-image: url("public/icons/social/facebook.png");
 					}
-					#share_social_twitter, #share_social_facebook {
+					#share_social_google {
+						background-image: url("public/icons/social/google.png");
+					}
+					#share_social_twitter, #share_social_facebook, #share_social_google {
 						width: 35px;
 						height: 35px;
 						display: block;
