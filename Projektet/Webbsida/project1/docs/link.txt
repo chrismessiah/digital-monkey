@@ -1,0 +1,9 @@
+Locally
+http://localhost/projects/XML/Webbsida/
+
+On KTH/CSC
+http://xml.csc.kth.se/~chrabd/DM2517/project/
+
+Access phpmyadmin@KTH/CSC
+http://xml.csc.kth.se/utbildning/kth/kurser/DM2517/xmlpubh11/phpMyAdmin/
+pwd: chrabd-xmlpub13

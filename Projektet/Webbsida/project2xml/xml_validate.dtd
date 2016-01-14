@@ -1,0 +1,75 @@
+<!ELEMENT website (
+	users,
+	blogposts
+)>
+
+<!ELEMENT users (
+	user+
+)>
+
+<!ELEMENT user (
+	id,
+	username,
+	firstname,
+	lastname,
+	password,
+	picture_path,
+	user_type
+)>
+
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT picture_path (#PCDATA)>
+<!ELEMENT user_type (#PCDATA)>
+
+
+<!ELEMENT blogposts (
+	blogpost*
+)>
+
+<!ELEMENT blogpost (
+	id,
+	banner_path,
+	title,
+	intro,
+	body,
+	datetime,
+	banner_color,
+	author_id
+)>
+
+
+<!ELEMENT banner_path (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT intro (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT datetime (#PCDATA)>
+
+<!ELEMENT banner_color (
+	r,
+	g,
+	b,
+	alpha
+)>
+
+<!ELEMENT r (#PCDATA)>
+<!ELEMENT g (#PCDATA)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT alpha (#PCDATA)>
+
+<!ELEMENT author_id (#PCDATA)>
+
+
+
+
+
+
+
+
+
+
+
+
