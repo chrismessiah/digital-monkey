@@ -1,7 +1,7 @@
 <?php
 
 //ob_start();
-header ("Content-Type:text/xml");
+header("Content-Type:text/xml");
 require 'session.php';
 require 'text_formatter.php';
 require 'languages_apply2.php';

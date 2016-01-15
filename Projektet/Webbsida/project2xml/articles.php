@@ -67,12 +67,15 @@
 
 					if ($_SESSION["user_type"]== 0||$dict["created_by"] == $_SESSION["user_id"]) {
 						$admin_controls = $xml->addChild('admin_controls');
+
 						$delete = $admin_controls->addChild('delete');
-						$link = $delete->addChild('link', "delete_blogpost.php?id=".$articleid);
-						$label = $delete->addChild('label', $lang["button_delete"]);
 						$edit = $admin_controls->addChild('edit');
-						$link = $edit->addChild('link', "control_panel.php?id=".$articleid."&mode=edit&choice=blogpost");
+							
+						$link = $delete->addChild('link', "delete_blogpost.php?id=".$articleid);
+						$link = $edit->link = "control_panel.php?id=".$articleid."&mode=edit&choice=blogpost";
+						
 						$label = $edit->addChild('label', $lang["button_edit"]);
+						$label = $delete->addChild('label', $lang["button_delete"]);
 					}
 
 				$MySQLstatement->close();
