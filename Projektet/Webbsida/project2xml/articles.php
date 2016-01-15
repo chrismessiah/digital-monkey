@@ -1,6 +1,6 @@
 <?php
 	require 'headerXML.php';
-	
+	$xml_doc_path = "articles.xsl";
 	if ( isset($_GET["article"]) ) {
 		# if the variable has a value
 
@@ -38,7 +38,9 @@
 
 				$title = $article->addChild('title', $dict["title"]);
 				$intro = $article->addChild('intro', $dict["intro"]);
-				$body = $article->addChild('body', $dict["body"]); // text_format_this()
+				$body = $article->addChild('body', htmlspecialchars($dict["body"]));
+				$image_path = $article->addChild('image_path', $dict["image_path"]);
+				
 
 
 				//Social  share 

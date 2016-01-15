@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
 
 <!-- Space: &#160; -->
@@ -15,33 +15,6 @@
 					#foot_div {
 						position: relative;
 						bottom: 20px;
-					}
-				</style>
-				<style>
-					#article_banner {
-						width: 100%;
-						height: 400px;
-						background-image: url("<?php echo $dict["image_path"]; ?>");
-						background-size: 100% 400px;
-					}
-					#article_title, #article_body, #article_intro {
-						font-family: Times;
-					}
-					#article_title {
-						font-size: 30px;
-						text-align: center;
-					}
-					#article_body {
-						font-size: 14px;
-						margin-bottom: 50px;
-					}
-					#article_intro {
-						font-size: 20px;
-						text-align: center;
-					}
-					#article_body_wrapper {
-						margin: auto;
-    					width: 60%;
 					}
 				</style>
 			</body>
@@ -321,6 +294,7 @@
 	</xsl:template>
 
 	<xsl:template match="article">
+
 		<div id="article_banner"></div>
 
 		<div id="article_body_wrapper">
@@ -334,6 +308,33 @@
 				<xsl:value-of select="body"/>
 			</p>
 		</div>
+		<style>
+			#article_banner {
+				width: 100%;
+				height: 400px;
+				background-image: url("<xsl:value-of select="image_path"/>");
+				background-size: 100% 400px;
+			}
+			#article_title, #article_body, #article_intro {
+				font-family: Times;
+			}
+			#article_title {
+				font-size: 30px;
+				text-align: center;
+			}
+			#article_body {
+				font-size: 14px;
+				margin-bottom: 50px;
+			}
+			#article_intro {
+				font-size: 20px;
+				text-align: center;
+			}
+			#article_body_wrapper {
+				margin: auto;
+				width: 60%;
+			}
+		</style>
 	</xsl:template>
 
 	<xsl:template match="social_share">
