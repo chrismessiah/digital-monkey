@@ -1,8 +1,8 @@
 Locally
-http://localhost/projects/XML/Webbsida/project2xml/
+http://localhost/projects/XML/Webbsida/project2/
 
 On KTH/CSC
-http://xml.csc.kth.se/~chrabd/DM2517/project/projectxml
+http://xml.csc.kth.se/~chrabd/DM2517/project/project2
 
 Access phpmyadmin@KTH/CSC
 http://xml.csc.kth.se/utbildning/kth/kurser/DM2517/xmlpubh11/phpMyAdmin/
