@@ -7,8 +7,14 @@
 			<head></head>
 			<body>
 				<xsl:apply-templates select="./website/header"/>
-
+				<xsl:apply-templates select="./website/articles"/>
 				<xsl:apply-templates select="./website/footer"/>
+				<style>
+					#foot_div {
+						position: relative;
+						bottom: 20px;
+					}
+				</style>
 			</body>
 		</html>
 	</xsl:template>
@@ -129,13 +135,10 @@
 		</style>
 	</xsl:template>
 
-
-
 	<xsl:template match="footer">
 		<div id="foot_div">
 			<div id="text_wrapper">
 				<p class='foot_p'><xsl:value-of select="intro"/></p>
-				<br>
 				<ul>
 					<li class='foot_p'><xsl:value-of select="list/bullet1"/></li>
 					<li class='foot_p'><xsl:value-of select="list/bullet2"/></li>
@@ -145,7 +148,6 @@
 					<li class='foot_p'><xsl:value-of select="list/bullet6"/></li>
 					<li class='foot_p'><xsl:value-of select="list/bullet7"/></li>
 				</ul>
-				<br>
 				<p class='foot_p'><xsl:value-of select="outro"/></p>
 			</div>
 
@@ -159,7 +161,7 @@
 					</a>
 					<p class="person_text">
 						<xsl:value-of select="creators/creator1/name"/>
-						<br>
+						
 						<a>
 							<xsl:attribute name="href">
 								mailto:<xsl:value-of select="creators/creator1/mail"/>
@@ -178,7 +180,7 @@
 					</a>
 					<p class="person_text">
 						<xsl:value-of select="creators/creator2/name"/>
-						<br>
+						
 						<a>
 							<xsl:attribute name="href">
 								mailto:<xsl:value-of select="creators/creator2/mail"/>
@@ -190,6 +192,7 @@
 			</div>
 
 			<div id="tobecentered"><p id="map-descr"><xsl:value-of select="contact"/></p></div>
+
 			<div id="map"></div>
 			<style>
 				#map {
@@ -219,24 +222,6 @@
 					margin-top: 50px;
 				}
 			</style>
-			<script type="text/javascript">
-				var map;
-				function initMap() {
-					map = new google.maps.Map(document.getElementById('map'), {
-				    	center: {lat: 59.34947, lng: 18.070814},
-				    	zoom: 13,
-				    	disableDefaultUI: true
-				  	});
-					var marker = new google.maps.Marker({
-		  				position: {lat: 59.34947, lng: 18.070814},
-		  				animation:google.maps.Animation.BOUNCE
-		  			});
-					marker.setMap(map);
-				}
-			</script>
-			<script async defer
-				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF0oBZVbIkzw6UjY2lNjzmDeWVP7hZKYg&callback=initMap">
-		    </script>
 		</div>
 
 		<style>
@@ -303,6 +288,68 @@
 			
 			#foot_chris {background-image: url(<xsl:value-of select="creators/creator1/picPath"/>);}
 			#foot_adde {background-image: url(<xsl:value-of select="creators/creator2/picPath"/>);}
+		</style>
+	</xsl:template>
+
+	<xsl:template match="articles">
+		<xsl:apply-templates select="article"/>
+	</xsl:template>
+
+	<xsl:template match="article">
+		<a>
+		<xsl:attribute name="href">
+			articles.php?article=<xsl:value-of select="id"/>
+		</xsl:attribute>
+		<div>
+			<xsl:attribute name="id">
+				<xsl:value-of select="css_blog_id"/>
+			</xsl:attribute>
+			<div>
+				<p>
+					<xsl:attribute name="id">
+						<xsl:value-of select="css_blog_title"/>
+					</xsl:attribute>
+					<xsl:value-of select="title"/>
+				</p>
+				<p>
+					<xsl:attribute name="id">
+						<xsl:value-of select="css_blog_intro"/>
+					</xsl:attribute>
+					<xsl:value-of select="intro"/>
+				</p>
+			</div>
+		</div>
+		</a>
+		<style>
+			#<xsl:value-of select="css_blog_id"/> {
+				height: 400px;
+				background-image: url(<xsl:value-of select="image_path"/>);
+				background-size: 100% 400px;
+				background-repeat: no-repeat;
+			}
+			#<xsl:value-of select="css_blog_id"/> > div {
+				background-color: rgba(<xsl:value-of select="overlay_color"/>);
+				height: 200px;
+				position: relative;
+				top: 200px;
+			}
+			#<xsl:value-of select="css_blog_id"/> > div > p {
+				position: relative;
+				left: 40px;
+				top: 30px;
+				font-family: Helvetica;
+				color: #FFFFFF;
+				padding-bottom: 20px;
+			}
+			#<xsl:value-of select="css_blog_title"/> {
+				font-size: 40px;
+			}
+			#<xsl:value-of select="css_blog_intro"/> {
+				font-size: 22px;
+			}
+			a {
+				text-decoration: none;
+			}
 		</style>
 	</xsl:template>
 

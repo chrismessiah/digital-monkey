@@ -1,5 +1,6 @@
 <?php
-	require 'header.php';
+	$xml_doc_path = "index.xsl";
+	require 'headerXML.php';
 	require 'connToMySQL.php';
 	$MySQLObj = new MySQL_Handler();
 	$MySQLObj->mysql_connect();
@@ -12,79 +13,23 @@
 	# Get each blogpost
 	$result = $MySQLObj->conn->query("SELECT * FROM Blog ORDER BY datetime DESC;");
 
+
+
+	$articles = $xml->addChild('articles');
 	for ($i=0; $i < $count; $i++) { 
 
 		$dict = $result->fetch_assoc();
+		$article = $articles->addChild('article');
 
-		// $dict["blogpost_id"];
-		// $dict["image_path"];
-		// $dict["title"];
-		// $dict["intro"];
-		// $dict["overlay_color"];
-		
-		$css_blog_id = 'blog_article_'.$dict["blogpost_id"];
-		$css_blog_title = 'blog_article_'.$dict["blogpost_id"]."_title";
-		$css_blog_intro = 'blog_article_'.$dict["blogpost_id"]."_intro";
+		$id = $article->addChild('id', $dict["blogpost_id"]);
+		$title = $article->addChild('title', $dict["title"]);
+		$intro = $article->addChild('intro', $dict["intro"]);
+		$image_path = $article->addChild('image_path', $dict["image_path"]);
+		$overlay_color = $article->addChild('overlay_color', $dict["overlay_color"]);
 
-?>
-		<a href="articles.php?article=<?php echo $dict["blogpost_id"]; ?>">
-		<div id="<?php echo $css_blog_id; ?>">
-			<div> <!-- color overlay -->
-				<p id="<?php echo $css_blog_title; ?>"><?php echo $dict["title"]; ?></p>
-				<p id="<?php echo $css_blog_intro; ?>"><?php echo $dict["intro"]; ?></p>
-			</div>
-		</div>
-		</a>
-
-		<style>
-			<?php echo "#".$css_blog_id ?> {
-				height: 400px;
-				background-image: url(<?php echo $dict['image_path']; ?>);
-				background-size: 100% 400px;
-				background-repeat: no-repeat;
-			}
-			<?php echo "#".$css_blog_id ?> > div {
-				background-color: rgba(<?php echo $dict["overlay_color"]; ?>);
-				height: 200px;
-				position: relative;
-				top: 200px;
-			}
-			<?php echo "#".$css_blog_id ?> > div > p {
-				position: relative;
-				left: 40px;
-				top: 30px;
-				font-family: Helvetica;
-				color: #FFFFFF;
-				padding-bottom: 20px;
-			}
-			<?php echo "#".$css_blog_title ?> {
-				font-size: 40px;
-			}
-			<?php echo "#".$css_blog_intro ?> {
-				font-size: 22px;
-			}
-			a {
-				text-decoration: none;
-			}
-		</style>
-
-<?php
+		$css_blog_id = $article->addChild('css_blog_id', 'blog_article_'.$dict["blogpost_id"]);
+		$css_blog_title = $article->addChild('css_blog_title', 'blog_article_'.$dict["blogpost_id"]."_title");
+		$css_blog_intro = $article->addChild('css_blog_intro', 'blog_article_'.$dict["blogpost_id"]."_intro");
 	}
-?>
-
-
-
-<?php
-	require 'footer.php';
-?>
-<style>
-	#foot_div {
-		position: relative;
-		bottom: 20px;
-	}
-</style>
-
-
-<?php
-	require 'error.php';
+	require 'footerXML.php';
 ?>
