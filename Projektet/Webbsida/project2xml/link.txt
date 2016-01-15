@@ -1,5 +1,5 @@
 Locally
-http://localhost/projects/XML/Webbsida/
+http://localhost/projects/XML/Webbsida/project2xml/
 
 On KTH/CSC
 http://xml.csc.kth.se/~chrabd/DM2517/project/

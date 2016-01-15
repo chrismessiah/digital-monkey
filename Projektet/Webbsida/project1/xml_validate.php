@@ -95,8 +95,8 @@ if ($state) {
 	// Configure the transformer
 	$proc = new XSLTProcessor;
 	$proc->importStyleSheet($xsl_document); // attach the xsl rules
-	//echo $xml;
-	echo $proc->transformToXML($xml_document);
+	echo $xml;
+	//echo $proc->transformToXML($xml_document);
 } else {
 	echo "XML DOES NOT VALIDATE";
 }
