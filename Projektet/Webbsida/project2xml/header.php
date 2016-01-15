@@ -14,16 +14,18 @@ $header = $xml->addChild('header');
 $logo = $header->addChild('logo', 'public/header/kth.png');
 $links = $header->addChild('links');
 
-$link1 = $links->addChild('linkXML', $lang['xml_export']);
-$link5 = $links->addChild('linkSetLang', $lang['change_lange']);
+$link = $links->addChild('linkXML', $lang['xml_export']);
+$link = $links->addChild('linkSetLang', $lang['change_lange']);
 
 
 if ( $_SESSION["logged_in"] == false ) {
-	$link2 = $links->addChild('linkLogin', $lang['log_in']);
+	$logged_out = $links->addChild('logged_out');
+	$link = $logged_out->addChild('linkLogin', $lang['log_in']);
 } else {
-	$link3 = $links->addChild('linkControl', $lang['control_panel']);
-	$link4 = $links->addChild('linkLogOut', $lang['log_out']);
-	$link9 = $links->addChild('profilePic', $_SESSION['pic_path']);
+	$logged_in = $links->addChild('logged_in');
+	$link = $logged_in->addChild('linkControl', $lang['control_panel']);
+	$link = $logged_in->addChild('linkLogOut', $lang['log_out']);
+	$link = $logged_in->addChild('profilePic', $_SESSION['pic_path']);
 }
 
 ?>

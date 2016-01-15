@@ -2,8 +2,8 @@
 <translations>
 	<!-- Header -->
     <translation id="xml_export">
-    	<swe>Exportera till XML</swe>
-        <en>Export to XML</en>
+    	<swe>Exportera DB till XML</swe>
+        <en>Export DB to XML</en>
     </translation>
     <translation id="log_in">
     	<swe>Logga in</swe>
