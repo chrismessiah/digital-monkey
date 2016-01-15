@@ -325,6 +325,7 @@
 			#article_body {
 				font-size: 14px;
 				margin-bottom: 50px;
+				white-space: pre-wrap
 			}
 			#article_intro {
 				font-size: 20px;
