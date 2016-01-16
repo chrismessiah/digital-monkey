@@ -31,5 +31,7 @@
 		$css_blog_title = $article->addChild('css_blog_title', 'blog_article_'.$dict["blogpost_id"]."_title");
 		$css_blog_intro = $article->addChild('css_blog_intro', 'blog_article_'.$dict["blogpost_id"]."_intro");
 	}
+	$useXML = 1;
+	require 'error.php';
 	require 'footerXML.php';
 ?>

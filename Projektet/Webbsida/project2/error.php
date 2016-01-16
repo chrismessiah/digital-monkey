@@ -96,6 +96,11 @@
 		} else {
 			$message = $lang["error_standard"];
 		}
-		require 'quickSwal.php';
+
+		if (isset($useXML)) {
+			require 'quickSwalXML.php';
+		} else {
+			require 'quickSwal.php';
+		}
 	}
 ?>

@@ -93,5 +93,7 @@
 		exit();
 	}
 
+$useXML = 1;
+require 'error.php';
 require 'footerXML.php';
 ?>

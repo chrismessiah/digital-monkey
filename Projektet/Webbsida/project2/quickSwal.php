@@ -6,5 +6,7 @@
 		text: "<?php echo $message; ?>",
 		type: "<?php echo $type; ?>",
 		confirmButtonText: "<?php echo $button_text; ?>"
+		timer: 1500,
+		showConfirmButton: false
 	});
 </script>

@@ -4,11 +4,14 @@
 <!-- Space: &#160; -->
 	<xsl:template match="/">
 		<html>
-			<head></head>
+			<head>
+				<link href="modules/sweetAlert/dist/sweetalert.css" rel="stylesheet" type="text/css" />
+			</head>
 			<body>
 				<xsl:apply-templates select="./website/header"/>
 				<xsl:apply-templates select="./website/login_area"/>
 				<xsl:apply-templates select="./website/footer"/>
+				<xsl:apply-templates select="./website/error"/>
 			</body>
 		</html>
 	</xsl:template>
@@ -402,6 +405,19 @@
 		</style>
 	</xsl:template>
 
+	<xsl:template match="error">
+		<script src="modules/sweetAlert/dist/sweetalert.min.js"/>
+		<script type="text/javascript">
+			swal({
+				title: "<xsl:value-of select="title"/>",
+				text: "<xsl:value-of select="message"/>",
+				type: "<xsl:value-of select="type"/>",
+				confirmButtonText: "<xsl:value-of select="button_text"/>",
+				timer: 1500,
+				showConfirmButton: false
+			});
+		</script>
+	</xsl:template>
 
 
 </xsl:stylesheet>

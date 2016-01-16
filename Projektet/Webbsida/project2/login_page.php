@@ -15,5 +15,7 @@
 
 	$banner_path = $login->addChild('banner_path', "public/Albert-Einstein-genius-copy.jpg");
 
+	$useXML = 1;
+	require 'error.php';
 	require 'footerXML.php';
 ?>
