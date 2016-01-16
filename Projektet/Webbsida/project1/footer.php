@@ -62,6 +62,7 @@
 			margin-top: 50px;
 		}
 	</style>
+	
 	<script type="text/javascript">
 		var map;
 		function initMap() {

@@ -1,5 +1,6 @@
 <?php
 
+
 $xml = simplexml_load_file("languages.xml");
 $lang = array();
 if (!isset($_SESSION["lang"])) {

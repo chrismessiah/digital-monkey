@@ -7,5 +7,11 @@
 	} else {
 		$_SESSION["lang"] = "en";
 	}
-	header('Location: '.$_SERVER['HTTP_REFERER']);
+
+	// Removes error messages from url
+	list($file, $parameters) = explode('?', $_SERVER['HTTP_REFERER']);
+	parse_str($parameters, $output);
+	unset($output['error']);
+	$result = $file . '?' . http_build_query($output); // Rebuild the url
+	header('Location: '.$result);
 ?>
