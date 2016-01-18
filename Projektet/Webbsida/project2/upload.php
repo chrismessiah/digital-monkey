@@ -52,7 +52,7 @@
             echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
-            header('location:control_panel.php?choice=blogpost&error=file_upload_fail');
+           	header('location:control_panel.php?choice=blogpost&error=file_upload_fail');
             exit();
         }
     }
