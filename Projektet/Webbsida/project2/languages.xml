@@ -350,4 +350,8 @@
         <swe>Yo! Läs denna artickel den är typ superintressant!</swe>
         <en>Hey! I found this article and it was totally interesting!</en>
     </translation>
+    <translation id="username_exists">
+        <swe>Användarnamnet finns redan! var god ändra den till ett unikt användarnamn!</swe>
+        <en>The username already exists. Please set an unused username!</en>
+    </translation>
 </translations>

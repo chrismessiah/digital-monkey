@@ -92,6 +92,10 @@
 			$title = $lang["error_title_success"];
 			$message = $lang["error_blogpost_updated"];
 			$type = "success";
+		} elseif ($_GET["error"] == "username_exists") {
+			$title = $lang["error_title_warning"];
+			$message = $lang["username_exists"];
+			$type = "warning";
 		
 		} else {
 			$message = $lang["error_standard"];

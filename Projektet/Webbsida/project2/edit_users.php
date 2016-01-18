@@ -10,6 +10,18 @@
 				
 				$MySQLObj = new MySQL_Handler();
 				$MySQLObj->mysql_connect();
+
+
+				$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Users WHERE username=?");
+				$MySQLstatement->bind_param("s", $_POST["new_user_username"]);
+				$state = $MySQLstatement->execute();
+				$result = $MySQLstatement->get_result();
+				$boolean = $result->fetch_row();
+				$boolean = $boolean[0];
+				if ($boolean == 1) {
+					header('location:control_panel.php?error=username_exists');
+					exit();
+				}
 	
 				while (true) {
 					$user_id = rand(1, 99999999);
@@ -38,6 +50,7 @@
 				$state = $MySQLstatement->execute();
 				$MySQLstatement->close();
 				header('location:control_panel.php?error=user_created');
+				exit();
 
 			}
 
@@ -55,8 +68,10 @@
 
 					if ($users_deleted == 0) {
 						header('location:control_panel.php?choice=edit_user&error=no_user_deleted');
+						exit();
 					} elseif ($users_deleted == 1) {
 						header('location:control_panel.php?choice=edit_user&error=one_user_deleted');
+						exit();
 					}
 
 				}
@@ -67,14 +82,27 @@
 							$MySQLObj = new MySQL_Handler();
 							$MySQLObj->mysql_connect();
 
-							$MySQLstatement = $MySQLObj->conn->prepare("SELECT password FROM Users WHERE user_id=?");
+							$MySQLstatement = $MySQLObj->conn->prepare("SELECT * FROM Users WHERE user_id=?");
 							$MySQLstatement->bind_param("s", $_GET["id"]);
 							$state = $MySQLstatement->execute();
 							$result = $MySQLstatement->get_result();
 							$MySQLstatement->close();
 
-							$foo = $result->fetch_row();
-							$pwd = $foo[0];
+							$old_data = $result->fetch_assoc();
+							$pwd = $old_data["password"];
+
+							if ($old_data["username"] != $_POST["new_user_username"]) {
+								$MySQLstatement = $MySQLObj->conn->prepare("SELECT COUNT(1) FROM Users WHERE username=?");
+								$MySQLstatement->bind_param("s", $_POST["new_user_username"]);
+								$state = $MySQLstatement->execute();
+								$result = $MySQLstatement->get_result();
+								$boolean = $result->fetch_row();
+								$boolean = $boolean[0];
+								if ($boolean == 1) {
+									header('location:control_panel.php?error=username_exists');
+									exit();
+								}
+							}
 
 							$priv = 1;
 
@@ -92,10 +120,12 @@
 							$state = $MySQLstatement->execute();
 							if ($state) {
 								header('location:control_panel.php?error=user_updated');
+								exit();
 							}
 
 						} else {
 							header('location:control_panel.php?error=no_user_edited');
+							exit();
 						}
 					} else {
 						$MySQLObj = new MySQL_Handler();
@@ -107,8 +137,10 @@
 						if (isset($_POST["selected_user_id"])) {
 							$selected_user = $_POST["selected_user_id"];
 							header('location:control_panel.php?choice=change_user&id='.$selected_user);
+							exit();
 						} else {
 							header('location:control_panel.php?error=no_user_selected');
+							exit();
 						}
 					}
 
@@ -116,12 +148,15 @@
 
 			} else {
 				header('location:control_panel.php?error=some_error');
+				exit();
 			}
 		} else {
 			header('location:index.php?error=some_error');
+			exit();
 		}
 	} else {
 		header('location:control_panel.php?error=some_error');
+		exit();
 	}
 
 ?>
