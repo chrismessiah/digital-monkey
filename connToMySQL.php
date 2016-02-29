@@ -13,24 +13,24 @@ class MySQL_Handler {
 		$connect = "local";
 		#$connect = "CSC";
 
-
+		// PHP environment variables allow your scripts to glean certain types of data dynamically from the server. This supports script flexibility in a potentially changing server environment.
 
 		if ($connect == "local") {
 			// For running locally		
-			$hostname = "127.0.0.1";
-			$username = "test";
-			$password = "hello67";
-			$db_name = "proj_xml";
-			$port = 3306;
-			$socket = "/var/run/mysqld/mysqld.sock";
+			$hostname = "";
+			$username = "";
+			$password = "";
+			$db_name = "";
+			$port = ;
+			$socket = "";
 			$conn = mysqli_connect($hostname, $username, $password, $db_name, $port, $socket);
 		}
 		elseif ($connect == "CSC") {
 			//For runnting at KTH/CSC
-			$hostname = "localhost";
-			$username = "chrabd";
-			$password = "chrabd-xmlpub13";
-			$db_name = "chrabd";
+			$hostname = "";
+			$username = "";
+			$password = "";
+			$db_name = "";
 			$conn = mysqli_connect($hostname, $username, $password, $db_name);
 		}
 
