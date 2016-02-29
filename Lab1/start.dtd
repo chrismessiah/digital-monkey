@@ -1,3 +1,0 @@
-<!ELEMENT person (fornamn,efternamn)>
-<!ELEMENT fornamn (#PCDATA)>
-<!ELEMENT efternamn (#PCDATA)>
