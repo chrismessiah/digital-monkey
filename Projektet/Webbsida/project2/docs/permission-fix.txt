@@ -1,3 +1,0 @@
-# To enable remote-write to folder foo run:
-	fs sa foo/ system:anyuser all
-from a folder above foo

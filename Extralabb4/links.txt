@@ -1,5 +1,0 @@
-
-http://xml.csc.kth.se/~chrabd/DM2517/lab-css/mid-short.xml
-
-http://xml.csc.kth.se/~chrabd/DM2517/lab-css/midsummerdream.xml
-
