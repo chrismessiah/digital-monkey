@@ -1,43 +1,26 @@
 <?php
+require '.env';
 
 class MySQL_Handler {
-	
+
 	function __construct() {
 		$this->conn = NULL;
 	}
 
 	function mysql_connect($print_status = false) {
-		
-		// $hostname = "localhost"; // Oddly enough does not work
-		
-		$connect = "local";
-		#$connect = "CSC";
 
-		// PHP environment variables allow your scripts to glean certain types of data dynamically from the server. This supports script flexibility in a potentially changing server environment.
-
-		if ($connect == "local") {
-			// For running locally		
-			$hostname = "";
-			$username = "";
-			$password = "";
-			$db_name = "";
-			$port = ;
-			$socket = "";
-			$conn = mysqli_connect($hostname, $username, $password, $db_name, $port, $socket);
-		}
-		elseif ($connect == "CSC") {
-			//For runnting at KTH/CSC
-			$hostname = "";
-			$username = "";
-			$password = "";
-			$db_name = "";
-			$conn = mysqli_connect($hostname, $username, $password, $db_name);
+		// PHP environment variables allow your scripts to glean certain types of data dynamically from the server.
+		// This supports script flexibility in a potentially changing server environment.
+		if (isset($_ENV["socket"]) && isset($_ENV["socket"])) {
+			$conn = mysqli_connect($_ENV["hostname"], $_ENV["username"], $_ENV["password"], $_ENV["db_name"], $_ENV["port"], $_ENV["socket"]);
+		} else {
+			$conn = mysqli_connect($_ENV["hostname"], $_ENV["username"], $_ENV["password"], $_ENV["db_name"]);
 		}
 
 		// Check connection
 		if ($print_status) {
 			if ($conn->connect_error) {
-			    die("<h2>Connection to DB FAILED: " . $conn->connect_error . "</h2>");	
+			    die("<h2>Connection to DB FAILED: " . $conn->connect_error . "</h2>");
 			} else {echo "Connection to DB success<br><br>";}
 		}
 
@@ -48,8 +31,8 @@ class MySQL_Handler {
 	function mysql_close() {
 		if ($this->conn != NULL) {
 			$this->conn->close();
-		} else { 
-		 	echo "Cannot close connection, DB not connected";	 
+		} else {
+		 	echo "Cannot close connection, DB not connected";
 
 		}
 	}
@@ -61,7 +44,7 @@ class MySQL_Handler {
 	// 	if ($sorting_conditon != "") {
 	// 		$sorting_conditon = " ORDER BY ".$sorting_conditon;
 	// 	}
-	// 	$sql = "SELECT ".$column_names." FROM ".$table_name.$condition.$sorting_conditon.";"; // Select 
+	// 	$sql = "SELECT ".$column_names." FROM ".$table_name.$condition.$sorting_conditon.";"; // Select
 	// 	$result = $this->conn->query($sql);
 	// 	return $result;
 	// }

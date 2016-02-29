@@ -23,7 +23,7 @@
 			</a>
 			<p class="person_text">Christian Abdelmassih<br><a href="mailto:chrabd@kth.se">chrabd@kth.se</a></p>
 		</div>
-		
+
 		<div class="person_block">
 			<a href="https://se.linkedin.com/in/adelina-tahiri-728b55a1">
 				<div id="foot_adde"></div>
@@ -62,7 +62,7 @@
 			margin-top: 50px;
 		}
 	</style>
-	
+
 	<script type="text/javascript">
 		var map;
 		function initMap() {
@@ -79,7 +79,7 @@
 		}
 	</script>
 	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF0oBZVbIkzw6UjY2lNjzmDeWVP7hZKYg&callback=initMap">
+		src="<?php echo "https://maps.googleapis.com/maps/api/js?key=".$_ENV["api_google_maps_key"]."&callback=initMap"; ?>">
     </script>
 
 </div>
@@ -90,8 +90,8 @@
     padding:0;
     margin:0;
 	}
-	li { 
-	    padding-left: 2em; 
+	li {
+	    padding-left: 2em;
 	    text-indent: -.7em;
 	}
 	li:before {
@@ -143,12 +143,9 @@
 		background-size: 246px 246px;
 		overflow:hidden;
 		margin: 20px;
-		
+
 	}
-	
+
 	#foot_chris {background-image: url("public/footer/chris.png");}
 	#foot_adde {background-image: url("public/footer/adde.png");}
 </style>
-
-
-
