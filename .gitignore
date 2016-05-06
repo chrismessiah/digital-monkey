@@ -1,2 +1,6 @@
 
 .env
+
+/vendor/
+/composer_components/
+/bower_components/

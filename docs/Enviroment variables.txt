@@ -1,0 +1,14 @@
+# Enviroment variables
+
+
+-- Database
+$_ENV["socket"] -- optional
+$_ENV["hostname"]
+$_ENV["username"]
+$_ENV["password"]
+$_ENV["db_name"]
+$_ENV["port"]
+$_ENV["socket"]
+
+-- Footer
+$_ENV["api_google_maps_key"]
