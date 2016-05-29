@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'BlogpostController@show_all');
 
 Route::get('/blogpost/{id}', 'BlogpostController@show_one');

@@ -16,7 +16,7 @@ class CreateBlogpostsTable extends Migration
             $table->increments('id');
             $table->integer('author')->unsigned();
             $table->foreign('author')->references('id')->on('users');
-            $table->string('image_path', 70);
+            $table->string('image_name', 70);
             $table->string('title', 50);
             $table->string('intro', 200);
             $table->text('body');

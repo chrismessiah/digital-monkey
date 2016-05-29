@@ -1,5 +1,5 @@
 <div id="head_div">
-	<a href="index.php">
+	<a href="/">
 		<div id="kth_logo"></div>
 	</a>
 	<style>
@@ -51,7 +51,7 @@
 				display: inline-block;
 				width: 60px;
 				height: 60px;
-				background-image: url("<?php echo $_SESSION['pic_path']; ?>");
+				background-image: url("/images/profile_pictures/");
 				overflow:hidden;
 				border-radius: 100px;
 				background-size: 60px 60px;
@@ -103,7 +103,7 @@
 		background-repeat: no-repeat;
 	}
 	#kth_logo {
-		background-image: url("public/header/kth.png");
+		background-image: url("/images/icons/kth.png");
 		left: 15px;
 		top: 15px;
 		background-size: 50px 50px;
