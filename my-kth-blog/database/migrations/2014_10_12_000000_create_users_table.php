@@ -24,6 +24,15 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        $this->insert_stuff();
+    }
+
+    private function insert_stuff() {
+        DB::statement("INSERT INTO users (id, username, firstname, lastname, pic_name, is_admin, email, password)
+        VALUES
+        	(2345,'admin','admin','admin','example.jpg',TRUE, 'admin@admin.com','admin'),
+        	(34561,'chrabd','Christian','Abdel','example.jpg',FALSE,'ab@gmail.com','123456');
+        ");
     }
 
     /**

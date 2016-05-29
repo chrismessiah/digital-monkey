@@ -7,7 +7,7 @@
   <div id="article_body_wrapper">
     <p id="article_title">{{$title}}</p>
     <p id="article_intro">{{$intro}}</p>
-    <p id="article_body">{{$body}}</p>
+    <p id="article_body">{!!$body!!}</p>
   </div>
   <div id="center_this">
     <a href="" id="share_social_twitter"></a>
