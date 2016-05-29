@@ -12,5 +12,8 @@
 */
 
 Route::get('/', 'BlogpostController@show_all');
+Route::get('/login', function () {
+  return view('login');
+});
 
 Route::get('/blogpost/{id}', 'BlogpostController@show_one');

@@ -17,7 +17,7 @@
 
 	@if (true)
   {{-- @if ($_SESSION["logged_in"] == false) --}}
-		<a href="login_page.php"><p class="head_menu">Log in</p></a>
+		<a href="/login"><p class="head_menu">Log in</p></a>
 		<style>
 			.head_menu {
 				left: 70%;
