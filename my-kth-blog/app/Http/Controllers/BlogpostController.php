@@ -17,13 +17,13 @@ class BlogpostController extends Controller {
 
     public function show_one($id) {
       $blogpost = Blogpost::find($id);
-
       $author_id = $blogpost->author;
       $image_name = $blogpost->image_name;
-      $title = $blogpost->title;
-      $intro = $blogpost->intro;
+      $title = strip_tags($blogpost->title);
+      $intro = strip_tags($blogpost->intro);
       $body = $blogpost->body;
       $body = nl2br($body);
+      $body = strip_tags($body, '<strong><em><ins><sub><sup><br>');
       $created_at = $blogpost->created_at;
       $updated_at = $blogpost->updated_at;
       return view('blogpost', compact('image_name','title', 'intro', 'body', 'created_at', 'updated_at'));
