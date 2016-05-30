@@ -1,27 +1,64 @@
-# Laravel PHP Framework
+# A Student Blog
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This is a reworked version the my final project in [DM2517 XML for Publishing](https://www.kth.se/student/kurser/kurs/DM2517?l=en). It has been completely rebuilt using Laravel as opposed to pure PHP. It is currently being hosted on [my-kth-blog.herokuapp.com](http://my-kth-blog.herokuapp.com/).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+### Requirements
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+* Homebrew
+* Node
+* Bower
+* PHP +7.0
+* pdo-pgsql module for PHP
+* Grunt-CLI
+* Postgresql
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+#### Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+```
+// Homebrew
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-## Security Vulnerabilities
+// Node
+$ brew install node
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+// Bower
+$ npm install -g bower
 
-## License
+// PHP +7.0
+$ brew tap homebrew/dupes
+$ brew tap homebrew/versions
+$ brew tap homebrew/homebrew-php
+$ brew install php70
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+// pdo-pgsql
+$ brew install php70-pdo-pgsql
+
+// Grunt-CLI
+$ npm install -g grunt-cli
+
+// Postgresql
+$ brew install postgresql
+```
+
+Remember to change `php5_module`  in `/etc/apache2/httpd.conf` to
+
+```
+LoadModule php7_module /usr/local/opt/php70/libexec/apache2/libphp7.so
+```
+
+
+
+### First time setup
+
+```
+$ createdb my-kth-blog
+
+// into cd /my-kth-blog
+$ php artisan migrate
+$ psql my-kth-blog
+=# \i path to /database/initalization/initalize.sql
+=# \q
+
+```
