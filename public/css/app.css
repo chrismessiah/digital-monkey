@@ -1,7 +1,12 @@
-p, span {
-  font-family: JosefinSans; }
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/Lato-Regular.ttf); }
 
-.btn {
+div.btn,
+button.btn,
+a.btn,
+input[type="submit"].btn {
+  font-family: Lato, Helvetica, sans-serif;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 2px;
@@ -9,27 +14,46 @@ p, span {
   padding: 10px 20px;
   margin: 5px 0px;
   cursor: pointer;
+  cursor: hand;
   color: black;
   text-align: center;
   letter-spacing: 2px;
-  font-size: 25px; }
-  .btn p {
-    color: black;
-    font-family: JosefinSans;
-    text-align: center;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 25px;
-    position: relative;
-    bottom: 6px;
-    left: 1px; }
-  .btn:hover {
+  font-size: 25px;
+  text-decoration: none; }
+  div.btn p,
+  button.btn p,
+  a.btn p,
+  input[type="submit"].btn p {
+    margin: 0; }
+  div.btn:hover,
+  button.btn:hover,
+  a.btn:hover,
+  input[type="submit"].btn:hover {
     background-color: black;
-    color: white; }
-    .btn:hover p {
-      color: white; }
+    color: white;
+    cursor: pointer;
+    cursor: hand; }
 
-.linear-transition, .btn, .btn p {
+div.btn2,
+button.btn2,
+a.btn2,
+input[type="submit"].btn2 {
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #525259;
+  border-radius: 40px;
+  border: 1px solid #979797;
+  font-size: 17px;
+  padding: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  cursor: hand; }
+
+.linear-transition, div.btn,
+button.btn,
+a.btn,
+input[type="submit"].btn {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.2s;
@@ -45,25 +69,78 @@ p, span {
   -ms-user-select: none;
   user-select: none; }
 
-@font-face {
-  font-family: JosefinSans;
-  src: url(fonts/JosefinSans-Bold.woff);
-  font-weight: bold; }
+.upper {
+  text-transform: uppercase; }
 
 @font-face {
-  font-family: JosefinSans;
-  src: url(fonts/JosefinSans-Italic.woff);
-  font-style: italic; }
+  font-family: Lato;
+  src: url(/fonts/Lato-Regular.ttf); }
 
-@font-face {
-  font-family: JosefinSans;
-  src: url(fonts/JosefinSans-Regular.woff);
-  font-weight: normal; }
+a {
+  text-decoration: none; }
 
-@font-face {
-  font-family: JosefinSans;
-  src: url(fonts/JosefinSans-BoldItalic.woff);
-  font-weight: bold;
-  font-style: italic; }
+body {
+  margin: 0px 0px; }
+
+p,
+a,
+div,
+body {
+  font-family: Lato, Helvetica, sans-serif; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: table; }
+
+#login-bg {
+  background-image: url("../images/pages/login/bg.jpg");
+  height: 750px;
+  background-size: 1600px;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+#login_wrapper {
+  position: relative;
+  top: 350px; }
+  #login_wrapper div {
+    margin: 0 auto; }
+    #login_wrapper div:nth-child(1) {
+      width: 200px; }
+    #login_wrapper div:nth-child(2) {
+      width: 135px; }
+    #login_wrapper div:nth-child(3) {
+      width: 220px; }
+  #login_wrapper button,
+  #login_wrapper a {
+    padding: 5px;
+    font-size: 15px;
+    display: inline-block; }
+  #login_wrapper p {
+    display: inline-block;
+    margin-right: 5px; }
+
+input[type="password"],
+input[type="email"] {
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  border-radius: 40px;
+  font-size: 16px;
+  font-family: Lato, Helvetica, sans-serif;
+  outline: 0;
+  padding: 12px;
+  color: #525259;
+  margin: 10px 0px;
+  max-width: 200px;
+  display: block; }
+
+input[type="email"]:focus::-webkit-input-placeholder,
+input[type="password"]:focus::-webkit-input-placeholder {
+  color: transparent; }
 
 /*# sourceMappingURL=app.css.map */
