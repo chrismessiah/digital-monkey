@@ -19,10 +19,6 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
 
-<Directory "/">
-  AllowOverride None
-</Directory>
-
 <Directory "/.hej">
   AllowOverride FileInfo
 </Directory>
