@@ -1,44 +1,31 @@
-#head-div {
-  background: #525259; }
-  #head-div #kth-logo {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    background-repeat: no-repeat;
-    background-image: url("/images/icons/kth.png");
-    background-size: 50px 50px;
-    margin-left: 10px;
-    margin-top: 10px; }
-  #head-div nav {
-    width: 90%;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-pack: end;
-    justify-content: flex-end; }
-    #head-div nav a {
-      font-size: 20px;
-      color: #FFFFFF;
-      position: relative;
-      bottom: 10px;
-      margin-right: 10px; }
+.upper {
+  text-transform: uppercase; }
 
-#foot-div {
-  background: #353535;
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/Lato-Regular.ttf); }
+
+a {
+  text-decoration: none; }
+
+body {
+  margin: 0px 0px; }
+
+p,
+a,
+div,
+body {
+  font-family: Lato, Helvetica, sans-serif; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
-  #foot-div p {
-    font-family: Helvetica;
-    color: white;
-    line-height: 29px;
-    margin: 0px;
-    margin-right: 5px;
-    font-size: 15px; }
-  #foot-div a {
-    text-decoration: none;
-    color: white; }
+  display: table; }
 
 @font-face {
   font-family: Lato;
@@ -111,84 +98,122 @@ input[type="submit"].btn {
   -ms-user-select: none;
   user-select: none; }
 
-.upper {
-  text-transform: uppercase; }
+#head-div {
+  background: #525259; }
+  #head-div #kth-logo {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-image: url("/images/icons/kth.png");
+    background-size: 50px 50px;
+    margin-left: 10px;
+    margin-top: 10px; }
+  #head-div nav {
+    width: 90%;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    #head-div nav a {
+      font-size: 20px;
+      color: #FFFFFF;
+      position: relative;
+      bottom: 10px;
+      margin-right: 10px; }
 
-@font-face {
-  font-family: Lato;
-  src: url(/fonts/Lato-Regular.ttf); }
-
-a {
-  text-decoration: none; }
-
-body {
-  margin: 0px 0px; }
-
-p,
-a,
-div,
-body {
-  font-family: Lato, Helvetica, sans-serif; }
-
-html,
-body {
-  height: 100%; }
-
-body {
-  margin: 0;
-  padding: 0;
+#foot-div {
+  background: #353535;
   width: 100%;
-  display: table; }
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  #foot-div p {
+    font-family: Helvetica;
+    color: white;
+    line-height: 29px;
+    margin: 0px;
+    margin-right: 5px;
+    font-size: 15px; }
+  #foot-div a {
+    text-decoration: none;
+    color: white; }
 
-#login-bg {
+.login-page-container {
   background-image: url("../images/pages/login/bg.jpg");
   height: 750px;
   background-size: 1600px;
   background-repeat: no-repeat;
   background-position: center; }
-
-#login_wrapper {
-  position: relative;
-  top: 400px;
-  width: 350px;
-  margin: 40px auto; }
-  #login_wrapper p,
-  #login_wrapper input[type="checkbox"] {
-    display: inline-block; }
-  #login_wrapper div.submit-container {
-    display: block; }
-    #login_wrapper div.submit-container button.btn,
-    #login_wrapper div.submit-container a.btn {
-      background: transparent;
+  .login-page-container > div {
+    position: relative;
+    top: 400px;
+    width: 350px;
+    margin: 40px auto; }
+    .login-page-container > div p,
+    .login-page-container > div input[type="checkbox"] {
+      display: inline-block; }
+    .login-page-container > div div.submit-container {
+      display: block; }
+      .login-page-container > div div.submit-container button.btn,
+      .login-page-container > div div.submit-container a.btn {
+        box-sizing: border-box;
+        font-size: 15px; }
+        .login-page-container > div div.submit-container button.btn.login,
+        .login-page-container > div div.submit-container a.btn.login {
+          width: calc(33% + 5px); }
+        .login-page-container > div div.submit-container button.btn.reset,
+        .login-page-container > div div.submit-container a.btn.reset {
+          width: calc(66% - 7px); }
+    .login-page-container > div input[type="password"],
+    .login-page-container > div input[type="email"] {
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      width: calc(100% - 20px);
+      margin: 10px auto;
+      display: block;
       box-sizing: border-box;
-      font-size: 15px; }
-      #login_wrapper div.submit-container button.btn.login,
-      #login_wrapper div.submit-container a.btn.login {
-        width: calc(33% + 5px); }
-      #login_wrapper div.submit-container button.btn.reset,
-      #login_wrapper div.submit-container a.btn.reset {
-        width: calc(66% - 7px); }
-  #login_wrapper input[type="password"],
-  #login_wrapper input[type="email"] {
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    width: calc(100% - 20px);
-    margin: 10px auto;
-    display: block;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    border: 1px solid #979797;
-    border-radius: 40px;
-    font-size: 16px;
-    font-family: Lato, Helvetica, sans-serif;
-    outline: 0;
-    padding: 12px;
-    color: #525259;
-    margin: 10px 0px;
-    display: block; }
-  #login_wrapper input[type="email"]:focus::-webkit-input-placeholder,
-  #login_wrapper input[type="password"]:focus::-webkit-input-placeholder {
-    color: transparent; }
+      background: #FFFFFF;
+      border: 1px solid #979797;
+      border-radius: 40px;
+      font-size: 16px;
+      font-family: Lato, Helvetica, sans-serif;
+      outline: 0;
+      padding: 12px;
+      color: #525259;
+      margin: 10px 0px;
+      display: block; }
+      .login-page-container > div input[type="password"]:focus::-webkit-input-placeholder,
+      .login-page-container > div input[type="email"]:focus::-webkit-input-placeholder {
+        color: transparent; }
+
+.register-page-container {
+  margin: auto;
+  width: 60%; }
+  .register-page-container form {
+    margin-top: 70px;
+    text-align: center; }
+    .register-page-container form .btn {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    .register-page-container form input {
+      margin: 10px 0;
+      padding: 10px;
+      border: solid 1px #dcdcdc;
+      transition: box-shadow 0.3s, border 0.3s;
+      display: block;
+      width: 100%;
+      font-size: 18px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      box-shadow: none;
+      border-radius: none; }
+      .register-page-container form input:focus {
+        border: solid 1px #707070;
+        box-shadow: 0 0 5px 1px #969696;
+        outline: none; }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,13 +1,10 @@
 @extends('master')
 
-{{-- @section('head')
-<link rel="stylesheet" href="/css/login.css">
-@endsection --}}
 
 @section('content')
-<div id="login-bg">
-    <div id="login_wrapper">
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+<div class="login-page-container">
+    <div class="login_wrapper">
+        <form role="form" method="POST" action="{{ url('/login') }}">
             <div>
                 {{ csrf_field() }}
                 <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="email">
