@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="register-page-container">     
-    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+    <form role="form" method="POST" action="{{ url('/register') }}">
         {{ csrf_field() }}
         <input id="firstname" placeholder="firstname" type="text" name="firstname" value="{{ old('firstname') }}">
         <input id="lastname" placeholder="lastname" type="text" name="lastname" value="{{ old('lastname') }}">

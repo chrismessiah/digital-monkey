@@ -189,16 +189,16 @@ input[type="submit"].btn {
       .login-page-container > div input[type="email"]:focus::-webkit-input-placeholder {
         color: transparent; }
 
-.register-page-container {
+.register-page-container, .reset-password-request-container {
   margin: auto;
   width: 60%; }
-  .register-page-container form {
+  .register-page-container form, .reset-password-request-container form {
     margin-top: 70px;
     text-align: center; }
-    .register-page-container form .btn {
+    .register-page-container form .btn, .reset-password-request-container form .btn {
       margin-top: 30px;
       margin-bottom: 30px; }
-    .register-page-container form input {
+    .register-page-container form input, .reset-password-request-container form input {
       margin: 10px 0;
       padding: 10px;
       border: solid 1px #dcdcdc;
@@ -211,7 +211,7 @@ input[type="submit"].btn {
       appearance: none;
       box-shadow: none;
       border-radius: none; }
-      .register-page-container form input:focus {
+      .register-page-container form input:focus, .reset-password-request-container form input:focus {
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
@@ -252,5 +252,48 @@ input[type="submit"].btn {
       background-image: url("/images/icons/facebook.png"); }
     .blogpost-container #social a#google {
       background-image: url("/images/icons/google.png"); }
+
+.blogpost {
+  height: 400px;
+  background-size: 100% 400px;
+  background-repeat: no-repeat; }
+  .blogpost > p {
+    position: relative;
+    left: 40px;
+    top: 30px;
+    font-family: Helvetica;
+    color: #FFFFFF;
+    padding-bottom: 20px; }
+    .blogpost > p.title {
+      font-size: 40px; }
+    .blogpost > p.intro {
+      font-size: 22px; }
+
+.register-page-container, .reset-password-request-container {
+  margin: auto;
+  width: 60%; }
+  .register-page-container form, .reset-password-request-container form {
+    margin-top: 70px;
+    text-align: center; }
+    .register-page-container form .btn, .reset-password-request-container form .btn {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    .register-page-container form input, .reset-password-request-container form input {
+      margin: 10px 0;
+      padding: 10px;
+      border: solid 1px #dcdcdc;
+      transition: box-shadow 0.3s, border 0.3s;
+      display: block;
+      width: 100%;
+      font-size: 18px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      box-shadow: none;
+      border-radius: none; }
+      .register-page-container form input:focus, .reset-password-request-container form input:focus {
+        border: solid 1px #707070;
+        box-shadow: 0 0 5px 1px #969696;
+        outline: none; }
 
 /*# sourceMappingURL=app.css.map */

@@ -13,7 +13,8 @@
 
 Route::get('/', 'BlogpostController@show_all');
 Route::get('/home', function(){
-  return redirect('/');
+  return view('/auth.passwords.request');
+  //return redirect('/');
 });
 
 Route::get('/login', function () {
