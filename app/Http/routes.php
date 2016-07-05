@@ -19,3 +19,4 @@ Route::get('/login', function () {
 Route::get('/blogpost/{id}', 'BlogpostController@show_one');
 Route::auth();
 //Route::get('/home', 'HomeController@index');
+Route::get('/.well-known/acme-challenge/'.env('CERT_LINK_KEY'), 'CertificateController@lets_encrypt');
