@@ -10,7 +10,7 @@
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             <div>
                 {{ csrf_field() }}
-                <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="username">
+                <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="email">
                 <input id="password" type="password" name="password" placeholder="password">
 
                 <p>Remember me?</p><input type="checkbox" name="remember">
