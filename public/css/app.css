@@ -216,4 +216,41 @@ input[type="submit"].btn {
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
 
+.blogpost-container #article_banner {
+  width: 100%;
+  height: 400px;
+  background-size: 100% 400px; }
+
+.blogpost-container #content {
+  margin: auto;
+  width: 60%; }
+  .blogpost-container #content p {
+    text-align: center; }
+    .blogpost-container #content p#title {
+      font-size: 30px; }
+    .blogpost-container #content p#intro {
+      font-size: 20px; }
+    .blogpost-container #content p#body {
+      font-size: 14px;
+      margin-bottom: 50px;
+      text-align: left; }
+
+.blogpost-container #social {
+  margin: auto;
+  width: 12%;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .blogpost-container #social a {
+    width: 35px;
+    height: 35px;
+    background-size: 35px;
+    display: inline-block;
+    margin: 5px; }
+    .blogpost-container #social a#twitter {
+      background-image: url("/images/icons/twitter.png"); }
+    .blogpost-container #social a#facebook {
+      background-image: url("/images/icons/facebook.png"); }
+    .blogpost-container #social a#google {
+      background-image: url("/images/icons/google.png"); }
+
 /*# sourceMappingURL=app.css.map */
