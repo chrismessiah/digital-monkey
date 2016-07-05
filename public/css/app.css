@@ -22,6 +22,24 @@
       bottom: 10px;
       margin-right: 10px; }
 
+#foot-div {
+  background: #353535;
+  width: 100%;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  #foot-div p {
+    font-family: Helvetica;
+    color: white;
+    line-height: 29px;
+    margin: 0px;
+    margin-right: 5px;
+    font-size: 15px; }
+  #foot-div a {
+    text-decoration: none;
+    color: white; }
+
 @font-face {
   font-family: Lato;
   src: url(/fonts/Lato-Regular.ttf); }
