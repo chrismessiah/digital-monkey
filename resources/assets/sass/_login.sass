@@ -1,5 +1,5 @@
 // $susy: (columns: 12, container: 1120px, global-box-sizing: border-box)
-// @include border-box-sizing;
+// @include border-box-sizing
 
 @import buttons
 @import addons
@@ -13,46 +13,52 @@
 	//background-attachment: fixed 			// Gives cool effect!
 	background-position: center
 
-
 #login_wrapper
 	position: relative
-	top: 350px
-	div
-		margin: 0 auto
-		&:nth-child(1)
-			width: 200px
-		&:nth-child(2)
-			width: 135px
-		&:nth-child(3)
-			width: 220px
+	top: 400px
+	width: 350px
+	margin: 40px auto
 
-
-	button,
-	a
-		padding: 5px
-		font-size: 15px
+	p,
+	input[type="checkbox"]
 		display: inline-block
-	p
-		display: inline-block
-		margin-right: 5px
 
-input[type="password"],
-input[type="email"]
-	background: #FFFFFF
-	border: 1px solid #979797
-	border-radius: 40px
-	font-size: 16px
-	font-family: $font-stack
-	outline: 0
-	padding: 12px
-	color: #525259
-	margin: 10px 0px
-	max-width: 200px
-	display: block
+	div.submit-container
+		display: block
+
+		button.btn,
+		a.btn
+			background: transparent
+			box-sizing: border-box
+			font-size: 15px
+			&.login
+			  width: calc(33% + 5px)
+			&.reset
+			  width: calc(66% - 7px)
+
+	input[type="password"],
+	input[type="email"]
+		border: none
+		border-radius: 10px
+		padding: 10px
+		width: calc(100% - 20px)
+		margin: 10px auto
+		display: block
+		box-sizing: border-box
+		background: #FFFFFF
+		border: 1px solid #979797
+		border-radius: 40px
+		font-size: 16px
+		font-family: $font-stack
+		outline: 0
+		padding: 12px
+		color: #525259
+		margin: 10px 0px
+		display: block
 
 
-// Hides placeholder
-input[type="email"],
-input[type="password"]
-	&:focus::-webkit-input-placeholder
-		color: transparent
+	// Hides placeholder
+	input[type="email"],
+	input[type="password"]
+		&:focus::-webkit-input-placeholder
+			color: transparent

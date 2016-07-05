@@ -107,40 +107,46 @@ body {
 
 #login_wrapper {
   position: relative;
-  top: 350px; }
-  #login_wrapper div {
-    margin: 0 auto; }
-    #login_wrapper div:nth-child(1) {
-      width: 200px; }
-    #login_wrapper div:nth-child(2) {
-      width: 135px; }
-    #login_wrapper div:nth-child(3) {
-      width: 220px; }
-  #login_wrapper button,
-  #login_wrapper a {
-    padding: 5px;
-    font-size: 15px;
+  top: 400px;
+  width: 350px;
+  margin: 40px auto; }
+  #login_wrapper p,
+  #login_wrapper input[type="checkbox"] {
     display: inline-block; }
-  #login_wrapper p {
-    display: inline-block;
-    margin-right: 5px; }
-
-input[type="password"],
-input[type="email"] {
-  background: #FFFFFF;
-  border: 1px solid #979797;
-  border-radius: 40px;
-  font-size: 16px;
-  font-family: Lato, Helvetica, sans-serif;
-  outline: 0;
-  padding: 12px;
-  color: #525259;
-  margin: 10px 0px;
-  max-width: 200px;
-  display: block; }
-
-input[type="email"]:focus::-webkit-input-placeholder,
-input[type="password"]:focus::-webkit-input-placeholder {
-  color: transparent; }
+  #login_wrapper div.submit-container {
+    display: block; }
+    #login_wrapper div.submit-container button.btn,
+    #login_wrapper div.submit-container a.btn {
+      background: transparent;
+      box-sizing: border-box;
+      font-size: 15px; }
+      #login_wrapper div.submit-container button.btn.login,
+      #login_wrapper div.submit-container a.btn.login {
+        width: calc(33% + 5px); }
+      #login_wrapper div.submit-container button.btn.reset,
+      #login_wrapper div.submit-container a.btn.reset {
+        width: calc(66% - 7px); }
+  #login_wrapper input[type="password"],
+  #login_wrapper input[type="email"] {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    display: block;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    border-radius: 40px;
+    font-size: 16px;
+    font-family: Lato, Helvetica, sans-serif;
+    outline: 0;
+    padding: 12px;
+    color: #525259;
+    margin: 10px 0px;
+    display: block; }
+  #login_wrapper input[type="email"]:focus::-webkit-input-placeholder,
+  #login_wrapper input[type="password"]:focus::-webkit-input-placeholder {
+    color: transparent; }
 
 /*# sourceMappingURL=app.css.map */

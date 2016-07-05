@@ -12,15 +12,13 @@
                 {{ csrf_field() }}
                 <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="username">
                 <input id="password" type="password" name="password" placeholder="password">
-            </div>
 
-            <div>
                 <p>Remember me?</p><input type="checkbox" name="remember">
-            </div>
 
-            <div>
-                <button type="submit" class="btn">Login</button>
-                <a class="btn" href="{{ url('/password/reset') }}">Reset Password?</a>
+                <div class="submit-container">
+                    <button type="submit" class="btn login">Login</button>
+                    <a class="btn reset" href="{{ url('/password/reset') }}">Reset Password?</a>
+                </div>
             </div>
         </form>
     </div>
