@@ -12,10 +12,11 @@
 */
 
 Route::get('/', 'BlogpostController@show_all');
-Route::get('/home', function(){
-  return view('/auth.passwords.request');
-  //return redirect('/');
-});
+
+// ONLY FOR TESTING
+Route::get('/reset', function(){return view('/auth.passwords.reset');});
+Route::get('/request', function(){return view('/auth.passwords.request');});
+// ONLY FOR TESTING
 
 Route::get('/login', function () {
   return view('login');
