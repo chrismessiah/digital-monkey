@@ -1,0 +1,52 @@
+// $susy: (columns: 12, container: 1120px, global-box-sizing: border-box)
+// @include border-box-sizing
+
+.login-page-container
+	background-image: url("../images/pages/login/bg.jpg")
+	background-size: 1600px
+	background-repeat: no-repeat
+	background-position: center
+	//background-attachment: fixed 			// Gives cool effect!
+	width: 100%
+	height: 750px
+	> div
+		position: relative
+		top: 400px
+		width: 350px
+		margin: 0 auto
+		
+		p,
+		input[type="checkbox"]
+			display: inline-block
+		
+		div.submit-container
+			display: block
+		
+			button.btn,
+			a.btn
+				box-sizing: border-box
+				font-size: 15px
+				&.login
+				  width: calc(33% + 5px)
+				&.reset
+				  width: calc(66% - 7px)
+		
+		input[type="password"],
+		input[type="email"]
+			border: none
+			border-radius: 10px
+			padding: 10px
+			width: calc(100% - 20px)
+			margin: 10px auto
+			box-sizing: border-box
+			background: #FFFFFF
+			border: 1px solid #979797
+			border-radius: 40px
+			font-size: 16px
+			font-family: $font-stack
+			outline: 0
+			padding: 12px
+			color: #525259
+			margin: 10px 0px
+			&:focus::-webkit-input-placeholder
+				color: transparent
