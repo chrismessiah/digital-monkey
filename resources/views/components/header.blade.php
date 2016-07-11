@@ -1,6 +1,9 @@
 <div id="head-div">
-	<a href="/"><div id="kth-logo"></div></a>
-	<nav>
+	<nav class="left">
+		<a id="kth-logo-link" href="/"><div id="kth-logo"></div></a>
+	</nav>
+	
+	<nav class="right">
 		@if (Auth::guest()) {{-- Not logged in --}}
 			<a href="/register">Register</a>
 			<a href="/login">Log in</a>

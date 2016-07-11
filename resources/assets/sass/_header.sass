@@ -1,77 +1,97 @@
 $bgcolor: #525259
-$profile-pic-diameter: 60px
+$header-height: 75px
+$pic-diameter: calc(#{$header-height}*0.7)
 
 #head-div
 	background: $bgcolor
-	#kth-logo
-		display: inline-block
-		width: 60px
-		height: 60px
-		background-repeat: no-repeat
-		background-image: url("/images/icons/kth.png")
-		background-size: 50px 50px
-		margin-left: 10px
-		margin-top: 10px
+	height: $header-height
+	
 	nav
-		width: 90%
-		display: inline-flex
-		justify-content: flex-end
+		position: absolute
+		top: 0
+		bottom: 0
+		height: inherit
+		
 		a
 			color: #FFFFFF
-			padding: 12px 16px
 			text-decoration: none
 			cursor: pointer
-		
-		.dropdown
-			display: inline-block
 			
-			&:hover
-				.content
-					display: block
+		&.left
+			left: 0
+			#kth-logo
+				display: inline-block
+				width: $pic-diameter
+				height: $pic-diameter
+				background-repeat: no-repeat
+				background-image: url("/images/icons/kth.png")
+				background-size: $pic-diameter $pic-diameter
+				margin-left: 10px
+				margin-top: 10px
+	
+		&.right
+			right: 0
+			& > a
+				position: relative
+				top: calc(#{$header-height}/3)
+				padding: 0px 10px
+				font-size: 20px
+			
+			.dropdown
+				float: right
+				display: inline-block
+				position: relative
+				top: calc(#{$header-height}*0.15)
+				
+				&:hover
+					.content
+						display: block
+					.dropdown-header
+						background-color: $bgcolor
+				
 				.dropdown-header
 					background-color: $bgcolor
-			
-			.dropdown-header
-				background-color: $bgcolor
-				color: white
-				padding: 16px
-				font-size: 16px
-				border: none
-				cursor: pointer
-				
-				.profile-pic
-					display: inline-block
-					width: $profile-pic-diameter
-					height: $profile-pic-diameter
-					overflow:hidden
-					border-radius: 100px
-					background-size: 160%
-					background-position: center
-					background-repeat: no-repeat
-				p
-					display: inline-block
-					margin: 0
-					margin-left: 5px
-					font-size: calc(#{$profile-pic-diameter}/3)
-					position: relative
-					bottom: calc(#{$profile-pic-diameter} - #{$profile-pic-diameter}*0.7)
-				
-			// Dropdown Content (Hidden by Default) 
-			.content
-				z-index: 5
-				display: none
-				position: absolute
-				background-color: $bgcolor
-				min-width: calc(#{$profile-pic-diameter}*3)
-				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
-				border-radius: 0px 0px 10px 10px
-				
-				// Links inside the dropdown
-				a
-					display: block
-					margin-right: 0px
+					color: white
+					padding: 0px 16px
+					font-size: 16px
+					border: none
+					cursor: pointer
+					
+					.profile-pic
+						display: inline-block
+						width: $pic-diameter
+						height: $pic-diameter
+						overflow:hidden
+						border-radius: 100px
+						background-size: 160%
+						background-position: center
+						background-repeat: no-repeat
+					p
+						display: inline-block
+						margin: 0
+						margin-left: 5px
+						font-size: calc(#{$pic-diameter}/3)
+						position: relative
+						bottom: calc(#{$pic-diameter} - #{$pic-diameter}*0.7)
+					
+				// Dropdown Content (Hidden by Default) 
+				.content
+					z-index: 5
+					display: none
+					position: absolute
+					background-color: $bgcolor
+					min-width: calc(#{$pic-diameter}*3)
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+					border-radius: 0px 0px 10px 10px
+					
+					// Links inside the dropdown
+					a
+						display: block
+						margin-right: 0px
+						padding: 10px 10px
+						font-size: 16px
 
-					// Change color of dropdown links on hover 
-					&:hover
-						background-color: #757581
-						border-radius: 10px 10px 10px 10px
+						// Change color of dropdown links on hover 
+						&:hover
+							background-color: #757581
+							border-radius: 10px 10px 10px 10px

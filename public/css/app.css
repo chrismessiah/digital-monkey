@@ -99,69 +99,82 @@ input[type="submit"].btn {
   user-select: none; }
 
 #head-div {
-  background: #525259; }
-  #head-div #kth-logo {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    background-repeat: no-repeat;
-    background-image: url("/images/icons/kth.png");
-    background-size: 50px 50px;
-    margin-left: 10px;
-    margin-top: 10px; }
+  background: #525259;
+  height: 75px; }
   #head-div nav {
-    width: 90%;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-pack: end;
-    justify-content: flex-end; }
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: inherit; }
     #head-div nav a {
       color: #FFFFFF;
-      padding: 12px 16px;
       text-decoration: none;
       cursor: pointer; }
-    #head-div nav .dropdown {
-      display: inline-block; }
-      #head-div nav .dropdown:hover .content {
-        display: block; }
-      #head-div nav .dropdown:hover .dropdown-header {
-        background-color: #525259; }
-      #head-div nav .dropdown .dropdown-header {
-        background-color: #525259;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer; }
-        #head-div nav .dropdown .dropdown-header .profile-pic {
-          display: inline-block;
-          width: 60px;
-          height: 60px;
-          border-radius: 100px;
-          background-size: 160%;
-          background-position: center;
-          background-repeat: no-repeat; }
-        #head-div nav .dropdown .dropdown-header p {
-          display: inline-block;
-          margin: 0;
-          margin-left: 5px;
-          font-size: calc(60px/3);
-          position: relative;
-          bottom: calc(60px - 60px*0.7); }
-      #head-div nav .dropdown .content {
-        z-index: 5;
-        display: none;
-        position: absolute;
-        background-color: #525259;
-        min-width: calc(60px*3);
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        border-radius: 0px 0px 10px 10px; }
-        #head-div nav .dropdown .content a {
-          display: block;
-          margin-right: 0px; }
-          #head-div nav .dropdown .content a:hover {
-            background-color: #757581;
-            border-radius: 10px 10px 10px 10px; }
+    #head-div nav.left {
+      left: 0; }
+      #head-div nav.left #kth-logo {
+        display: inline-block;
+        width: calc(75px*0.7);
+        height: calc(75px*0.7);
+        background-repeat: no-repeat;
+        background-image: url("/images/icons/kth.png");
+        background-size: calc(75px*0.7) calc(75px*0.7);
+        margin-left: 10px;
+        margin-top: 10px; }
+    #head-div nav.right {
+      right: 0; }
+      #head-div nav.right > a {
+        position: relative;
+        top: calc(75px/3);
+        padding: 0px 10px;
+        font-size: 20px; }
+      #head-div nav.right .dropdown {
+        float: right;
+        display: inline-block;
+        position: relative;
+        top: calc(75px*0.15); }
+        #head-div nav.right .dropdown:hover .content {
+          display: block; }
+        #head-div nav.right .dropdown:hover .dropdown-header {
+          background-color: #525259; }
+        #head-div nav.right .dropdown .dropdown-header {
+          background-color: #525259;
+          color: white;
+          padding: 0px 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer; }
+          #head-div nav.right .dropdown .dropdown-header .profile-pic {
+            display: inline-block;
+            width: calc(75px*0.7);
+            height: calc(75px*0.7);
+            border-radius: 100px;
+            background-size: 160%;
+            background-position: center;
+            background-repeat: no-repeat; }
+          #head-div nav.right .dropdown .dropdown-header p {
+            display: inline-block;
+            margin: 0;
+            margin-left: 5px;
+            font-size: calc(calc(75px*0.7)/3);
+            position: relative;
+            bottom: calc(calc(75px*0.7) - calc(75px*0.7)*0.7); }
+        #head-div nav.right .dropdown .content {
+          z-index: 5;
+          display: none;
+          position: absolute;
+          background-color: #525259;
+          min-width: calc(calc(75px*0.7)*3);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          border-radius: 0px 0px 10px 10px; }
+          #head-div nav.right .dropdown .content a {
+            display: block;
+            margin-right: 0px;
+            padding: 10px 10px;
+            font-size: 16px; }
+            #head-div nav.right .dropdown .content a:hover {
+              background-color: #757581;
+              border-radius: 10px 10px 10px 10px; }
 
 #foot-div {
   background: #353535;
