@@ -33,6 +33,9 @@ class User extends Authenticatable
     }
     
     public function getPicUrl() {
+        if ($this->fb_id) {
+            return('https://graph.facebook.com/v2.6/'.$this->fb_id.'/picture?width=500');
+        }
         if (file_exists(asset('images/profile_pics/'.$this->id.'.jpg'))) {
             return(asset('images/profile_pics/'.$this->id.'.jpg'));
         }
