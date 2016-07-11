@@ -28,6 +28,10 @@ class User extends Authenticatable
         'remember_token',
     ];
     
+    public function blogposts() {
+        return $this->hasMany(Blogpost::class);
+    } 
+    
     public function getFirstname() {
         return explode(" ",$this->fullname)[0];
     }

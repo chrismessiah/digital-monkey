@@ -14,7 +14,10 @@
 
 Route::auth();
 Route::get('/', 'BlogpostController@show_all');
-Route::get('/blogpost/{id}', 'BlogpostController@show_one');
+Route::get('/blogpost/read/{id}', 'BlogpostController@show_one');
+Route::get('/blogpost/write', function(){return view('blogpost.write');})->middleware('auth');
+Route::post('/blogpost/publish', 'BlogpostController@publish'); // restriction from controller
+
 Route::get('/controlpanel', function(){return view('admin');})->middleware('admin');
 
 

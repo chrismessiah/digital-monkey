@@ -18,7 +18,7 @@
 					</style>
 				</div>
 				<div class="content">
-					<a href="">Post</a>
+					<a href="{{ url('/blogpost/write') }}">Make blogpost</a>
 					<a href="">Preferences</a>
 					<a href="{{ url('/logout') }}">Logout</a>
 				</div>
