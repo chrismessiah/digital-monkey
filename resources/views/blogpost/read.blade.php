@@ -22,5 +22,8 @@
       <a href="" id="facebook"></a>
       <a href="" id="google"></a>
     </div>
+    @if (Auth::user()->id == $author || Auth::user()->is_admin)
+      <a class="btn" href="{{ url('/blogpost/'.$id.'/edit') }}">Edit</a>
+    @endif
   </div>
 @endsection

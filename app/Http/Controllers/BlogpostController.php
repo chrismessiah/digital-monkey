@@ -22,8 +22,8 @@ class BlogpostController extends Controller {
 
     public function show_one($id) {
       $blogpost = Blogpost::find($id);
-      $author_id = $blogpost->author;
-      
+      $id = $blogpost->id;
+      $author = $blogpost->author;
       $image_name = $blogpost->image_name;
       $title = strip_tags($blogpost->title);
       $intro = strip_tags($blogpost->intro);
@@ -31,7 +31,7 @@ class BlogpostController extends Controller {
       $body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br>');
       $created_at = $blogpost->created_at;
       $updated_at = $blogpost->updated_at;
-      return view('blogpost.read', compact('image_name','title', 'intro', 'body', 'created_at', 'updated_at'));
+      return view('blogpost.read', compact('id','image_name','author','title', 'intro', 'body', 'created_at', 'updated_at'));
     }
     
     public function publish(Request $request) {
