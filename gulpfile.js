@@ -14,4 +14,8 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.sass');
+    mix.scripts([
+        '../bower/jquery/dist/jquery.js',
+        '../bower/sweetalert/dist/sweetalert-dev.js'
+    ], 'public/js/vendor.js');
 });

@@ -3,6 +3,7 @@
 /vendor
 /composer_components
 /bower_components
+/resources/assets/bower
 /node_modules
 /public/storage
 Homestead.yaml
