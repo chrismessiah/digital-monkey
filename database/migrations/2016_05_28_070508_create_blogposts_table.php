@@ -15,7 +15,7 @@ class CreateBlogpostsTable extends Migration
         Schema::create('blogposts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('author')->unsigned();
-            $table->foreign('author')->references('id')->on('users');
+            $table->foreign('author')->references('id')->on('users')->onDelete('cascade');
             $table->string('image_name', 70);
             $table->string('title', 50);
             $table->string('intro', 200);
@@ -43,6 +43,6 @@ class CreateBlogpostsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('blogposts');
     }
 }

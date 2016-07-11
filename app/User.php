@@ -12,9 +12,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname',
-        'lastname',
-        'username',
+        'fullname',
+        'fb_id',
         'email',
         'password',
     ];
@@ -28,4 +27,15 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    
+    public function getFirstname() {
+        return explode(" ",$this->fullname)[0];
+    }
+    
+    public function getPicUrl() {
+        if (file_exists(asset('images/profile_pics/'.$this->id.'.jpg'))) {
+            return(asset('images/profile_pics/'.$this->id.'.jpg'));
+        }
+        return(asset('images/profile_pics/example.jpg'));
+    }
 }

@@ -26,3 +26,7 @@ Route::get('/request', function(){return view('/auth.passwords.request');});
 // ONLY FOR TESTING
 
 Route::get('/.well-known/acme-challenge/'.env('CERT_LINK_KEY'), 'CertificateController@lets_encrypt');
+
+// facebook
+Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebookOAUTH');
+Route::get('auth/facebook/callback', 'Auth\AuthController@facebookCallbackLogin');
