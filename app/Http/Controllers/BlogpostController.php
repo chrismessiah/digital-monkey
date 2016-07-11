@@ -12,7 +12,7 @@ use Auth;
 class BlogpostController extends Controller {
     
     public function __construct() {
-        $this->middleware('auth', ['only' => ['publish']);
+        $this->middleware('auth', ['only' => ['publish']]);
     }
 
     public function show_all() {
