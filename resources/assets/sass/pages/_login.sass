@@ -12,31 +12,30 @@
 	> div
 		position: relative
 		top: 400px
-		width: 350px
+		width: 300px
 		margin: 0 auto
 		
 		p,
 		input[type="checkbox"]
 			display: inline-block
 		
-		div.submit-container
-			display: block
-		
-			button.btn,
-			a.btn
-				box-sizing: border-box
-				font-size: 15px
-				&.login
-				  width: calc(33% + 5px)
-				&.reset
-				  width: calc(66% - 7px)
-		
+		button.btn,
+		a.btn
+			width: 100%
+			box-sizing: border-box
+			font-size: 20px
+			border-radius: 40px
+			&.btn-facebook:hover
+				background-color: #3b5998
+				border-color: #3b5998
+				
+	
 		input[type="password"],
 		input[type="email"]
 			border: none
 			border-radius: 10px
 			padding: 10px
-			width: calc(100% - 20px)
+			width: 100%
 			margin: 10px auto
 			box-sizing: border-box
 			background: #FFFFFF
