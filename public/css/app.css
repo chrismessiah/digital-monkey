@@ -115,31 +115,47 @@ input[type="submit"].btn {
     display: inline-flex;
     -ms-flex-pack: end;
     justify-content: flex-end; }
+    #head-div nav a {
+      color: #FFFFFF;
+      padding: 12px 16px;
+      text-decoration: none; }
     #head-div nav .dropdown {
       display: inline-block; }
-      #head-div nav .dropdown:hover .dropdown-content {
+      #head-div nav .dropdown:hover .content {
         display: block; }
-      #head-div nav .dropdown:hover .dropbtn {
+      #head-div nav .dropdown:hover .dropdown-header {
         background-color: #525259; }
-      #head-div nav .dropdown .title {
+      #head-div nav .dropdown .dropdown-header {
         background-color: #525259;
         color: white;
         padding: 16px;
         font-size: 16px;
         border: none;
         cursor: pointer; }
+        #head-div nav .dropdown .dropdown-header .profile-pic {
+          display: inline-block;
+          width: 60px;
+          height: 60px;
+          border-radius: 100px;
+          background-size: 160%;
+          background-position: center;
+          background-repeat: no-repeat; }
+        #head-div nav .dropdown .dropdown-header p {
+          display: inline-block;
+          margin: 0;
+          margin-left: 5px;
+          font-size: calc(60px/3);
+          position: relative;
+          bottom: calc(60px - 60px*0.7); }
       #head-div nav .dropdown .content {
         z-index: 5;
         display: none;
         position: absolute;
         background-color: #525259;
-        min-width: 160px;
+        min-width: calc(60px*3);
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         border-radius: 0px 0px 10px 10px; }
         #head-div nav .dropdown .content a {
-          color: #FFFFFF;
-          padding: 12px 16px;
-          text-decoration: none;
           display: block;
           margin-right: 0px; }
           #head-div nav .dropdown .content a:hover {
