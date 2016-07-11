@@ -40,7 +40,7 @@ class User extends Authenticatable
         if ($this->fb_id) {
             return('https://graph.facebook.com/v2.6/'.$this->fb_id.'/picture?width=500');
         }
-        if (file_exists(asset('images/profile_pics/'.$this->id.'.jpg'))) {
+        if (file_exists('images/profile_pics/'.$this->id.'.jpg')) {
             return(asset('images/profile_pics/'.$this->id.'.jpg'));
         }
         return(asset('images/profile_pics/example.jpg'));
