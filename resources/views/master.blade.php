@@ -11,5 +11,6 @@
         @yield('content')
         @include('components.footer')
         @yield('js')
+        @include('errors.swal')
     </body>
 </html>
