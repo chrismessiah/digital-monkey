@@ -115,12 +115,36 @@ input[type="submit"].btn {
     display: inline-flex;
     -ms-flex-pack: end;
     justify-content: flex-end; }
-    #head-div nav a {
-      font-size: 20px;
-      color: #FFFFFF;
-      position: relative;
-      bottom: 10px;
-      margin-right: 10px; }
+    #head-div nav .dropdown {
+      display: inline-block; }
+      #head-div nav .dropdown:hover .dropdown-content {
+        display: block; }
+      #head-div nav .dropdown:hover .dropbtn {
+        background-color: #525259; }
+      #head-div nav .dropdown .title {
+        background-color: #525259;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer; }
+      #head-div nav .dropdown .content {
+        z-index: 5;
+        display: none;
+        position: absolute;
+        background-color: #525259;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 10px 10px; }
+        #head-div nav .dropdown .content a {
+          color: #FFFFFF;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          margin-right: 0px; }
+          #head-div nav .dropdown .content a:hover {
+            background-color: #757581;
+            border-radius: 10px 10px 10px 10px; }
 
 #foot-div {
   background: #353535;

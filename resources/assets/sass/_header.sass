@@ -1,5 +1,7 @@
+$bgcolor: #525259
+
 #head-div
-	background: #525259
+	background: $bgcolor
 	#kth-logo
 		display: inline-block
 		width: 60px
@@ -13,9 +15,43 @@
 		width: 90%
 		display: inline-flex
 		justify-content: flex-end
-		a
-			font-size: 20px
-			color: #FFFFFF
-			position: relative
-			bottom: 10px
-			margin-right: 10px
+		
+		.dropdown
+			display: inline-block
+			
+			&:hover
+				.dropdown-content
+					display: block
+				.dropbtn
+					background-color: $bgcolor
+			
+			.title
+		    background-color: $bgcolor
+		    color: white
+		    padding: 16px
+		    font-size: 16px
+		    border: none
+		    cursor: pointer
+				
+			// Dropdown Content (Hidden by Default) 
+			.content
+				z-index: 5
+				display: none
+				position: absolute
+				background-color: $bgcolor
+				min-width: 160px
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+				border-radius: 0px 0px 10px 10px
+				
+				// Links inside the dropdown
+				a
+					color: #FFFFFF
+					padding: 12px 16px
+					text-decoration: none
+					display: block
+					margin-right: 0px
+
+					// Change color of dropdown links on hover 
+					&:hover
+						background-color: #757581
+						border-radius: 10px 10px 10px 10px
