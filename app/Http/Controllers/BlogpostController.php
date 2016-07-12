@@ -13,6 +13,7 @@ use Auth;
 class BlogpostController extends Controller {
     
     public function __construct() {
+        $this->middleware('ssl', ['only' => ['store', 'destroy', 'create', 'update']]);
         $this->middleware('auth', ['only' => ['store', 'destroy', 'create', 'update']]);
     }
 
