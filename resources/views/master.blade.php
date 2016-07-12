@@ -3,7 +3,7 @@
     <head>
         <title>My Blog</title>
         <link rel="stylesheet" href="/css/app.css">
-        <script src="{{ asset('/js/vendor.js') }}"></script>
+        <script src="{{ secure_asset('/js/vendor.js') }}"></script>
         @yield('head')
     </head>
     <body>
