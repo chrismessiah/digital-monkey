@@ -34,7 +34,7 @@
       </div>
       
     </div>
-    @if (Auth::user()->id == $author->id || Auth::user()->is_admin)
+    @if (Auth::check() && (Auth::user()->id == $author->id || Auth::user()->is_admin))
       <form method="POST" action="{{ url('/blogposts/'.$id) }}">
         {{ method_field('PATCH') }}
         {{ csrf_field() }}

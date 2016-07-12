@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Blogpost extends Model {
   
@@ -13,7 +14,7 @@ class Blogpost extends Model {
   ];
   
   public function check_if_author($user) {
-    if ( ($this->author == $user->id) || $user->is_admin ) {
+    if ( Auth::check() && ($this->author == Auth::user()->id) || Auth::user()->is_admin ) {
       return true;
     }
     return false;
