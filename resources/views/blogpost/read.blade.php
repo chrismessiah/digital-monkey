@@ -35,12 +35,12 @@
       
     </div>
     @if (Auth::check() && (Auth::user()->id == $author->id || Auth::user()->is_admin))
-      <form method="POST" action="{{ url('/blogposts/'.$id) }}">
+      <form method="POST" action="{{ secure_url('/blogposts/'.$id) }}">
         {{ method_field('PATCH') }}
         {{ csrf_field() }}
         <button type="submit" class="btn">Edit</button>
       </form>
-      <form method="POST" action="{{ url('/blogposts/'.$id) }}">
+      <form method="POST" action="{{ secure_url('/blogposts/'.$id) }}">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
         <button type="submit" class="btn">Delete</button>

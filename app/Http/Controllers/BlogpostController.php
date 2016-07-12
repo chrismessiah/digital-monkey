@@ -54,16 +54,16 @@ class BlogpostController extends Controller {
         $blogpost->author = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file');
         $blogpost->save();
-        return redirect()->to( url('blogposts/'.$blogpost->id) );
+        return redirect()->to( secure_url('blogposts/'.$blogpost->id) );
     }
     
     public function destroy(Request $request, $id) {
         $blogpost = Blogpost::find($id);
         if ( !$blogpost->check_if_author(Auth::user()) ) {
-            return redirect()->to( url('blogposst/'.$blogpost->id) );
+            return redirect()->to( secure_url('blogposst/'.$blogpost->id) );
         }
         Blogpost::destroy($id);
-        return redirect()->to( url('/') );
+        return redirect()->to( secure_url('/') );
         
     }
     

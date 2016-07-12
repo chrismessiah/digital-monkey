@@ -13,12 +13,12 @@
 					<div class="profile-pic"></div> <p>{{Auth::user()->getFirstname()}}</p>
 				</div>
 				<div class="content">
-					<a href="{{ url('blogposts/create') }}">Make blogpost</a>
+					<a href="{{ secure_url('blogposts/create') }}">Make blogpost</a>
 					<a href="">Preferences</a>
 					@if (Auth::user()->is_admin)
 						<a href="">Admin controls</a>
 					@endif
-					<a href="{{ url('logout') }}">Logout</a>
+					<a href="{{ secure_url('logout') }}">Logout</a>
 				</div>
 			</div>
 			

@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="write-blogpost-page-container">     
-      <form role="form" method="POST" action="{{ url('blogposts') }}" enctype="multipart/form-data">
+      <form role="form" method="POST" action="{{ secure_url('blogposts') }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input id="title" placeholder="title" type="text" name="title" value="{{ old('title') }}">
           <input id="intro" placeholder="intro" type="text" name="intro" value="{{ old('intro') }}">
