@@ -11,18 +11,22 @@
 			<div class="dropdown">
 				<div class="dropdown-header">
 					<div class="profile-pic"></div> <p>{{Auth::user()->getFirstname()}}</p>
-					<style>
-						.profile-pic {	
-								background-image: url("{{ Auth::user()->getPicUrl() }}");
-						}
-					</style>
 				</div>
 				<div class="content">
-					<a href="{{ url('/blogpost/write') }}">Make blogpost</a>
+					<a href="{{ url('blogposts/create') }}">Make blogpost</a>
 					<a href="">Preferences</a>
-					<a href="{{ url('/logout') }}">Logout</a>
+					@if (Auth::user()->is_admin)
+						<a href="">Admin controls</a>
+					@endif
+					<a href="{{ url('logout') }}">Logout</a>
 				</div>
 			</div>
+			
+			<style>
+				#head-div .profile-pic {	
+						background-image: url("{{ Auth::user()->getPicUrl() }}");
+				}
+			</style>
 		@endif
 		
 		{{-- <a href=""><p id="head_menu4">Change to Swedish</p></a> --}}

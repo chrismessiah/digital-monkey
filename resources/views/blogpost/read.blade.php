@@ -16,19 +16,31 @@
       <p id="title">{{$title}}</p>
       <p id="intro">{{$intro}}</p>
       <p id="body">{!!$body!!}</p>
+      
+      <div class="author-container">
+        <p class="header">Published by</p>
+        <div class="profile-pic"></div> <p id="author">{{$author->fullname}}</p>
+        <style>
+          .blogpost-container .profile-pic {
+            background-image: url("{{ $author->getPicUrl() }}");
+          }
+        </style>
+      </div>
+      
+      <div class="social">
+        <a href="" id="twitter"></a>
+        <a href="" id="facebook"></a>
+        <a href="" id="google"></a>
+      </div>
+      
     </div>
-    <div id="social">
-      <a href="" id="twitter"></a>
-      <a href="" id="facebook"></a>
-      <a href="" id="google"></a>
-    </div>
-    @if (Auth::user()->id == $author || Auth::user()->is_admin)
-      <form method="POST" action="{{ url('/blogpost/'.$id.'/edit') }}">
+    @if (Auth::user()->id == $author->id || Auth::user()->is_admin)
+      <form method="POST" action="{{ url('/blogposts/'.$id) }}">
         {{ method_field('PATCH') }}
         {{ csrf_field() }}
         <button type="submit" class="btn">Edit</button>
       </form>
-      <form method="POST" action="{{ url('/blogpost/'.$id.'/delete') }}">
+      <form method="POST" action="{{ url('/blogposts/'.$id) }}">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
         <button type="submit" class="btn">Delete</button>

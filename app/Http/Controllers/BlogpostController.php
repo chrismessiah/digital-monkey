@@ -7,23 +7,32 @@ use DB;
 //use Log;
 use App\Http\Requests;
 use App\Blogpost;
+use App\User;
 use Auth;
 
 class BlogpostController extends Controller {
     
     public function __construct() {
-        $this->middleware('auth', ['only' => ['publish']]);
+        $this->middleware('auth', ['only' => ['store', 'destroy', 'create', 'update']]);
     }
 
     public function show_all() {
         $blogposts = Blogpost::all()->sortByDesc("updated_at");
         return view('index', compact('blogposts'));
     }
+    
+    public function create() {
+        return view('blogpost.write');
+    }
+    
+    public function update($id) {
+        # code...
+    }
 
-    public function show_one($id) {
+    public function show($id) {
       $blogpost = Blogpost::find($id);
       $id = $blogpost->id;
-      $author = $blogpost->author;
+      $author = User::find($blogpost->author);
       $image_name = $blogpost->image_name;
       $title = strip_tags($blogpost->title);
       $intro = strip_tags($blogpost->intro);
@@ -34,7 +43,7 @@ class BlogpostController extends Controller {
       return view('blogpost.read', compact('id','image_name','author','title', 'intro', 'body', 'created_at', 'updated_at'));
     }
     
-    public function publish(Request $request) {
+    public function store(Request $request) {
         $this->validate($request, [
             'title' => 'required|min:3|max:15',
             'intro' => 'required|min:3|max:25',
@@ -45,7 +54,17 @@ class BlogpostController extends Controller {
         $blogpost->author = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file');
         $blogpost->save();
-        return redirect()->to( url('/blogpost/read/'.$blogpost->id) );
+        return redirect()->to( url('blogposts/'.$blogpost->id) );
+    }
+    
+    public function destroy(Request $request, $id) {
+        $blogpost = Blogpost::find($id);
+        if ( !$blogpost->check_if_author(Auth::user()) ) {
+            return redirect()->to( url('blogposst/'.$blogpost->id) );
+        }
+        Blogpost::destroy($id);
+        return redirect()->to( url('/') );
+        
     }
     
     private function image_upload(Request $request, $form_file_naming) {

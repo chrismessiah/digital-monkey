@@ -14,19 +14,22 @@
 
 Route::auth();
 Route::get('/', 'BlogpostController@show_all');
-Route::get('/blogpost/read/{id}', 'BlogpostController@show_one');
-//Route::get('/blogpost/edit/{id}', 'BlogpostController@show_one');
-Route::get('/blogpost/write', function(){return view('blogpost.write');})->middleware('auth');
-Route::post('/blogpost/publish', 'BlogpostController@publish'); // restriction from controller
 
-Route::get('/controlpanel', function(){return view('admin');})->middleware('admin');
+Route::post('blogposts', 'BlogpostController@store');
+Route::get('blogposts/create', 'BlogpostController@create');
+Route::get('blogposts/{id}', 'BlogpostController@show');
+Route::put('blogposts/{id}', 'BlogpostController@update');
+Route::delete('blogposts/{id}', 'BlogpostController@destroy');
+
+
+Route::get('controlpanel', function(){return view('admin');})->middleware('admin');
 
 
 
 
 // ONLY FOR TESTING
-Route::get('/reset', function(){return view('/auth.passwords.reset');});
-Route::get('/request', function(){return view('/auth.passwords.request');});
+Route::get('reset', function(){return view('/auth.passwords.reset');});
+Route::get('request', function(){return view('/auth.passwords.request');});
 // ONLY FOR TESTING
 
 Route::get('/.well-known/acme-challenge/'.env('CERT_LINK_KEY'), 'CertificateController@lets_encrypt');

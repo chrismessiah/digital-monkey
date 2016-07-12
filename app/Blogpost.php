@@ -12,4 +12,11 @@ class Blogpost extends Model {
       'body',
   ];
   
+  public function check_if_author($user) {
+    if ( ($this->author == $user->id) || $user->is_admin ) {
+      return true;
+    }
+    return false;
+  }
+  
 }
