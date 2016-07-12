@@ -43,8 +43,22 @@ class BlogpostController extends Controller {
         
         $blogpost = new Blogpost($request->all());
         $blogpost->author = Auth::user()->id;
-        $blogpost->image_name = 'dbaec6755e67e7d9c0bfff49c75e451a.png';
+        $blogpost->image_name = $this->image_upload($request, 'file');
         $blogpost->save();
         return redirect()->to( url('/blogpost/read/'.$blogpost->id) );
+    }
+    
+    private function image_upload(Request $request, $form_file_naming) {
+        $this->validate($request, [$form_file_naming => 'file|image|max:4000']);
+        if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
+            $image = $request->file($form_file_naming);
+            $extension = $image->getClientOriginalExtension();
+            $hash = hash_file('md5', $image);
+            $file_name = $hash.'.'.$extension;
+            $path = public_path().'/images/blog_banners/';
+            $image->move($path, $file_name);
+            return $file_name;
+        }
+        return 'dbaec6755e67e7d9c0bfff49c75e451a.png';
     }
 }

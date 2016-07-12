@@ -13,7 +13,7 @@
 
 @section('content')
   @foreach($blogposts as $blogpost)
-    <a href="{{ url('/blogpost/'.$blogpost->id) }}">
+    <a href="{{ url('/blogpost/read/'.$blogpost->id) }}">
       <div class="blogpost {{'post'.$blogpost->id}}">
         <p class="title">{{$blogpost->title}}</p>
         <p class="intro">{{$blogpost->intro}}</p>
