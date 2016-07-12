@@ -15,7 +15,6 @@ class ForceSSL
      */
     public function handle($request, Closure $next) {
         if ( ($request->header('x-forwarded-proto') != 'https') && (env('APP_ENV') === 'production') ) {
-            echo();
             return redirect()->secure($request->getRequestUri());
         }
         return $next($request);
