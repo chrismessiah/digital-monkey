@@ -5,36 +5,6 @@
   font-family: Lato;
   src: url(/fonts/Lato-Regular.ttf); }
 
-a {
-  text-decoration: none;
-    text-decoration--webkit-user-select: none;
-    text-decoration--moz-user-select: none;
-    text-decoration--ms-user-select: none;
-    text-decoration-user-select: non; }
-
-body {
-  margin: 0px 0px; }
-
-p,
-a,
-div,
-body {
-  font-family: Lato, Helvetica, sans-serif; }
-
-html,
-body {
-  height: 100%; }
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: table; }
-
-@font-face {
-  font-family: Lato;
-  src: url(/fonts/Lato-Regular.ttf); }
-
 div.btn,
 button.btn,
 a.btn,
@@ -101,6 +71,28 @@ input[type="submit"].btn {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/Lato-Regular.ttf); }
+
+#foot-div {
+  background: #353535;
+  width: 100%;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  #foot-div p {
+    font-family: Helvetica;
+    color: white;
+    line-height: 29px;
+    margin: 0px;
+    margin-right: 5px;
+    font-size: 15px; }
+  #foot-div a {
+    text-decoration: none;
+    color: white; }
 
 #head-div {
   background: #525259;
@@ -181,23 +173,51 @@ input[type="submit"].btn {
               background-color: #757581;
               border-radius: 10px 10px 10px 10px; }
 
-#foot-div {
-  background: #353535;
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/Lato-Regular.ttf); }
+
+a {
+  text-decoration: none;
+    text-decoration--webkit-user-select: none;
+    text-decoration--moz-user-select: none;
+    text-decoration--ms-user-select: none;
+    text-decoration-user-select: non; }
+
+body {
+  margin: 0px 0px; }
+
+p,
+a,
+div,
+body {
+  font-family: Lato, Helvetica, sans-serif; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
-  #foot-div p {
+  display: table; }
+
+.blogpost {
+  height: 400px;
+  background-size: 100% 400px;
+  background-repeat: no-repeat; }
+  .blogpost > p {
+    position: relative;
+    left: 40px;
+    top: 30px;
     font-family: Helvetica;
-    color: white;
-    line-height: 29px;
-    margin: 0px;
-    margin-right: 5px;
-    font-size: 15px; }
-  #foot-div a {
-    text-decoration: none;
-    color: white; }
+    color: #FFFFFF;
+    padding-bottom: 20px; }
+    .blogpost > p.title {
+      font-size: 40px; }
+    .blogpost > p.intro {
+      font-size: 22px; }
 
 .login-page-container {
   background-image: url("../images/pages/login/bg.jpg");
@@ -245,17 +265,17 @@ input[type="submit"].btn {
       .login-page-container > div input[type="email"]:focus::-webkit-input-placeholder {
         color: transparent; }
 
-.register-page-container, .write-blogpost-page-container, .reset-password-request-container, .reset-password-container {
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, .write-blogpost-page-container {
   margin: auto;
   width: 60%; }
-  .register-page-container form, .write-blogpost-page-container form, .reset-password-request-container form, .reset-password-container form {
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, .write-blogpost-page-container form {
     margin-top: 70px;
     text-align: center; }
-    .register-page-container form .btn, .write-blogpost-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, .write-blogpost-page-container form .btn {
       margin-top: 30px;
       margin-bottom: 30px; }
-    .register-page-container form input, .write-blogpost-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
-    .register-page-container form textarea, .write-blogpost-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, .write-blogpost-page-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, .write-blogpost-page-container form textarea {
       margin: 10px 0;
       padding: 10px;
       border: solid 1px #dcdcdc;
@@ -268,8 +288,66 @@ input[type="submit"].btn {
       appearance: none;
       box-shadow: none;
       border-radius: none; }
-      .register-page-container form input:focus, .write-blogpost-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
-      .register-page-container form textarea:focus, .write-blogpost-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, .write-blogpost-page-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, .write-blogpost-page-container form textarea:focus {
+        border: solid 1px #707070;
+        box-shadow: 0 0 5px 1px #969696;
+        outline: none; }
+
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, .write-blogpost-page-container {
+  margin: auto;
+  width: 60%; }
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, .write-blogpost-page-container form {
+    margin-top: 70px;
+    text-align: center; }
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, .write-blogpost-page-container form .btn {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, .write-blogpost-page-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, .write-blogpost-page-container form textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: solid 1px #dcdcdc;
+      transition: box-shadow 0.3s, border 0.3s;
+      display: block;
+      width: 100%;
+      font-size: 18px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      box-shadow: none;
+      border-radius: none; }
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, .write-blogpost-page-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, .write-blogpost-page-container form textarea:focus {
+        border: solid 1px #707070;
+        box-shadow: 0 0 5px 1px #969696;
+        outline: none; }
+
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, .write-blogpost-page-container {
+  margin: auto;
+  width: 60%; }
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, .write-blogpost-page-container form {
+    margin-top: 70px;
+    text-align: center; }
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, .write-blogpost-page-container form .btn {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, .write-blogpost-page-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, .write-blogpost-page-container form textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: solid 1px #dcdcdc;
+      transition: box-shadow 0.3s, border 0.3s;
+      display: block;
+      width: 100%;
+      font-size: 18px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      box-shadow: none;
+      border-radius: none; }
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, .write-blogpost-page-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, .write-blogpost-page-container form textarea:focus {
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
@@ -277,6 +355,8 @@ input[type="submit"].btn {
 .blogpost-container {
   text-align: center;
   padding-bottom: 50px; }
+  .blogpost-container form {
+    display: inline-block; }
   .blogpost-container #article_banner {
     width: 100%;
     height: 400px;
@@ -312,17 +392,17 @@ input[type="submit"].btn {
       .blogpost-container #social a#google {
         background-image: url("/images/icons/google.png"); }
 
-.register-page-container, .write-blogpost-page-container, .reset-password-request-container, .reset-password-container {
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, .write-blogpost-page-container {
   margin: auto;
   width: 60%; }
-  .register-page-container form, .write-blogpost-page-container form, .reset-password-request-container form, .reset-password-container form {
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, .write-blogpost-page-container form {
     margin-top: 70px;
     text-align: center; }
-    .register-page-container form .btn, .write-blogpost-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, .write-blogpost-page-container form .btn {
       margin-top: 30px;
       margin-bottom: 30px; }
-    .register-page-container form input, .write-blogpost-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
-    .register-page-container form textarea, .write-blogpost-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, .write-blogpost-page-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, .write-blogpost-page-container form textarea {
       margin: 10px 0;
       padding: 10px;
       border: solid 1px #dcdcdc;
@@ -335,82 +415,8 @@ input[type="submit"].btn {
       appearance: none;
       box-shadow: none;
       border-radius: none; }
-      .register-page-container form input:focus, .write-blogpost-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
-      .register-page-container form textarea:focus, .write-blogpost-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
-        border: solid 1px #707070;
-        box-shadow: 0 0 5px 1px #969696;
-        outline: none; }
-
-.blogpost {
-  height: 400px;
-  background-size: 100% 400px;
-  background-repeat: no-repeat; }
-  .blogpost > p {
-    position: relative;
-    left: 40px;
-    top: 30px;
-    font-family: Helvetica;
-    color: #FFFFFF;
-    padding-bottom: 20px; }
-    .blogpost > p.title {
-      font-size: 40px; }
-    .blogpost > p.intro {
-      font-size: 22px; }
-
-.register-page-container, .write-blogpost-page-container, .reset-password-request-container, .reset-password-container {
-  margin: auto;
-  width: 60%; }
-  .register-page-container form, .write-blogpost-page-container form, .reset-password-request-container form, .reset-password-container form {
-    margin-top: 70px;
-    text-align: center; }
-    .register-page-container form .btn, .write-blogpost-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
-      margin-top: 30px;
-      margin-bottom: 30px; }
-    .register-page-container form input, .write-blogpost-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
-    .register-page-container form textarea, .write-blogpost-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
-      margin: 10px 0;
-      padding: 10px;
-      border: solid 1px #dcdcdc;
-      transition: box-shadow 0.3s, border 0.3s;
-      display: block;
-      width: 100%;
-      font-size: 18px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      box-shadow: none;
-      border-radius: none; }
-      .register-page-container form input:focus, .write-blogpost-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
-      .register-page-container form textarea:focus, .write-blogpost-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
-        border: solid 1px #707070;
-        box-shadow: 0 0 5px 1px #969696;
-        outline: none; }
-
-.register-page-container, .write-blogpost-page-container, .reset-password-request-container, .reset-password-container {
-  margin: auto;
-  width: 60%; }
-  .register-page-container form, .write-blogpost-page-container form, .reset-password-request-container form, .reset-password-container form {
-    margin-top: 70px;
-    text-align: center; }
-    .register-page-container form .btn, .write-blogpost-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
-      margin-top: 30px;
-      margin-bottom: 30px; }
-    .register-page-container form input, .write-blogpost-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
-    .register-page-container form textarea, .write-blogpost-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
-      margin: 10px 0;
-      padding: 10px;
-      border: solid 1px #dcdcdc;
-      transition: box-shadow 0.3s, border 0.3s;
-      display: block;
-      width: 100%;
-      font-size: 18px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      box-shadow: none;
-      border-radius: none; }
-      .register-page-container form input:focus, .write-blogpost-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
-      .register-page-container form textarea:focus, .write-blogpost-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, .write-blogpost-page-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, .write-blogpost-page-container form textarea:focus {
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }

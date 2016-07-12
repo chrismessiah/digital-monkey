@@ -1,16 +1,19 @@
 
 // components
-@import addons
-@import init
-@import buttons
-@import header
-@import footer
+@import components/addons
+@import components/buttons
+@import components/fonts
+@import components/footer
+@import components/header
+@import components/init
 
 // pages
-@import pages/login
-@import pages/register
-@import pages/read-blogpost
-@import pages/write-blogpost
 @import pages/index
-@import pages/request-password-reset
-@import pages/reset-password
+
+@import pages/auth/login
+@import pages/auth/register
+@import pages/auth/request-password-reset
+@import pages/auth/reset-password
+
+@import pages/blogpost/read
+@import pages/blogpost/write

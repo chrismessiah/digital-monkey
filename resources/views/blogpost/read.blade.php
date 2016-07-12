@@ -23,7 +23,16 @@
       <a href="" id="google"></a>
     </div>
     @if (Auth::user()->id == $author || Auth::user()->is_admin)
-      <a class="btn" href="{{ url('/blogpost/'.$id.'/edit') }}">Edit</a>
+      <form method="POST" action="{{ url('/blogpost/'.$id.'/edit') }}">
+        {{ method_field('PATCH') }}
+        {{ csrf_field() }}
+        <button type="submit" class="btn">Edit</button>
+      </form>
+      <form method="POST" action="{{ url('/blogpost/'.$id.'/delete') }}">
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+        <button type="submit" class="btn">Delete</button>
+      </form>
     @endif
   </div>
 @endsection
