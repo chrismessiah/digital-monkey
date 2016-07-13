@@ -14,8 +14,10 @@ class Blogpost extends Model {
   ];
   
   public function check_if_author() {
-    if ( Auth::check() && ($this->author == Auth::user()->id) || Auth::user()->is_admin ) {
-      return true;
+    if ( Auth::check() ) {
+      if ( $this->author == Auth::user()->id || Auth::user()->is_admin ) {
+        return true;
+      }
     }
     return false;
   }
