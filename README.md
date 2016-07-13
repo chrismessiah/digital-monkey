@@ -13,8 +13,7 @@ This is a reworked version the my final project in [DM2517 XML for Publishing](h
 * Postgresql
 
 
-
-#### Installation
+#### Installing requirements
 
 ```
 // Homebrew
@@ -48,17 +47,14 @@ Remember to change `php5_module`  in `/etc/apache2/httpd.conf` to
 LoadModule php7_module /usr/local/opt/php70/libexec/apache2/libphp7.so
 ```
 
-
-
-### First time setup
+### First-time setup
 
 ```
-$ createdb my-kth-blog
-
 // into cd /my-kth-blog
+$ createdb my-kth-blog
 $ php artisan migrate
-$ psql my-kth-blog
-=# \i path to /database/initalization/initalize.sql
-=# \q
+$ bower install
+$ npm install
+$ composer install
 
 ```
