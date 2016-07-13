@@ -3,7 +3,7 @@
 @section('head')
   <style>
   #article_banner {
-    background-image: url("{{'/images/blog_banners/'.$image_name}}")
+    background-image: url("{{'/images/blog_banners/'.$blogpost->image_name}}")
   }
   </style>
 @endsection
@@ -13,9 +13,9 @@
     <div id="article_banner"></div>
 
     <div id="content">
-      <p id="title">{{$title}}</p>
-      <p id="intro">{{$intro}}</p>
-      <p id="body">{!!$body!!}</p>
+      <p id="title">{{$blogpost->title}}</p>
+      <p id="intro">{{$blogpost->intro}}</p>
+      <p id="body">{!!$blogpost->body!!}</p>
       
       <div class="author-container">
         <p class="header">Published by</p>
@@ -34,9 +34,9 @@
       </div>
       
     </div>
-    @if (Auth::check() && (Auth::user()->id == $author->id || Auth::user()->is_admin))
-      <a href="{{ Helper::env_url('/blogposts/'.$id.'/edit') }}" class="btn">Edit</a>
-      <form method="POST" action="{{ Helper::env_url('/blogposts/'.$id) }}">
+    @if ($blogpost->check_if_author())
+      <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id.'/edit') }}" class="btn">Edit</a>
+      <form method="POST" action="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
         <button type="submit" class="btn">Delete</button>

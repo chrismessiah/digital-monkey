@@ -25,7 +25,7 @@ class BlogpostController extends Controller {
     public function create($id) {
         if ($id) {
             $blogpost = Blogpost::find($id);
-            if ( !$blogpost->check_if_author(Auth::user()) ) {
+            if ( !$blogpost->check_if_author() ) {
                 return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
             }
             $request_type = "PATCH";
@@ -46,7 +46,7 @@ class BlogpostController extends Controller {
         ]);
         
         $blogpost = Blogpost::find($id);
-        if ( !$blogpost->check_if_author(Auth::user()) ) {
+        if ( !$blogpost->check_if_author() ) {
             return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
         }
         $blogpost->title = $request->input('title');
@@ -61,16 +61,12 @@ class BlogpostController extends Controller {
 
     public function show($id) {
       $blogpost = Blogpost::find($id);
-      $id = $blogpost->id;
       $author = User::find($blogpost->author);
-      $image_name = $blogpost->image_name;
-      $title = strip_tags($blogpost->title);
-      $intro = strip_tags($blogpost->intro);
+      $blogpost->title = strip_tags($blogpost->title);
+      $blogpost->intro = strip_tags($blogpost->intro);
       $unsanitized_body = nl2br($blogpost->body);
-      $body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br>');
-      $created_at = $blogpost->created_at;
-      $updated_at = $blogpost->updated_at;
-      return view('blogpost.read', compact('id','image_name','author','title', 'intro', 'body', 'created_at', 'updated_at'));
+      $blogpost->body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br>');
+      return view('blogpost.read', compact('author', 'blogpost'));
     }
     
     public function store(Request $request) {
@@ -89,7 +85,7 @@ class BlogpostController extends Controller {
     
     public function destroy(Request $request, $id) {
         $blogpost = Blogpost::find($id);
-        if ( !$blogpost->check_if_author(Auth::user()) ) {
+        if ( !$blogpost->check_if_author() ) {
             return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
         }
         Blogpost::destroy($id);
