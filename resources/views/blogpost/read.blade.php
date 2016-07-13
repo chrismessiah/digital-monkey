@@ -35,11 +35,7 @@
       
     </div>
     @if (Auth::check() && (Auth::user()->id == $author->id || Auth::user()->is_admin))
-      <form method="POST" action="{{ Helper::env_url('/blogposts/'.$id) }}">
-        {{ method_field('PATCH') }}
-        {{ csrf_field() }}
-        <button type="submit" class="btn">Edit</button>
-      </form>
+      <a href="{{ Helper::env_url('/blogposts/'.$id.'/edit') }}" class="btn">Edit</a>
       <form method="POST" action="{{ Helper::env_url('/blogposts/'.$id) }}">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}

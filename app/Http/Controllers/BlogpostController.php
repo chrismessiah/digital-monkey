@@ -22,12 +22,41 @@ class BlogpostController extends Controller {
         return view('index', compact('blogposts'));
     }
     
-    public function create() {
-        return view('blogpost.write');
+    public function create($id) {
+        if ($id) {
+            $blogpost = Blogpost::find($id);
+            if ( !$blogpost->check_if_author(Auth::user()) ) {
+                return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
+            }
+            $request_type = "PATCH";
+            $route = "blogposts/".$blogpost->id;
+        } else {
+            $blogpost = new Blogpost();
+            $request_type = "POST";
+            $route = "blogposts";
+        }
+        return view('blogpost.write', compact('blogpost', 'request_type', 'route'));
     }
     
-    public function update($id) {
-        # code...
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'title' => 'required|min:3|max:15',
+            'intro' => 'required|min:3|max:60',
+            'body' => 'required|min:3|max:2000'
+        ]);
+        
+        $blogpost = Blogpost::find($id);
+        if ( !$blogpost->check_if_author(Auth::user()) ) {
+            return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
+        }
+        $blogpost->title = $request->input('title');
+        $blogpost->intro = $request->input('intro');
+        $blogpost->body = $request->input('body');
+        if ($request->hasFile('file')) {
+            $blogpost->image_name = $this->image_upload($request, 'file');
+        }
+        $blogpost->save();
+        return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
 
     public function show($id) {
@@ -47,8 +76,8 @@ class BlogpostController extends Controller {
     public function store(Request $request) {
         $this->validate($request, [
             'title' => 'required|min:3|max:15',
-            'intro' => 'required|min:3|max:25',
-            'body' => 'required|min:3|max:1000'
+            'intro' => 'required|min:3|max:60',
+            'body' => 'required|min:3|max:2000'
         ]);
         
         $blogpost = new Blogpost($request->all());
