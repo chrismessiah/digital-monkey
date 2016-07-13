@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Helpers\Helper;
 
 class User extends Authenticatable
 {
@@ -41,8 +42,8 @@ class User extends Authenticatable
             return('https://graph.facebook.com/v2.6/'.$this->fb_id.'/picture?width=500');
         }
         if (file_exists('images/profile_pics/'.$this->id.'.jpg')) {
-            return(secure_asset('images/profile_pics/'.$this->id.'.jpg'));
+            return(Helper::env_asset('images/profile_pics/'.$this->id.'.jpg'));
         }
-        return(secure_asset('images/profile_pics/example.jpg'));
+        return(Helper::env_asset('images/profile_pics/example.jpg'));
     }
 }
