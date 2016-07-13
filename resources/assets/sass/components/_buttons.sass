@@ -1,0 +1,66 @@
+@import fonts
+
+$color1: black
+$color2: white
+
+div.btn,
+button.btn,
+a.btn,
+input[type="submit"].btn
+  font-family: $font-stack
+  background-color: transparent
+  border: 2px solid $color1
+  border-radius: 2px
+  display: inline-block
+  padding: 10px 20px
+  margin: 5px 0px
+  cursor: pointer
+  cursor: hand
+  color: $color1
+  text-align: center
+  letter-spacing: 2px
+  font-size: 25px
+  text-decoration: none
+  @extend .linear-transition
+  p
+    margin: 0
+
+  &:hover
+    background-color: $color1
+    color: $color2
+    cursor: pointer
+    cursor: hand
+
+
+div.btn2,
+button.btn2,
+a.btn2,
+input[type="submit"].btn2
+  text-align: center
+  color: #FFFFFF
+  background-color: #525259
+  border-radius: 40px
+  border: 1px solid #979797
+  font-size: 17px
+  padding: 12px
+  padding-left: 30px
+  padding-right: 30px
+  cursor: pointer
+  cursor: hand
+
+
+.linear-transition
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear
+  -webkit-transition-duration: 0.2s
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear
+  -moz-transition-duration: 0.2s
+  /* NO prefix for opera */
+  transition-timing-function: linear
+  transition-duration: 0.2s
+  -moz-user-select: -moz-none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  user-select: none
