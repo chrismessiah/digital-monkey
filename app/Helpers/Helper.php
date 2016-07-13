@@ -12,9 +12,16 @@ namespace App\Helpers;
 
 class Helper {
     public static function env_url($path) {
-        if ($path[0] == "/") {
-            return env('WEB_DOMAIN').$path;
+        if (env('APP_ENV') == 'local') {
+            return url($path);
         }
-        return env('WEB_DOMAIN')."/".$path;
+        return secure_url($path);
+    }
+    
+    public static function env_asset($path) {
+        if (env('APP_ENV') == 'local') {
+            return asset($path);
+        }
+        return secure_asset($path);
     }
 }
