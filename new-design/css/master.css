@@ -97,7 +97,15 @@ div {
         position: absolute;
         top: 50%;
         margin-top: calc(-34px/2);
-        margin-left: 10px; }
+        margin-left: 10px;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform; }
+        #header > div.left .logo:hover {
+          transform: scale(1.1); }
     #header > div.right {
       right: 0; }
       #header > div.right > div {
