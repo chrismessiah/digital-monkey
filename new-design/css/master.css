@@ -83,7 +83,8 @@ div {
     position: absolute;
     top: 0;
     bottom: 0;
-    height: inherit; }
+    height: inherit;
+    cursor: pointer; }
     #header > div.left {
       left: 0; }
       #header > div.left .logo {
@@ -100,8 +101,7 @@ div {
     #header > div.right {
       right: 0; }
       #header > div.right > div {
-        display: inline-block;
-        cursor: pointer; }
+        display: inline-block; }
         #header > div.right > div.search {
           height: 60px;
           width: 60px;
