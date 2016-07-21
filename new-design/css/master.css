@@ -1,7 +1,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div {
+.linear-transition, #header > div.right > div, #index #article-banners .column .element, #index #article-banners .column .element > div.gradient {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -59,7 +59,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div {
+.linear-transition, #header > div.right > div, #index #article-banners .column .element, #index #article-banners .column .element > div.gradient {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -136,6 +136,11 @@ div {
           bottom: 4px;
           padding-left: 10px;
           padding-right: 10px; }
+          #header > div.right > div.user .name {
+            display: none; }
+            @media screen and (min-width: 768px) {
+              #header > div.right > div.user .name {
+                display: initial; } }
           #header > div.right > div.user:hover {
             background-color: #45c8f2; }
             #header > div.right > div.user:hover .name {
@@ -175,3 +180,68 @@ div {
     top: 5px; }
     #footer p span {
       font-family: RalewayBoldItalic; }
+
+.upper {
+  text-transform: uppercase; }
+
+.linear-transition, #header > div.right > div, #index #article-banners .column .element, #index #article-banners .column .element > div.gradient {
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.1s;
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear;
+  -moz-transition-duration: 0.1s;
+  /* NO prefix for opera */
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#index #article-banners {
+  font-size: 0; }
+  #index #article-banners .column {
+    width: calc(100%/3);
+    display: inline-block; }
+    #index #article-banners .column .element {
+      width: inherit;
+      height: 175px;
+      margin: 0;
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-osx-font-smoothing: grayscale; }
+      #index #article-banners .column .element.big {
+        height: 350px; }
+        #index #article-banners .column .element.big .banner {
+          background-image: url("../images/articles/big1.png"); }
+        #index #article-banners .column .element.big p {
+          font-size: 1.7em; }
+      #index #article-banners .column .element > div {
+        position: absolute;
+        width: inherit;
+        height: inherit; }
+        #index #article-banners .column .element > div.gradient {
+          z-index: 10;
+          background-image: linear-gradient(rgba(52, 93, 241, 0.45), rgba(255, 0, 0, 0.45)); }
+          #index #article-banners .column .element > div.gradient p {
+            margin: 0;
+            color: white;
+            display: table;
+            position: relative;
+            left: 10px;
+            top: 10px;
+            font-size: 1.3em;
+            width: 90%; }
+        #index #article-banners .column .element > div.banner {
+          margin: 0;
+          background-image: url("../images/articles/small1.png");
+          background-position: center;
+          background-size: auto 100%;
+          cursor: pointer; }
+      #index #article-banners .column .element:hover .gradient {
+        background-image: linear-gradient(rgba(52, 93, 241, 0.6), rgba(255, 0, 0, 0.6)); }
+      #index #article-banners .column .element:hover .banner {
+        background-size: auto 120%; }
