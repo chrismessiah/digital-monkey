@@ -202,11 +202,11 @@ div {
 
 #index #article-banners {
   font-size: 0; }
-  @media screen and (min-width: 800px) and (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     #index #article-banners {
       height: 525px;
-      display: block;
-      overflow-x: scroll; } }
+      width: 100%;
+      display: block; } }
   @media screen and (min-width: 1025px) {
     #index #article-banners {
       height: 350px;
@@ -216,18 +216,35 @@ div {
   #index #article-banners .element {
     font-size: 0;
     margin: 0; }
-    @media screen and (min-width: 800px) and (max-width: 1024px) {
+    @media screen and (max-width: 599px) {
+      #index #article-banners .element {
+        display: none;
+        width: 100%;
+        height: 175px; }
+        #index #article-banners .element:nth-child(1), #index #article-banners .element:nth-child(2), #index #article-banners .element:nth-child(3) {
+          display: block; } }
+    @media screen and (min-width: 600px) and (max-width: 799px) {
+      #index #article-banners .element {
+        width: 50%; }
+        #index #article-banners .element:nth-last-child(1) {
+          display: none; } }
+    @media screen and (min-width: 600px) and (max-width: 1024px) {
       #index #article-banners .element {
         height: 175px;
-        width: 70%;
-        display: inline; }
+        display: inline-block; } }
+  @media screen and (min-width: 600px) and (max-width: 1024px) and (max-width: 799px) {
+    #index #article-banners .element {
+      width: 50%; }
+      #index #article-banners .element:nth-last-child(1) {
+        display: none; } }
+  @media screen and (min-width: 600px) and (max-width: 1024px) and (min-width: 800px) {
+    #index #article-banners .element {
+      width: 33.33333%; } }
+    @media screen and (min-width: 600px) and (max-width: 1024px) {
         #index #article-banners .element:nth-child(1), #index #article-banners .element:nth-child(2) {
-          display: inline-block;
           margin: 0;
           width: 50%;
-          height: 350px; }
-          #index #article-banners .element:nth-child(1) p, #index #article-banners .element:nth-child(2) p {
-            font-size: 1.7em; } }
+          height: 350px; } }
     @media screen and (min-width: 1025px) {
       #index #article-banners .element {
         width: 33.33333%;
@@ -254,7 +271,8 @@ div {
         margin: 0;
         background-image: url("../images/articles/small1.png");
         background-position: center;
-        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
         cursor: pointer; }
     #index #article-banners .element:hover .gradient {
       background-image: linear-gradient(rgba(52, 93, 241, 0.6), rgba(255, 0, 0, 0.6)); }
