@@ -4,50 +4,65 @@
 #index
   #article-banners
     font-size: 0
-    .column
-      width: calc(100%/3)
-      display: inline-block
-      .element
-        width: inherit
+    @media screen and (min-width: 800px) and (max-width: 1024px)
+      height: 525px
+      display: block
+      overflow-x: scroll
+    @media screen and (min-width: 1025px)
+      height: 350px
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+    .element
+      font-size: 0
+      margin: 0
+      @media screen and (min-width: 800px) and (max-width: 1024px)
         height: 175px
-        margin: 0
-        @extend .linear-transition
-        overflow: hidden
-        backface-visibility: hidden
-        -webkit-backface-visibility: hidden
-        -moz-osx-font-smoothing: grayscale
-        &.big
+        width: 70%
+        display: inline
+        &:nth-child(1), &:nth-child(2)
+          display: inline-block
+          margin: 0
+          width: 50%
           height: 350px
-          .banner
-            background-image:  url('../images/articles/big1.png')
           p
             font-size: 1.7em
-        > div
-          position: absolute
-          width: inherit
-          height: inherit
-          &.gradient
-            z-index: 10
-            background-image: linear-gradient( rgba(52, 93, 241, 0.45), rgba(255, 0, 0, 0.45) )
-            @extend .linear-transition
-            p
-              margin: 0
-              color: white
-              display: table
-              position: relative
-              left: 10px
-              top: 10px
-              font-size: 1.3em
-              width: 90%
-          &.banner
+      @media screen and (min-width: 1025px)
+        width: 33.33333%
+        height: 175px
+        &:nth-child(1)
+          height: 350px
+      // @extend .linear-transition
+      // overflow: hidden
+      // backface-visibility: hidden
+      // -webkit-backface-visibility: hidden
+      // -moz-osx-font-smoothing: grayscale
+      > div
+        position: absolute
+        width: inherit
+        height: inherit
+        &.gradient
+          z-index: 10
+          background-image: linear-gradient( rgba(52, 93, 241, 0.45), rgba(255, 0, 0, 0.45) )
+          @extend .linear-transition
+          p
             margin: 0
-            background-image: url('../images/articles/small1.png')
-            background-position: center
-            background-size: auto 100%
-            cursor: pointer
-        &:hover
-          .gradient
-            background-image: linear-gradient( rgba(52, 93, 241, 0.6), rgba(255, 0, 0, 0.6) )
-          .banner
-            background-size: auto 120%
-            
+            color: white
+            display: table
+            position: relative
+            left: 10px
+            top: 10px
+            font-size: 1.3em
+            width: 90%
+        &.banner
+          margin: 0
+          background-image: url('../images/articles/small1.png')
+          background-position: center
+          background-size: auto 100%
+          cursor: pointer
+      &:hover
+        .gradient
+          background-image: linear-gradient( rgba(52, 93, 241, 0.6), rgba(255, 0, 0, 0.6) )
+        .banner
+          background-size: auto 120%
+          

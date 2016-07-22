@@ -1,7 +1,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div, #index #article-banners .column .element, #index #article-banners .column .element > div.gradient {
+.linear-transition, #header > div.right > div, #index #article-banners .element > div.gradient {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -59,7 +59,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div, #index #article-banners .column .element, #index #article-banners .column .element > div.gradient {
+.linear-transition, #header > div.right > div, #index #article-banners .element > div.gradient {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -184,7 +184,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div, #index #article-banners .column .element, #index #article-banners .column .element > div.gradient {
+.linear-transition, #header > div.right > div, #index #article-banners .element > div.gradient {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -202,46 +202,61 @@ div {
 
 #index #article-banners {
   font-size: 0; }
-  #index #article-banners .column {
-    width: calc(100%/3);
-    display: inline-block; }
-    #index #article-banners .column .element {
-      width: inherit;
-      height: 175px;
-      margin: 0;
-      overflow: hidden;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      -moz-osx-font-smoothing: grayscale; }
-      #index #article-banners .column .element.big {
-        height: 350px; }
-        #index #article-banners .column .element.big .banner {
-          background-image: url("../images/articles/big1.png"); }
-        #index #article-banners .column .element.big p {
-          font-size: 1.7em; }
-      #index #article-banners .column .element > div {
-        position: absolute;
-        width: inherit;
-        height: inherit; }
-        #index #article-banners .column .element > div.gradient {
-          z-index: 10;
-          background-image: linear-gradient(rgba(52, 93, 241, 0.45), rgba(255, 0, 0, 0.45)); }
-          #index #article-banners .column .element > div.gradient p {
-            margin: 0;
-            color: white;
-            display: table;
-            position: relative;
-            left: 10px;
-            top: 10px;
-            font-size: 1.3em;
-            width: 90%; }
-        #index #article-banners .column .element > div.banner {
+  @media screen and (min-width: 800px) and (max-width: 1024px) {
+    #index #article-banners {
+      height: 525px;
+      display: block;
+      overflow-x: scroll; } }
+  @media screen and (min-width: 1025px) {
+    #index #article-banners {
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap; } }
+  #index #article-banners .element {
+    font-size: 0;
+    margin: 0; }
+    @media screen and (min-width: 800px) and (max-width: 1024px) {
+      #index #article-banners .element {
+        height: 175px;
+        width: 70%;
+        display: inline; }
+        #index #article-banners .element:nth-child(1), #index #article-banners .element:nth-child(2) {
+          display: inline-block;
           margin: 0;
-          background-image: url("../images/articles/small1.png");
-          background-position: center;
-          background-size: auto 100%;
-          cursor: pointer; }
-      #index #article-banners .column .element:hover .gradient {
-        background-image: linear-gradient(rgba(52, 93, 241, 0.6), rgba(255, 0, 0, 0.6)); }
-      #index #article-banners .column .element:hover .banner {
-        background-size: auto 120%; }
+          width: 50%;
+          height: 350px; }
+          #index #article-banners .element:nth-child(1) p, #index #article-banners .element:nth-child(2) p {
+            font-size: 1.7em; } }
+    @media screen and (min-width: 1025px) {
+      #index #article-banners .element {
+        width: 33.33333%;
+        height: 175px; }
+        #index #article-banners .element:nth-child(1) {
+          height: 350px; } }
+    #index #article-banners .element > div {
+      position: absolute;
+      width: inherit;
+      height: inherit; }
+      #index #article-banners .element > div.gradient {
+        z-index: 10;
+        background-image: linear-gradient(rgba(52, 93, 241, 0.45), rgba(255, 0, 0, 0.45)); }
+        #index #article-banners .element > div.gradient p {
+          margin: 0;
+          color: white;
+          display: table;
+          position: relative;
+          left: 10px;
+          top: 10px;
+          font-size: 1.3em;
+          width: 90%; }
+      #index #article-banners .element > div.banner {
+        margin: 0;
+        background-image: url("../images/articles/small1.png");
+        background-position: center;
+        background-size: auto 100%;
+        cursor: pointer; }
+    #index #article-banners .element:hover .gradient {
+      background-image: linear-gradient(rgba(52, 93, 241, 0.6), rgba(255, 0, 0, 0.6)); }
+    #index #article-banners .element:hover .banner {
+      background-size: auto 120%; }
