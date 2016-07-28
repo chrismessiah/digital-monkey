@@ -333,3 +333,18 @@ div {
         background-color: black; }
       #index #categories .area:active p {
         color: black; }
+
+#index #article-posts {
+  height: 600px;
+  width: 100%;
+  font-size: 0; }
+  #index #article-posts .left {
+    display: inline-block;
+    width: 75%;
+    height: inherit;
+    background-color: blue; }
+  #index #article-posts .right {
+    display: inline-block;
+    width: 25%;
+    height: inherit;
+    background-color: red; }
