@@ -348,11 +348,17 @@ div {
   font-size: 0; }
   #index #article-posts .left {
     display: inline-block;
-    width: 75%;
+    width: 100%;
     height: inherit;
     background-color: blue; }
+    @media screen and (min-width: 800px) {
+      #index #article-posts .left {
+        width: 75%; } }
   #index #article-posts .right {
-    display: inline-block;
-    width: 25%;
-    height: inherit;
-    background-color: red; }
+    display: none; }
+    @media screen and (min-width: 800px) {
+      #index #article-posts .right {
+        display: inline-block;
+        width: 25%;
+        height: inherit;
+        background-color: red; } }

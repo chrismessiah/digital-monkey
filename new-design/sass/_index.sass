@@ -151,13 +151,17 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
     font-size: 0
     .left
       display: inline-block
-      width: 75%
+      width: 100%
+      @media screen and (min-width: 800px)
+        width: 75%
       height: inherit
       background-color: blue
     .right
-      display: inline-block
-      width: 25%
-      height: inherit
-      background-color: red
+      display: none
+      @media screen and (min-width: 800px)
+        display: inline-block
+        width: 25%
+        height: inherit
+        background-color: red
           
           
