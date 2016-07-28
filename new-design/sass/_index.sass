@@ -10,6 +10,14 @@ $teal-purple: linear-gradient( rgba(51, 230, 235, 0.50), rgba(186, 63, 141, 0.50
 $orange-yellow: linear-gradient( rgba(235, 122, 51, 0.50), rgba(186, 182, 63, 0.50) )
 $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50) )
 
+.no-user-select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
 #index
   #article-banners
     font-size: 0
@@ -102,6 +110,7 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
       width: calc(100%/6)
       display: inline-block
       text-align: center
+      @extend .no-user-select
       .icon
         display: inline-block
         height: 35px
