@@ -299,13 +299,21 @@ div {
 #index #categories {
   height: 60px;
   width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
   background-color: #1c2227;
   font-size: 0; }
+  @media screen and (min-width: 600px) {
+    #index #categories {
+      width: 100%; } }
   #index #categories .area {
     height: inherit;
-    width: calc(100%/6);
+    width: 133px;
     display: inline-block;
     text-align: center; }
+    @media screen and (min-width: 800px) {
+      #index #categories .area {
+        width: calc(100%/6); } }
     #index #categories .area .icon {
       display: inline-block;
       height: 35px;

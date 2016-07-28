@@ -103,11 +103,17 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
   #categories
     height: 60px
     width: 100%
+    overflow-x: auto
+    white-space: nowrap
+    @media screen and (min-width: 600px)
+      width: 100%
     background-color: $dark-gray
     font-size: 0
     .area
       height: inherit
-      width: calc(100%/6)
+      width: 133px
+      @media screen and (min-width: 800px)
+        width: calc(100%/6)
       display: inline-block
       text-align: center
       @extend .no-user-select
