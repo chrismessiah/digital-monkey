@@ -308,9 +308,15 @@ div {
       width: 100%; } }
   #index #categories .area {
     height: inherit;
-    width: 133px;
+    width: 38%;
     display: inline-block;
     text-align: center; }
+    @media screen and (min-width: 500px) {
+      #index #categories .area {
+        width: 28%; } }
+    @media screen and (min-width: 700px) {
+      #index #categories .area {
+        width: 21.5%; } }
     @media screen and (min-width: 800px) {
       #index #categories .area {
         width: calc(100%/6); } }
