@@ -377,25 +377,29 @@ div {
     height: 100%;
     font-size: 0;
     height: inherit; }
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1000px) {
       #index #article-posts .left {
         width: 75%; } }
     #index #article-posts .left .article {
-      height: 230px;
-      max-width: 1000px;
+      height: 180px;
+      max-width: 950px;
       margin: 30px 0px 30px 30px;
       font-size: 0; }
+      @media screen and (min-width: 800px) {
+        #index #article-posts .left .article {
+          height: 210px; } }
       #index #article-posts .left .article > div {
         display: inline-block; }
         #index #article-posts .left .article > div.image {
           height: inherit;
-          width: 360px;
+          width: 33%;
           background-image: url("../images/articles/article1.png");
           background-size: cover;
+          background-position: center;
           margin-right: 30px; }
         #index #article-posts .left .article > div.info {
           vertical-align: top;
-          width: 600px;
+          max-width: 450px;
           font-size: 0; }
           #index #article-posts .left .article > div.info p {
             margin: 10px 0; }
@@ -404,24 +408,33 @@ div {
               font-weight: bold;
               margin-top: 0; }
             #index #article-posts .left .article > div.info p.title {
-              font-size: 28px; }
+              font-size: 20px; }
+              @media screen and (min-width: 800px) {
+                #index #article-posts .left .article > div.info p.title {
+                  font-size: 22px; } }
+            #index #article-posts .left .article > div.info p.intro {
+              font-size: 14px; }
+              @media screen and (min-width: 800px) {
+                #index #article-posts .left .article > div.info p.intro {
+                  font-size: 16px; } }
   #index #article-posts .right {
     display: none; }
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1000px) {
       #index #article-posts .right {
         vertical-align: top;
         display: inline-block;
         width: 25%;
         font-size: 0; }
         #index #article-posts .right .container {
-          width: 275px;
+          width: auto;
           float: right;
           margin-right: 30px; }
           #index #article-posts .right .container .image {
             height: 130px;
-            width: 275px;
+            width: 20vw;
             background-image: url("../images/articles/article2.png");
             background-size: cover;
+            background-position: center;
             margin-bottom: 30px; }
             #index #article-posts .right .container .image .window {
               max-width: 215px;
@@ -448,6 +461,4 @@ div {
                 line-height: 45px;
                 width: 40px;
                 text-align: center;
-                vertical-align: middle;
-                position: relative;
-                bottom: 15px; } }
+                vertical-align: top; } }
