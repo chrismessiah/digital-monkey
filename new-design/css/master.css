@@ -366,22 +366,88 @@ div {
         color: black; }
 
 #index #article-posts {
-  height: 600px;
+  height: auto;
   width: 100%;
-  font-size: 0; }
+  font-size: 0;
+  display: block; }
   #index #article-posts .left {
+    vertical-align: top;
     display: inline-block;
     width: 100%;
-    height: inherit;
-    background-color: blue; }
+    height: 100%;
+    font-size: 0;
+    height: inherit; }
     @media screen and (min-width: 800px) {
       #index #article-posts .left {
         width: 75%; } }
+    #index #article-posts .left .article {
+      height: 230px;
+      max-width: 1000px;
+      margin: 30px 0px 30px 30px;
+      font-size: 0; }
+      #index #article-posts .left .article > div {
+        display: inline-block; }
+        #index #article-posts .left .article > div.image {
+          height: inherit;
+          width: 360px;
+          background-image: url("../images/articles/article1.png");
+          background-size: cover;
+          margin-right: 30px; }
+        #index #article-posts .left .article > div.info {
+          vertical-align: top;
+          width: 600px;
+          font-size: 0; }
+          #index #article-posts .left .article > div.info p {
+            margin: 10px 0; }
+            #index #article-posts .left .article > div.info p.category {
+              color: #45c8f2;
+              font-weight: bold;
+              margin-top: 0; }
+            #index #article-posts .left .article > div.info p.title {
+              font-size: 28px; }
   #index #article-posts .right {
     display: none; }
     @media screen and (min-width: 800px) {
       #index #article-posts .right {
+        vertical-align: top;
         display: inline-block;
         width: 25%;
-        height: inherit;
-        background-color: red; } }
+        font-size: 0; }
+        #index #article-posts .right .container {
+          width: 275px;
+          float: right;
+          margin-right: 30px; }
+          #index #article-posts .right .container .image {
+            height: 130px;
+            width: 275px;
+            background-image: url("../images/articles/article2.png");
+            background-size: cover;
+            margin-bottom: 30px; }
+            #index #article-posts .right .container .image .window {
+              max-width: 215px;
+              height: 60px;
+              background-color: rgba(28, 34, 39, 0.69);
+              font-size: 0;
+              position: relative;
+              top: 30px; }
+              #index #article-posts .right .container .image .window > p {
+                font-size: 14px;
+                color: white;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 5px;
+                display: inline-block;
+                width: 70%; }
+              #index #article-posts .right .container .image .window > div {
+                display: inline-block;
+                background-color: #45c8f2;
+                color: white;
+                padding: 5px;
+                font-size: 36px;
+                height: 45px;
+                line-height: 45px;
+                width: 40px;
+                text-align: center;
+                vertical-align: middle;
+                position: relative;
+                bottom: 15px; } }
