@@ -158,24 +158,44 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
       @media screen and (min-width: 1000px)
         width: 75%
       .article
-        height: 180px
+        //@extend .linear-transition
+        width: 95%
+        margin: 0
+        font-size: 0
+        margin: 30px auto 0 auto
+        &:hover
+          cursor: pointer
+          box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.10)
+          .image
+            box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.10)
+        //height: 180px
+        //max-height: 80vmin
         @media screen and (min-width: 800px)
           height: 210px
-        max-width: 950px
-        margin: 30px 0px 30px 30px
-        font-size: 0
+          margin: 30px 0px 30px 30px
+          max-width: 950px
         > div
-          display: inline-block
+          display: block
+          @media screen and (min-width: 800px)
+            display: inline-block
           &.image
-            height: inherit
-            width: 33%
+            height: 50vw
+            width: 100%
+            @media screen and (min-width: 800px)
+              height: inherit
+              width: 33%
+            
             background-image: url('../images/articles/article1.png')
             background-size: cover
             background-position: center
             margin-right: 30px
           &.info
             vertical-align: top
-            max-width: 450px
+            width: 97%
+            margin-top: 10px
+            @media screen and (min-width: 800px)
+              width: 60%
+              margin-top: 0
             font-size: 0
             p
               margin: 10px 0
@@ -184,11 +204,13 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
                 font-weight: bold
                 margin-top: 0 
               &.title
-                font-size: 20px
+                //font-size: 20px
+                font-weight: bold
+                font-size: 30px
                 @media screen and (min-width: 800px)
                   font-size: 22px
               &.intro
-                font-size: 14px
+                font-size: 15px
                 @media screen and (min-width: 800px)
                   font-size: 16px
     .right

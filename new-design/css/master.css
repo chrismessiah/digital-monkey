@@ -381,26 +381,45 @@ div {
       #index #article-posts .left {
         width: 75%; } }
     #index #article-posts .left .article {
-      height: 180px;
-      max-width: 950px;
-      margin: 30px 0px 30px 30px;
-      font-size: 0; }
+      width: 95%;
+      margin: 0;
+      font-size: 0;
+      margin: 30px auto 0 auto; }
+      #index #article-posts .left .article:hover {
+        cursor: pointer;
+        box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.1); }
+        #index #article-posts .left .article:hover .image {
+          box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.1); }
       @media screen and (min-width: 800px) {
         #index #article-posts .left .article {
-          height: 210px; } }
+          height: 210px;
+          margin: 30px 0px 30px 30px;
+          max-width: 950px; } }
       #index #article-posts .left .article > div {
-        display: inline-block; }
+        display: block; }
+        @media screen and (min-width: 800px) {
+          #index #article-posts .left .article > div {
+            display: inline-block; } }
         #index #article-posts .left .article > div.image {
-          height: inherit;
-          width: 33%;
+          height: 50vw;
+          width: 100%;
           background-image: url("../images/articles/article1.png");
           background-size: cover;
           background-position: center;
           margin-right: 30px; }
+          @media screen and (min-width: 800px) {
+            #index #article-posts .left .article > div.image {
+              height: inherit;
+              width: 33%; } }
         #index #article-posts .left .article > div.info {
           vertical-align: top;
-          max-width: 450px;
+          width: 97%;
+          margin-top: 10px;
           font-size: 0; }
+          @media screen and (min-width: 800px) {
+            #index #article-posts .left .article > div.info {
+              width: 60%;
+              margin-top: 0; } }
           #index #article-posts .left .article > div.info p {
             margin: 10px 0; }
             #index #article-posts .left .article > div.info p.category {
@@ -408,12 +427,13 @@ div {
               font-weight: bold;
               margin-top: 0; }
             #index #article-posts .left .article > div.info p.title {
-              font-size: 20px; }
+              font-weight: bold;
+              font-size: 30px; }
               @media screen and (min-width: 800px) {
                 #index #article-posts .left .article > div.info p.title {
                   font-size: 22px; } }
             #index #article-posts .left .article > div.info p.intro {
-              font-size: 14px; }
+              font-size: 15px; }
               @media screen and (min-width: 800px) {
                 #index #article-posts .left .article > div.info p.intro {
                   font-size: 16px; } }
