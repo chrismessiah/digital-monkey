@@ -1,6 +1,8 @@
 $dark-gray: #1c2227
 $light-blue: #45c8f2
 
+@import addons
+
 #footer
   width: 100%
   height: 30px
@@ -14,4 +16,8 @@ $light-blue: #45c8f2
     top: 5px
     cursor: default
     span
+      @extend .linear-transition
       font-family: RalewayBoldItalic
+      &:hover
+        cursor: pointer
+        color: #e06c75

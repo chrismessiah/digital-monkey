@@ -158,16 +158,19 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
       @media screen and (min-width: 1000px)
         width: 75%
       .article
-        //@extend .linear-transition
+        @extend .linear-transition
+        
+        position: relative
         width: 95%
         margin: 0
         font-size: 0
         margin: 30px auto 0 auto
         &:hover
           cursor: pointer
-          box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.10)
+          transform: translateX(10px)
+          box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.05)
           .image
-            box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.10)
+            box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.05)
         //height: 180px
         //max-height: 80vmin
         @media screen and (min-width: 800px)
@@ -220,6 +223,10 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
                 
     .right
       display: none
+      .article .window
+        @extend .linear-transition
+        @extend .no-user-select
+      
       @media screen and (min-width: 1000px)
         vertical-align: top
         display: inline-block
@@ -240,8 +247,11 @@ $purple-teal: linear-gradient( rgba(107, 51, 235, 0.50), rgba(63, 167, 186, 0.50
             background-position: center
             margin-bottom: 30px
             position: relative
+            overflow: hidden
             &:hover
               cursor: pointer
+              .window
+                transform: translate(-40px, -50%)
             .window
               width: 70%
               height: 60px

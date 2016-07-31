@@ -1,7 +1,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div, #index #article-banners .element > div.gradient, #index #categories .area {
+.linear-transition, #header > div.right > div, #footer p span, #index #article-banners .element > div.gradient, #index #categories .area, #index #article-posts .left .article, #index #article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -17,7 +17,7 @@
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index #categories .area {
+.no-user-select, #index #categories .area, #index #article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -67,7 +67,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div, #index #article-banners .element > div.gradient, #index #categories .area {
+.linear-transition, #header > div.right > div, #footer p span, #index #article-banners .element > div.gradient, #index #categories .area, #index #article-posts .left .article, #index #article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -83,7 +83,7 @@ div {
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index #categories .area {
+.no-user-select, #index #categories .area, #index #article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -183,25 +183,10 @@ div {
               position: relative;
               bottom: 20px; }
 
-#footer {
-  width: 100%;
-  height: 30px;
-  background-color: #1c2227; }
-  #footer p {
-    color: #45c8f2;
-    font-size: 14px;
-    margin: 0;
-    margin-left: 5px;
-    position: relative;
-    top: 5px;
-    cursor: default; }
-    #footer p span {
-      font-family: RalewayBoldItalic; }
-
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, #header > div.right > div, #index #article-banners .element > div.gradient, #index #categories .area {
+.linear-transition, #header > div.right > div, #footer p span, #index #article-banners .element > div.gradient, #index #categories .area, #index #article-posts .left .article, #index #article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -217,7 +202,52 @@ div {
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index #categories .area {
+.no-user-select, #index #categories .area, #index #article-posts .right .article .window {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#footer {
+  width: 100%;
+  height: 30px;
+  background-color: #1c2227; }
+  #footer p {
+    color: #45c8f2;
+    font-size: 14px;
+    margin: 0;
+    margin-left: 5px;
+    position: relative;
+    top: 5px;
+    cursor: default; }
+    #footer p span {
+      font-family: RalewayBoldItalic; }
+      #footer p span:hover {
+        cursor: pointer;
+        color: #e06c75; }
+
+.upper {
+  text-transform: uppercase; }
+
+.linear-transition, #header > div.right > div, #footer p span, #index #article-banners .element > div.gradient, #index #categories .area, #index #article-posts .left .article, #index #article-posts .right .article .window {
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.1s;
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear;
+  -moz-transition-duration: 0.1s;
+  /* NO prefix for opera */
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.no-user-select, #index #categories .area, #index #article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -381,15 +411,17 @@ div {
       #index #article-posts .left {
         width: 75%; } }
     #index #article-posts .left .article {
+      position: relative;
       width: 95%;
       margin: 0;
       font-size: 0;
       margin: 30px auto 0 auto; }
       #index #article-posts .left .article:hover {
         cursor: pointer;
-        box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.1); }
+        transform: translateX(10px);
+        box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.05); }
         #index #article-posts .left .article:hover .image {
-          box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.1); }
+          box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.05); }
       @media screen and (min-width: 800px) {
         #index #article-posts .left .article {
           height: 20vw;
@@ -465,9 +497,12 @@ div {
             background-size: cover;
             background-position: center;
             margin-bottom: 30px;
-            position: relative; }
+            position: relative;
+            overflow: hidden; }
             #index #article-posts .right .container .article:hover {
               cursor: pointer; }
+              #index #article-posts .right .container .article:hover .window {
+                transform: translate(-40px, -50%); }
             #index #article-posts .right .container .article .window {
               width: 70%;
               height: 60px;
