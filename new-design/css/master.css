@@ -392,9 +392,9 @@ div {
           box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.1); }
       @media screen and (min-width: 800px) {
         #index #article-posts .left .article {
-          height: 210px;
+          height: 20vw;
           margin: 30px 0px 30px 30px;
-          max-width: 950px; } }
+          width: 97%; } }
       #index #article-posts .left .article > div {
         display: block; }
         @media screen and (min-width: 800px) {
@@ -432,11 +432,17 @@ div {
               @media screen and (min-width: 800px) {
                 #index #article-posts .left .article > div.info p.title {
                   font-size: 22px; } }
+              @media screen and (min-width: 1300px) {
+                #index #article-posts .left .article > div.info p.title {
+                  font-size: 26px; } }
             #index #article-posts .left .article > div.info p.intro {
               font-size: 15px; }
               @media screen and (min-width: 800px) {
                 #index #article-posts .left .article > div.info p.intro {
                   font-size: 16px; } }
+              @media screen and (min-width: 1300px) {
+                #index #article-posts .left .article > div.info p.intro {
+                  font-size: 20px; } }
   #index #article-posts .right {
     display: none; }
     @media screen and (min-width: 1000px) {
@@ -449,29 +455,55 @@ div {
           width: auto;
           float: right;
           margin-right: 30px; }
-          #index #article-posts .right .container .image {
-            height: 130px;
+          #index #article-posts .right .container > p {
+            font-weight: bold;
+            font-size: 24px; } }
+      @media screen and (min-width: 1000px) and (min-width: 1000px) {
+        #index #article-posts .right .container > p {
+          font-size: 28px; } }
+    @media screen and (min-width: 1000px) {
+          #index #article-posts .right .container .article {
+            height: 10vw;
             width: 20vw;
             background-image: url("../images/articles/article2.png");
             background-size: cover;
             background-position: center;
-            margin-bottom: 30px; }
-            #index #article-posts .right .container .image .window {
-              max-width: 215px;
+            margin-bottom: 30px;
+            position: relative; }
+            #index #article-posts .right .container .article:hover {
+              cursor: pointer; }
+            #index #article-posts .right .container .article .window {
+              width: 70%;
               height: 60px;
               background-color: rgba(28, 34, 39, 0.69);
               font-size: 0;
-              position: relative;
-              top: 30px; }
-              #index #article-posts .right .container .image .window > p {
-                font-size: 14px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              flex-wrap: nowrap; } }
+        @media screen and (min-width: 1000px) and (min-width: 1350px) {
+          #index #article-posts .right .container .article .window {
+            height: 50%; } }
+    @media screen and (min-width: 1000px) {
+              #index #article-posts .right .container .article .window > p {
+                font-size: 1.2vw;
                 color: white;
                 margin-top: 0;
                 margin-bottom: 0;
                 margin-left: 5px;
                 display: inline-block;
-                width: 70%; }
-              #index #article-posts .right .container .image .window > div {
+                width: 77%; } }
+          @media screen and (min-width: 1000px) and (min-width: 1350px) {
+            #index #article-posts .right .container .article .window > p {
+              font-size: 16px; } }
+          @media screen and (min-width: 1000px) and (min-width: 1500px) {
+            #index #article-posts .right .container .article .window > p {
+              font-size: 18px; } }
+    @media screen and (min-width: 1000px) {
+              #index #article-posts .right .container .article .window > div {
                 display: inline-block;
                 background-color: #45c8f2;
                 color: white;
@@ -480,5 +512,4 @@ div {
                 height: 45px;
                 line-height: 45px;
                 width: 40px;
-                text-align: center;
-                vertical-align: top; } }
+                text-align: center; } }
