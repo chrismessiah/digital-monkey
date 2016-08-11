@@ -544,3 +544,171 @@ div {
                 line-height: 45px;
                 width: 40px;
                 text-align: center; } }
+
+.upper {
+  text-transform: uppercase; }
+
+.linear-transition, #header > div.right > div, #footer p span, #index .article-banners .element > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.1s;
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear;
+  -moz-transition-duration: 0.1s;
+  /* NO prefix for opera */
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.no-user-select, #index .categories .area, #index .article-posts .right .article .window {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+@font-face {
+  font-family: RalewayRegular;
+  src: url("../fonts/Raleway-Regular.ttf"); }
+
+@font-face {
+  font-family: RalewayMedium;
+  src: url("../fonts/Raleway-Medium.ttf"); }
+
+@font-face {
+  font-family: RalewayMediumItalic;
+  src: url("../fonts/Raleway-MediumItalic.ttf"); }
+
+@font-face {
+  font-family: RalewayBold;
+  src: url("../fonts/Raleway-Bold.ttf"); }
+
+@font-face {
+  font-family: RalewayItalic;
+  src: url("../fonts/Raleway-Italic.ttf"); }
+
+@font-face {
+  font-family: RalewayLight;
+  src: url("../fonts/Raleway-Light.ttf"); }
+
+@font-face {
+  font-family: RalewayBoldItalic;
+  src: url("../fonts/Raleway-BoldItalic.ttf"); }
+
+#browse {
+  width: 100vw; }
+  #browse .banner {
+    height: 600px;
+    width: inherit;
+    background-image: url("../images/articles/banner1.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 20px; }
+    #browse .banner > div {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px; }
+      #browse .banner > div div.profile {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        background-image: url("../images/chris.jpg");
+        background-size: cover;
+        border-radius: 100px;
+        margin-right: 10px; }
+      #browse .banner > div p {
+        color: white;
+        margin: 0;
+        font-size: 22px;
+        font-family: RalewayLight;
+        display: inline-block;
+        position: relative;
+        bottom: 10px; }
+        #browse .banner > div p span {
+          color: #7ac1f4; }
+          #browse .banner > div p span:hover {
+            color: #6aa4cd;
+            cursor: pointer; }
+        #browse .banner > div p.title {
+          position: inherit;
+          font-size: 30px;
+          font-family: RalewayRegular; }
+  #browse .social {
+    position: absolute; }
+    #browse .social > div {
+      width: 30px;
+      height: 30px;
+      margin: 10px; }
+      #browse .social > div.twitter {
+        background-image: url("../images/social/twitter.svg"); }
+      #browse .social > div.facebook {
+        background-image: url("../images/social/facebook.svg"); }
+      #browse .social > div.google-plus {
+        background-image: url("../images/social/google-plus.svg"); }
+      #browse .social > div:hover {
+        cursor: pointer; }
+  #browse .content-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px; }
+    #browse .content-wrapper p {
+      margin: 10px auto;
+      width: 60vw; }
+      #browse .content-wrapper p.intro {
+        font-size: 24px;
+        line-height: 36px; }
+        #browse .content-wrapper p.intro::first-letter {
+          color: #45C8F2;
+          font-family: RalewayMedium;
+          font-size: 70px; }
+      #browse .content-wrapper p.title {
+        font-family: RalewayBold;
+        font-size: 26px; }
+      #browse .content-wrapper p.qoute {
+        font-family: RalewayMedium;
+        font-size: 45px;
+        width: 70vw;
+        text-align: center;
+        width: 80vw;
+        color: #999999; }
+  #browse hr {
+    width: 70vw; }
+  #browse .author {
+    width: 70vw;
+    min-height: 130px;
+    margin: 20px auto 20px auto;
+    font-size: 0; }
+    #browse .author .left {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px; }
+      #browse .author .left .profile-pic {
+        height: 125px;
+        width: 125px;
+        background-image: url("../images/chris.jpg");
+        background-size: cover;
+        border-radius: 100px;
+        vertical-align: middle; }
+    #browse .author .right {
+      width: 75%;
+      display: inline-block;
+      vertical-align: top; }
+      #browse .author .right p {
+        margin: 10px 0; }
+        #browse .author .right p:nth-child(1) {
+          font-family: RalewayMedium;
+          font-size: 24px; }
