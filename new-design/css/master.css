@@ -619,6 +619,12 @@ div {
       flex-direction: column;
       text-align: center;
       padding: 0 20px; }
+      #browse .banner > div p.category {
+        background-color: #45c8f2;
+        padding: 5px 10px;
+        color: white;
+        text-transform: uppercase;
+        font-size: 18px; }
       #browse .banner > div div.profile {
         height: 40px;
         width: 40px;
@@ -687,7 +693,7 @@ div {
   #browse hr {
     width: 70vw; }
   #browse .author {
-    width: 70vw;
+    width: 60vw;
     min-height: 130px;
     margin: 20px auto 20px auto;
     font-size: 0; }
