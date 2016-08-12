@@ -651,7 +651,11 @@ div {
           font-size: 30px;
           font-family: RalewayRegular; }
   #browse .social {
+    display: none;
     position: absolute; }
+    @media screen and (min-width: 550px) {
+      #browse .social {
+        display: block; } }
     #browse .social > div {
       width: 30px;
       height: 30px;
@@ -672,7 +676,16 @@ div {
     margin-bottom: 20px; }
     #browse .content-wrapper p {
       margin: 10px auto;
-      width: 60vw; }
+      width: 80vw; }
+      @media screen and (min-width: 950px) {
+        #browse .content-wrapper p {
+          width: 75vw; } }
+      @media screen and (min-width: 950px) {
+        #browse .content-wrapper p {
+          width: 70vw; } }
+      @media screen and (min-width: 1100px) {
+        #browse .content-wrapper p {
+          width: 60vw; } }
       #browse .content-wrapper p.intro {
         font-size: 24px;
         line-height: 36px; }
