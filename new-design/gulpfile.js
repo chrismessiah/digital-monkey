@@ -49,6 +49,7 @@ gulp.task('default', function() {
 
 gulp.task('concat-js', function() {
   return gulp.src([
+      'bower_components/jquery/dist/jquery.min.js',
       'js/*.js'
     ])
     .pipe(concat('master.js'))
