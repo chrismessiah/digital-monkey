@@ -114,10 +114,14 @@ $light-blue: #45c8f2
     margin: 20px auto 20px auto
     font-size: 0
     .left
-      display: inline-flex
+      display: flex
       justify-content: center
       align-items: center
-      margin-right: 20px
+      margin: 30px 0 10px 0
+      @media screen and (min-width: 650px)
+        display: inline-flex
+        margin-right: 20px
+        margin-top: 0
       .profile-pic
         height: 125px
         width: 125px
@@ -126,11 +130,19 @@ $light-blue: #45c8f2
         border-radius: 100px
         vertical-align: middle
     .right
-      width: 75%
       display: inline-block
       vertical-align: top
+      @media screen and (min-width: 650px)
+        width: 50%
+      @media screen and (min-width: 700px)
+        width: 60%
+      @media screen and (min-width: 800px)
+        width: 70%
       p
         margin: 10px 0
         &:nth-child(1)
           font-family: RalewayMedium
           font-size: 24px
+          text-align: center
+          @media screen and (min-width: 650px)
+            text-align: left
