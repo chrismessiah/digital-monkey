@@ -30,13 +30,13 @@ class CreateUsersTable extends Migration
                 'email' => 'superuser@superuser.com',
                 'fullname' => 'superuser superuser',
                 'is_admin' => TRUE,
-                'password' => '\$2y\$10\$Ac9SitW1rA041PZTEw4SDu41zNhEk1MmdX9XDcWjx9WiITPmL269y',
+                'password' => '$2y$10$Ac9SitW1rA041PZTEw4SDu41zNhEk1MmdX9XDcWjx9WiITPmL269y',
                 'remember_token' => 'M5C9Q7H9zvsiynhLOZB3yO35tOpeI5FMduXGGEPZQ8oyPaOpulXT7jRtfpKx'
             ), array(
                 'email' => 'chrabd@kth.se',
                 'fullname' => 'Christian Abdel',
                 'is_admin' => FALSE,
-                'password' => '\$2y\$10\$N1KnUXUUmg0HDWGv4i0voO35vYbwTrEFIWQQEmpP0zhEcNjzBfvPu',
+                'password' => '$2y$10$N1KnUXUUmg0HDWGv4i0voO35vYbwTrEFIWQQEmpP0zhEcNjzBfvPu',
                 'remember_token' => 'II7v3XSKWQlCATSfveyqaaKA0PXId5PvCxHJOnPNeU0nDYCz0O6ZYugHubCX'
             )); 
         foreach ($users as $array) {

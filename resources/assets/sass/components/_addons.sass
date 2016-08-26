@@ -1,2 +1,26 @@
 .upper
 	text-transform: uppercase
+	
+.linear-transition
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear
+  -webkit-transition-duration: 0.1s
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear
+  -moz-transition-duration: 0.1s
+  /* NO prefix for opera */
+  transition-timing-function: linear
+  transition-duration: 0.1s
+  -moz-user-select: -moz-none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.no-user-select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none

@@ -1,34 +1,33 @@
-<div id="head-div">
-	<nav class="left">
-		<a id="kth-logo-link" href="/"><div id="kth-logo"></div></a>
-	</nav>
-	
-	<nav class="right">
-		@if (Auth::guest()) {{-- Not logged in --}}
-			<a href="/register">Register</a>
-			<a href="/login">Log in</a>
-		@else {{-- logged in --}}
-			<div class="dropdown">
-				<div class="dropdown-header">
-					<div class="profile-pic"></div> <p>{{Auth::user()->getFirstname()}}</p>
+<div id="header">
+		<div class="standard">
+				<div class="left">
+						<div class="logo"></div>
 				</div>
-				<div class="content">
-					<a href="{{ Helper::env_url('blogposts/create') }}">Make blogpost</a>
-					<a href="">Preferences</a>
-					@if (Auth::user()->is_admin)
-						<a href="">Admin controls</a>
-					@endif
-					<a href="{{ Helper::env_url('logout') }}">Logout</a>
+				
+				<div class="right">
+						<div class="search">
+								<div class="icon"></div>
+						</div>
+						@if (Auth::guest()) {{-- Not logged in --}}
+							<div class="login">Sign in</div>
+						@else {{-- logged in --}}
+							<div class="user">
+									<div class="container">
+											<div class="icon"></div>
+											<style>
+												#header .user .icon {	
+														background-image: url("{{ Auth::user()->getPicUrl() }}");
+												}
+											</style>
+									</div>
+									<div class="name">Chales</div>
+							</div>
+						@endif
 				</div>
-			</div>
-			
-			<style>
-				#head-div .profile-pic {	
-						background-image: url("{{ Auth::user()->getPicUrl() }}");
-				}
-			</style>
-		@endif
-		
-		{{-- <a href=""><p id="head_menu4">Change to Swedish</p></a> --}}
-	</nav>
+		</div>
+		<div class="login-dropdown">
+				<div class="back"></div>
+				<div class="logo"></div>
+				<p>Log in / Sign up</p>
+		</div>
 </div>

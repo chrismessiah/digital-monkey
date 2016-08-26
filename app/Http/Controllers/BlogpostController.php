@@ -7,6 +7,7 @@ use DB;
 //use Log;
 use App\Http\Requests;
 use App\Blogpost;
+use App\Category;
 use App\User;
 use Auth;
 use App\Helpers\Helper;
@@ -19,7 +20,8 @@ class BlogpostController extends Controller {
 
     public function show_all() {
         $blogposts = Blogpost::all()->sortByDesc("updated_at");
-        return view('index', compact('blogposts'));
+        $categories = Category::all();
+        return view('index', compact('blogposts', 'categories'));
     }
     
     public function create($id) {
