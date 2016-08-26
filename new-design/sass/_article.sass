@@ -1,11 +1,18 @@
 $dark-gray: #1c2227
 $light-blue: #45c8f2
+$light-light-blue: #6ecae7
+//$light-light-blue: #67cded
 
 @import addons
 @import fonts
 
 #browse
   width: 100vw
+  div,
+  p
+    &::selection
+      background: $light-light-blue
+      color: white
   .banner
     height: 600px
     width: inherit
