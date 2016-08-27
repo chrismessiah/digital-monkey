@@ -17,7 +17,7 @@
           <?php
           $i = 0;
           ?>
-          @foreach($blogposts->take(5) as $blogpost)
+          @foreach($banners as $blogpost)
             <div class="element">
                 <div class="gradient color{{$i}}">
                     <p>{{$blogpost->title}}</p>
@@ -46,7 +46,7 @@
         
         <div class="article-posts">
             <div class="left">
-                @foreach($blogposts->splice(5, 9) as $blogpost)
+                @foreach($blogpost_list as $blogpost)
                   <div class="article">
                       <div class="image"></div>
                       <div class="info">
@@ -65,7 +65,7 @@
                     <?php
                       $i = 1;
                     ?>
-                    @foreach($blogposts->take(-5) as $blogpost)
+                    @foreach($popular_posts as $blogpost)
                       <div class="article">
                           <div class="window">
                               <div>{{$i}}</div>

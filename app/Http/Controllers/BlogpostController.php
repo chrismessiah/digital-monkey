@@ -17,11 +17,25 @@ class BlogpostController extends Controller {
     public function __construct() {
         $this->middleware('auth', ['only' => ['store', 'destroy', 'create', 'update']]);
     }
+    
+    private function popper($i2, $to_pop, $direction) {
+        if ($direction === "f") {$to_pop = $to_pop->reverse();}
+        for ($i=0; $i < $i2; $i++) { 
+            $to_pop->pop();
+        }
+        if ($direction === "f") {$to_pop = $to_pop->reverse();}
+        return $to_pop;
+    }
 
     public function show_all() {
         $blogposts = Blogpost::all()->sortByDesc("updated_at");
+        $banners = $blogposts->take(5);
+        $blogposts = $this->popper(5, $blogposts, "f"); 
+        $popular_posts = $blogposts->take(-5);
+        $blogposts = $this->popper(5, $blogposts, "l");
+        $blogpost_list = $blogposts;
         $categories = Category::all();
-        return view('index', compact('blogposts', 'categories'));
+        return view('index', compact('banners', 'popular_posts', 'blogpost_list', 'categories'));
     }
     
     public function create($id) {
