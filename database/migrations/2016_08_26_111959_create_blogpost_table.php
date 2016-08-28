@@ -16,7 +16,7 @@ class CreateBlogpostTable extends Migration {
             $table->integer('author')->unsigned();
             $table->foreign('author')->references('id')->on('users')->onDelete('cascade');
             $table->string('image_name', 70);
-            $table->integer('category');
+            $table->integer('category')->unsigned();
             $table->foreign('category')->references('id')->on('categories');
             $table->string('title', 50);
             $table->string('intro', 200);
