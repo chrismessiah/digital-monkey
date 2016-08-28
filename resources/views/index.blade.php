@@ -50,7 +50,7 @@
                   <div class="article">
                       <div class="image"></div>
                       <div class="info">
-                          <p class="category">{{$blogpost->category}}</p> <!-- HAVE TO EAGER LOAD THE CATEGORIES -->
+                          <p class="category">{{$blogpost->category->name}}</p>
                           <p class="title">{{$blogpost->title}}</p>
                           <p class="intro">{{$blogpost->intro}}</p>
                           <div class="author"></div>

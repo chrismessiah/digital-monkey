@@ -28,12 +28,12 @@ class BlogpostController extends Controller {
     }
 
     public function show_all() {
-        $blogposts = Blogpost::all()->sortByDesc("updated_at");
+        $blogposts = Blogpost::with(['author', 'category'])->orderBy('updated_at', 'desc')->get();
         $banners = $blogposts->take(5);
         $blogposts = $this->popper(5, $blogposts, "f"); 
-        $popular_posts = $blogposts->take(-5);
+        $popular_posts = $blogposts->take(-5); // should be most popular but what the heck...
         $blogposts = $this->popper(5, $blogposts, "l");
-        $blogpost_list = $blogposts;
+        $blogpost_list = $blogposts->take(4); // should be whole list but no infinite-scroll is implemented so 4 is enough for now
         $categories = Category::all();
         return view('index', compact('banners', 'popular_posts', 'blogpost_list', 'categories'));
     }
