@@ -30,7 +30,7 @@ class User extends Authenticatable
     ];
     
     public function blogposts() {
-        return $this->hasMany(Blogpost::class);
+        return $this->hasMany('App\Blogpost', 'id', 'author');
     } 
     
     public function getFirstname() {

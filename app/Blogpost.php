@@ -22,4 +22,12 @@ class Blogpost extends Model {
     return false;
   }
   
+  public function author() {
+    return $this->belongsTo('App\User', 'author', 'id');
+  }
+  
+  public function category() {
+    return $this->belongsTo('App\Category', 'category', 'id');
+  }
+  
 }
