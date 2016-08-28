@@ -592,7 +592,8 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
       color: #45c8f2;
       font-size: 18px;
       display: inline;
-      padding-left: 5px; }
+      padding-left: 5px;
+      text-transform: capitalize; }
     #index .categories .area:hover {
       cursor: pointer;
       background-color: #45c8f2; }
@@ -669,7 +670,8 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
             #index .article-posts .left .article > div.info p.category {
               color: #45c8f2;
               font-weight: bold;
-              margin-top: 0; }
+              margin-top: 0;
+              text-transform: capitalize; }
             #index .article-posts .left .article > div.info p.title {
               font-weight: bold;
               font-size: 30px; }
