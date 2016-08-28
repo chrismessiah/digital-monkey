@@ -37,12 +37,12 @@
         
         <div class="categories">
             <div class="area">
-                <div class="icon"></div>
+                {{-- <div class="icon"></div> --}}
                 <p>featured</p>
             </div>
           @foreach($categories as $category)
             <div class="area">
-                <div class="icon"></div>
+                {{-- <div class="icon"></div> --}}
                 <p>{{$category->name}}</p>
             </div>
           @endforeach

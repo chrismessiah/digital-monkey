@@ -24,6 +24,8 @@ class CreateCategoriesTable extends Migration
         $categories = array(
         'web dev',
         'science',
+        'math',
+        'economics',
         'big data'
     );
         foreach ($categories as $category) {

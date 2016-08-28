@@ -593,7 +593,8 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
       font-size: 18px;
       display: inline;
       padding-left: 5px;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      line-height: 60px; }
     #index .categories .area:hover {
       cursor: pointer;
       background-color: #45c8f2; }
