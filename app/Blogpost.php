@@ -23,11 +23,11 @@ class Blogpost extends Model {
   }
   
   public function author() {
-    return $this->belongsTo('App\User', 'author', 'id');
+    return $this->belongsTo('App\User', 'user_id', 'id');
   }
   
   public function category() {
-    return $this->belongsTo('App\Category', 'category', 'id');
+    return $this->belongsTo('App\Category', 'category_id', 'id');
   }
   
 }
