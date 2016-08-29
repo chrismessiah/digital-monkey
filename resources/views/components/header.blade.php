@@ -22,7 +22,7 @@
 												}
 											</style>
 									</div>
-									<div class="name">Chales</div>
+									<div class="name">{{Auth::user()->getFirstname()}}</div>
 							</div>
 						@endif
 				</div>
