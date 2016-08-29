@@ -18,7 +18,7 @@
           $i = 0;
           ?>
           @foreach($banners as $blogpost)
-            <div class="element">
+            <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
                 <div class="gradient color{{$i}}">
                     <p>{{$blogpost->title}}</p>
                 </div>
@@ -28,13 +28,15 @@
                     background-image: url("{{'/images/blog_banners/'.$blogpost->image_name}}");
                   }
                 </style>
-            </div>
+            </a>
             <?php
             $i = $i + 1;
             ?>
           @endforeach
         </div>
         
+        
+        {{-- no a-href tag here!!!  --}}
         <div class="categories">
             <div class="area">
                 {{-- <div class="icon"></div> --}}
@@ -51,15 +53,17 @@
         <div class="article-posts">
             <div class="left">
                 @foreach($blogpost_list as $blogpost)
-                  <div class="article">
-                      <div class="image"></div>
-                      <div class="info">
-                          <p class="category">{{$blogpost->category->name}}</p>
-                          <p class="title">{{$blogpost->title}}</p>
-                          <p class="intro">{{$blogpost->intro}}</p>
-                          <div class="author"></div>
+                  <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
+                      <div class="article">
+                          <div class="image"></div>
+                          <div class="info">
+                              <p class="category">{{$blogpost->category->name}}</p>
+                              <p class="title">{{$blogpost->title}}</p>
+                              <p class="intro">{{$blogpost->intro}}</p>
+                              <div class="author"></div>
+                          </div>
                       </div>
-                  </div>
+                  </a>
                 @endforeach
             </div>
             
@@ -70,12 +74,14 @@
                       $i = 1;
                     ?>
                     @foreach($popular_posts as $blogpost)
-                      <div class="article">
-                          <div class="window">
-                              <div>{{$i}}</div>
-                              <p>{{$blogpost->title}}</p>
+                      <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
+                          <div class="article">
+                              <div class="window">
+                                  <div>{{$i}}</div>
+                                  <p>{{$blogpost->title}}</p>
+                              </div>
                           </div>
-                      </div>
+                      </a>
                       <?php
                         $i = $i + 1;
                       ?>
