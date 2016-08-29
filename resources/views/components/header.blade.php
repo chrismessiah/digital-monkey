@@ -1,7 +1,9 @@
 <div id="header">
 		<div class="standard">
 				<div class="left">
-						<div class="logo"></div>
+						<a href="{{ Helper::env_url('/') }}">
+							<div class="logo"></div>
+						</a>
 				</div>
 				
 				<div class="right">
