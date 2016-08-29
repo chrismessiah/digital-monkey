@@ -18,7 +18,9 @@ elixir(function(mix) {
         '../bower/sweetalert/dist/sweetalert.css'
     ]);
     mix.scripts([
-        '../bower/jquery/dist/jquery.js',
-        '../bower/sweetalert/dist/sweetalert-dev.js'
+        '../bower/jquery/dist/jquery.min.js',
+        '../bower/moment/min/moment.min.js',
+        '../bower/sweetalert/dist/sweetalert.min.js',
+        '../js/*.js'
     ], 'public/js/vendor.js');
 });
