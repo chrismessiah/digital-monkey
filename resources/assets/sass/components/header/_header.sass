@@ -1,7 +1,7 @@
 $dark-gray: #1c2227
 $light-blue: #45c8f2
 
-@import addons
+@import ../addons
 
 #header
   @extend .linear-transition
@@ -9,38 +9,7 @@ $light-blue: #45c8f2
   height: 60px
   background-color: $dark-gray
   z-index: 10000
-  div.login-dropdown
-    display: none
-    height: inherit
-    width: inherit
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    .logo 
-      width: 200px
-      height: 85px
-      background-image: url('../images/digitalMonkey.svg')
-      background-size: 200px 85px
-      margin-bottom: 30px
-    p
-      color: rgb(214, 214, 214)
-      font-size: 24px
-    .back
-      position: absolute
-      top: 0
-      right: 0
-      margin-top: 20px
-      margin-right: 20px
-      width: 30px
-      height: 30px
-      -webkit-mask-image: url('../images/back.svg')
-      mask-image: url('../images/back.svg')
-      background-color: $light-blue
-      background-size: 30px 30px
-      @extend .linear-transition
-      &:hover
-        cursor: pointer
-        transform: scale(1.1)
+  @import login-dropdown
   div.standard
     height: inherit
     width: inherit

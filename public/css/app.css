@@ -1,10 +1,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -20,7 +17,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -56,72 +53,80 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
   font-family: RalewayBoldItalic;
   src: url("../fonts/Raleway-BoldItalic.ttf"); }
 
-div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn {
-  font-family: Helvetica;
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 2px;
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px 0px;
-  cursor: pointer;
-  cursor: hand;
-  color: black;
-  text-align: center;
-  letter-spacing: 2px;
-  font-size: 25px;
-  text-decoration: none; }
-  div.btn p,
-  button.btn p,
-  a.btn p,
-  input[type="submit"].btn p {
-    margin: 0; }
-  div.btn:hover,
-  button.btn:hover,
-  a.btn:hover,
-  input[type="submit"].btn:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    cursor: hand; }
+.upper {
+  text-transform: uppercase; }
 
-div.btn2,
-button.btn2,
-a.btn2,
-input[type="submit"].btn2 {
-  text-align: center;
-  color: #FFFFFF;
-  background-color: #525259;
-  border-radius: 40px;
-  border: 1px solid #979797;
-  font-size: 17px;
-  padding: 12px;
-  padding-left: 30px;
-  padding-right: 30px;
-  cursor: pointer;
-  cursor: hand; }
-
-.linear-transition, div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
-  -webkit-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.1s;
   /* Prefix -moz- for firefox */
   -moz-transition-timing-function: linear;
-  -moz-transition-duration: 0.2s;
+  -moz-transition-duration: 0.1s;
   /* NO prefix for opera */
   transition-timing-function: linear;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.btn-template, .btn-dark, .btn-light, .btn-facebook {
+  display: inline-block;
+  cursor: pointer;
+  cursor: hand;
+  text-decoration: none;
+  text-align: center;
+  margin: 5px 0px;
+  padding: 10px 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 100px;
+  border-color: red;
+  background-color: transparent;
+  color: red;
+  font-family: RalewayRegular;
+  letter-spacing: 2px;
+  font-size: 20px; }
+  .btn-template p, .btn-dark p, .btn-light p, .btn-facebook p {
+    margin: 0; }
+  .btn-template:hover, .btn-dark:hover, .btn-light:hover, .btn-facebook:hover {
+    background-color: red;
+    color: green;
+    cursor: pointer;
+    cursor: hand; }
+  .btn-template:focus, .btn-dark:focus, .btn-light:focus, .btn-facebook:focus {
+    outline: none; }
+
+.btn-dark {
+  border-color: black;
+  color: black; }
+  .btn-dark:hover {
+    background-color: black;
+    color: white; }
+
+.btn-light {
+  border-color: white;
+  color: white; }
+  .btn-light:hover {
+    background-color: white;
+    color: black; }
+
+.btn-facebook {
+  border-color: #3363c7;
+  color: #3363c7; }
+  .btn-facebook:hover {
+    background-color: #3363c7;
+    color: black; }
 
 @font-face {
   font-family: RalewayRegular;
@@ -154,10 +159,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -173,7 +175,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -202,10 +204,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -221,7 +220,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -268,6 +267,46 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
       #header div.login-dropdown .back:hover {
         cursor: pointer;
         transform: scale(1.1); }
+    #header div.login-dropdown > a {
+      text-decoration: none;
+      color: white;
+      position: absolute;
+      right: 20px;
+      bottom: 20px; }
+      #header div.login-dropdown > a:hover {
+        color: #c1c1c1; }
+    #header div.login-dropdown .container {
+      top: 400px;
+      width: 300px;
+      margin: 0 auto;
+      z-index: 999999; }
+      #header div.login-dropdown .container input[type="password"],
+      #header div.login-dropdown .container input[type="email"] {
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        margin: 10px auto;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        border-radius: 40px;
+        font-size: 16px;
+        font-family: RalewayRegular;
+        outline: 0;
+        padding: 12px;
+        color: black;
+        margin: 10px 0px; }
+        #header div.login-dropdown .container input[type="password"]:focus::-webkit-input-placeholder,
+        #header div.login-dropdown .container input[type="email"]:focus::-webkit-input-placeholder {
+          color: transparent; }
+      #header div.login-dropdown .container p.separator {
+        text-align: center;
+        font-family: RalewayItalic; }
+      #header div.login-dropdown .container .btn-light {
+        width: 100%;
+        margin-top: 20px; }
+      #header div.login-dropdown .container .btn-facebook {
+        width: 80%; }
   #header div.standard {
     height: inherit;
     width: inherit; }
@@ -439,10 +478,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -458,7 +494,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -904,10 +940,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, div.btn,
-button.btn,
-a.btn,
-input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -923,7 +956,7 @@ input[type="submit"].btn, #footer p span, #header, #header div.login-dropdown .b
   -ms-user-select: none;
   user-select: none; }
 
-.no-user-select, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

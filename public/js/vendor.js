@@ -561,8 +561,4 @@ $(document).ready(function() {
   
 });
 
-$(document).ready(function() {
-  console.log("Hello");
-});
-
 //# sourceMappingURL=vendor.js.map

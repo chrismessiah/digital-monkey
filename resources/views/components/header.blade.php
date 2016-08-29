@@ -11,7 +11,7 @@
 								<div class="icon"></div>
 						</div>
 						@if (Auth::guest()) {{-- Not logged in --}}
-							<div class="login">Sign in</div>
+							<div class="login">Sign in / Sign up</div>
 						@else {{-- logged in --}}
 							<div class="user">
 									<div class="container">
@@ -30,6 +30,20 @@
 		<div class="login-dropdown">
 				<div class="back"></div>
 				<div class="logo"></div>
-				<p>Log in / Sign up</p>
+				<p>Sign in / Sign up</p>
+				<div class="container">
+						<form role="form" method="POST" action="{{ Helper::env_url('/login') }}">
+								{{ csrf_field() }}
+								<input id="email" type="email" name="email" placeholder="email" value="{{ old('email') }}">
+								<input id="password" type="password" name="password" placeholder="password">
+
+								{{-- <p>Remember me?</p><input type="checkbox" name="remember"> --}}
+								{{-- <a href="{{ Helper::env_url('/password/reset') }}">Forgot Password?</a> --}}
+								<button type="submit" class="btn-light">Login with email</button>
+								<p class="separator">or</p>
+								<a href="{{ Helper::env_url('/auth/facebook') }}" class="btn-facebook">Login with facebook</a>							
+						</form>
+				</div>
+				<a href="{{ Helper::env_url('/register') }}">Don't have an account yet?</a>
 		</div>
 </div>
