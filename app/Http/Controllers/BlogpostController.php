@@ -76,13 +76,12 @@ class BlogpostController extends Controller {
     }
 
     public function show($id) {
-      $blogpost = Blogpost::find($id);
-      $author = User::find($blogpost->author);
+      $blogpost = Blogpost::with('author', 'category')->find($id);
       $blogpost->title = strip_tags($blogpost->title);
       $blogpost->intro = strip_tags($blogpost->intro);
       $unsanitized_body = nl2br($blogpost->body);
       $blogpost->body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br>');
-      return view('blogpost.read', compact('author', 'blogpost'));
+      return view('blogpost.read', compact('blogpost'));
     }
     
     public function store(Request $request) {
