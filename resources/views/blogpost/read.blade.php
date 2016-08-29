@@ -11,12 +11,9 @@
               <p class="title">{{$blogpost->title}}</p>
               <div>
                   <script type="text/javascript">
-                    $(document).ready(function() {
-                      var timestamp = moment('{{$blogpost->created_at}}', 'YYYY-MM-DD hh:mm:ss').fromNow().toLowerCase();
-                      $('.timestamp').html(timestamp);
-                    });
+                    var date = '{{$blogpost->created_at}}';
                   </script>
-                  <div class="profile"></div><p>by <span>{{$blogpost->author->fullname}}</span> - Posted <span class="timestamp"></span></p>
+                  <div class="profile"></div><p>by <span>{{$blogpost->author->fullname}}</span> - Posted <span class="timestamp">Changed by js</span></p>
               </div>
           </div>
       </div>
@@ -27,7 +24,7 @@
               <div class="google-plus"></div>
           </div>
           <div class="content-wrapper">
-              {{-- how the heck do i store ??? --}}
+              {{-- how the heck do i store this ??? --}}
               <p class="intro">The further you get in your career, the harder it is to pinpoint — and then do something about — your personal and professional shortcomings.</p>
               <p>The Iphone is staggeringly popular, although it hasn’t really come as much of a surprise – you only have to consider the Ipod as proof of Apple’s dominance with such gadgets. If you are lucky enough to be one of the early Iphone owners, check out these resources to help you get some free Iphone games.<br><br>1-It’s one of the most obvious ways to find anything these days, but a simple google search can yield excellent results when you are looking for places to get your downloads. The downside of this is that after a little while you begin to realise that many of these sites have a few things in common. The trouble is that the sites that make themselves the most accessible in this way are the ones that are simply looking to make money with their advertising. They get paid for you to click on their ads, so it’s in their interest to drag as many visitors as possible into their site, and for this reason you’ll find that many of them offer no real downloads at all.</p>
               <p class="title">The shortcomings you can’t see</p>
