@@ -27,6 +27,11 @@
 						@endif
 				</div>
 		</div>
+		<div class="logged-in-dropdown">
+			<div class="triangle"></div>
+			<a href="{{Helper::env_url('/')}}">Make blogpost</a>
+			<a href="{{Helper::env_url('/logout')}}">Log out</a>
+		</div>
 		<div class="login-dropdown">
 				<div class="back"></div>
 				<div class="logo"></div>

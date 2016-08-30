@@ -533,6 +533,7 @@ function preventDefault(e) {
 
 $(document).ready(function() {
   
+  // show dropdown
   $("#header").find('.standard').find('.login').click(function() {
     $($("body").children()[1]).css({'-webkit-filter': 'blur(5px)'});
     $("#header").css({
@@ -546,6 +547,7 @@ $(document).ready(function() {
     window.ontouchmove  = preventDefault;
   });
   
+  // hide dropdown
   $("#header").find('.login-dropdown').find('.back').click(function() {
     $($("body").children()[1]).css({'-webkit-filter': 'none'});
     $("#header").css({
@@ -559,6 +561,19 @@ $(document).ready(function() {
     window.ontouchmove  = null;
   });
   
+  // show dropdown (when logged in)
+  var loggedInDropdownIsShown = false;
+  $("#header").find('.right').find('.user').click(function() {
+    if (loggedInDropdownIsShown) {
+      $("#header").find('.logged-in-dropdown').css({'display':'none'});
+      $("#header").find('.logged-in-dropdown').animate({'opacity':"0"});
+    } else {
+      $("#header").find('.logged-in-dropdown').css({'display':'block'});
+      $("#header").find('.logged-in-dropdown').animate({'opacity':"1"});
+      
+    }
+    loggedInDropdownIsShown = !loggedInDropdownIsShown;
+  });
 });
 
 //# sourceMappingURL=vendor.js.map

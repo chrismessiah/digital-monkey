@@ -1,7 +1,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -56,7 +56,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -159,7 +159,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -204,7 +204,7 @@
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -307,6 +307,60 @@
         margin-top: 20px; }
       #header div.login-dropdown .container .btn-facebook {
         width: 80%; }
+  #header .upper {
+    text-transform: uppercase; }
+  #header .linear-transition, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header #footer p span, #footer p #header span, #header #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #header #index .article-banners a > div.gradient, #index .article-banners #header a > div.gradient, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .left .article, #index .article-posts .left #header .article, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window {
+    /* Prefix -webkit- for chrome and safari */
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-duration: 0.1s;
+    /* Prefix -moz- for firefox */
+    -moz-transition-timing-function: linear;
+    -moz-transition-duration: 0.1s;
+    /* NO prefix for opera */
+    transition-timing-function: linear;
+    transition-duration: 0.1s;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  #header .no-user-select, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  #header .logged-in-dropdown {
+    opacity: 0;
+    display: none;
+    background-color: white;
+    position: absolute;
+    z-index: 999999;
+    right: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    min-width: 140px;
+    padding-bottom: 10px;
+    box-shadow: 5px 5px 15px #888888;
+    font-size: 0; }
+    #header .logged-in-dropdown .triangle {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+      position: relative;
+      left: 45%;
+      bottom: 10px; }
+    #header .logged-in-dropdown a {
+      color: black;
+      display: block;
+      padding: 5px 10px;
+      font-size: 16px; }
+      #header .logged-in-dropdown a:hover {
+        color: #a4a4a4; }
   #header div.standard {
     height: inherit;
     width: inherit; }
@@ -478,7 +532,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -940,7 +994,7 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
