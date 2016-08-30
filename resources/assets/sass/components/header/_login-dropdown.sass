@@ -2,7 +2,6 @@ div.login-dropdown
   display: none
   height: inherit
   width: inherit
-  justify-content: center
   align-items: center
   flex-direction: column
   .logo 
@@ -11,11 +10,9 @@ div.login-dropdown
     background-image: url('../images/digitalMonkey.svg')
     background-size: 200px 85px
     margin-bottom: 30px
-  p
-    color: rgb(214, 214, 214)
-    font-size: 24px
+    margin-top: 60px
   .back
-    position: absolute
+    position: fixed
     top: 0
     right: 0
     margin-top: 20px
@@ -30,49 +27,70 @@ div.login-dropdown
     &:hover
       cursor: pointer
       transform: scale(1.1)
-  > a
-    text-decoration: none
-    color: white
-    position: absolute
-    right: 20px
-    bottom: 20px
-    &:hover
-      color: rgb(193, 193, 193)
-  .container
-    top: 400px
-    width: 300px
-    margin: 0 auto
-    z-index: 999999
     
-    input[type="password"],
-    input[type="email"]
-      border: none
-      border-radius: 10px
-      padding: 10px
-      width: 100%
-      margin: 10px auto
-      box-sizing: border-box
-      background: #FFFFFF
-      border-radius: 40px
-      font-size: 16px
-      font-family: RalewayRegular
-      outline: 0
-      padding: 12px
-      color: black
-      margin: 10px 0px
-      &:focus::-webkit-input-placeholder
-        color: transparent
-    p.separator
-      //text-transform: uppercase
-      text-align: center
-      font-family: RalewayItalic
-      // &:before,
-      // &:after
-      //   width: 30px
-      //   height: 1px
-      //   background-color: white
-    .btn-light
-      width: 100%
-      margin-top: 20px
-    .btn-facebook
-      width: 80%
+  .sign-in,
+  .sign-up
+    opacity: 1
+    display: flex
+    align-items: center
+    flex-direction: column
+    p.title
+      color: rgb(214, 214, 214)
+      font-size: 24px
+    .container
+      top: 400px
+      width: 300px
+      margin: 0 auto 40px auto
+      z-index: 999999
+      
+      p.redirect
+        text-decoration: none
+        color: white
+        position: fixed
+        right: 20px
+        bottom: 20px
+        &:hover
+          color: rgb(193, 193, 193)
+          cursor: pointer
+      
+      input[type="password"],
+      input[type="text"],
+      input[type="email"]
+        border: none
+        border-radius: 10px
+        padding: 10px
+        width: 100%
+        margin: 10px auto
+        box-sizing: border-box
+        background: #FFFFFF
+        border-radius: 40px
+        font-size: 16px
+        font-family: RalewayRegular
+        outline: 0
+        padding: 12px
+        color: black
+        margin: 10px 0px
+        &:focus::-webkit-input-placeholder
+          color: transparent
+      p.separator
+        //text-transform: uppercase
+        text-align: center
+        font-family: RalewayItalic
+        color: white
+        // &:before,
+        // &:after
+        //   width: 30px
+        //   height: 1px
+        //   background-color: white
+      .btn-light
+        width: 100%
+        margin-top: 20px
+      .btn-facebook
+        width: 80%
+        margin-bottom: 10px
+    &.sign-up
+      display: none
+      opacity: 0
+      .btn-light,
+      .btn-facebook
+        font-size: 18px

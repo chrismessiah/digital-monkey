@@ -237,8 +237,6 @@
     display: none;
     height: inherit;
     width: inherit;
-    -ms-flex-pack: center;
-    justify-content: center;
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-direction: column;
@@ -248,12 +246,10 @@
       height: 85px;
       background-image: url("../images/digitalMonkey.svg");
       background-size: 200px 85px;
-      margin-bottom: 30px; }
-    #header div.login-dropdown p {
-      color: #d6d6d6;
-      font-size: 24px; }
+      margin-bottom: 30px;
+      margin-top: 60px; }
     #header div.login-dropdown .back {
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       margin-top: 20px;
@@ -267,46 +263,85 @@
       #header div.login-dropdown .back:hover {
         cursor: pointer;
         transform: scale(1.1); }
-    #header div.login-dropdown > a {
-      text-decoration: none;
-      color: white;
-      position: absolute;
-      right: 20px;
-      bottom: 20px; }
-      #header div.login-dropdown > a:hover {
-        color: #c1c1c1; }
-    #header div.login-dropdown .container {
-      top: 400px;
-      width: 300px;
-      margin: 0 auto;
-      z-index: 999999; }
-      #header div.login-dropdown .container input[type="password"],
-      #header div.login-dropdown .container input[type="email"] {
-        border: none;
-        border-radius: 10px;
-        padding: 10px;
-        width: 100%;
-        margin: 10px auto;
-        box-sizing: border-box;
-        background: #FFFFFF;
-        border-radius: 40px;
-        font-size: 16px;
-        font-family: RalewayRegular;
-        outline: 0;
-        padding: 12px;
-        color: black;
-        margin: 10px 0px; }
-        #header div.login-dropdown .container input[type="password"]:focus::-webkit-input-placeholder,
-        #header div.login-dropdown .container input[type="email"]:focus::-webkit-input-placeholder {
-          color: transparent; }
-      #header div.login-dropdown .container p.separator {
-        text-align: center;
-        font-family: RalewayItalic; }
-      #header div.login-dropdown .container .btn-light {
-        width: 100%;
-        margin-top: 20px; }
-      #header div.login-dropdown .container .btn-facebook {
-        width: 80%; }
+    #header div.login-dropdown .sign-in,
+    #header div.login-dropdown .sign-up {
+      opacity: 1;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      #header div.login-dropdown .sign-in p.title,
+      #header div.login-dropdown .sign-up p.title {
+        color: #d6d6d6;
+        font-size: 24px; }
+      #header div.login-dropdown .sign-in .container,
+      #header div.login-dropdown .sign-up .container {
+        top: 400px;
+        width: 300px;
+        margin: 0 auto 40px auto;
+        z-index: 999999; }
+        #header div.login-dropdown .sign-in .container p.redirect,
+        #header div.login-dropdown .sign-up .container p.redirect {
+          text-decoration: none;
+          color: white;
+          position: fixed;
+          right: 20px;
+          bottom: 20px; }
+          #header div.login-dropdown .sign-in .container p.redirect:hover,
+          #header div.login-dropdown .sign-up .container p.redirect:hover {
+            color: #c1c1c1;
+            cursor: pointer; }
+        #header div.login-dropdown .sign-in .container input[type="password"],
+        #header div.login-dropdown .sign-in .container input[type="text"],
+        #header div.login-dropdown .sign-in .container input[type="email"],
+        #header div.login-dropdown .sign-up .container input[type="password"],
+        #header div.login-dropdown .sign-up .container input[type="text"],
+        #header div.login-dropdown .sign-up .container input[type="email"] {
+          border: none;
+          border-radius: 10px;
+          padding: 10px;
+          width: 100%;
+          margin: 10px auto;
+          box-sizing: border-box;
+          background: #FFFFFF;
+          border-radius: 40px;
+          font-size: 16px;
+          font-family: RalewayRegular;
+          outline: 0;
+          padding: 12px;
+          color: black;
+          margin: 10px 0px; }
+          #header div.login-dropdown .sign-in .container input[type="password"]:focus::-webkit-input-placeholder,
+          #header div.login-dropdown .sign-in .container input[type="text"]:focus::-webkit-input-placeholder,
+          #header div.login-dropdown .sign-in .container input[type="email"]:focus::-webkit-input-placeholder,
+          #header div.login-dropdown .sign-up .container input[type="password"]:focus::-webkit-input-placeholder,
+          #header div.login-dropdown .sign-up .container input[type="text"]:focus::-webkit-input-placeholder,
+          #header div.login-dropdown .sign-up .container input[type="email"]:focus::-webkit-input-placeholder {
+            color: transparent; }
+        #header div.login-dropdown .sign-in .container p.separator,
+        #header div.login-dropdown .sign-up .container p.separator {
+          text-align: center;
+          font-family: RalewayItalic;
+          color: white; }
+        #header div.login-dropdown .sign-in .container .btn-light,
+        #header div.login-dropdown .sign-up .container .btn-light {
+          width: 100%;
+          margin-top: 20px; }
+        #header div.login-dropdown .sign-in .container .btn-facebook,
+        #header div.login-dropdown .sign-up .container .btn-facebook {
+          width: 80%;
+          margin-bottom: 10px; }
+      #header div.login-dropdown .sign-in.sign-up,
+      #header div.login-dropdown .sign-up.sign-up {
+        display: none;
+        opacity: 0; }
+        #header div.login-dropdown .sign-in.sign-up .btn-light,
+        #header div.login-dropdown .sign-in.sign-up .btn-facebook,
+        #header div.login-dropdown .sign-up.sign-up .btn-light,
+        #header div.login-dropdown .sign-up.sign-up .btn-facebook {
+          font-size: 18px; }
   #header .upper {
     text-transform: uppercase; }
   #header .linear-transition, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header #footer p span, #footer p #header span, #header #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #header #index .article-banners a > div.gradient, #index .article-banners #header a > div.gradient, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .left .article, #index .article-posts .left #header .article, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window {
