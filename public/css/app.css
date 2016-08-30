@@ -286,13 +286,25 @@
         #header div.login-dropdown .sign-up .container p.redirect {
           text-decoration: none;
           color: white;
-          position: fixed;
-          right: 20px;
-          bottom: 20px; }
+          position: initial;
+          text-align: center; }
           #header div.login-dropdown .sign-in .container p.redirect:hover,
           #header div.login-dropdown .sign-up .container p.redirect:hover {
             color: #c1c1c1;
             cursor: pointer; }
+          @media screen and (min-width: 620px) {
+            #header div.login-dropdown .sign-in .container p.redirect,
+            #header div.login-dropdown .sign-up .container p.redirect {
+              max-width: 20vw;
+              position: fixed;
+              display: block;
+              right: 20px;
+              bottom: 20px;
+              text-align: right; } }
+          @media screen and (min-width: 825px) {
+            #header div.login-dropdown .sign-in .container p.redirect,
+            #header div.login-dropdown .sign-up .container p.redirect {
+              max-width: 30vw; } }
         #header div.login-dropdown .sign-in .container input[type="password"],
         #header div.login-dropdown .sign-in .container input[type="text"],
         #header div.login-dropdown .sign-in .container input[type="email"],

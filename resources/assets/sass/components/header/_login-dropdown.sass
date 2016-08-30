@@ -46,12 +46,20 @@ div.login-dropdown
       p.redirect
         text-decoration: none
         color: white
-        position: fixed
-        right: 20px
-        bottom: 20px
         &:hover
           color: rgb(193, 193, 193)
           cursor: pointer
+        position: initial
+        text-align: center
+        @media screen and (min-width: 620px)
+          max-width: 20vw
+          position: fixed
+          display: block
+          right: 20px
+          bottom: 20px
+          text-align: right
+        @media screen and (min-width: 825px)
+          max-width: 30vw
       
       input[type="password"],
       input[type="text"],
