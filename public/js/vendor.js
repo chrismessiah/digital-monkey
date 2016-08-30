@@ -539,8 +539,11 @@ $(document).ready(function() {
   $("#header").find('.standard').find('.login').click(function() {
     $($("body").children()[1]).css({
       '-webkit-filter': 'blur(5px)',
-      'position':'fixed'
+      'position':'fixed',
+      'top':'60px'
     });
+    $('#footer').css({'height':'60px'});
+    $($('#footer').children()).css('display','none');
     $("#header").css({
       'min-height':'100vh',
       'height':'auto',
@@ -549,8 +552,6 @@ $(document).ready(function() {
     });
     $("#header").find('.standard').css({'display':'none'});
     $("#header").find('.login-dropdown').css({'display':'flex'});
-    //window.onwheel = preventDefault;
-    //window.ontouchmove  = preventDefault;
   });
   
   // if (showingDropdown) {
@@ -568,6 +569,8 @@ $(document).ready(function() {
       '-webkit-filter': 'none',
       'position':'initial'
     });
+    $('#footer').css({'height':'30px'});
+    $($('#footer').children()).css('display','block');
     $("#header").css({
       'height':'60px',
       'min-height':'0',
