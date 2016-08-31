@@ -1,7 +1,9 @@
 @extends('master')
 
 @section('content')
-  <div class="write-blogpost-page-container">     
+  <div class="write-blogpost-page-container">
+      <p class="editable">I'm editable! :D</p>
+      <script>var editor = new MediumEditor('.editable');</script>
       <form role="form" method="POST" action="{{ Helper::env_url($route) }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           @if ($request_type == "PATCH")

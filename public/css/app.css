@@ -1297,6 +1297,9 @@ div {
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
 
+.write-blogpost-page-container .editable {
+  outline: none; }
+
 body.stop-scrolling {
   height: 100%;
   overflow: hidden; }

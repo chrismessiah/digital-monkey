@@ -38,19 +38,20 @@ class BlogpostController extends Controller {
         return view('index', compact('banners', 'popular_posts', 'blogpost_list', 'categories'));
     }
     
-    public function create($id) {
-        if ($id) {
-            $blogpost = Blogpost::find($id);
-            if ( !$blogpost->check_if_author() ) {
-                return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
-            }
-            $request_type = "PATCH";
-            $route = "blogposts/".$blogpost->id;
-        } else {
-            $blogpost = new Blogpost();
-            $request_type = "POST";
-            $route = "blogposts";
-        }
+    public function create() {
+        // if ($id) {
+        //     $blogpost = Blogpost::find($id);
+        //     if ( !$blogpost->check_if_author() ) {
+        //         return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
+        //     }
+        //     $request_type = "PATCH";
+        //     $route = "blogposts/".$blogpost->id;
+        // }
+        //else {
+        $blogpost = new Blogpost();
+        $request_type = "POST";
+        $route = "blogposts";
+        //}
         return view('blogpost.write', compact('blogpost', 'request_type', 'route'));
     }
     
