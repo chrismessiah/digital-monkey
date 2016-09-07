@@ -1302,11 +1302,17 @@ div {
   outline: none;
   max-width: 80vw; }
   .write-blogpost-page-container .editable-intro.editable-intro,
-  .write-blogpost-page-container .editable-body.editable-intro {
+  .write-blogpost-page-container .editable-intro.editable-intro p,
+  .write-blogpost-page-container .editable-body.editable-intro,
+  .write-blogpost-page-container .editable-body.editable-intro p {
     font-size: 24px;
-    line-height: 36px; }
+    line-height: 36px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
     .write-blogpost-page-container .editable-intro.editable-intro::first-letter,
-    .write-blogpost-page-container .editable-body.editable-intro::first-letter {
+    .write-blogpost-page-container .editable-intro.editable-intro p::first-letter,
+    .write-blogpost-page-container .editable-body.editable-intro::first-letter,
+    .write-blogpost-page-container .editable-body.editable-intro p::first-letter {
       color: #45C8F2;
       font-family: RalewayMedium;
       font-size: 70px; }
@@ -1317,7 +1323,13 @@ div {
     width: 70vw;
     text-align: center;
     width: 80vw;
-    color: #999999; }
+    color: #999999;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .write-blogpost-page-container .editable-intro.editable-body p,
+  .write-blogpost-page-container .editable-body.editable-body p {
+    margin-top: 10px;
+    margin-bottom: 10px; }
 
 body.stop-scrolling {
   height: 100%;
