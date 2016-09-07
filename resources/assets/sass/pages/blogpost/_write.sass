@@ -2,5 +2,22 @@
 
 .write-blogpost-page-container
 	@extend .form-container
-	.editable
+	.editable-intro,
+	.editable-body
 		outline: none
+		max-width: 80vw
+		&.editable-intro
+			font-size: 24px
+			line-height: 36px
+			&::first-letter
+				color: #45C8F2
+				font-family: RalewayMedium
+				font-size: 70px
+		&.editable-body
+			h6
+				font-family: RalewayMedium
+				font-size: 45px
+				width: 70vw
+				text-align: center
+				width: 80vw
+				color: #999999

@@ -12,6 +12,7 @@
           {{-- <a href="{{ Helper::env_url('/password/reset') }}">Forgot Password?</a> --}}
           <button type="submit" class="btn-light">Login with email</button>
       </form>
+      <p>Wait! What's my password again?</p>
       <p class="redirect">Don't have an account yet?</p>
   </div>
 </div>

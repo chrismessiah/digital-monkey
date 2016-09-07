@@ -15,12 +15,15 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass([
         'app.sass',
-        '../bower/sweetalert/dist/sweetalert.css'
+        '../bower/sweetalert/dist/sweetalert.css',
+        '../bower/medium-editor/dist/css/medium-editor.min.css',
+        '../bower/medium-editor/dist/css/themes/beagle.min.css'
     ]);
     mix.scripts([
         '../bower/jquery/dist/jquery.min.js',
         '../bower/moment/min/moment.min.js',
         '../bower/sweetalert/dist/sweetalert.min.js',
+        '../bower/medium-editor/dist/js/medium-editor.min.js',
         '../js/*.js'
     ], 'public/js/vendor.js');
 });
