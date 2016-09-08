@@ -2088,17 +2088,17 @@ div {
   font-family: RalewayBoldItalic;
   src: url("../fonts/Raleway-BoldItalic.ttf"); }
 
-#browse {
+#browse, #write-blogpost {
   width: 100vw; }
-  #browse div::-moz-selection,
-  #browse p::-moz-selection {
+  #browse div::-moz-selection, #write-blogpost div::-moz-selection,
+  #browse p::-moz-selection, #write-blogpost p::-moz-selection {
     background: #6ecae7;
     color: white; }
-  #browse div::selection,
-  #browse p::selection {
+  #browse div::selection, #write-blogpost div::selection,
+  #browse p::selection, #write-blogpost p::selection {
     background: #6ecae7;
     color: white; }
-  #browse .banner {
+  #browse .banner, #write-blogpost .banner {
     height: 600px;
     width: inherit;
     background-image: url("../images/articles/banner1.png");
@@ -2110,7 +2110,7 @@ div {
     -ms-flex-align: end;
     align-items: flex-end;
     margin-bottom: 20px; }
-    #browse .banner > div {
+    #browse .banner > div, #write-blogpost .banner > div {
       background-color: rgba(0, 0, 0, 0.7);
       min-height: 100px;
       display: -ms-flexbox;
@@ -2121,13 +2121,13 @@ div {
       flex-direction: column;
       text-align: center;
       padding: 0 20px; }
-      #browse .banner > div p.category {
+      #browse .banner > div p.category, #write-blogpost .banner > div p.category {
         background-color: #45c8f2;
         padding: 5px 10px;
         color: white;
         text-transform: uppercase;
         font-size: 18px; }
-      #browse .banner > div div.profile {
+      #browse .banner > div div.profile, #write-blogpost .banner > div div.profile {
         height: 40px;
         width: 40px;
         display: inline-block;
@@ -2135,7 +2135,7 @@ div {
         background-size: cover;
         border-radius: 100px;
         margin-right: 10px; }
-      #browse .banner > div p {
+      #browse .banner > div p, #write-blogpost .banner > div p {
         color: white;
         margin: 0;
         text-transform: capitalize;
@@ -2144,37 +2144,37 @@ div {
         display: inline-block;
         position: relative;
         bottom: 10px; }
-        #browse .banner > div p span {
+        #browse .banner > div p span, #write-blogpost .banner > div p span {
           color: #7ac1f4; }
-          #browse .banner > div p span:hover {
+          #browse .banner > div p span:hover, #write-blogpost .banner > div p span:hover {
             color: #6aa4cd;
             cursor: pointer; }
-        #browse .banner > div p span.timestamp {
+        #browse .banner > div p span.timestamp, #write-blogpost .banner > div p span.timestamp {
           color: white;
           text-transform: lowercase; }
-        #browse .banner > div p.title {
+        #browse .banner > div p.title, #write-blogpost .banner > div p.title {
           position: inherit;
           font-size: 30px;
           font-family: RalewayRegular; }
-  #browse .social {
+  #browse .social, #write-blogpost .social {
     display: none;
     position: absolute; }
     @media screen and (min-width: 550px) {
-      #browse .social {
+      #browse .social, #write-blogpost .social {
         display: block; } }
-    #browse .social > div {
+    #browse .social > div, #write-blogpost .social > div {
       width: 30px;
       height: 30px;
       margin: 10px; }
-      #browse .social > div.twitter {
+      #browse .social > div.twitter, #write-blogpost .social > div.twitter {
         background-image: url("../images/social/twitter.svg"); }
-      #browse .social > div.facebook {
+      #browse .social > div.facebook, #write-blogpost .social > div.facebook {
         background-image: url("../images/social/facebook.svg"); }
-      #browse .social > div.google-plus {
+      #browse .social > div.google-plus, #write-blogpost .social > div.google-plus {
         background-image: url("../images/social/google-plus.svg"); }
-      #browse .social > div:hover {
+      #browse .social > div:hover, #write-blogpost .social > div:hover {
         cursor: pointer; }
-  #browse .content-wrapper {
+  #browse .content-wrapper, #write-blogpost .content-wrapper {
     width: 100vw;
     display: -ms-flexbox;
     display: flex;
@@ -2183,43 +2183,43 @@ div {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-bottom: 20px; }
-    #browse .content-wrapper p {
+    #browse .content-wrapper p, #write-blogpost .content-wrapper p {
       margin: 10px auto;
       width: 80vw; }
       @media screen and (min-width: 950px) {
-        #browse .content-wrapper p {
+        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
           width: 75vw; } }
       @media screen and (min-width: 950px) {
-        #browse .content-wrapper p {
+        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
           width: 70vw; } }
       @media screen and (min-width: 1100px) {
-        #browse .content-wrapper p {
+        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
           width: 60vw; } }
-      #browse .content-wrapper p.intro {
+      #browse .content-wrapper p.intro, #write-blogpost .content-wrapper p.intro {
         font-size: 24px;
         line-height: 36px; }
-        #browse .content-wrapper p.intro::first-letter {
+        #browse .content-wrapper p.intro::first-letter, #write-blogpost .content-wrapper p.intro::first-letter {
           color: #45C8F2;
           font-family: RalewayMedium;
           font-size: 70px; }
-      #browse .content-wrapper p.title {
+      #browse .content-wrapper p.title, #write-blogpost .content-wrapper p.title {
         font-family: RalewayBold;
         font-size: 26px; }
-      #browse .content-wrapper p.qoute {
+      #browse .content-wrapper p.qoute, #write-blogpost .content-wrapper p.qoute {
         font-family: RalewayMedium;
         font-size: 45px;
         width: 70vw;
         text-align: center;
         width: 80vw;
         color: #999999; }
-  #browse hr {
+  #browse hr, #write-blogpost hr {
     width: 70vw; }
-  #browse .author {
+  #browse .author, #write-blogpost .author {
     width: 60vw;
     min-height: 130px;
     margin: 20px auto 20px auto;
     font-size: 0; }
-    #browse .author .left {
+    #browse .author .left, #write-blogpost .author .left {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: center;
@@ -2228,39 +2228,39 @@ div {
       align-items: center;
       margin: 30px 0 10px 0; }
       @media screen and (min-width: 650px) {
-        #browse .author .left {
+        #browse .author .left, #write-blogpost .author .left {
           display: -ms-inline-flexbox;
           display: inline-flex;
           margin-right: 20px;
           margin-top: 0; } }
-      #browse .author .left .profile-pic {
+      #browse .author .left .profile-pic, #write-blogpost .author .left .profile-pic {
         height: 125px;
         width: 125px;
         background-image: url("../images/chris.jpg");
         background-size: cover;
         border-radius: 100px;
         vertical-align: middle; }
-    #browse .author .right {
+    #browse .author .right, #write-blogpost .author .right {
       display: inline-block;
       vertical-align: top; }
       @media screen and (min-width: 650px) {
-        #browse .author .right {
+        #browse .author .right, #write-blogpost .author .right {
           width: 50%; } }
       @media screen and (min-width: 700px) {
-        #browse .author .right {
+        #browse .author .right, #write-blogpost .author .right {
           width: 60%; } }
       @media screen and (min-width: 800px) {
-        #browse .author .right {
+        #browse .author .right, #write-blogpost .author .right {
           width: 70%; } }
-      #browse .author .right p {
+      #browse .author .right p, #write-blogpost .author .right p {
         margin: 10px 0; }
-        #browse .author .right p:nth-child(1) {
+        #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
           font-family: RalewayMedium;
           text-transform: capitalize;
           font-size: 24px;
           text-align: center; }
           @media screen and (min-width: 650px) {
-            #browse .author .right p:nth-child(1) {
+            #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
               text-align: left; } }
 
 .form-container, .register-page-container, .reset-password-request-container, .reset-password-container, #write-blogpost {
@@ -2292,38 +2292,302 @@ div {
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
 
-#write-blogpost .editable-intro,
-#write-blogpost .editable-body {
-  outline: none;
-  max-width: 80vw; }
-  #write-blogpost .editable-intro.editable-intro,
-  #write-blogpost .editable-intro.editable-intro p,
-  #write-blogpost .editable-body.editable-intro,
-  #write-blogpost .editable-body.editable-intro p {
-    font-size: 24px;
-    line-height: 36px;
-    margin-top: 10px;
-    margin-bottom: 10px; }
-    #write-blogpost .editable-intro.editable-intro::first-letter,
-    #write-blogpost .editable-intro.editable-intro p::first-letter,
-    #write-blogpost .editable-body.editable-intro::first-letter,
-    #write-blogpost .editable-body.editable-intro p::first-letter {
-      color: #45C8F2;
+.upper {
+  text-transform: uppercase; }
+
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.1s;
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear;
+  -moz-transition-duration: 0.1s;
+  /* NO prefix for opera */
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+@font-face {
+  font-family: RalewayRegular;
+  src: url("../fonts/Raleway-Regular.ttf"); }
+
+@font-face {
+  font-family: RalewayMedium;
+  src: url("../fonts/Raleway-Medium.ttf"); }
+
+@font-face {
+  font-family: RalewayMediumItalic;
+  src: url("../fonts/Raleway-MediumItalic.ttf"); }
+
+@font-face {
+  font-family: RalewayBold;
+  src: url("../fonts/Raleway-Bold.ttf"); }
+
+@font-face {
+  font-family: RalewayItalic;
+  src: url("../fonts/Raleway-Italic.ttf"); }
+
+@font-face {
+  font-family: RalewayLight;
+  src: url("../fonts/Raleway-Light.ttf"); }
+
+@font-face {
+  font-family: RalewayBoldItalic;
+  src: url("../fonts/Raleway-BoldItalic.ttf"); }
+
+#browse, #write-blogpost {
+  width: 100vw; }
+  #browse div::-moz-selection, #write-blogpost div::-moz-selection,
+  #browse p::-moz-selection, #write-blogpost p::-moz-selection {
+    background: #6ecae7;
+    color: white; }
+  #browse div::selection, #write-blogpost div::selection,
+  #browse p::selection, #write-blogpost p::selection {
+    background: #6ecae7;
+    color: white; }
+  #browse .banner, #write-blogpost .banner {
+    height: 600px;
+    width: inherit;
+    background-image: url("../images/articles/banner1.png");
+    background-size: cover;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin-bottom: 20px; }
+    #browse .banner > div, #write-blogpost .banner > div {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px; }
+      #browse .banner > div p.category, #write-blogpost .banner > div p.category {
+        background-color: #45c8f2;
+        padding: 5px 10px;
+        color: white;
+        text-transform: uppercase;
+        font-size: 18px; }
+      #browse .banner > div div.profile, #write-blogpost .banner > div div.profile {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        background-image: url("../images/chris.jpg");
+        background-size: cover;
+        border-radius: 100px;
+        margin-right: 10px; }
+      #browse .banner > div p, #write-blogpost .banner > div p {
+        color: white;
+        margin: 0;
+        text-transform: capitalize;
+        font-size: 22px;
+        font-family: RalewayLight;
+        display: inline-block;
+        position: relative;
+        bottom: 10px; }
+        #browse .banner > div p span, #write-blogpost .banner > div p span {
+          color: #7ac1f4; }
+          #browse .banner > div p span:hover, #write-blogpost .banner > div p span:hover {
+            color: #6aa4cd;
+            cursor: pointer; }
+        #browse .banner > div p span.timestamp, #write-blogpost .banner > div p span.timestamp {
+          color: white;
+          text-transform: lowercase; }
+        #browse .banner > div p.title, #write-blogpost .banner > div p.title {
+          position: inherit;
+          font-size: 30px;
+          font-family: RalewayRegular; }
+  #browse .social, #write-blogpost .social {
+    display: none;
+    position: absolute; }
+    @media screen and (min-width: 550px) {
+      #browse .social, #write-blogpost .social {
+        display: block; } }
+    #browse .social > div, #write-blogpost .social > div {
+      width: 30px;
+      height: 30px;
+      margin: 10px; }
+      #browse .social > div.twitter, #write-blogpost .social > div.twitter {
+        background-image: url("../images/social/twitter.svg"); }
+      #browse .social > div.facebook, #write-blogpost .social > div.facebook {
+        background-image: url("../images/social/facebook.svg"); }
+      #browse .social > div.google-plus, #write-blogpost .social > div.google-plus {
+        background-image: url("../images/social/google-plus.svg"); }
+      #browse .social > div:hover, #write-blogpost .social > div:hover {
+        cursor: pointer; }
+  #browse .content-wrapper, #write-blogpost .content-wrapper {
+    width: 100vw;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px; }
+    #browse .content-wrapper p, #write-blogpost .content-wrapper p {
+      margin: 10px auto;
+      width: 80vw; }
+      @media screen and (min-width: 950px) {
+        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
+          width: 75vw; } }
+      @media screen and (min-width: 950px) {
+        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
+          width: 70vw; } }
+      @media screen and (min-width: 1100px) {
+        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
+          width: 60vw; } }
+      #browse .content-wrapper p.intro, #write-blogpost .content-wrapper p.intro {
+        font-size: 24px;
+        line-height: 36px; }
+        #browse .content-wrapper p.intro::first-letter, #write-blogpost .content-wrapper p.intro::first-letter {
+          color: #45C8F2;
+          font-family: RalewayMedium;
+          font-size: 70px; }
+      #browse .content-wrapper p.title, #write-blogpost .content-wrapper p.title {
+        font-family: RalewayBold;
+        font-size: 26px; }
+      #browse .content-wrapper p.qoute, #write-blogpost .content-wrapper p.qoute {
+        font-family: RalewayMedium;
+        font-size: 45px;
+        width: 70vw;
+        text-align: center;
+        width: 80vw;
+        color: #999999; }
+  #browse hr, #write-blogpost hr {
+    width: 70vw; }
+  #browse .author, #write-blogpost .author {
+    width: 60vw;
+    min-height: 130px;
+    margin: 20px auto 20px auto;
+    font-size: 0; }
+    #browse .author .left, #write-blogpost .author .left {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin: 30px 0 10px 0; }
+      @media screen and (min-width: 650px) {
+        #browse .author .left, #write-blogpost .author .left {
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          margin-right: 20px;
+          margin-top: 0; } }
+      #browse .author .left .profile-pic, #write-blogpost .author .left .profile-pic {
+        height: 125px;
+        width: 125px;
+        background-image: url("../images/chris.jpg");
+        background-size: cover;
+        border-radius: 100px;
+        vertical-align: middle; }
+    #browse .author .right, #write-blogpost .author .right {
+      display: inline-block;
+      vertical-align: top; }
+      @media screen and (min-width: 650px) {
+        #browse .author .right, #write-blogpost .author .right {
+          width: 50%; } }
+      @media screen and (min-width: 700px) {
+        #browse .author .right, #write-blogpost .author .right {
+          width: 60%; } }
+      @media screen and (min-width: 800px) {
+        #browse .author .right, #write-blogpost .author .right {
+          width: 70%; } }
+      #browse .author .right p, #write-blogpost .author .right p {
+        margin: 10px 0; }
+        #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
+          font-family: RalewayMedium;
+          text-transform: capitalize;
+          font-size: 24px;
+          text-align: center; }
+          @media screen and (min-width: 650px) {
+            #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
+              text-align: left; } }
+
+#write-blogpost .banner .category,
+#write-blogpost .banner .title {
+  outline: none; }
+
+#write-blogpost .content {
+  max-width: 80vw;
+  margin: 40px auto 20px auto;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  #write-blogpost .content .intro,
+  #write-blogpost .content .body {
+    outline: none;
+    max-width: 80vw; }
+    #write-blogpost .content .intro.intro,
+    #write-blogpost .content .intro.intro p,
+    #write-blogpost .content .body.intro,
+    #write-blogpost .content .body.intro p {
+      font-size: 24px;
+      line-height: 36px;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+      #write-blogpost .content .intro.intro::first-letter,
+      #write-blogpost .content .intro.intro p::first-letter,
+      #write-blogpost .content .body.intro::first-letter,
+      #write-blogpost .content .body.intro p::first-letter {
+        color: #45C8F2;
+        font-family: RalewayMedium;
+        font-size: 70px; }
+    #write-blogpost .content .intro.body blockquote,
+    #write-blogpost .content .body.body blockquote {
+      margin: 10px auto;
+        margin-width: 80vw;
       font-family: RalewayMedium;
-      font-size: 70px; }
-  #write-blogpost .editable-intro.editable-body blockquote,
-  #write-blogpost .editable-body.editable-body blockquote {
-    font-family: RalewayMedium;
-    font-size: 45px;
-    width: 70vw;
-    text-align: center;
-    width: 80vw;
-    color: #999999;
-    margin-top: 10px;
-    margin-bottom: 10px; }
-  #write-blogpost .editable-intro.editable-body p,
-  #write-blogpost .editable-body.editable-body p {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+      font-size: 45px;
+      width: 70vw;
+      text-align: center;
+      width: 80vw;
+      color: #999999; }
+    #write-blogpost .content .intro.body p,
+    #write-blogpost .content .body.body p {
+      margin: 10px auto;
+      width: 80vw; }
+      #write-blogpost .content .intro.body p.intro,
+      #write-blogpost .content .body.body p.intro {
+        font-size: 24px;
+        line-height: 36px; }
+        #write-blogpost .content .intro.body p.intro::first-letter,
+        #write-blogpost .content .body.body p.intro::first-letter {
+          color: #45C8F2;
+          font-family: RalewayMedium;
+          font-size: 70px; }
+      #write-blogpost .content .intro.body p.title,
+      #write-blogpost .content .body.body p.title {
+        font-family: RalewayBold;
+        font-size: 26px; }
+      @media screen and (min-width: 950px) {
+        #write-blogpost .content .intro.body p,
+        #write-blogpost .content .body.body p {
+          width: 75vw; } }
+      @media screen and (min-width: 950px) {
+        #write-blogpost .content .intro.body p,
+        #write-blogpost .content .body.body p {
+          width: 70vw; } }
+      @media screen and (min-width: 1100px) {
+        #write-blogpost .content .intro.body p,
+        #write-blogpost .content .body.body p {
+          width: 60vw; } }
 
 /*# sourceMappingURL=app.css.map */

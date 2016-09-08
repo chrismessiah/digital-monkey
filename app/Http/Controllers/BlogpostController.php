@@ -38,21 +38,32 @@ class BlogpostController extends Controller {
         return view('index', compact('banners', 'popular_posts', 'blogpost_list', 'categories'));
     }
     
-    public function create() {
-        // if ($id) {
-        //     $blogpost = Blogpost::find($id);
-        //     if ( !$blogpost->check_if_author() ) {
-        //         return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
-        //     }
-        //     $request_type = "PATCH";
-        //     $route = "blogposts/".$blogpost->id;
-        // }
-        //else {
-        $blogpost = new Blogpost();
-        $request_type = "POST";
-        $route = "blogposts";
-        //}
-        return view('blogpost.write', compact('blogpost', 'request_type', 'route'));
+    public function create($id) {
+        if ($id) {
+            $blogpost = Blogpost::with(['author', 'category'])->find($id);
+            if ( !$blogpost->check_if_author() ) {
+                // send $error messange here
+                return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
+            }
+            $request_type = "PATCH";
+            $form_route = "blogposts/".$blogpost->id;
+            
+            $button_text = "Update!";
+        }
+        else {
+            $blogpost = new Blogpost();
+            $blogpost->category = new Category();
+            $blogpost->category->name = 'Choose a category!';
+            $blogpost->title = 'Add a title here!';
+            $blogpost->intro = 'I\'m the intro!';
+            $blogpost->body = 'I\'m the body!';
+            
+            $request_type = "POST";
+            $form_route = "blogposts";
+            $button_text = "Post!";
+        }
+        $blogpost = $this->sanitize_blogpost($blogpost);
+        return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text'));
     }
     
     public function update(Request $request, $id) {
@@ -64,7 +75,7 @@ class BlogpostController extends Controller {
         
         $blogpost = Blogpost::find($id);
         if ( !$blogpost->check_if_author() ) {
-            return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
+            return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
         }
         $blogpost->title = $request->input('title');
         $blogpost->intro = $request->input('intro');
@@ -75,26 +86,32 @@ class BlogpostController extends Controller {
         $blogpost->save();
         return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
+    
+    private function sanitize_blogpost($blogpost) {
+        $blogpost->title = strip_tags($blogpost->title);
+        $blogpost->intro = strip_tags($blogpost->intro);
+        $unsanitized_body = nl2br($blogpost->body);
+        $blogpost->body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br><blockquote><h1><h2><h3><b><i><pre><a>');
+        return $blogpost;
+    }
 
     public function show($id) {
       $blogpost = Blogpost::with('author', 'category')->find($id);
-      $blogpost->title = strip_tags($blogpost->title);
-      $blogpost->intro = strip_tags($blogpost->intro);
-      $unsanitized_body = nl2br($blogpost->body);
-      $blogpost->body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br>');
+      $blogpost = $this->sanitize_blogpost($blogpost);
       return view('blogpost.read', compact('blogpost'));
     }
     
     public function store(Request $request) {
         $this->validate($request, [
-            'title' => 'required|min:3|max:15',
-            'intro' => 'required|min:3|max:60',
+            'title' => 'required|min:3|max:60',
+            'intro' => 'required|min:3|max:160',
             'body' => 'required|min:3|max:2000'
         ]);
         
         $blogpost = new Blogpost($request->all());
         $blogpost->author = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file');
+        $blogpost = $this->sanitize_blogpost($blogpost);
         $blogpost->save();
         return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
@@ -102,7 +119,7 @@ class BlogpostController extends Controller {
     public function destroy(Request $request, $id) {
         $blogpost = Blogpost::find($id);
         if ( !$blogpost->check_if_author() ) {
-            return redirect()->to( Helper::env_url('blogposst/'.$blogpost->id) );
+            return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
         }
         Blogpost::destroy($id);
         return redirect()->to( Helper::env_url('/') );

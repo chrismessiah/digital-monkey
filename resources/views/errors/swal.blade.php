@@ -7,4 +7,8 @@
        <li>{{ $error }}</li>
       @endforeach
     </ul>
+@elseif(isset($error))
+  <script type="text/javascript">
+    swal({{$error}});
+  </script>
 @endif
