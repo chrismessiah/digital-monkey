@@ -26,7 +26,7 @@
             
         <p class="intro">{{$blogpost->intro}}</p>
         <div class="body">
-          <pre class="language-markup">&lt;p class="hello"&gt;testing&lt;/p&gt;</pre>
+          {{-- <pre class="language-markup">&lt;p class="hello"&gt;testing&lt;/p&gt;</pre> --}}
           {!! $blogpost->body !!}</div>
         <hr/>
         <div class="author">
