@@ -14,10 +14,10 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass([
-        'app.sass',
         '../bower/sweetalert/dist/sweetalert.css',
         '../bower/medium-editor/dist/css/medium-editor.min.css',
-        '../bower/medium-editor/dist/css/themes/beagle.min.css'
+        '../bower/medium-editor/dist/css/themes/flat.min.css',
+        'app.sass',
     ]);
     mix.scripts([
         '../bower/jquery/dist/jquery.min.js',

@@ -5,6 +5,7 @@ $(document).ready(function() {
     var editorIntro = new MediumEditor('.editable-intro',{
       toolbar: false
     });
+    
     var editorBody = new MediumEditor('.editable-body',{
       toolbar: {
         buttons: [
@@ -12,18 +13,9 @@ $(document).ready(function() {
           'italic',
           'h1',
           'h2',
-          'h3', 
-          {
-              name: 'quote',
-              action: 'append-h6',
-              aria: 'Quote',
-              tagNames: ['h6'],
-              contentDefault: '<b>Quote</b>',
-          },
-          {
-              name: 'pre',
-              aria: 'Code',
-          },
+          'h3',
+          'quote',
+          'pre',
           'anchor'
         ]
       }

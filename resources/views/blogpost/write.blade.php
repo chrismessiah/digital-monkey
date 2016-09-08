@@ -2,8 +2,8 @@
 
 @section('content')
   <div id="write-blogpost">
-    <p class="editable-intro">I'm the intro</p>
-    <p class="editable-body">I'm the body!</p>
+    <div class="editable-intro">I'm the intro</div>
+    <div class="editable-body">I'm the body!</div>
     <form role="form" method="POST" action="{{ Helper::env_url($route) }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{ method_field('PATCH') }}

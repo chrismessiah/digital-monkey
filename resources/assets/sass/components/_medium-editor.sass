@@ -1,0 +1,15 @@
+$light-blue: #45c8f2
+$light-darker-blue: #38a8cb
+$light-lightdarker-blue: #38a8cb
+$light-lighter-blue: #a9d6e4
+
+.medium-editor-toolbar-active
+  background-color: $light-blue
+  ul li button
+    border-right-color: $light-lighter-blue
+    &:hover
+      background-color: $light-darker-blue
+    &.medium-editor-button-active
+      background-color: $light-lightdarker-blue
+  &::after
+    border-color: $light-blue transparent transparent
