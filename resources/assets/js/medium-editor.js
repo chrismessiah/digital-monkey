@@ -13,7 +13,6 @@ $(document).ready(function() {
           'italic',
           'h1',
           'h2',
-          'h3',
           'quote',
           'pre',
           'anchor'

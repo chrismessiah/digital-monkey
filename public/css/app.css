@@ -1,3 +1,104 @@
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em; }
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #272822; }
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal; }
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray; }
+
+.token.punctuation {
+  color: #f8f8f2; }
+
+.namespace {
+  opacity: .7; }
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672; }
+
+.token.boolean,
+.token.number {
+  color: #ae81ff; }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e; }
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2; }
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #e6db74; }
+
+.token.keyword {
+  color: #66d9ef; }
+
+.token.regex,
+.token.important {
+  color: #fd971f; }
+
+.token.important,
+.token.bold {
+  font-weight: bold; }
+
+.token.italic {
+  font-style: italic; }
+
+.token.entity {
+  cursor: help; }
+
 body.stop-scrolling {
   height: 100%;
   overflow: hidden; }
@@ -1946,17 +2047,17 @@ div {
       .login-page-container > div input[type="email"]:focus::-webkit-input-placeholder {
         color: transparent; }
 
-.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, #write-blogpost {
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container {
   margin: auto;
   width: 60%; }
-  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, #write-blogpost form {
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form {
     margin-top: 70px;
     text-align: center; }
-    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, #write-blogpost form .btn {
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
       margin-top: 30px;
       margin-bottom: 30px; }
-    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, #write-blogpost form input,
-    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, #write-blogpost form textarea {
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
       margin: 10px 0;
       padding: 10px;
       border: solid 1px #dcdcdc;
@@ -1969,23 +2070,23 @@ div {
       appearance: none;
       box-shadow: none;
       border-radius: none; }
-      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, #write-blogpost form input:focus,
-      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, #write-blogpost form textarea:focus {
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
 
-.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, #write-blogpost {
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container {
   margin: auto;
   width: 60%; }
-  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, #write-blogpost form {
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form {
     margin-top: 70px;
     text-align: center; }
-    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, #write-blogpost form .btn {
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
       margin-top: 30px;
       margin-bottom: 30px; }
-    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, #write-blogpost form input,
-    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, #write-blogpost form textarea {
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
       margin: 10px 0;
       padding: 10px;
       border: solid 1px #dcdcdc;
@@ -1998,23 +2099,23 @@ div {
       appearance: none;
       box-shadow: none;
       border-radius: none; }
-      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, #write-blogpost form input:focus,
-      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, #write-blogpost form textarea:focus {
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
 
-.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, #write-blogpost {
+.form-container, .register-page-container, .reset-password-request-container, .reset-password-container {
   margin: auto;
   width: 60%; }
-  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, #write-blogpost form {
+  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form {
     margin-top: 70px;
     text-align: center; }
-    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, #write-blogpost form .btn {
+    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn {
       margin-top: 30px;
       margin-bottom: 30px; }
-    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, #write-blogpost form input,
-    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, #write-blogpost form textarea {
+    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input,
+    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea {
       margin: 10px 0;
       padding: 10px;
       border: solid 1px #dcdcdc;
@@ -2027,267 +2128,8 @@ div {
       appearance: none;
       box-shadow: none;
       border-radius: none; }
-      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, #write-blogpost form input:focus,
-      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, #write-blogpost form textarea:focus {
-        border: solid 1px #707070;
-        box-shadow: 0 0 5px 1px #969696;
-        outline: none; }
-
-.upper {
-  text-transform: uppercase; }
-
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
-  /* Prefix -webkit- for chrome and safari */
-  -webkit-transition-timing-function: linear;
-  -webkit-transition-duration: 0.1s;
-  /* Prefix -moz- for firefox */
-  -moz-transition-timing-function: linear;
-  -moz-transition-duration: 0.1s;
-  /* NO prefix for opera */
-  transition-timing-function: linear;
-  transition-duration: 0.1s;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
-@font-face {
-  font-family: RalewayRegular;
-  src: url("../fonts/Raleway-Regular.ttf"); }
-
-@font-face {
-  font-family: RalewayMedium;
-  src: url("../fonts/Raleway-Medium.ttf"); }
-
-@font-face {
-  font-family: RalewayMediumItalic;
-  src: url("../fonts/Raleway-MediumItalic.ttf"); }
-
-@font-face {
-  font-family: RalewayBold;
-  src: url("../fonts/Raleway-Bold.ttf"); }
-
-@font-face {
-  font-family: RalewayItalic;
-  src: url("../fonts/Raleway-Italic.ttf"); }
-
-@font-face {
-  font-family: RalewayLight;
-  src: url("../fonts/Raleway-Light.ttf"); }
-
-@font-face {
-  font-family: RalewayBoldItalic;
-  src: url("../fonts/Raleway-BoldItalic.ttf"); }
-
-#browse, #write-blogpost {
-  width: 100vw; }
-  #browse div::-moz-selection, #write-blogpost div::-moz-selection,
-  #browse p::-moz-selection, #write-blogpost p::-moz-selection {
-    background: #6ecae7;
-    color: white; }
-  #browse div::selection, #write-blogpost div::selection,
-  #browse p::selection, #write-blogpost p::selection {
-    background: #6ecae7;
-    color: white; }
-  #browse .banner, #write-blogpost .banner {
-    height: 600px;
-    width: inherit;
-    background-image: url("../images/articles/banner1.png");
-    background-size: cover;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: end;
-    align-items: flex-end;
-    margin-bottom: 20px; }
-    #browse .banner > div, #write-blogpost .banner > div {
-      background-color: rgba(0, 0, 0, 0.7);
-      min-height: 100px;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      text-align: center;
-      padding: 0 20px; }
-      #browse .banner > div p.category, #write-blogpost .banner > div p.category {
-        background-color: #45c8f2;
-        padding: 5px 10px;
-        color: white;
-        text-transform: uppercase;
-        font-size: 18px; }
-      #browse .banner > div div.profile, #write-blogpost .banner > div div.profile {
-        height: 40px;
-        width: 40px;
-        display: inline-block;
-        background-image: url("../images/chris.jpg");
-        background-size: cover;
-        border-radius: 100px;
-        margin-right: 10px; }
-      #browse .banner > div p, #write-blogpost .banner > div p {
-        color: white;
-        margin: 0;
-        text-transform: capitalize;
-        font-size: 22px;
-        font-family: RalewayLight;
-        display: inline-block;
-        position: relative;
-        bottom: 10px; }
-        #browse .banner > div p span, #write-blogpost .banner > div p span {
-          color: #7ac1f4; }
-          #browse .banner > div p span:hover, #write-blogpost .banner > div p span:hover {
-            color: #6aa4cd;
-            cursor: pointer; }
-        #browse .banner > div p span.timestamp, #write-blogpost .banner > div p span.timestamp {
-          color: white;
-          text-transform: lowercase; }
-        #browse .banner > div p.title, #write-blogpost .banner > div p.title {
-          position: inherit;
-          font-size: 30px;
-          font-family: RalewayRegular; }
-  #browse .social, #write-blogpost .social {
-    display: none;
-    position: absolute; }
-    @media screen and (min-width: 550px) {
-      #browse .social, #write-blogpost .social {
-        display: block; } }
-    #browse .social > div, #write-blogpost .social > div {
-      width: 30px;
-      height: 30px;
-      margin: 10px; }
-      #browse .social > div.twitter, #write-blogpost .social > div.twitter {
-        background-image: url("../images/social/twitter.svg"); }
-      #browse .social > div.facebook, #write-blogpost .social > div.facebook {
-        background-image: url("../images/social/facebook.svg"); }
-      #browse .social > div.google-plus, #write-blogpost .social > div.google-plus {
-        background-image: url("../images/social/google-plus.svg"); }
-      #browse .social > div:hover, #write-blogpost .social > div:hover {
-        cursor: pointer; }
-  #browse .content-wrapper, #write-blogpost .content-wrapper {
-    width: 100vw;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 20px; }
-    #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-      margin: 10px auto;
-      width: 80vw; }
-      @media screen and (min-width: 950px) {
-        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-          width: 75vw; } }
-      @media screen and (min-width: 950px) {
-        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-          width: 70vw; } }
-      @media screen and (min-width: 1100px) {
-        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-          width: 60vw; } }
-      #browse .content-wrapper p.intro, #write-blogpost .content-wrapper p.intro {
-        font-size: 24px;
-        line-height: 36px; }
-        #browse .content-wrapper p.intro::first-letter, #write-blogpost .content-wrapper p.intro::first-letter {
-          color: #45C8F2;
-          font-family: RalewayMedium;
-          font-size: 70px; }
-      #browse .content-wrapper p.title, #write-blogpost .content-wrapper p.title {
-        font-family: RalewayBold;
-        font-size: 26px; }
-      #browse .content-wrapper p.qoute, #write-blogpost .content-wrapper p.qoute {
-        font-family: RalewayMedium;
-        font-size: 45px;
-        width: 70vw;
-        text-align: center;
-        width: 80vw;
-        color: #999999; }
-  #browse hr, #write-blogpost hr {
-    width: 70vw; }
-  #browse .author, #write-blogpost .author {
-    width: 60vw;
-    min-height: 130px;
-    margin: 20px auto 20px auto;
-    font-size: 0; }
-    #browse .author .left, #write-blogpost .author .left {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -ms-flex-align: center;
-      align-items: center;
-      margin: 30px 0 10px 0; }
-      @media screen and (min-width: 650px) {
-        #browse .author .left, #write-blogpost .author .left {
-          display: -ms-inline-flexbox;
-          display: inline-flex;
-          margin-right: 20px;
-          margin-top: 0; } }
-      #browse .author .left .profile-pic, #write-blogpost .author .left .profile-pic {
-        height: 125px;
-        width: 125px;
-        background-image: url("../images/chris.jpg");
-        background-size: cover;
-        border-radius: 100px;
-        vertical-align: middle; }
-    #browse .author .right, #write-blogpost .author .right {
-      display: inline-block;
-      vertical-align: top; }
-      @media screen and (min-width: 650px) {
-        #browse .author .right, #write-blogpost .author .right {
-          width: 50%; } }
-      @media screen and (min-width: 700px) {
-        #browse .author .right, #write-blogpost .author .right {
-          width: 60%; } }
-      @media screen and (min-width: 800px) {
-        #browse .author .right, #write-blogpost .author .right {
-          width: 70%; } }
-      #browse .author .right p, #write-blogpost .author .right p {
-        margin: 10px 0; }
-        #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
-          font-family: RalewayMedium;
-          text-transform: capitalize;
-          font-size: 24px;
-          text-align: center; }
-          @media screen and (min-width: 650px) {
-            #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
-              text-align: left; } }
-
-.form-container, .register-page-container, .reset-password-request-container, .reset-password-container, #write-blogpost {
-  margin: auto;
-  width: 60%; }
-  .form-container form, .register-page-container form, .reset-password-request-container form, .reset-password-container form, #write-blogpost form {
-    margin-top: 70px;
-    text-align: center; }
-    .form-container form .btn, .register-page-container form .btn, .reset-password-request-container form .btn, .reset-password-container form .btn, #write-blogpost form .btn {
-      margin-top: 30px;
-      margin-bottom: 30px; }
-    .form-container form input, .register-page-container form input, .reset-password-request-container form input, .reset-password-container form input, #write-blogpost form input,
-    .form-container form textarea, .register-page-container form textarea, .reset-password-request-container form textarea, .reset-password-container form textarea, #write-blogpost form textarea {
-      margin: 10px 0;
-      padding: 10px;
-      border: solid 1px #dcdcdc;
-      transition: box-shadow 0.3s, border 0.3s;
-      display: block;
-      width: 100%;
-      font-size: 18px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      box-shadow: none;
-      border-radius: none; }
-      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus, #write-blogpost form input:focus,
-      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus, #write-blogpost form textarea:focus {
+      .form-container form input:focus, .register-page-container form input:focus, .reset-password-request-container form input:focus, .reset-password-container form input:focus,
+      .form-container form textarea:focus, .register-page-container form textarea:focus, .reset-password-request-container form textarea:focus, .reset-password-container form textarea:focus {
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
         outline: none; }
@@ -2347,17 +2189,9 @@ div {
   font-family: RalewayBoldItalic;
   src: url("../fonts/Raleway-BoldItalic.ttf"); }
 
-#browse, #write-blogpost {
+#browse {
   width: 100vw; }
-  #browse div::-moz-selection, #write-blogpost div::-moz-selection,
-  #browse p::-moz-selection, #write-blogpost p::-moz-selection {
-    background: #6ecae7;
-    color: white; }
-  #browse div::selection, #write-blogpost div::selection,
-  #browse p::selection, #write-blogpost p::selection {
-    background: #6ecae7;
-    color: white; }
-  #browse .banner, #write-blogpost .banner {
+  #browse .banner {
     height: 600px;
     width: inherit;
     background-image: url("../images/articles/banner1.png");
@@ -2368,8 +2202,9 @@ div {
     justify-content: center;
     -ms-flex-align: end;
     align-items: flex-end;
-    margin-bottom: 20px; }
-    #browse .banner > div, #write-blogpost .banner > div {
+    margin-bottom: 20px;
+    outline: none; }
+    #browse .banner > div {
       background-color: rgba(0, 0, 0, 0.7);
       min-height: 100px;
       display: -ms-flexbox;
@@ -2380,13 +2215,13 @@ div {
       flex-direction: column;
       text-align: center;
       padding: 0 20px; }
-      #browse .banner > div p.category, #write-blogpost .banner > div p.category {
+      #browse .banner > div p.category {
         background-color: #45c8f2;
         padding: 5px 10px;
         color: white;
         text-transform: uppercase;
         font-size: 18px; }
-      #browse .banner > div div.profile, #write-blogpost .banner > div div.profile {
+      #browse .banner > div div.profile {
         height: 40px;
         width: 40px;
         display: inline-block;
@@ -2394,7 +2229,7 @@ div {
         background-size: cover;
         border-radius: 100px;
         margin-right: 10px; }
-      #browse .banner > div p, #write-blogpost .banner > div p {
+      #browse .banner > div p {
         color: white;
         margin: 0;
         text-transform: capitalize;
@@ -2403,191 +2238,271 @@ div {
         display: inline-block;
         position: relative;
         bottom: 10px; }
-        #browse .banner > div p span, #write-blogpost .banner > div p span {
+        #browse .banner > div p span {
           color: #7ac1f4; }
-          #browse .banner > div p span:hover, #write-blogpost .banner > div p span:hover {
+          #browse .banner > div p span:hover {
             color: #6aa4cd;
             cursor: pointer; }
-        #browse .banner > div p span.timestamp, #write-blogpost .banner > div p span.timestamp {
+        #browse .banner > div p span.timestamp {
           color: white;
           text-transform: lowercase; }
-        #browse .banner > div p.title, #write-blogpost .banner > div p.title {
+        #browse .banner > div p.title {
           position: inherit;
           font-size: 30px;
           font-family: RalewayRegular; }
-  #browse .social, #write-blogpost .social {
-    display: none;
-    position: absolute; }
-    @media screen and (min-width: 550px) {
-      #browse .social, #write-blogpost .social {
-        display: block; } }
-    #browse .social > div, #write-blogpost .social > div {
-      width: 30px;
-      height: 30px;
-      margin: 10px; }
-      #browse .social > div.twitter, #write-blogpost .social > div.twitter {
-        background-image: url("../images/social/twitter.svg"); }
-      #browse .social > div.facebook, #write-blogpost .social > div.facebook {
-        background-image: url("../images/social/facebook.svg"); }
-      #browse .social > div.google-plus, #write-blogpost .social > div.google-plus {
-        background-image: url("../images/social/google-plus.svg"); }
-      #browse .social > div:hover, #write-blogpost .social > div:hover {
-        cursor: pointer; }
-  #browse .content-wrapper, #write-blogpost .content-wrapper {
-    width: 100vw;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 20px; }
-    #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-      margin: 10px auto;
-      width: 80vw; }
-      @media screen and (min-width: 950px) {
-        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-          width: 75vw; } }
-      @media screen and (min-width: 950px) {
-        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-          width: 70vw; } }
-      @media screen and (min-width: 1100px) {
-        #browse .content-wrapper p, #write-blogpost .content-wrapper p {
-          width: 60vw; } }
-      #browse .content-wrapper p.intro, #write-blogpost .content-wrapper p.intro {
-        font-size: 24px;
-        line-height: 36px; }
-        #browse .content-wrapper p.intro::first-letter, #write-blogpost .content-wrapper p.intro::first-letter {
-          color: #45C8F2;
-          font-family: RalewayMedium;
-          font-size: 70px; }
-      #browse .content-wrapper p.title, #write-blogpost .content-wrapper p.title {
-        font-family: RalewayBold;
-        font-size: 26px; }
-      #browse .content-wrapper p.qoute, #write-blogpost .content-wrapper p.qoute {
-        font-family: RalewayMedium;
-        font-size: 45px;
-        width: 70vw;
-        text-align: center;
-        width: 80vw;
-        color: #999999; }
-  #browse hr, #write-blogpost hr {
-    width: 70vw; }
-  #browse .author, #write-blogpost .author {
-    width: 60vw;
-    min-height: 130px;
-    margin: 20px auto 20px auto;
-    font-size: 0; }
-    #browse .author .left, #write-blogpost .author .left {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -ms-flex-align: center;
-      align-items: center;
-      margin: 30px 0 10px 0; }
-      @media screen and (min-width: 650px) {
-        #browse .author .left, #write-blogpost .author .left {
-          display: -ms-inline-flexbox;
-          display: inline-flex;
-          margin-right: 20px;
-          margin-top: 0; } }
-      #browse .author .left .profile-pic, #write-blogpost .author .left .profile-pic {
-        height: 125px;
-        width: 125px;
-        background-image: url("../images/chris.jpg");
-        background-size: cover;
-        border-radius: 100px;
-        vertical-align: middle; }
-    #browse .author .right, #write-blogpost .author .right {
-      display: inline-block;
-      vertical-align: top; }
-      @media screen and (min-width: 650px) {
-        #browse .author .right, #write-blogpost .author .right {
-          width: 50%; } }
-      @media screen and (min-width: 700px) {
-        #browse .author .right, #write-blogpost .author .right {
-          width: 60%; } }
-      @media screen and (min-width: 800px) {
-        #browse .author .right, #write-blogpost .author .right {
-          width: 70%; } }
-      #browse .author .right p, #write-blogpost .author .right p {
-        margin: 10px 0; }
-        #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
-          font-family: RalewayMedium;
-          text-transform: capitalize;
-          font-size: 24px;
-          text-align: center; }
-          @media screen and (min-width: 650px) {
-            #browse .author .right p:nth-child(1), #write-blogpost .author .right p:nth-child(1) {
-              text-align: left; } }
-
-#write-blogpost .banner .category,
-#write-blogpost .banner .title {
-  outline: none; }
-
-#write-blogpost .content {
-  max-width: 80vw;
-  margin: 40px auto 20px auto;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  #write-blogpost .content .intro,
-  #write-blogpost .content .body {
-    outline: none;
-    max-width: 80vw; }
-    #write-blogpost .content .intro.intro,
-    #write-blogpost .content .intro.intro p,
-    #write-blogpost .content .body.intro,
-    #write-blogpost .content .body.intro p {
-      font-size: 24px;
-      line-height: 36px;
-      margin-top: 10px;
-      margin-bottom: 10px; }
-      #write-blogpost .content .intro.intro::first-letter,
-      #write-blogpost .content .intro.intro p::first-letter,
-      #write-blogpost .content .body.intro::first-letter,
-      #write-blogpost .content .body.intro p::first-letter {
-        color: #45C8F2;
-        font-family: RalewayMedium;
-        font-size: 70px; }
-    #write-blogpost .content .intro.body blockquote,
-    #write-blogpost .content .body.body blockquote {
-      margin: 10px auto;
-        margin-width: 80vw;
+  #browse .intro, #browse .intro p {
+    max-width: 80vw;
+    margin: 40px auto 20px auto;
+    font-size: 24px;
+    line-height: 36px; }
+    #browse .intro::first-letter, #browse .intro p::first-letter {
+      color: #45C8F2;
+      font-family: RalewayMedium;
+      font-size: 70px; }
+  #browse .body {
+    max-width: 80vw;
+    margin: 40px auto 20px auto; }
+    #browse .body pre {
+      margin: 20px auto;
+      width: inherit;
+      background-color: #f5f2f0;
+      display: block;
+      padding: 10px;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word; }
+    #browse .body blockquote {
+      margin: 40px auto;
+      width: 80vw;
       font-family: RalewayMedium;
       font-size: 45px;
       width: 70vw;
       text-align: center;
       width: 80vw;
       color: #999999; }
-    #write-blogpost .content .intro.body p,
-    #write-blogpost .content .body.body p {
+    #browse .body p {
       margin: 10px auto;
       width: 80vw; }
-      #write-blogpost .content .intro.body p.intro,
-      #write-blogpost .content .body.body p.intro {
+      #browse .body p.intro {
         font-size: 24px;
         line-height: 36px; }
-        #write-blogpost .content .intro.body p.intro::first-letter,
-        #write-blogpost .content .body.body p.intro::first-letter {
+        #browse .body p.intro::first-letter {
           color: #45C8F2;
           font-family: RalewayMedium;
           font-size: 70px; }
-      #write-blogpost .content .intro.body p.title,
-      #write-blogpost .content .body.body p.title {
+      #browse .body p.title {
         font-family: RalewayBold;
         font-size: 26px; }
       @media screen and (min-width: 950px) {
-        #write-blogpost .content .intro.body p,
-        #write-blogpost .content .body.body p {
+        #browse .body p {
           width: 75vw; } }
       @media screen and (min-width: 950px) {
-        #write-blogpost .content .intro.body p,
-        #write-blogpost .content .body.body p {
+        #browse .body p {
           width: 70vw; } }
       @media screen and (min-width: 1100px) {
-        #write-blogpost .content .intro.body p,
-        #write-blogpost .content .body.body p {
+        #browse .body p {
           width: 60vw; } }
+  #browse div::-moz-selection, #browse p::-moz-selection {
+    background: #6ecae7;
+    color: white; }
+  #browse div::selection, #browse p::selection {
+    background: #6ecae7;
+    color: white; }
+  #browse .social {
+    display: none;
+    position: absolute; }
+    @media screen and (min-width: 550px) {
+      #browse .social {
+        display: block; } }
+    #browse .social > div {
+      width: 30px;
+      height: 30px;
+      margin: 10px; }
+      #browse .social > div.twitter {
+        background-image: url("../images/social/twitter.svg"); }
+      #browse .social > div.facebook {
+        background-image: url("../images/social/facebook.svg"); }
+      #browse .social > div.google-plus {
+        background-image: url("../images/social/google-plus.svg"); }
+      #browse .social > div:hover {
+        cursor: pointer; }
+  #browse hr {
+    width: 70vw;
+    margin: 30px auto; }
+  #browse .author {
+    width: 60vw;
+    min-height: 130px;
+    margin: 20px auto 20px auto;
+    font-size: 0; }
+    #browse .author .left {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin: 30px 0 10px 0; }
+      @media screen and (min-width: 650px) {
+        #browse .author .left {
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          margin-right: 20px;
+          margin-top: 0; } }
+      #browse .author .left .profile-pic {
+        height: 125px;
+        width: 125px;
+        background-image: url("../images/chris.jpg");
+        background-size: cover;
+        border-radius: 100px;
+        vertical-align: middle; }
+    #browse .author .right {
+      display: inline-block;
+      vertical-align: top; }
+      @media screen and (min-width: 650px) {
+        #browse .author .right {
+          width: 50%; } }
+      @media screen and (min-width: 700px) {
+        #browse .author .right {
+          width: 60%; } }
+      @media screen and (min-width: 800px) {
+        #browse .author .right {
+          width: 70%; } }
+      #browse .author .right p {
+        margin: 10px 0; }
+        #browse .author .right p:nth-child(1) {
+          font-family: RalewayMedium;
+          text-transform: capitalize;
+          font-size: 24px;
+          text-align: center; }
+          @media screen and (min-width: 650px) {
+            #browse .author .right p:nth-child(1) {
+              text-align: left; } }
+
+#write-blogpost .banner {
+  height: 600px;
+  width: inherit;
+  background-image: url("../images/articles/banner1.png");
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  outline: none; }
+  #write-blogpost .banner > div {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px; }
+    #write-blogpost .banner > div p.category {
+      background-color: #45c8f2;
+      padding: 5px 10px;
+      color: white;
+      text-transform: uppercase;
+      font-size: 18px; }
+    #write-blogpost .banner > div div.profile {
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      background-image: url("../images/chris.jpg");
+      background-size: cover;
+      border-radius: 100px;
+      margin-right: 10px; }
+    #write-blogpost .banner > div p {
+      color: white;
+      margin: 0;
+      text-transform: capitalize;
+      font-size: 22px;
+      font-family: RalewayLight;
+      display: inline-block;
+      position: relative;
+      bottom: 10px; }
+      #write-blogpost .banner > div p span {
+        color: #7ac1f4; }
+        #write-blogpost .banner > div p span:hover {
+          color: #6aa4cd;
+          cursor: pointer; }
+      #write-blogpost .banner > div p span.timestamp {
+        color: white;
+        text-transform: lowercase; }
+      #write-blogpost .banner > div p.title {
+        position: inherit;
+        font-size: 30px;
+        font-family: RalewayRegular; }
+
+#write-blogpost .content .body {
+  max-width: 80vw;
+  margin: 40px auto 20px auto; }
+  #write-blogpost .content .body pre {
+    margin: 20px auto;
+    width: inherit;
+    background-color: #f5f2f0;
+    display: block;
+    padding: 10px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word; }
+  #write-blogpost .content .body blockquote {
+    margin: 40px auto;
+    width: 80vw;
+    font-family: RalewayMedium;
+    font-size: 45px;
+    width: 70vw;
+    text-align: center;
+    width: 80vw;
+    color: #999999; }
+  #write-blogpost .content .body p {
+    margin: 10px auto;
+    width: 80vw; }
+    #write-blogpost .content .body p.intro {
+      font-size: 24px;
+      line-height: 36px; }
+      #write-blogpost .content .body p.intro::first-letter {
+        color: #45C8F2;
+        font-family: RalewayMedium;
+        font-size: 70px; }
+    #write-blogpost .content .body p.title {
+      font-family: RalewayBold;
+      font-size: 26px; }
+    @media screen and (min-width: 950px) {
+      #write-blogpost .content .body p {
+        width: 75vw; } }
+    @media screen and (min-width: 950px) {
+      #write-blogpost .content .body p {
+        width: 70vw; } }
+    @media screen and (min-width: 1100px) {
+      #write-blogpost .content .body p {
+        width: 60vw; } }
+
+#write-blogpost .content .intro, #write-blogpost .content .intro p {
+  max-width: 80vw;
+  margin: 40px auto 20px auto;
+  font-size: 24px;
+  line-height: 36px; }
+  #write-blogpost .content .intro::first-letter, #write-blogpost .content .intro p::first-letter {
+    color: #45C8F2;
+    font-family: RalewayMedium;
+    font-size: 70px; }
+
+#write-blogpost .content .intro,
+#write-blogpost .content .body {
+  outline: none;
+  max-width: 80vw; }
+
+#write-blogpost form button {
+  margin: 30px auto;
+  display: block; }
 
 /*# sourceMappingURL=app.css.map */

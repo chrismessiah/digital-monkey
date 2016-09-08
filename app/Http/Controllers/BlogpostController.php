@@ -66,16 +66,20 @@ class BlogpostController extends Controller {
         return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text'));
     }
     
-    public function update(Request $request, $id) {
+    private function validate_blogpost_request(Request $request){
         $this->validate($request, [
-            'title' => 'required|min:3|max:15',
-            'intro' => 'required|min:3|max:60',
-            'body' => 'required|min:3|max:2000'
+            'title' => 'required|min:3|max:50',
+            'intro' => 'required|min:3|max:160',
+            'body' => 'required|min:3|max:4000'
         ]);
+    }
+    
+    public function update(Request $request, $id) {
+        $this->validate_blogpost_request($request);
         
         $blogpost = Blogpost::find($id);
         if ( !$blogpost->check_if_author() ) {
-            return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
+            //return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
         }
         $blogpost->title = $request->input('title');
         $blogpost->intro = $request->input('intro');
@@ -102,11 +106,7 @@ class BlogpostController extends Controller {
     }
     
     public function store(Request $request) {
-        $this->validate($request, [
-            'title' => 'required|min:3|max:60',
-            'intro' => 'required|min:3|max:160',
-            'body' => 'required|min:3|max:2000'
-        ]);
+        $this->validate_blogpost_request($request);
         
         $blogpost = new Blogpost($request->all());
         $blogpost->author = Auth::user()->id;

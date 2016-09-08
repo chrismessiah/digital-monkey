@@ -1,57 +1,12 @@
-@import ../../templates/form
-@import read
-
 #write-blogpost
-	@extend .form-container
-	@extend #browse
-	.banner
-		.category,
-		.title
-			outline: none
+	@import banner
 	.content
-		max-width: 80vw
-		margin: 40px auto 20px auto
-		justify-content: center
+		@import body
+		@import intro
 		.intro,
 		.body
 			outline: none
 			max-width: 80vw
-			&.intro,
-			&.intro p
-				font-size: 24px
-				line-height: 36px
-				margin-top: 10px
-				margin-bottom: 10px
-				&::first-letter
-					color: #45C8F2
-					font-family: RalewayMedium
-					font-size: 70px
-			&.body
-				blockquote
-					margin: 10px auto
-		      width: 80vw
-					font-family: RalewayMedium
-					font-size: 45px
-					width: 70vw
-					text-align: center
-					width: 80vw
-					color: #999999
-				p
-					margin: 10px auto
-					width: 80vw
-					&.intro
-						font-size: 24px
-						line-height: 36px
-						&::first-letter
-							color: #45C8F2
-							font-family: RalewayMedium
-							font-size: 70px
-					&.title
-						font-family: RalewayBold
-						font-size: 26px
-					@media screen and (min-width: 950px)
-						width: 75vw
-					@media screen and (min-width: 950px)
-						width: 70vw
-					@media screen and (min-width: 1100px)
-						width: 60vw
+	form button
+		margin: 30px auto
+		display: block
