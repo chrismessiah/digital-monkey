@@ -1669,6 +1669,8 @@ div {
       background-color: #38a8cb; }
     .medium-editor-toolbar-active ul li button.medium-editor-button-active {
       background-color: #38a8cb; }
+  .medium-editor-toolbar-active::before {
+    border-color: transparent transparent #45c8f2; }
   .medium-editor-toolbar-active::after {
     border-color: #45c8f2 transparent transparent; }
 
@@ -2284,7 +2286,7 @@ div {
       color: #999999; }
     #browse .body p {
       margin: 10px auto;
-      width: 80vw; }
+      width: inherit; }
       #browse .body p.intro {
         font-size: 24px;
         line-height: 36px; }
@@ -2295,15 +2297,6 @@ div {
       #browse .body p.title {
         font-family: RalewayBold;
         font-size: 26px; }
-      @media screen and (min-width: 950px) {
-        #browse .body p {
-          width: 75vw; } }
-      @media screen and (min-width: 950px) {
-        #browse .body p {
-          width: 70vw; } }
-      @media screen and (min-width: 1100px) {
-        #browse .body p {
-          width: 60vw; } }
   #browse div::-moz-selection, #browse p::-moz-selection {
     background: #6ecae7;
     color: white; }
@@ -2465,7 +2458,7 @@ div {
     color: #999999; }
   #write-blogpost .content .body p {
     margin: 10px auto;
-    width: 80vw; }
+    width: inherit; }
     #write-blogpost .content .body p.intro {
       font-size: 24px;
       line-height: 36px; }
@@ -2476,15 +2469,6 @@ div {
     #write-blogpost .content .body p.title {
       font-family: RalewayBold;
       font-size: 26px; }
-    @media screen and (min-width: 950px) {
-      #write-blogpost .content .body p {
-        width: 75vw; } }
-    @media screen and (min-width: 950px) {
-      #write-blogpost .content .body p {
-        width: 70vw; } }
-    @media screen and (min-width: 1100px) {
-      #write-blogpost .content .body p {
-        width: 60vw; } }
 
 #write-blogpost .content .intro, #write-blogpost .content .intro p {
   max-width: 80vw;

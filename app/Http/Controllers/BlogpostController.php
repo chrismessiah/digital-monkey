@@ -94,8 +94,8 @@ class BlogpostController extends Controller {
     private function sanitize_blogpost($blogpost) {
         $blogpost->title = strip_tags($blogpost->title);
         $blogpost->intro = strip_tags($blogpost->intro);
-        $unsanitized_body = nl2br($blogpost->body);
-        $blogpost->body = strip_tags($unsanitized_body, '<strong><em><ins><sub><sup><br><blockquote><h1><h2><h3><b><i><pre><a>');
+        //$blogpost->body = nl2br($blogpost->body);
+        $blogpost->body = strip_tags($blogpost->body, '<strong><em><ins><sub><sup><blockquote><h1><h2><h3><b><i><pre><a><p>');
         return $blogpost;
     }
 
