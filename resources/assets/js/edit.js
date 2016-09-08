@@ -14,5 +14,8 @@ $(document).ready(function() {
       $('#write-blogpost').find('form').find('#body').val(body);
     });
     
+    // $('#write-blogpost').find('.content').find('pre').keyup(function() {
+    //   console.log($(this).val);
+    // });
   }
 });

@@ -161,7 +161,7 @@ var _ = _self.Prism = {
 	highlightAll: function(async, callback) {
 		var env = {
 			callback: callback,
-			selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+			selector: 'pre[class*="language-"], [class*="language-"] pre, pre[class*="lang-"], [class*="lang-"] pre'
 		};
 
 		_.hooks.run("before-highlightall", env);
@@ -1326,6 +1326,9 @@ $(document).ready(function() {
       $('#write-blogpost').find('form').find('#body').val(body);
     });
     
+    $('#write-blogpost').find('.content').find('pre').keyup(function() {
+      console.log($(this).val);
+    });
   }
 });
 
