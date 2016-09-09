@@ -5,6 +5,7 @@
     <div class="banner">
         <div>
             <div>
+                @include('blogpost/category-popup')
                 <p class="category">{{$blogpost->category->name}}</p>
             </div>
             <p class="title editable-no-toolbar">{{$blogpost->title}}</p>

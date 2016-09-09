@@ -1,6 +1,17 @@
 $(document).ready(function() {
   if ($('#write-blogpost').length > 0) {
     
+    $('#write-blogpost').find('.banner').find('.category').click(function () {
+      $('#write-blogpost').find('.banner').find('#category-popup').css({
+        'display': 'block'
+      });
+    });
+    
+    $('#write-blogpost').find('.banner').find('#category-popup').find('.content').find('div').click(function () {
+      $('#write-blogpost').find('.banner').find('#category-popup').css({
+        'display': 'none'
+      });
+    });
     
     $('#write-blogpost').find('form').find('button').click(function () {
       var category = $('#write-blogpost').find('.banner').find('.category').html();

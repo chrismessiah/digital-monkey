@@ -1,0 +1,37 @@
+$light-blue: #45c8f2
+
+#category-popup
+  display: none
+  background-color: $light-blue
+  position: absolute
+  left: 45%
+  bottom: 28%
+  z-index: 10000000
+  min-width: 60px
+  border-radius: 10px
+  //box-shadow: 5px 5px 15px #888888
+  .triangle
+    content: ""
+    width: 0
+    height: 0
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-top: 10px solid #45c8f2
+    position: absolute
+    left: 40%
+    top: 100%
+  .content
+    div
+      color: white
+      padding: 10px 10px
+      border-bottom: 1px solid rgb(74, 157, 200)
+      &:first-child
+        border-top-right-radius: 10px
+        border-top-left-radius: 10px
+      &:last-child
+        border-bottom: none
+        border-bottom-right-radius: 10px
+        border-bottom-left-radius: 10px
+      &:hover
+        background-color: #39a5c8
+        cursor: pointer

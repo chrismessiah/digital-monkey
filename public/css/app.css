@@ -2450,6 +2450,43 @@ div {
         font-size: 30px;
         font-family: RalewayRegular; }
 
+#write-blogpost #category-popup {
+  display: none;
+  background-color: #45c8f2;
+  position: absolute;
+  left: 45%;
+  bottom: 28%;
+  z-index: 10000000;
+  min-width: 60px;
+  border-radius: 10px; }
+  #write-blogpost #category-popup .triangle {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #45c8f2;
+    position: absolute;
+    left: 40%;
+    top: 100%; }
+  #write-blogpost #category-popup .content div {
+    color: white;
+    padding: 10px 10px;
+    border-bottom: 1px solid #4a9dc8; }
+    #write-blogpost #category-popup .content div:first-child {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px; }
+    #write-blogpost #category-popup .content div:last-child {
+      border-bottom: none;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px; }
+    #write-blogpost #category-popup .content div:hover {
+      background-color: #39a5c8;
+      cursor: pointer; }
+
+#write-blogpost .category:hover {
+  cursor: pointer; }
+
 #write-blogpost .content .body {
   max-width: 80vw;
   margin: 40px auto 20px auto; }
