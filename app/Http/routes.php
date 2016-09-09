@@ -32,8 +32,8 @@ Route::post('password/reset', 'Auth\PasswordController@reset');
 Route::get('/', 'BlogpostController@show_all');
 
 Route::post('blogposts', 'BlogpostController@store');
-Route::get('blogposts/create', 'BlogpostController@create');
-Route::get('blogposts/{id}/edit', 'BlogpostController@create');
+Route::get('blogposts/write', 'BlogpostController@write');
+Route::get('blogposts/{id}/edit', 'BlogpostController@edit');
 Route::get('blogposts/{id}', 'BlogpostController@show');
 Route::patch('blogposts/{id}', 'BlogpostController@update');
 Route::delete('blogposts/{id}', 'BlogpostController@destroy');

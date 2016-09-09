@@ -38,30 +38,30 @@ class BlogpostController extends Controller {
         return view('index', compact('banners', 'popular_posts', 'blogpost_list', 'categories'));
     }
     
-    public function create($id) {
-        if ($id) {
-            $blogpost = Blogpost::with(['author', 'category'])->find($id);
-            if ( !$blogpost->check_if_author() ) {
-                // send $error messange here
-                return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
-            }
-            $request_type = "PATCH";
-            $form_route = "blogposts/".$blogpost->id;
-            
-            $button_text = "Update!";
+    public function edit($id) {
+        $blogpost = Blogpost::with(['author', 'category'])->find($id);
+        if ( !$blogpost->check_if_author() ) {
+            // send $error messange here
+            return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
         }
-        else {
-            $blogpost = new Blogpost();
-            $blogpost->category = new Category();
-            $blogpost->category->name = 'Choose a category!';
-            $blogpost->title = 'Add a title here!';
-            $blogpost->intro = 'I\'m the intro!';
-            $blogpost->body = 'I\'m the body!';
-            
-            $request_type = "POST";
-            $form_route = "blogposts";
-            $button_text = "Post!";
-        }
+        $request_type = "PATCH";
+        $form_route = "blogposts/".$blogpost->id;
+        $button_text = "Update!";
+        $blogpost = $this->sanitize_blogpost($blogpost);
+        return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text'));
+    }
+    
+    public function write() {
+        $blogpost = new Blogpost();
+        $blogpost->category = new Category();
+        $blogpost->category->name = 'Choose a category!';
+        $blogpost->title = 'Add a title here!';
+        $blogpost->intro = 'I\'m the intro!';
+        $blogpost->body = 'I\'m the body!';
+        
+        $request_type = "POST";
+        $form_route = "blogposts";
+        $button_text = "Post!";
         $blogpost = $this->sanitize_blogpost($blogpost);
         return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text'));
     }
