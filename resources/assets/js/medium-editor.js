@@ -6,6 +6,12 @@ $(document).ready(function() {
       toolbar: false
     });
     
+    $('.editable-no-toolbar').bind('keypress', function(e) {
+      if(e.keyCode == 13) {
+        return false;
+      }
+    });
+    
     var editorBody = new MediumEditor('.editable',{
       toolbar: {
         buttons: [
