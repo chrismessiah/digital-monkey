@@ -25,9 +25,12 @@
         </div>
             
         <p class="intro">{{$blogpost->intro}}</p>
-        <div class="body">
-          {{-- <pre class="language-markup">&lt;p class="hello"&gt;testing&lt;/p&gt;</pre> --}}
-          {!! $blogpost->body !!}</div>
+        <div class="body">{!! $blogpost->body !!}</div>
+        @if(!Auth::guest())
+          @if($blogpost->check_if_author())
+            <a class="btn-dark edit-btn" href="{{ Helper::env_url('blogposts/'.$blogpost->id.'/edit') }}">Edit!</a>
+          @endif
+        @endif
         <hr/>
         <div class="author">
             <div class="left">

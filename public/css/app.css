@@ -2334,6 +2334,10 @@ div {
         background-image: url("../images/social/google-plus.svg"); }
       #browse .social > div:hover {
         cursor: pointer; }
+  #browse .edit-btn {
+    margin: 30px auto;
+    max-width: 100px;
+    display: block; }
   #browse hr {
     width: 70vw;
     margin: 30px auto; }
