@@ -2217,8 +2217,7 @@ div {
     justify-content: center;
     -ms-flex-align: end;
     align-items: flex-end;
-    margin-bottom: 20px;
-    outline: none; }
+    margin-bottom: 20px; }
     #browse .banner > div {
       background-color: rgba(0, 0, 0, 0.7);
       min-height: 100px;
@@ -2263,6 +2262,7 @@ div {
           text-transform: lowercase; }
         #browse .banner > div p.title {
           position: inherit;
+          outline: none;
           font-size: 30px;
           font-family: RalewayRegular; }
   #browse .intro, #browse .intro p {
@@ -2401,8 +2401,7 @@ div {
   justify-content: center;
   -ms-flex-align: end;
   align-items: flex-end;
-  margin-bottom: 20px;
-  outline: none; }
+  margin-bottom: 20px; }
   #write-blogpost .banner > div {
     background-color: rgba(0, 0, 0, 0.7);
     min-height: 100px;
@@ -2447,6 +2446,7 @@ div {
         text-transform: lowercase; }
       #write-blogpost .banner > div p.title {
         position: inherit;
+        outline: none;
         font-size: 30px;
         font-family: RalewayRegular; }
 
