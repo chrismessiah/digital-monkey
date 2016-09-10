@@ -89,6 +89,7 @@ class BlogpostController extends Controller {
         if ($request->hasFile('file')) {
             $blogpost->image_name = $this->image_upload($request, 'file');
         }
+        $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         $blogpost->save();
         return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
@@ -107,13 +108,19 @@ class BlogpostController extends Controller {
       return view('blogpost.read', compact('blogpost'));
     }
     
+    private function get_categoryID_by_name($categoryName) {
+        $categoryObj = Category::where('name', $categoryName)->first();
+        return $categoryObj->id;
+    }
+    
     public function store(Request $request) {
         $this->validate_blogpost_request($request);
         
         $blogpost = new Blogpost($request->all());
-        $blogpost->author = Auth::user()->id;
+        $blogpost->user_id = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file');
         $blogpost = $this->sanitize_blogpost($blogpost);
+        $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         $blogpost->save();
         return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
