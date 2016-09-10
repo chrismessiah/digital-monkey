@@ -40,6 +40,7 @@ class BlogpostController extends Controller {
     
     public function edit($id) {
         $blogpost = Blogpost::with(['author', 'category'])->find($id);
+        $categories = Category::all();
         if ( !$blogpost->check_if_author() ) {
             // send $error messange here
             return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
@@ -48,11 +49,12 @@ class BlogpostController extends Controller {
         $form_route = "blogposts/".$blogpost->id;
         $button_text = "Update!";
         $blogpost = $this->sanitize_blogpost($blogpost);
-        return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text'));
+        return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text', 'categories'));
     }
     
     public function write() {
         $blogpost = new Blogpost();
+        $categories = Category::all();
         $blogpost->category = new Category();
         $blogpost->category->name = 'Choose a category!';
         $blogpost->title = 'Add a title here!';
@@ -63,7 +65,7 @@ class BlogpostController extends Controller {
         $form_route = "blogposts";
         $button_text = "Post!";
         $blogpost = $this->sanitize_blogpost($blogpost);
-        return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text'));
+        return view('blogpost.write', compact('blogpost', 'request_type', 'form_route', 'button_text', 'categories'));
     }
     
     private function validate_blogpost_request(Request $request){
