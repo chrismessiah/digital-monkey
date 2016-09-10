@@ -1582,7 +1582,8 @@ body.stop-scrolling {
             padding-left: 10px;
             padding-right: 10px; }
             #header div.standard > div.right > div.user .name {
-              display: none; }
+              display: none;
+              text-transform: capitalize; }
               @media screen and (min-width: 768px) {
                 #header div.standard > div.right > div.user .name {
                   display: initial; } }
@@ -2452,9 +2453,10 @@ div {
 
 #write-blogpost #category-popup {
   display: none;
+  opacity: 0;
   background-color: #45c8f2;
   position: absolute;
-  left: 45%;
+  left: 43vw;
   bottom: 28%;
   z-index: 10000000;
   min-width: 60px;
@@ -2472,7 +2474,8 @@ div {
   #write-blogpost #category-popup .content div {
     color: white;
     padding: 10px 10px;
-    border-bottom: 1px solid #4a9dc8; }
+    border-bottom: 1px solid #4a9dc8;
+    text-transform: uppercase; }
     #write-blogpost #category-popup .content div:first-child {
       border-top-right-radius: 10px;
       border-top-left-radius: 10px; }
