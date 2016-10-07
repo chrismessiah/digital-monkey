@@ -88,7 +88,7 @@ class BlogpostController extends Controller {
         $blogpost->intro = $request->input('intro');
         $blogpost->body = $request->input('body');
         if ($request->hasFile('file')) {
-            $blogpost->image_name = $this->image_upload($request, 'file');
+            $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->id);
         }
         $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         $blogpost->save();
