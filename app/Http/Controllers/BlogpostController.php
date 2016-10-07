@@ -29,7 +29,6 @@ class BlogpostController extends Controller {
     }
 
     public function show_all() {
-        return phpinfo();
         $blogposts = Blogpost::with(['author', 'category'])->orderBy('updated_at', 'desc')->get();
         $banners = $blogposts->take(5);
         $blogposts = $this->popper(5, $blogposts, "f"); 
