@@ -142,7 +142,7 @@ class BlogpostController extends Controller {
             $extension = $image->getClientOriginalExtension();
             $hash = hash_file('md5', $image);
             $file_name = $hash.'.'.$extension;
-            $path = public_path().'/images/blog_banners/';
+            $path = public_path().'/images/articles/';
             $image->move($path, $file_name);
             return $file_name;
         }

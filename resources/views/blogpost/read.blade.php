@@ -4,6 +4,9 @@
 @section('content')  
   <div id="browse">
       <div class="banner">
+        <style>
+          .banner {background-image: url("{{'../images/articles/'.$blogpost->image_name}}")}
+        </style>
           <div>
               <div>
                   <p class="category">{{$blogpost->category->name}}</p>

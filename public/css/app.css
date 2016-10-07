@@ -2258,7 +2258,6 @@ div {
   #browse .banner {
     height: 600px;
     width: inherit;
-    background-image: url("../images/articles/banner1.png");
     background-size: cover;
     display: -ms-flexbox;
     display: flex;
@@ -2476,7 +2475,6 @@ div {
 #write-blogpost .banner {
   height: 600px;
   width: inherit;
-  background-image: url("../images/articles/banner1.png");
   background-size: cover;
   display: -ms-flexbox;
   display: flex;
