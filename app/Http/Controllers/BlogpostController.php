@@ -121,7 +121,11 @@ class BlogpostController extends Controller {
         $blogpost->user_id = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
         $blogpost = $this->sanitize_blogpost($blogpost);
-        $blogpost->category_id = $this->get_categoryID_by_name($request->category);
+        if ($blogpost->category_id) {
+            $blogpost->category_id = $this->get_categoryID_by_name($request->category);
+        } else {
+            $blogpost->category_id = 3;
+        }
         $blogpost->save();
         return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
