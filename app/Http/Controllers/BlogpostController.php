@@ -150,7 +150,8 @@ class BlogpostController extends Controller {
             $file_name = $hash.'.'.$extension;
             $path = public_path().'/images/articles/';
             $image->move($path, $file_name);
-            unlink($new_image_path);
+            //unlink($new_image_path);
+            return $file_name
         }
         return 'dbaec6755e67e7d9c0bfff49c75e451a.png';
     }
