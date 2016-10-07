@@ -16,6 +16,18 @@
   -webkit-user-select: none
   -ms-user-select: none
   user-select: none
+  
+.linear-transition-fast
+  @extend .linear-transition
+  -webkit-transition-duration: 0.05s
+  -moz-transition-duration: 0.05s
+  transition-duration: 0.05s
+
+.linear-transition-slow
+  @extend .linear-transition
+  -webkit-transition-duration: 0.3s
+  -moz-transition-duration: 0.3s
+  transition-duration: 0.3s
 
 .no-user-select
   -webkit-touch-callout: none

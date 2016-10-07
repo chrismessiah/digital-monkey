@@ -22,6 +22,40 @@ $hover-color: rgba(136, 136, 136, 0.11)
 				&:not(:focus):hover
 					background-color: $hover-color
 	.banner
+		.img-upload-box
+			display: flex
+			width: 100vw
+			height: 200px
+			position: absolute
+			bottom: 45%
+			justify-content: center
+			align-items: center
+			background-color: transparent
+			overflow: hidden
+			input
+				position: relative
+				//top: 300px
+				font-size: 100px
+				width: 100px
+				height: 100px
+				opacity: 0
+				&:hover
+					cursor: pointer
+				
+			&:hover
+				cursor: pointer
+				.icon
+					opacity: 1
+			.icon
+				@extend .linear-transition-slow
+				opacity: 0
+				width: 120px
+				height: 100px
+				background-image: url("../images/camera.svg")
+				background-size: cover
+				background-position: center
+				&:hover
+					cursor: pointer
 		.category:hover
 			cursor: pointer
 			background-color: #72d3f2
