@@ -2628,6 +2628,15 @@ div {
     #write-blogpost .content .body.body:not(:focus):hover {
       background-color: rgba(136, 136, 136, 0.11); }
 
+#write-blogpost .banner .blogpost-info {
+  z-index: 2; }
+
+#write-blogpost .banner img {
+  width: 100vw;
+  height: inherit;
+  position: absolute;
+  opacity: 0; }
+
 #write-blogpost .banner .img-upload-box {
   display: -ms-flexbox;
   display: flex;

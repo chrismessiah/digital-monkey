@@ -4,9 +4,10 @@
   <div id="write-blogpost">
     <form role="form" method="POST" action="{{ Helper::env_url($form_route) }}" enctype="multipart/form-data">
       <div class="banner">
+          <img src=""/>
           <div class="img-upload-box"><div class="icon"><input id="file" type="file" name="file"></div></div>
           @include('blogpost/category-popup')
-          <div>
+          <div class="blogpost-info">
               <div>
                   <p class="category">{{$blogpost->category->name}}</p>
               </div>

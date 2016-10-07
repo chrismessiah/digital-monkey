@@ -1313,6 +1313,22 @@ $(document).ready(function() {
 $(document).ready(function() {
   if ($('#write-blogpost').length > 0) {
     
+    // preview image upload
+    $('#write-blogpost').find('form').find('input[type="file"]').change(function(){
+      readURL(this);
+    });
+    
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+              $('#write-blogpost').find('.banner').find('img').attr('src', e.target.result);
+              $('#write-blogpost').find('.banner').find('img').animate({'opacity':'1'});
+          }
+          reader.readAsDataURL(input.files[0]);
+      }
+    }
+    
     
     // Code for category popup
     var popupIsOpen = false;
