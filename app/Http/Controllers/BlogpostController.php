@@ -119,7 +119,7 @@ class BlogpostController extends Controller {
         
         $blogpost = new Blogpost($request->all());
         $blogpost->user_id = Auth::user()->id;
-        $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->id);
+        $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
         $blogpost = $this->sanitize_blogpost($blogpost);
         $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         $blogpost->save();
