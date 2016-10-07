@@ -163,8 +163,8 @@ class BlogpostController extends Controller {
     }
     
     private function image_compress($input_image, $id) {   
-        $imagick = new Imagick(realpath($input_image));
-        $imagick->resizeImage(2048, 2048, Imagick::INTERPOLATE_FILTER, 1, true);
+        $imagick = new \Imagick(realpath($input_image));
+        $imagick->resizeImage(2048, 2048, \Imagick::INTERPOLATE_FILTER, 1, true);
         $imagick->setImageCompressionQuality(40);
         $path = public_path().'/images/articles/'.$id.'.jpg';
         $imagick->writeImage($path);
