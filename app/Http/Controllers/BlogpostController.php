@@ -29,6 +29,7 @@ class BlogpostController extends Controller {
     }
 
     public function show_all() {
+        return phpinfo();
         $blogposts = Blogpost::with(['author', 'category'])->orderBy('updated_at', 'desc')->get();
         $banners = $blogposts->take(5);
         $blogposts = $this->popper(5, $blogposts, "f"); 
@@ -73,7 +74,8 @@ class BlogpostController extends Controller {
         $this->validate($request, [
             'title' => 'required|min:3|max:50',
             'intro' => 'required|min:3|max:160',
-            'body' => 'required|min:3|max:4000'
+            'body' => 'required|min:3|max:4000',
+            'file' => 'file|image|max:15000',
         ]);
     }
     
@@ -115,11 +117,12 @@ class BlogpostController extends Controller {
     }
     
     public function store(Request $request) {
+        return var_dump($request->hasFile('file'));
         $this->validate_blogpost_request($request);
         
         $blogpost = new Blogpost($request->all());
         $blogpost->user_id = Auth::user()->id;
-        $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
+        //$blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
         $blogpost = $this->sanitize_blogpost($blogpost);
         if ($blogpost->category_id) {
             $blogpost->category_id = $this->get_categoryID_by_name($request->category);
@@ -141,16 +144,20 @@ class BlogpostController extends Controller {
     }
     
     private function image_upload(Request $request, $form_file_naming, $id) {
-        $this->validate($request, [$form_file_naming => 'file|image|max:4000']);
+        $this->validate($request, [$form_file_naming => 'file|image|max:15000']);
         if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
             $image = $request->file($form_file_naming);
-            
-            $new_image_path = $this->image_compress($image, $id);
+            if (!App::environment('local')) {
+                $image = $this->image_compress($image, $id);
+                $extension = "jpg";
+            } else {
+                $extension = "png";
+            }
             $hash = hash_file('md5', $new_image_path);
             $file_name = $hash.'.'.$extension;
             $path = public_path().'/images/articles/';
             $image->move($path, $file_name);
-            //unlink($new_image_path);
+            unlink($new_image_path);
             return $file_name;
         }
         return 'dbaec6755e67e7d9c0bfff49c75e451a.png';

@@ -11,6 +11,7 @@ class Blogpost extends Model {
       'title',
       'intro',
       'body',
+      'image_name',
   ];
   
   public function check_if_author() {
