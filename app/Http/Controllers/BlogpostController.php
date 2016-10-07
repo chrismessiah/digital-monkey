@@ -7,7 +7,6 @@ use DB;
 //use Log;
 use App\Http\Requests;
 use App\Blogpost;
-use Intervention\Image\ImageManagerStatic as Image;
 use App\Category;
 use App\User;
 use Auth;
@@ -149,7 +148,7 @@ class BlogpostController extends Controller {
                 $image = $this->image_compress($image, $id);
                 $extension = "jpg";
             } else {
-                $extension = "png";
+               $extension = "png";
             }
             $hash = hash_file('md5', $image);
             $file_name = $hash.'.'.$extension;
@@ -164,14 +163,11 @@ class BlogpostController extends Controller {
     }
     
     private function image_compress($input_image, $id) {   
-        Image::configure(array('driver' => 'imagick'));     
-        $img = Image::make($input_image);
-        $img->resize(2048, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+        $imagick = new Imagick(realpath($input_image));
+        $imagick->resizeImage(2048, 2048, Imagick::INTERPOLATE_FILTER, 1, true);
+        $imagick->setImageCompressionQuality(40);
         $path = public_path().'/images/articles/'.$id.'.jpg';
-        $img->save($path,30);
+        $imagick->writeImage($path);
         return $path;
     }
 }
