@@ -145,17 +145,19 @@ class BlogpostController extends Controller {
         $this->validate($request, [$form_file_naming => 'file|image|max:15000']);
         if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
             $image = $request->file($form_file_naming);
-            if (!App::environment('local')) {
+            if (!app()->isLocal()) {
                 $image = $this->image_compress($image, $id);
                 $extension = "jpg";
             } else {
                 $extension = "png";
             }
-            $hash = hash_file('md5', $new_image_path);
+            $hash = hash_file('md5', $image);
             $file_name = $hash.'.'.$extension;
             $path = public_path().'/images/articles/';
             $image->move($path, $file_name);
-            unlink($new_image_path);
+            if (!app()->isLocal()) {
+                unlink($image);
+            }
             return $file_name;
         }
         return 'dbaec6755e67e7d9c0bfff49c75e451a.png';
