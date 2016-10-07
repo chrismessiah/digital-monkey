@@ -1099,7 +1099,8 @@ body.stop-scrolling {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -1154,7 +1155,8 @@ body.stop-scrolling {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -1257,7 +1259,8 @@ body.stop-scrolling {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -1302,7 +1305,8 @@ body.stop-scrolling {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -1454,7 +1458,9 @@ body.stop-scrolling {
           font-size: 18px; }
   #header .upper {
     text-transform: uppercase; }
-  #header .linear-transition, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header #footer p span, #footer p #header span, #header #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #header #index .article-banners a > div.gradient, #index .article-banners #header a > div.gradient, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .left .article, #index .article-posts .left #header .article, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window {
+  #header .linear-transition, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header #footer p span, #footer p #header span, #header #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #header #index .article-banners a > div.gradient, #index .article-banners #header a > div.gradient, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .left .article, #index .article-posts .left #header .article, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window, #header #write-blogpost .content .intro, #write-blogpost .content #header .intro, #header
+  #write-blogpost .content .body,
+  #write-blogpost .content #header .body, #header #write-blogpost .banner .category:hover, #write-blogpost .banner #header .category:hover, #header #write-blogpost .banner p.title, #write-blogpost .banner #header p.title {
     /* Prefix -webkit- for chrome and safari */
     -webkit-transition-timing-function: linear;
     -webkit-transition-duration: 0.1s;
@@ -1691,7 +1697,8 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -2153,7 +2160,8 @@ div {
 .upper {
   text-transform: uppercase; }
 
-.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window {
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
   /* Prefix -webkit- for chrome and safari */
   -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 0.1s;
@@ -2391,6 +2399,34 @@ div {
             #browse .author .right p:nth-child(1) {
               text-align: left; } }
 
+.upper {
+  text-transform: uppercase; }
+
+.linear-transition, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.1s;
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear;
+  -moz-transition-duration: 0.1s;
+  /* NO prefix for opera */
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
 #write-blogpost .banner {
   height: 600px;
   width: inherit;
@@ -2456,7 +2492,7 @@ div {
   opacity: 0;
   background-color: #45c8f2;
   position: absolute;
-  left: 43vw;
+  padding: 10px;
   bottom: 28%;
   z-index: 10000000;
   min-width: 60px;
@@ -2476,19 +2512,11 @@ div {
     padding: 10px 10px;
     border-bottom: 1px solid #4a9dc8;
     text-transform: uppercase; }
-    #write-blogpost #category-popup .content div:first-child {
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px; }
     #write-blogpost #category-popup .content div:last-child {
-      border-bottom: none;
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px; }
+      border-bottom: none; }
     #write-blogpost #category-popup .content div:hover {
       background-color: #39a5c8;
       cursor: pointer; }
-
-#write-blogpost .category:hover {
-  cursor: pointer; }
 
 #write-blogpost .content .body {
   max-width: 80vw;
@@ -2541,6 +2569,25 @@ div {
 #write-blogpost .content .body {
   outline: none;
   max-width: 80vw; }
+  #write-blogpost .content .intro.intro,
+  #write-blogpost .content .body.intro {
+    padding: 10px 5px 5px 5px; }
+    #write-blogpost .content .intro.intro:not(:focus):hover,
+    #write-blogpost .content .body.intro:not(:focus):hover {
+      background-color: rgba(136, 136, 136, 0.11); }
+  #write-blogpost .content .intro.body,
+  #write-blogpost .content .body.body {
+    padding: 10px; }
+    #write-blogpost .content .intro.body:not(:focus):hover,
+    #write-blogpost .content .body.body:not(:focus):hover {
+      background-color: rgba(136, 136, 136, 0.11); }
+
+#write-blogpost .banner .category:hover {
+  cursor: pointer;
+  background-color: #72d3f2; }
+
+#write-blogpost .banner p.title:not(:focus):hover {
+  background-color: #636363; }
 
 #write-blogpost form button {
   margin: 30px auto;

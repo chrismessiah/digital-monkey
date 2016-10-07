@@ -7,7 +7,7 @@ $(document).ready(function() {
     var popUpDiv = $('#write-blogpost').find('.banner').find('#category-popup');
     var categoryDiv = $('#write-blogpost').find('.banner').find('.category');
     
-    categoryDiv.click(function () {
+    categoryDiv.click(function (e) {
       if (popupIsOpen) {
         popUpDiv.animate({'opacity':"0"});
         popUpDiv.css({'display': 'none'});
@@ -15,7 +15,14 @@ $(document).ready(function() {
         popUpDiv.css({'display': 'block'});
         popUpDiv.animate({'opacity':"1"});
       }
+      e.stopPropagation();
       popupIsOpen = !popupIsOpen;
+    });
+    
+    $(document).on('click', function (e) {
+      popUpDiv.animate({'opacity':"0"});
+      popUpDiv.css({'display': 'none'});
+      popupIsOpen = false;
     });
     
     popUpDiv.find('.content').find('div').click(function (e) {

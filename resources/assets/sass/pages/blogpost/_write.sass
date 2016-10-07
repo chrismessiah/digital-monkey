@@ -1,8 +1,10 @@
+$hover-color: rgba(136, 136, 136, 0.11)
+
+@import ../../components/addons
+
 #write-blogpost
 	@import banner
 	@import category-popup
-	.category:hover
-		cursor: pointer
 	.content
 		@import body
 		@import intro
@@ -10,6 +12,24 @@
 		.body
 			outline: none
 			max-width: 80vw
+			@extend .linear-transition
+			&.intro
+				padding: 10px 5px 5px 5px
+				&:not(:focus):hover
+					background-color: $hover-color
+			&.body
+				padding: 10px
+				&:not(:focus):hover
+					background-color: $hover-color
+	.banner
+		.category:hover
+			cursor: pointer
+			background-color: #72d3f2
+			@extend .linear-transition
+		p.title
+			@extend .linear-transition
+			&:not(:focus):hover
+				background-color: rgb(99, 99, 99)
 	form button
 		margin: 30px auto
 		display: block

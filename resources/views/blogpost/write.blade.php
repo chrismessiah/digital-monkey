@@ -3,9 +3,9 @@
 @section('content')
   <div id="write-blogpost">
     <div class="banner">
+        @include('blogpost/category-popup')
         <div>
             <div>
-                @include('blogpost/category-popup')
                 <p class="category">{{$blogpost->category->name}}</p>
             </div>
             <p class="title editable-no-toolbar">{{$blogpost->title}}</p>
