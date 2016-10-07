@@ -14,9 +14,7 @@
 @section('content')
     <div id="index">
         <div class="article-banners">
-          <?php
-          $i = 0;
-          ?>
+          <?php $i = 1; ?>
           @foreach($banners as $blogpost)
             <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
                 <div class="gradient color{{$i}}">
@@ -24,14 +22,12 @@
                 </div>
                 <div class="banner"></div>
                 <style>
-                  #index .article-banners element:nth-child({{$i}}) {
-                    background-image: url("{{'/images/blog_banners/'.$blogpost->image_name}}");
+                  #index .article-banners a:nth-child({{$i}}) .banner {
+                    background-image: url("{{'../images/articles/'.$blogpost->image_name}}");
                   }
                 </style>
             </a>
-            <?php
-            $i = $i + 1;
-            ?>
+            <?php $i = $i + 1; ?>
           @endforeach
         </div>
         
@@ -52,8 +48,14 @@
         
         <div class="article-posts">
             <div class="left">
+                <?php $i = 1; ?>
                 @foreach($blogpost_list as $blogpost)
                   <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
+                      <style>
+                        #index .article-posts .left a:nth-child({{$i}}) .image {
+                          background-image: url("{{'../images/articles/'.$blogpost->image_name}}");
+                        }
+                      </style>
                       <div class="article">
                           <div class="image"></div>
                           <div class="info">
@@ -64,17 +66,21 @@
                           </div>
                       </div>
                   </a>
+                 <?php $i = $i + 1; ?>
                 @endforeach
             </div>
             
             <div class="right">
                 <div class="container">    
                     <p>POPULAR POSTS</p>
-                    <?php
-                      $i = 1;
-                    ?>
+                    <?php $i = 1; ?>
                     @foreach($popular_posts as $blogpost)
                       <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
+                          <style>
+                            #index .article-posts .right div a:nth-child({{$i}}) .article {
+                              background-image: url("{{'../images/articles/'.$blogpost->image_name}}");
+                            }
+                          </style>
                           <div class="article">
                               <div class="window">
                                   <div>{{$i}}</div>
@@ -82,9 +88,7 @@
                               </div>
                           </div>
                       </a>
-                      <?php
-                        $i = $i + 1;
-                      ?>
+                      <?php $i = $i + 1; ?>
                     @endforeach
                 </div>
             </div>

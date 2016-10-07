@@ -7,6 +7,7 @@ use DB;
 //use Log;
 use App\Http\Requests;
 use App\Blogpost;
+use Intervention\Image\ImageManagerStatic as Image;
 use App\Category;
 use App\User;
 use Auth;
@@ -118,7 +119,7 @@ class BlogpostController extends Controller {
         
         $blogpost = new Blogpost($request->all());
         $blogpost->user_id = Auth::user()->id;
-        $blogpost->image_name = $this->image_upload($request, 'file');
+        $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->id);
         $blogpost = $this->sanitize_blogpost($blogpost);
         $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         $blogpost->save();
@@ -135,17 +136,30 @@ class BlogpostController extends Controller {
         
     }
     
-    private function image_upload(Request $request, $form_file_naming) {
+    private function image_upload(Request $request, $form_file_naming, $id) {
         $this->validate($request, [$form_file_naming => 'file|image|max:4000']);
         if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
             $image = $request->file($form_file_naming);
-            $extension = $image->getClientOriginalExtension();
-            $hash = hash_file('md5', $image);
+            
+            $new_image_path = $this->image_compress($image, $id);
+            $hash = hash_file('md5', $new_image_path);
             $file_name = $hash.'.'.$extension;
             $path = public_path().'/images/articles/';
             $image->move($path, $file_name);
-            return $file_name;
+            unlink($new_image_path);
         }
         return 'dbaec6755e67e7d9c0bfff49c75e451a.png';
+    }
+    
+    private function image_compress($input_image, $id) {   
+        Image::configure(array('driver' => 'imagick'));     
+        $img = Image::make($input_image);
+        $img->resize(2048, null, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+        $path = public_path().'/images/articles/'.$id.'.jpg';
+        $img->save($path,30);
+        return $path;
     }
 }

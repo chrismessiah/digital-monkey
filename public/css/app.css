@@ -1837,7 +1837,6 @@ div {
           width: 90%; }
       #index .article-banners a > div.banner {
         margin: 0;
-        background-image: url("../images/articles/small1.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1941,7 +1940,6 @@ div {
         #index .article-posts .left .article > div.image {
           height: 50vw;
           width: 100%;
-          background-image: url("../images/articles/article1.png");
           background-size: cover;
           background-position: center;
           margin-right: 30px; }
@@ -2002,7 +2000,6 @@ div {
           #index .article-posts .right .container .article {
             height: 10vw;
             width: 20vw;
-            background-image: url("../images/articles/article2.png");
             background-size: cover;
             background-position: center;
             margin-bottom: 30px;
