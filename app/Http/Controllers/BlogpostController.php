@@ -116,12 +116,11 @@ class BlogpostController extends Controller {
     }
     
     public function store(Request $request) {
-        return var_dump($request->hasFile('file'));
         $this->validate_blogpost_request($request);
         
         $blogpost = new Blogpost($request->all());
         $blogpost->user_id = Auth::user()->id;
-        //$blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
+        $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
         $blogpost = $this->sanitize_blogpost($blogpost);
         if ($blogpost->category_id) {
             $blogpost->category_id = $this->get_categoryID_by_name($request->category);
