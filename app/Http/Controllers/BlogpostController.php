@@ -151,7 +151,7 @@ class BlogpostController extends Controller {
             $path = public_path().'/images/articles/';
             $image->move($path, $file_name);
             //unlink($new_image_path);
-            return $file_name
+            return $file_name;
         }
         return 'dbaec6755e67e7d9c0bfff49c75e451a.png';
     }
