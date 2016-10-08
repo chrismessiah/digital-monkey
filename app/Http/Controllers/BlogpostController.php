@@ -145,7 +145,7 @@ class BlogpostController extends Controller {
         $path = public_path().'/images/articles/';
         if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
             $image = $request->file($form_file_naming);            
-            $temp_imagepath = $this->compress($image, $path.$id.'.jpeg', 20, 2048);
+            $temp_imagepath = $this->compress($image, $path.$id.'.jpeg', 35, 2048);
             $extension = pathinfo($temp_imagepath, PATHINFO_EXTENSION);
             $hash = hash_file('md5', $temp_imagepath);
             $file_name = $hash.'.'.$extension;
