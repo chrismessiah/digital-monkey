@@ -28,7 +28,12 @@ class BlogpostController extends Controller {
     }
 
     public function show_all() {
-        $blogposts = Blogpost::with(['author', 'category'])->orderBy('updated_at', 'desc')->get();
+        // hairassment protection
+        if (Auth::check()) {
+            $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orWhere('user_id', '=', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
+        } else {
+            $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orderBy('updated_at', 'desc')->get();
+        }
         $banners = $blogposts->take(5);
         $blogposts = $this->popper(5, $blogposts, "f"); 
         $popular_posts = $blogposts->take(-5); // should be most popular but what the heck...
