@@ -2,8 +2,18 @@ $(document).ready(function() {
   if ($('#write-blogpost').length > 0) {
     
     // preview image upload
-    $('#write-blogpost').find('form').find('input[type="file"]').change(function(){
-      readURL(this);
+    var inputImage = $('#write-blogpost').find('form').find('input[type="file"]');
+    inputImage.change(function(){
+      var filename = inputImage.val();
+      var ext = filename.split('.').pop();
+      var oneMegaByte = 1000000;
+      if (ext != 'jpeg' && ext != 'jpg' && ext != 'png' && ext != 'gif') {
+        swal("Sorry bruh, only jpeg/jpg, png and gif image formats accepted.")
+      } else if (this.files && this.files[0] && this.files[0].size > oneMegaByte*15) {
+        swal("Hey that image is way too large!")
+      } else {
+        readURL(this);
+      }
     });
     
     function readURL(input) {
