@@ -9,11 +9,7 @@
           @include('blogpost/category-popup')
           @if ($blogpost->image_name)
             <style>
-              .banner {background-image: url("{{'../images/articles/'.$blogpost->image_name}}")}
-            </style>
-          @else
-            <style>
-              .banner {background-image: url("{{'../images/articles/article1.png'}}")}
+              .banner {background-image: url("{{ Helper::env_url('../images/articles/'.$blogpost->image_name) }}")}
             </style>
           @endif
           <div class="blogpost-info">
