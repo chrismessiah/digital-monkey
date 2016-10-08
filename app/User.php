@@ -17,6 +17,7 @@ class User extends Authenticatable
         'fb_id',
         'email',
         'password',
+        'about',
     ];
 
     /**
@@ -30,7 +31,7 @@ class User extends Authenticatable
     ];
     
     public function blogposts() {
-        return $this->hasMany(Blogpost::class);
+        return $this->hasMany('App\Blogpost', 'id', 'user_id');
     } 
     
     public function getFirstname() {

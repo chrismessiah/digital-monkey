@@ -1,0 +1,156 @@
+$dark-gray: #1c2227
+$light-blue: #45c8f2
+
+@import addons
+
+#header
+  @extend .linear-transition
+  width: 100%
+  height: 60px
+  background-color: $dark-gray
+  z-index: 10000
+  div.login-dropdown
+    display: none
+    height: inherit
+    width: inherit
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    .logo 
+      width: 200px
+      height: 85px
+      background-image: url('images/digitalMonkey.svg')
+      background-size: 200px 85px
+      margin-bottom: 30px
+    p
+      color: rgb(214, 214, 214)
+      font-size: 24px
+    .back
+      position: absolute
+      top: 0
+      right: 0
+      margin-top: 20px
+      margin-right: 20px
+      width: 30px
+      height: 30px
+      -webkit-mask-image: url('images/back.svg')
+      mask-image: url('images/back.svg')
+      background-color: $light-blue
+      background-size: 30px 30px
+      @extend .linear-transition
+      &:hover
+        cursor: pointer
+        transform: scale(1.1)
+  div.standard
+    height: inherit
+    width: inherit
+    > div
+      position: absolute
+      top: 0
+      bottom: 0
+      height: inherit
+      cursor: pointer
+      
+      &.left
+        left: 0
+        
+        .logo
+          display: block
+          text-indent: -9999px
+          width: 80px
+          height: 34px
+          background-image: url('images/digitalMonkey.svg')
+          background-size: 80px 34px
+          position: absolute
+          top: 50%
+          margin-top: calc(-34px/2)
+          margin-left: 10px
+          
+          transform: translateZ(0)
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+          backface-visibility: hidden
+          -moz-osx-font-smoothing: grayscale
+          transition-duration: 0.3s
+          transition-property: transform
+          &:hover
+            transform: scale(1.1)
+      
+      &.right
+        right: 0
+        > div
+          @extend .linear-transition
+          display: inline-block
+        
+          &.search
+            height: 60px
+            width: 60px
+            
+            //background-color: $light-blue
+            background-color: $dark-gray
+            
+            position: relative
+            left: 4px
+            &:hover
+              background-color: $light-blue
+              .icon
+                background-color: $dark-gray
+            
+            .icon
+              width: 28px
+              height: 29px
+              -webkit-mask-image: url('images/search.svg')
+              mask-image: url('images/search.svg')
+              background-color: $light-blue
+              background-size: 28px 29px
+              position: absolute
+              top: 50%
+              left: 50%
+              margin: -15px 0 0 -15px
+          &.login
+            height: inherit
+            vertical-align: top
+            padding: 0 10px
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            color: $light-blue
+            font-family: RalewayMedium
+            &:hover
+              background-color: $light-blue
+              color: $dark-gray
+          &.user
+            position: relative
+            bottom: 4px
+            padding-left: 10px
+            padding-right: 10px
+            .name
+              display: none
+              @media screen and (min-width: 768px)
+                display: initial
+            &:hover
+              background-color: $light-blue
+              .name
+                color: $dark-gray
+            > div
+              display: inline-block
+              &.container
+                padding-top: 5px
+                padding-bottom: 10px
+                .icon
+                  width: 42px
+                  height: 42px
+                  background-image: url('images/chris.jpg')
+                  background-size: 42px 42px
+                  overflow:hidden
+                  border-radius: 100px
+                  background-size: 160%
+                  background-position: center
+                  background-repeat: no-repeat
+                  position: relative
+                  top: 2px
+              &.name
+                color: $light-blue
+                font-family: RalewayMedium
+                position: relative
+                bottom: 20px
+            

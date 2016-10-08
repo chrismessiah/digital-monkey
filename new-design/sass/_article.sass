@@ -1,0 +1,155 @@
+$dark-gray: #1c2227
+$light-blue: #45c8f2
+$light-light-blue: #6ecae7
+//$light-light-blue: #67cded
+
+@import addons
+@import fonts
+
+#browse
+  width: 100vw
+  div,
+  p
+    &::selection
+      background: $light-light-blue
+      color: white
+  .banner
+    height: 600px
+    width: inherit
+    background-image: url('images/articles/banner1.png')
+    background-size: cover
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    margin-bottom: 20px
+    > div
+      background-color: rgba(black, 0.7)
+      min-height: 100px
+      display: flex
+      justify-content: center
+      flex-direction: column
+      text-align: center
+      padding: 0 20px
+      p.category
+        background-color: $light-blue
+        padding: 5px 10px
+        color: white
+        text-transform: uppercase
+        font-size: 18px
+      div.profile
+        height: 40px
+        width: 40px
+        display: inline-block
+        background-image: url('images/chris.jpg')
+        background-size: cover
+        border-radius: 100px
+        margin-right: 10px
+      p
+        color: white
+        margin: 0
+        font-size: 22px
+        font-family: RalewayLight
+        display: inline-block
+        position: relative
+        bottom: 10px
+        span
+          color: #7ac1f4
+          &:hover
+            color: #6aa4cd
+            cursor: pointer
+        &.title
+          position: inherit
+          font-size: 30px
+          font-family: RalewayRegular
+      
+          
+      
+  .social
+    display: none
+    @media screen and (min-width: 550px)
+      display: block
+    position: absolute
+    > div
+      width: 30px
+      height: 30px
+      margin: 10px
+      &.twitter
+        background-image: url('images/social/twitter.svg')
+      &.facebook
+        background-image: url('images/social/facebook.svg')
+      &.google-plus
+        background-image: url('images/social/google-plus.svg')
+      &:hover
+        cursor: pointer
+  .content-wrapper
+    width: 100vw
+    display: flex
+    justify-content: center
+    flex-direction: column
+    margin-bottom: 20px
+    p
+      margin: 10px auto
+      width: 80vw
+      @media screen and (min-width: 950px)
+        width: 75vw
+      @media screen and (min-width: 950px)
+        width: 70vw
+      @media screen and (min-width: 1100px)
+        width: 60vw
+      &.intro
+        font-size: 24px
+        line-height: 36px
+        &::first-letter
+          color: #45C8F2
+          font-family: RalewayMedium
+          font-size: 70px
+      &.title
+        font-family: RalewayBold
+        font-size: 26px
+      &.qoute
+        font-family: RalewayMedium
+        font-size: 45px
+        width: 70vw
+        text-align: center
+        width: 80vw
+        color: #999999
+  hr
+    width: 70vw
+  .author
+    width: 60vw
+    min-height: 130px
+    margin: 20px auto 20px auto
+    font-size: 0
+    .left
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 30px 0 10px 0
+      @media screen and (min-width: 650px)
+        display: inline-flex
+        margin-right: 20px
+        margin-top: 0
+      .profile-pic
+        height: 125px
+        width: 125px
+        background-image: url('images/chris.jpg')
+        background-size: cover
+        border-radius: 100px
+        vertical-align: middle
+    .right
+      display: inline-block
+      vertical-align: top
+      @media screen and (min-width: 650px)
+        width: 50%
+      @media screen and (min-width: 700px)
+        width: 60%
+      @media screen and (min-width: 800px)
+        width: 70%
+      p
+        margin: 10px 0
+        &:nth-child(1)
+          font-family: RalewayMedium
+          font-size: 24px
+          text-align: center
+          @media screen and (min-width: 650px)
+            text-align: left

@@ -8,6 +8,7 @@ use Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Helpers\Helper;
 
 class AuthController extends Controller
 {
@@ -102,7 +103,7 @@ class AuthController extends Controller
             $user = $results[0];
         }
         auth()->login($user);
-        return redirect()->to('/');
+        return redirect()->to(Helper::env_url('/'));
         
     }
 }

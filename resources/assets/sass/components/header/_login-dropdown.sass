@@ -1,0 +1,98 @@
+div.login-dropdown
+  display: none
+  height: inherit
+  width: inherit
+  align-items: center
+  flex-direction: column
+  .logo 
+    width: 200px
+    height: 85px
+    background-image: url('../images/digitalMonkey.svg')
+    background-size: 200px 85px
+    margin-bottom: 30px
+    margin-top: 60px
+  .back
+    position: fixed
+    top: 0
+    right: 0
+    margin-top: 20px
+    margin-right: 20px
+    width: 30px
+    height: 30px
+    -webkit-mask-image: url('../images/back.svg')
+    mask-image: url('../images/back.svg')
+    background-color: $light-blue
+    background-size: 30px 30px
+    @extend .linear-transition
+    &:hover
+      cursor: pointer
+      transform: scale(1.1)
+    
+  .sign-in,
+  .sign-up
+    opacity: 1
+    display: flex
+    align-items: center
+    flex-direction: column
+    p.title
+      color: rgb(214, 214, 214)
+      font-size: 24px
+    .container
+      top: 400px
+      width: 300px
+      margin: 0 auto 40px auto
+      z-index: 999999
+      
+      p.redirect
+        text-decoration: none
+        color: white
+        &:hover
+          color: rgb(193, 193, 193)
+          cursor: pointer
+        position: initial
+        text-align: center
+        @media screen and (min-width: 620px)
+          max-width: 20vw
+          position: fixed
+          display: block
+          right: 20px
+          bottom: 20px
+          text-align: right
+        @media screen and (min-width: 825px)
+          max-width: 30vw
+      
+      input[type="password"],
+      input[type="text"],
+      input[type="email"]
+        border: none
+        border-radius: 10px
+        padding: 10px
+        width: 100%
+        margin: 10px auto
+        box-sizing: border-box
+        background: #FFFFFF
+        border-radius: 40px
+        font-size: 16px
+        font-family: RalewayRegular
+        outline: 0
+        padding: 12px
+        color: black
+        margin: 10px 0px
+        &:focus::-webkit-input-placeholder
+          color: transparent
+      p
+        text-align: center
+        font-family: RalewayItalic
+        color: white
+      .btn-light
+        width: 100%
+        margin-top: 20px
+      .btn-facebook
+        width: 80%
+        margin-bottom: 10px
+    &.sign-up
+      display: none
+      opacity: 0
+      .btn-light,
+      .btn-facebook
+        font-size: 18px

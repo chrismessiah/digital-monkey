@@ -11,13 +11,29 @@
 |
 */
 
+// Route::auth();
 
-Route::auth();
+// Authentication Routes, uses AuthController
+Route::get('login', 'Auth\AuthController@showLoginForm');
+Route::post('login', 'Auth\AuthController@login');
+Route::get('logout', 'Auth\AuthController@logout');
+
+// Registration Routes, uses AuthController
+Route::get('register', 'Auth\AuthController@showRegistrationForm');
+Route::post('register', 'Auth\AuthController@register');
+
+// Password Reset Routes, uses PasswordController
+Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+Route::post('password/reset', 'Auth\PasswordController@reset');
+
+
+
 Route::get('/', 'BlogpostController@show_all');
 
 Route::post('blogposts', 'BlogpostController@store');
-Route::get('blogposts/create', 'BlogpostController@create');
-Route::get('blogposts/{id}/edit', 'BlogpostController@create');
+Route::get('blogposts/write', 'BlogpostController@write');
+Route::get('blogposts/{id}/edit', 'BlogpostController@edit');
 Route::get('blogposts/{id}', 'BlogpostController@show');
 Route::patch('blogposts/{id}', 'BlogpostController@update');
 Route::delete('blogposts/{id}', 'BlogpostController@destroy');

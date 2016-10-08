@@ -14,11 +14,19 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass([
+        '../bower/prism/themes/prism.css',
+        //'../bower/prism/themes/prism-okaidia.css',
+        '../bower/sweetalert/dist/sweetalert.css',
+        '../bower/medium-editor/dist/css/medium-editor.min.css',
+        '../bower/medium-editor/dist/css/themes/flat.min.css',
         'app.sass',
-        '../bower/sweetalert/dist/sweetalert.css'
     ]);
     mix.scripts([
-        '../bower/jquery/dist/jquery.js',
-        '../bower/sweetalert/dist/sweetalert-dev.js'
+        '../bower/prism/prism.js',
+        '../bower/jquery/dist/jquery.min.js',
+        '../bower/moment/min/moment.min.js',
+        '../bower/sweetalert/dist/sweetalert.min.js',
+        '../bower/medium-editor/dist/js/medium-editor.min.js',
+        '../js/*.js'
     ], 'public/js/vendor.js');
 });
