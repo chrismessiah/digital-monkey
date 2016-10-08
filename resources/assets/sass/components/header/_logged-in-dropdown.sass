@@ -1,0 +1,34 @@
+@import ../addons
+
+.logged-in-dropdown
+  opacity: 0
+  display: none
+  background-color: white
+  position: absolute
+  z-index: 999999
+  right: 20px
+  margin-top: 15px
+  border-radius: 5px
+  min-width: 140px
+  padding-bottom: 10px
+  box-shadow: 5px 5px 15px #888888
+  font-size: 0
+  .triangle
+    content: ""
+    width: 0
+    height: 0
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid white
+    position: relative
+    left: 45%
+    bottom: 10px
+  a
+    color: black
+    display: block
+    padding: 5px 10px
+    font-size: 16px
+    @extend .linear-transition
+    &:hover
+      color: rgb(164, 164, 164)
+      

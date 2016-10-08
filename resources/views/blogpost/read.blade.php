@@ -1,46 +1,56 @@
 @extends('master')
 
-@section('head')
-  <style>
-  #article_banner {
-    background-image: url("{{'/images/blog_banners/'.$blogpost->image_name}}")
-  }
-  </style>
-@endsection
 
-@section('content')
-  <div class="blogpost-container">
-    <div id="article_banner"></div>
-
-    <div id="content">
-      <p id="title">{{$blogpost->title}}</p>
-      <p id="intro">{{$blogpost->intro}}</p>
-      <p id="body">{!!$blogpost->body!!}</p>
-      
-      <div class="author-container">
-        <p class="header">Published by</p>
-        <div class="profile-pic"></div> <p id="author">{{$author->fullname}}</p>
+@section('content')  
+  <div id="browse">
+      <div class="banner">
         <style>
-          .blogpost-container .profile-pic {
-            background-image: url("{{ $author->getPicUrl() }}");
-          }
+          .banner {background-image: url("{{'../images/articles/'.$blogpost->image_name}}")}
         </style>
+          <div>
+              <div>
+                  <p class="category">{{$blogpost->category->name}}</p>
+              </div>
+              <p class="title">{{$blogpost->title}}</p>
+              <div>
+                  <script type="text/javascript">
+                    var date = '{{$blogpost->created_at}}';
+                  </script>
+                  <div class="profile"></div><p>by <span>{{$blogpost->author->fullname}}</span> - Posted <span class="timestamp">Changed by js</span></p>
+              </div>
+          </div>
       </div>
-      
-      <div class="social">
-        <a href="" id="twitter"></a>
-        <a href="" id="facebook"></a>
-        <a href="" id="google"></a>
+      <div>
+        <div class="social">
+          <div class="twitter"></div>
+          <div class="facebook"></div>
+          <div class="google-plus"></div>
+        </div>
+            
+        <p class="intro">{{$blogpost->intro}}</p>
+        <div class="body">{!! $blogpost->body !!}</div>
+        @if(!Auth::guest())
+          @if($blogpost->check_if_author())
+            <div class="edit-container">
+              <a class="btn-dark edit-btn" href="{{ Helper::env_url('blogposts/'.$blogpost->id.'/edit') }}">Edit</a>
+              <form role="form" method="POST" action="{{ Helper::env_url('blogposts/'.$blogpost->id) }}">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="submit" class="btn-dark">Delete</button>
+              </form>
+            </div>
+          @endif
+        @endif
+        <hr/>
+        <div class="author">
+            <div class="left">
+                <div class="profile-pic"></div>
+            </div>
+            <div class="right">
+                <p>By {{$blogpost->author->fullname}}</p>
+                <p>{{$blogpost->author->about}}</p>
+            </div>
+        </div>
       </div>
-      
-    </div>
-    @if ($blogpost->check_if_author())
-      <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id.'/edit') }}" class="btn">Edit</a>
-      <form method="POST" action="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
-        {{ method_field('DELETE') }}
-        {{ csrf_field() }}
-        <button type="submit" class="btn">Delete</button>
-      </form>
-    @endif
   </div>
 @endsection

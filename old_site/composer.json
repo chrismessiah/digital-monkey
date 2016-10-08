@@ -1,9 +1,0 @@
-{
-    "name": "christianabdelmassih/my-kth-blog",
-    "config": {
-        "vendor-dir": "composer_components"
-    },
-    "require": {
-    	"mobiledetect/mobiledetectlib": "^2.8"
-    }
-}

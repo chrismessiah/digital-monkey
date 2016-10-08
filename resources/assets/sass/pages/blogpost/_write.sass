@@ -1,4 +1,77 @@
-@import ../../templates/form
+$hover-color: rgba(136, 136, 136, 0.11)
 
-.write-blogpost-page-container
-	@extend .form-container
+@import ../../components/addons
+
+#write-blogpost
+	@import banner
+	@import category-popup
+	.content
+		@import body
+		@import intro
+		.intro,
+		.body
+			outline: none
+			max-width: 80vw
+			@extend .linear-transition
+			&.intro
+				padding: 10px 5px 5px 5px
+				&:not(:focus):hover
+					background-color: $hover-color
+			&.body
+				padding: 10px
+				&:not(:focus):hover
+					background-color: $hover-color
+	.banner
+		.blogpost-info
+			z-index: 2
+		img
+			width: 100vw
+			height: inherit
+			position: absolute
+			opacity: 0
+			
+		.img-upload-box
+			display: flex
+			width: 100vw
+			height: 200px
+			position: absolute
+			bottom: 45%
+			justify-content: center
+			align-items: center
+			background-color: transparent
+			overflow: hidden
+			input
+				position: relative
+				//top: 300px
+				font-size: 100px
+				width: 100px
+				height: 100px
+				opacity: 0
+				&:hover
+					cursor: pointer
+				
+			&:hover
+				cursor: pointer
+				.icon
+					opacity: 1
+			.icon
+				@extend .linear-transition-slow
+				opacity: 0
+				width: 120px
+				height: 100px
+				background-image: url("../images/camera.svg")
+				background-size: cover
+				background-position: center
+				&:hover
+					cursor: pointer
+		.category:hover
+			cursor: pointer
+			background-color: #72d3f2
+			@extend .linear-transition
+		p.title
+			@extend .linear-transition
+			&:not(:focus):hover
+				background-color: rgb(99, 99, 99)
+	form button
+		margin: 30px auto
+		display: block

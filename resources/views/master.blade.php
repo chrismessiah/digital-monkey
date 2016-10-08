@@ -7,7 +7,7 @@
         @yield('head')
     </head>
     <body>
-        @include('components.header')
+        @include('components.header.master')
         @yield('content')
         @include('components.footer')
         @yield('js')
