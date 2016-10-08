@@ -142,32 +142,56 @@ class BlogpostController extends Controller {
     
     private function image_upload(Request $request, $form_file_naming, $id) {
         $this->validate($request, [$form_file_naming => 'file|image|max:15000']);
+        $path = public_path().'/images/articles/';
         if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
             $image = $request->file($form_file_naming);
-            if (!app()->isLocal()) {
-                $image = $this->image_compress($image, $id);
-                $extension = "jpg";
-            } else {
-               $extension = "png";
-            }
-            $hash = hash_file('md5', $image);
+            // $extension = $image->getClientOriginalExtension();
+            
+            // if (!app()->isLocal()) {
+            //     $image = $this->image_compress($image, $id);
+            //     $extension = "jpg";
+            // } else {
+            //    $extension = "png";
+            // }
+            
+            $temp_imagepath = $this->compress($image, $path.$id.'.jpeg', 20);
+            $extension = pathinfo($temp_imagepath, PATHINFO_EXTENSION);
+            $hash = hash_file('md5', $temp_imagepath);
             $file_name = $hash.'.'.$extension;
-            $path = public_path().'/images/articles/';
-            $image->move($path, $file_name);
-            if (!app()->isLocal()) {
-                unlink($image);
-            }
+            $new_imagepath = $path.$file_name;
+            rename($temp_imagepath, $new_imagepath);
+            // if (!app()->isLocal()) {
+            //     unlink($image);
+            // }
             return $file_name;
         }
-        return 'dbaec6755e67e7d9c0bfff49c75e451a.png';
+        return 'no-img.png';
     }
     
-    private function image_compress($input_image, $id) {   
-        $imagick = new \Imagick(realpath($input_image));
-        $imagick->resizeImage(2048, 2048, \Imagick::INTERPOLATE_FILTER, 1, true);
-        $imagick->setImageCompressionQuality(40);
-        $path = public_path().'/images/articles/'.$id.'.jpg';
-        $imagick->writeImage($path);
-        return $path;
+    private function compress($source, $destination, $quality) {
+        $info = getimagesize($source);
+        if ($info['mime'] != 'image/jpeg' && $info['mime'] != 'image/jpg' && $info['mime'] != 'image/gif' && $info['mime'] != 'image/png') {
+            return $source;
+        }
+        
+        if ($info['mime'] == 'image/jpeg' || $info['mime'] == 'image/jpg') {
+            $image = imagecreatefromjpeg($source);
+        } elseif ($info['mime'] == 'image/gif') {
+            $image = imagecreatefromgif($source);
+        } elseif ($info['mime'] == 'image/png') {
+            $image = imagecreatefrompng($source);
+        }
+        imagejpeg($image, $destination, $quality);
+        return $destination;
     }
+    
+    // Not used: cant get fuckin Imagick to work :(
+    // private function image_compress($input_image, $id) {   
+    //     $imagick = new \Imagick(realpath($input_image));
+    //     $imagick->resizeImage(2048, 2048, \Imagick::INTERPOLATE_FILTER, 1, true);
+    //     $imagick->setImageCompressionQuality(40);
+    //     $path = public_path().'/images/articles/'.$id.'.jpg';
+    //     $imagick->writeImage($path);
+    //     return $path;
+    // }
 }
