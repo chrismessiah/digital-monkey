@@ -2379,10 +2379,15 @@ div {
         background-image: url("../images/social/google-plus.svg"); }
       #browse .social > div:hover {
         cursor: pointer; }
-  #browse .edit-btn {
-    margin: 30px auto;
-    max-width: 100px;
-    display: block; }
+  #browse .edit-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #browse .edit-container a, #browse .edit-container button {
+      margin: 0 10px; }
   #browse hr {
     width: 70vw;
     margin: 30px auto; }

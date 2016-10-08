@@ -31,7 +31,14 @@
         <div class="body">{!! $blogpost->body !!}</div>
         @if(!Auth::guest())
           @if($blogpost->check_if_author())
-            <a class="btn-dark edit-btn" href="{{ Helper::env_url('blogposts/'.$blogpost->id.'/edit') }}">Edit!</a>
+            <div class="edit-container">
+              <a class="btn-dark edit-btn" href="{{ Helper::env_url('blogposts/'.$blogpost->id.'/edit') }}">Edit</a>
+              <form role="form" method="POST" action="{{ Helper::env_url('blogposts/'.$blogpost->id) }}">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="submit" class="btn-dark">Delete</button>
+              </form>
+            </div>
           @endif
         @endif
         <hr/>
