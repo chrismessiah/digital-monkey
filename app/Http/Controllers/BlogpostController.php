@@ -144,31 +144,19 @@ class BlogpostController extends Controller {
         $this->validate($request, [$form_file_naming => 'file|image|max:15000']);
         $path = public_path().'/images/articles/';
         if ($request->hasFile($form_file_naming) && $request->file($form_file_naming)->isValid()) {
-            $image = $request->file($form_file_naming);
-            // $extension = $image->getClientOriginalExtension();
-            
-            // if (!app()->isLocal()) {
-            //     $image = $this->image_compress($image, $id);
-            //     $extension = "jpg";
-            // } else {
-            //    $extension = "png";
-            // }
-            
-            $temp_imagepath = $this->compress($image, $path.$id.'.jpeg', 20);
+            $image = $request->file($form_file_naming);            
+            $temp_imagepath = $this->compress($image, $path.$id.'.jpeg', 20, 2048);
             $extension = pathinfo($temp_imagepath, PATHINFO_EXTENSION);
             $hash = hash_file('md5', $temp_imagepath);
             $file_name = $hash.'.'.$extension;
             $new_imagepath = $path.$file_name;
             rename($temp_imagepath, $new_imagepath);
-            // if (!app()->isLocal()) {
-            //     unlink($image);
-            // }
             return $file_name;
         }
         return 'no-img.png';
     }
     
-    private function compress($source, $destination, $quality) {
+    private function compress($source, $destination, $quality, $width) {
         $info = getimagesize($source);
         if ($info['mime'] != 'image/jpeg' && $info['mime'] != 'image/jpg' && $info['mime'] != 'image/gif' && $info['mime'] != 'image/png') {
             return $source;
@@ -181,17 +169,12 @@ class BlogpostController extends Controller {
         } elseif ($info['mime'] == 'image/png') {
             $image = imagecreatefrompng($source);
         }
-        imagejpeg($image, $destination, $quality);
+        $height = round($width*$info[1]/$info[0]);
+        $photoX = imagesX($image);
+        $photoY = imagesY($image);
+        $images_fin = imageCreateTrueColor($width, $height);
+        imageCopyResampled($images_fin, $image, 0, 0, 0, 0, $width+1, $height+1, $photoX, $photoY);
+        imagejpeg($images_fin, $destination, $quality);
         return $destination;
     }
-    
-    // Not used: cant get fuckin Imagick to work :(
-    // private function image_compress($input_image, $id) {   
-    //     $imagick = new \Imagick(realpath($input_image));
-    //     $imagick->resizeImage(2048, 2048, \Imagick::INTERPOLATE_FILTER, 1, true);
-    //     $imagick->setImageCompressionQuality(40);
-    //     $path = public_path().'/images/articles/'.$id.'.jpg';
-    //     $imagick->writeImage($path);
-    //     return $path;
-    // }
 }
