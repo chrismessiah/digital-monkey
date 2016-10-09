@@ -30,7 +30,11 @@ class BlogpostController extends Controller {
     public function show_all() {
         // hairassment protection
         if (Auth::check()) {
-            $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orWhere('user_id', '=', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
+            if (Auth::user()->id == 1) {
+                $blogposts = Blogpost::with(['author', 'category'])->orderBy('updated_at', 'desc')->get();
+            } else {
+                $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orWhere('user_id', '=', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
+            }
         } else {
             $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orderBy('updated_at', 'desc')->get();
         }
