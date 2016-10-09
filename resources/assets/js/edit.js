@@ -7,10 +7,11 @@ $(document).ready(function() {
       var filename = inputImage.val();
       var ext = filename.split('.').pop();
       var oneMegaByte = 1000000;
+      var fileSizeUploadLimit = oneMegaByte*5;
       if (ext != 'jpeg' && ext != 'jpg' && ext != 'png' && ext != 'gif') {
         swal("Sorry bruh, only jpeg/jpg, png and gif image formats accepted.")
-      } else if (this.files && this.files[0] && this.files[0].size > oneMegaByte*15) {
-        swal("Hey that image is way too large!")
+      } else if (this.files && this.files[0] && this.files[0].size > fileSizeUploadLimit) {
+        swal(`Hey that image is way too large, the limit is ${fileSizeUploadLimit/oneMegaByte} Mb!`)
       } else {
         readURL(this);
       }
