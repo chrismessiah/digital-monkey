@@ -1834,7 +1834,8 @@ div {
           left: 10px;
           top: 10px;
           font-size: 1.3em;
-          width: 90%; }
+          width: 90%;
+          text-transform: capitalize; }
       #index .article-banners a > div.banner {
         margin: 0;
         background-position: center;

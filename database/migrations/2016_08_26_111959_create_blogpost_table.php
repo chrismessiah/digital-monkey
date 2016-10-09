@@ -15,11 +15,11 @@ class CreateBlogpostTable extends Migration {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('image_name', 70);
+            $table->string('image_name', 150);
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->string('title', 50);
-            $table->string('intro', 200);
+            $table->string('title', 80);
+            $table->string('intro', 500);
             $table->text('body');
             $table->timestamps();
         });

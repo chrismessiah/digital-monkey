@@ -11,4 +11,8 @@
   <script type="text/javascript">
     swal({{$error}});
   </script>
+@elseif(isset($error_data))
+  <script type="text/javascript">
+    swal({{$error}});
+  </script>
 @endif

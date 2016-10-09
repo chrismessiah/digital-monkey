@@ -30,7 +30,11 @@ class BlogpostController extends Controller {
     public function show_all() {
         // hairassment protection
         if (Auth::check()) {
-            $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orWhere('user_id', '=', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
+            if (Auth::user()->id == 1) {
+                $blogposts = Blogpost::with(['author', 'category'])->orderBy('updated_at', 'desc')->get();
+            } else {
+                $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orWhere('user_id', '=', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
+            }
         } else {
             $blogposts = Blogpost::with(['author', 'category'])->where('user_id', '=', 1)->orderBy('updated_at', 'desc')->get();
         }
@@ -75,9 +79,10 @@ class BlogpostController extends Controller {
     
     private function validate_blogpost_request(Request $request){
         $this->validate($request, [
-            'title' => 'required|min:3|max:50',
-            'intro' => 'required|min:3|max:160',
-            'body' => 'required|min:3|max:4000',
+            'title' => 'required|min:3|max:80',
+            'intro' => 'required|min:3|max:500',
+            'body' => 'required|min:3|max:15000',
+            'category' => 'min:3|max:30',
             'file' => 'file|image|max:15000',
         ]);
     }
@@ -126,7 +131,7 @@ class BlogpostController extends Controller {
         $blogpost->user_id = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
         $blogpost = $this->sanitize_blogpost($blogpost);
-        if ($blogpost->category_id) {
+        if ($request->category) {
             $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         } else {
             $blogpost->category_id = 3;
