@@ -1408,6 +1408,14 @@ body.stop-scrolling {
         width: 300px;
         margin: 0 auto 40px auto;
         z-index: 999999; }
+        #header div.login-dropdown .sign-in .container p.pass-forgot,
+        #header div.login-dropdown .sign-up .container p.pass-forgot {
+          text-decoration: none;
+          color: white; }
+          #header div.login-dropdown .sign-in .container p.pass-forgot:hover,
+          #header div.login-dropdown .sign-up .container p.pass-forgot:hover {
+            color: #c1c1c1;
+            cursor: pointer; }
         #header div.login-dropdown .sign-in .container p.redirect,
         #header div.login-dropdown .sign-up .container p.redirect {
           text-decoration: none;

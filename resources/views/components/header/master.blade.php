@@ -27,6 +27,9 @@
 						@endif
 				</div>
 		</div>
-		@include('components.header.logged-in-dropdown')
-		@include('components.header.login-dropdown.master')
+    @if (Auth::guest())
+      @include('components.header.login-dropdown.master')
+    @else
+      @include('components.header.logged-in-dropdown')
+    @endif
 </div>
