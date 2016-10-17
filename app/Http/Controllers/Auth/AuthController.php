@@ -64,12 +64,12 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data) {
-        //try {
+        try {
             Mail::raw('Hello you! A user created an account with the name: '.$data['firstname'].' '.$data['lastname'].'    and email: '.$data['email'], function ($message) {
                 $message->from('hello@digitalmonkey.com', 'DigitalMonkey');
                 $message->to(env('MY_MAIL'))->subject('Somebody created an account!');
             });
-        //} catch (\Exception $e) {}
+        } catch (\Exception $e) {}
         return User::create([
             'fullname' => $data['firstname'].' '.$data['lastname'],
             'email' => $data['email'],
