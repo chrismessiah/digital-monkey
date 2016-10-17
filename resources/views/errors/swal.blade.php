@@ -1,7 +1,7 @@
 @if (count($errors) > 0)
   <?php
   $array = $errors->all();
-  $string = 'The following errors have occured \n';
+  $string = 'The following errors have occured: \n';
   for ($i=0; $i < sizeof($array); $i++) { 
     $string = $string.'\n   '.($i+1).'.  '.$array[$i];
   }
