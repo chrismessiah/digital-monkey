@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Mail;
 //use Log;
 use App\Http\Requests;
 use App\Blogpost;
@@ -131,12 +132,19 @@ class BlogpostController extends Controller {
         $blogpost->user_id = Auth::user()->id;
         $blogpost->image_name = $this->image_upload($request, 'file', $blogpost->user_id);
         $blogpost = $this->sanitize_blogpost($blogpost);
-        if ($request->category) {
+        if ($request->category && $request->category != "Choose a category!") {
             $blogpost->category_id = $this->get_categoryID_by_name($request->category);
         } else {
             $blogpost->category_id = 3;
         }
         $blogpost->save();
+        try {
+            Mail::raw('Hello you! The user '.Auth::user()->name.' with email '.Auth::user()->email.' just posted a blogpost  with the url blogposts/'.$blogpost->id, function ($message) {
+                $message->from('hello@digitalmonkey.com', 'DigitalMonkey');
+                $message->to(env('MY_MAIL'))->subject('Somebody posted a blogpost!');
+            });
+        } catch (\Exception $e) {}
+        
         return redirect()->to( Helper::env_url('blogposts/'.$blogpost->id) );
     }
     
