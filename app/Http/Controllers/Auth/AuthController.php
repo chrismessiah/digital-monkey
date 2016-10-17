@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Mail;
 use Validator;
 use Socialite;
 use App\Http\Controllers\Controller;
@@ -63,6 +64,12 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data) {
+        try {
+            Mail::raw('Hello you! A user created an account with the name: '.$data['firstname'].' '.$data['lastname'].'    and email: '.$data['email'], function ($message) {
+                $message->from('hello@digitalmonkey.com', 'DigitalMonkey');
+                $message->to(env('MY_MAIL'))->subject('Somebody created an account!');
+            });
+        } catch (\Exception $e) {}
         return User::create([
             'fullname' => $data['firstname'].' '.$data['lastname'],
             'email' => $data['email'],
