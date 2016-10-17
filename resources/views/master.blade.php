@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Blog</title>
+        <title>DigitalMonkey</title>
         <link rel="stylesheet" href="/css/app.css">
         <script src="{{ Helper::env_asset('/js/vendor.js') }}"></script>
         @yield('head')
