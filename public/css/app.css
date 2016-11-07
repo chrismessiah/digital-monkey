@@ -2186,13 +2186,16 @@ div {
   #index .article-posts .left {
     vertical-align: top;
     display: inline-block;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     font-size: 0;
     height: inherit; }
+    @media screen and (min-width: 800px) {
+      #index .article-posts .left {
+        width: 95vw; } }
     @media screen and (min-width: 1000px) {
       #index .article-posts .left {
-        width: 75%; } }
+        width: 75vw; } }
     #index .article-posts .left .article {
       position: relative;
       width: 95%;
@@ -2201,8 +2204,6 @@ div {
       margin: 30px auto 0 auto; }
       #index .article-posts .left .article:hover {
         cursor: pointer;
-        -webkit-transform: translateX(10px);
-        transform: translateX(10px);
         box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.05); }
         #index .article-posts .left .article:hover .image {
           box-shadow: inset 0 0 200px 200px rgba(0, 0, 0, 0.05); }
@@ -2245,7 +2246,10 @@ div {
             #index .article-posts .left .article > div.info p.title {
               color: black;
               font-weight: bold;
-              font-size: 30px; }
+              font-size: 24px; }
+              @media screen and (min-width: 500px) {
+                #index .article-posts .left .article > div.info p.title {
+                  font-size: 30px; } }
               @media screen and (min-width: 800px) {
                 #index .article-posts .left .article > div.info p.title {
                   font-size: 22px; } }
@@ -2547,6 +2551,15 @@ div {
     -webkit-box-align: end;
     align-items: flex-end;
     margin-bottom: 20px; }
+    #browse .banner p, #browse .banner span {
+      color: white;
+      margin: 0;
+      text-transform: capitalize;
+      font-size: 22px;
+      font-family: RalewayLight;
+      display: inline-block;
+      position: relative;
+      bottom: 10px; }
     #browse .banner > div {
       background-color: rgba(0, 0, 0, 0.7);
       min-height: 100px;
@@ -2559,42 +2572,70 @@ div {
       flex-direction: column;
       text-align: center;
       padding: 0 20px; }
-      #browse .banner > div p.category {
+      #browse .banner > div > div:nth-child(1) p.category {
         background-color: #45c8f2;
         padding: 5px 10px;
         color: white;
         text-transform: uppercase;
         font-size: 18px; }
-      #browse .banner > div div.profile {
-        height: 40px;
-        width: 40px;
-        display: inline-block;
-        background-image: url("../images/chris.jpg");
-        background-size: cover;
-        border-radius: 100px;
-        margin-right: 10px; }
-      #browse .banner > div p {
-        color: white;
-        margin: 0;
-        text-transform: capitalize;
-        font-size: 22px;
-        font-family: RalewayLight;
-        display: inline-block;
-        position: relative;
-        bottom: 10px; }
-        #browse .banner > div p span {
-          color: #7ac1f4; }
-          #browse .banner > div p span:hover {
-            color: #6aa4cd;
-            cursor: pointer; }
-        #browse .banner > div p span.timestamp {
-          color: white;
-          text-transform: lowercase; }
-        #browse .banner > div p.title {
-          position: inherit;
-          outline: none;
-          font-size: 30px;
-          font-family: RalewayRegular; }
+      #browse .banner > div p.title {
+        position: inherit;
+        margin-bottom: 20px;
+        outline: none;
+        font-size: 24px;
+        font-family: RalewayRegular; }
+        @media screen and (min-width: 500px) {
+          #browse .banner > div p.title {
+            font-size: 27px; } }
+        @media screen and (min-width: 700px) {
+          #browse .banner > div p.title {
+            font-size: 30px; } }
+      #browse .banner > div > div:nth-child(3) {
+        margin-bottom: 5px; }
+        #browse .banner > div > div:nth-child(3) div.profile {
+          height: 70px;
+          width: 70px;
+          display: inline-block;
+          margin-bottom: 20px;
+          background-image: url("../images/chris.jpg");
+          background-size: cover;
+          border-radius: 100px;
+          margin-right: 10px; }
+          @media screen and (min-width: 650px) {
+            #browse .banner > div > div:nth-child(3) div.profile {
+              margin-bottom: 0;
+              height: 40px;
+              width: 40px;
+              display: inline-block; } }
+        #browse .banner > div > div:nth-child(3) div.fullname-div {
+          display: block; }
+          @media screen and (min-width: 650px) {
+            #browse .banner > div > div:nth-child(3) div.fullname-div {
+              display: inline; } }
+          #browse .banner > div > div:nth-child(3) div.fullname-div span {
+            display: inline; }
+            #browse .banner > div > div:nth-child(3) div.fullname-div span:nth-child(1) {
+              white-space: pre; }
+            #browse .banner > div > div:nth-child(3) div.fullname-div span:nth-child(2) {
+              color: #7ac1f4; }
+              #browse .banner > div > div:nth-child(3) div.fullname-div span:nth-child(2):hover {
+                color: #6aa4cd;
+                cursor: pointer; }
+        #browse .banner > div > div:nth-child(3) div.timedate-div {
+          display: block; }
+          @media screen and (min-width: 650px) {
+            #browse .banner > div > div:nth-child(3) div.timedate-div {
+              display: inline; } }
+          #browse .banner > div > div:nth-child(3) div.timedate-div span {
+            display: inline; }
+            #browse .banner > div > div:nth-child(3) div.timedate-div span:nth-child(1) {
+              display: none; }
+              @media screen and (min-width: 650px) {
+                #browse .banner > div > div:nth-child(3) div.timedate-div span:nth-child(1) {
+                  display: inline;
+                  color: white;
+                  padding-left: 5px;
+                  padding-right: 5px; } }
   #browse .intro, #browse .intro p {
     max-width: 80vw;
     margin: 40px auto 20px auto;
@@ -2770,6 +2811,15 @@ div {
   -webkit-box-align: end;
   align-items: flex-end;
   margin-bottom: 20px; }
+  #write-blogpost .banner p, #write-blogpost .banner span {
+    color: white;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-family: RalewayLight;
+    display: inline-block;
+    position: relative;
+    bottom: 10px; }
   #write-blogpost .banner > div {
     background-color: rgba(0, 0, 0, 0.7);
     min-height: 100px;
@@ -2782,42 +2832,70 @@ div {
     flex-direction: column;
     text-align: center;
     padding: 0 20px; }
-    #write-blogpost .banner > div p.category {
+    #write-blogpost .banner > div > div:nth-child(1) p.category {
       background-color: #45c8f2;
       padding: 5px 10px;
       color: white;
       text-transform: uppercase;
       font-size: 18px; }
-    #write-blogpost .banner > div div.profile {
-      height: 40px;
-      width: 40px;
-      display: inline-block;
-      background-image: url("../images/chris.jpg");
-      background-size: cover;
-      border-radius: 100px;
-      margin-right: 10px; }
-    #write-blogpost .banner > div p {
-      color: white;
-      margin: 0;
-      text-transform: capitalize;
-      font-size: 22px;
-      font-family: RalewayLight;
-      display: inline-block;
-      position: relative;
-      bottom: 10px; }
-      #write-blogpost .banner > div p span {
-        color: #7ac1f4; }
-        #write-blogpost .banner > div p span:hover {
-          color: #6aa4cd;
-          cursor: pointer; }
-      #write-blogpost .banner > div p span.timestamp {
-        color: white;
-        text-transform: lowercase; }
-      #write-blogpost .banner > div p.title {
-        position: inherit;
-        outline: none;
-        font-size: 30px;
-        font-family: RalewayRegular; }
+    #write-blogpost .banner > div p.title {
+      position: inherit;
+      margin-bottom: 20px;
+      outline: none;
+      font-size: 24px;
+      font-family: RalewayRegular; }
+      @media screen and (min-width: 500px) {
+        #write-blogpost .banner > div p.title {
+          font-size: 27px; } }
+      @media screen and (min-width: 700px) {
+        #write-blogpost .banner > div p.title {
+          font-size: 30px; } }
+    #write-blogpost .banner > div > div:nth-child(3) {
+      margin-bottom: 5px; }
+      #write-blogpost .banner > div > div:nth-child(3) div.profile {
+        height: 70px;
+        width: 70px;
+        display: inline-block;
+        margin-bottom: 20px;
+        background-image: url("../images/chris.jpg");
+        background-size: cover;
+        border-radius: 100px;
+        margin-right: 10px; }
+        @media screen and (min-width: 650px) {
+          #write-blogpost .banner > div > div:nth-child(3) div.profile {
+            margin-bottom: 0;
+            height: 40px;
+            width: 40px;
+            display: inline-block; } }
+      #write-blogpost .banner > div > div:nth-child(3) div.fullname-div {
+        display: block; }
+        @media screen and (min-width: 650px) {
+          #write-blogpost .banner > div > div:nth-child(3) div.fullname-div {
+            display: inline; } }
+        #write-blogpost .banner > div > div:nth-child(3) div.fullname-div span {
+          display: inline; }
+          #write-blogpost .banner > div > div:nth-child(3) div.fullname-div span:nth-child(1) {
+            white-space: pre; }
+          #write-blogpost .banner > div > div:nth-child(3) div.fullname-div span:nth-child(2) {
+            color: #7ac1f4; }
+            #write-blogpost .banner > div > div:nth-child(3) div.fullname-div span:nth-child(2):hover {
+              color: #6aa4cd;
+              cursor: pointer; }
+      #write-blogpost .banner > div > div:nth-child(3) div.timedate-div {
+        display: block; }
+        @media screen and (min-width: 650px) {
+          #write-blogpost .banner > div > div:nth-child(3) div.timedate-div {
+            display: inline; } }
+        #write-blogpost .banner > div > div:nth-child(3) div.timedate-div span {
+          display: inline; }
+          #write-blogpost .banner > div > div:nth-child(3) div.timedate-div span:nth-child(1) {
+            display: none; }
+            @media screen and (min-width: 650px) {
+              #write-blogpost .banner > div > div:nth-child(3) div.timedate-div span:nth-child(1) {
+                display: inline;
+                color: white;
+                padding-left: 5px;
+                padding-right: 5px; } }
 
 #write-blogpost #category-popup {
   display: none;
