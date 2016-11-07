@@ -13,20 +13,20 @@
 
 // Route::auth();
 
-// Authentication Routes, uses AuthController
-Route::get('login', 'Auth\AuthController@showLoginForm');
-Route::post('login', 'Auth\AuthController@login');
-Route::get('logout', 'Auth\AuthController@logout');
+// Authentication Routes, uses LoginController
+//Route::get('login', 'Auth\AuthController@showLoginForm'); // ????????+
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
 
-// Registration Routes, uses AuthController
-Route::get('register', 'Auth\AuthController@showRegistrationForm');
-Route::post('register', 'Auth\AuthController@register');
+// Registration Routes, uses RegisterController
+//Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes, uses PasswordController
-Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-Route::post('password/reset', 'Auth\PasswordController@reset');
-
+// **************** DOES NOT WORK
+// Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+// Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+// Route::post('password/reset', 'Auth\PasswordController@reset');
 
 
 Route::get('/', 'BlogpostController@show_all');
