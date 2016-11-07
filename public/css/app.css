@@ -1377,12 +1377,13 @@ body.stop-scrolling {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 @font-face {
   font-family: RalewayRegular;
@@ -1439,12 +1440,13 @@ body.stop-scrolling {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 .btn-template, .btn-dark, .btn-light, .btn-facebook {
   display: inline-block;
@@ -1549,12 +1551,13 @@ body.stop-scrolling {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 #footer {
   width: 100%;
@@ -1601,12 +1604,13 @@ body.stop-scrolling {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 #header {
   width: 100%;
@@ -1769,12 +1773,13 @@ body.stop-scrolling {
   #header .linear-transition-slow, #header #write-blogpost .banner .img-upload-box .icon, #write-blogpost .banner .img-upload-box #header .icon {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s; }
-  #header .no-user-select, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window {
+  #header .no-user-select, #header .btn-template, #header .btn-dark, #header .btn-light, #header .btn-facebook, #header button, #header #index .categories .area, #index .categories #header .area, #header #index .article-posts .right .article .window, #index .article-posts .right .article #header .window {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; }
+    user-select: none;
+    outline: none; }
   #header .logged-in-dropdown {
     opacity: 0;
     display: none;
@@ -1912,7 +1917,6 @@ body.stop-scrolling {
                 #header div.standard > div.right > div.user > div.container .icon {
                   width: 42px;
                   height: 42px;
-                  background-image: url("../images/chris.jpg");
                   background-size: 42px 42px;
                   border-radius: 100px;
                   background-size: 160%;
@@ -1953,6 +1957,41 @@ body.stop-scrolling {
 @font-face {
   font-family: RalewayBoldItalic;
   src: url("../fonts/Raleway-BoldItalic.ttf"); }
+
+.upper {
+  text-transform: uppercase; }
+
+.linear-transition, .linear-transition-fast, .linear-transition-slow, #write-blogpost .banner .img-upload-box .icon, .btn-template, .btn-dark, .btn-light, .btn-facebook, #footer p span, #header, #header div.login-dropdown .back, #header .linear-transition-fast, #header .linear-transition-slow, #header .logged-in-dropdown a, #header div.standard > div.right > div, #index .article-banners a > div.gradient, #index .categories .area, #index .article-posts .left .article, #index .article-posts .right .article .window, #write-blogpost .content .intro,
+#write-blogpost .content .body, #write-blogpost .banner .category:hover, #write-blogpost .banner p.title {
+  /* Prefix -webkit- for chrome and safari */
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.1s;
+  /* Prefix -moz- for firefox */
+  -moz-transition-timing-function: linear;
+  -moz-transition-duration: 0.1s;
+  /* NO prefix for opera */
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.linear-transition-fast {
+  -webkit-transition-duration: 0.05s;
+  transition-duration: 0.05s; }
+
+.linear-transition-slow, #write-blogpost .banner .img-upload-box .icon {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none; }
 
 html,
 body {
@@ -2029,12 +2068,13 @@ button {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 #index .article-banners {
   font-size: 0; }
@@ -2511,12 +2551,13 @@ button {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 @font-face {
   font-family: RalewayRegular;
@@ -2801,12 +2842,13 @@ button {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s; }
 
-.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, #index .categories .area, #index .article-posts .right .article .window {
+.no-user-select, .btn-template, .btn-dark, .btn-light, .btn-facebook, button, #index .categories .area, #index .article-posts .right .article .window {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  outline: none; }
 
 #write-blogpost .banner {
   height: 600px;
