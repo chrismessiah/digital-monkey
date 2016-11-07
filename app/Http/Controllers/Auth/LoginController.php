@@ -44,8 +44,9 @@ class LoginController extends Controller
         $results = User::where('fb_id', $user_fb->getId())->get();;
         if (count($results) == 0) {
             // REGISTER account
-            app('App\Http\Controllers\Auth\RegisterController')->facebookRegister();
+            $user = app('App\Http\Controllers\Auth\RegisterController')->facebookRegister($user_fb);
         } else {
+            // already have account, log in
             $user = $results[0];
         }
         auth()->login($user);

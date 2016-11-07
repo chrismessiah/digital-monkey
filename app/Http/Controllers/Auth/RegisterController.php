@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use Socialite;
 use Mail;
-use Validator;
 
 use App\Helpers\Helper;
 use App\User;
@@ -54,6 +53,7 @@ class RegisterController extends Controller
             'email' => $user_fb->getEmail()
         ]);
         $user->save();
+        return $user;
     }
 
     /**
