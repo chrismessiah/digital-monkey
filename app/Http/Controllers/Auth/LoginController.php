@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Socialite;
+use Mail;
+use Validator;
+
+use App\User;
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

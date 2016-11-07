@@ -52,5 +52,5 @@ Route::get('request', function(){return view('/auth.passwords.request');});
 Route::get('/.well-known/acme-challenge/'.env('CERT_LINK_KEY'), 'CertificateController@lets_encrypt');
 
 // facebook
-Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebookOAUTH');
-Route::get('auth/facebook/callback', 'Auth\AuthController@facebookCallbackLogin');
+Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebookOAUTH');
+Route::get('auth/facebook/callback', 'Auth\LoginController@facebookCallbackLogin');
