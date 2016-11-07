@@ -1805,6 +1805,13 @@ body.stop-scrolling {
       font-size: 16px; }
       #header .logged-in-dropdown a:hover {
         color: #a4a4a4; }
+    #header .logged-in-dropdown button {
+      background-color: transparent;
+      border-color: transparent;
+      font-size: 16px; }
+      #header .logged-in-dropdown button:hover {
+        color: #a4a4a4;
+        cursor: pointer; }
   #header div.standard {
     height: inherit;
     width: inherit; }
@@ -1968,7 +1975,8 @@ body {
   margin: 0px 0px; }
 
 p,
-div {
+div,
+button {
   font-family: RalewayRegular;
   font-size: 18px; }
 
