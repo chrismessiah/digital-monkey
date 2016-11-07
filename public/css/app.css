@@ -1917,9 +1917,8 @@ body.stop-scrolling {
                 #header div.standard > div.right > div.user > div.container .icon {
                   width: 42px;
                   height: 42px;
-                  background-size: 42px 42px;
                   border-radius: 100px;
-                  background-size: 160%;
+                  background-size: cover;
                   background-position: center;
                   background-repeat: no-repeat;
                   position: relative;
@@ -2646,7 +2645,6 @@ button {
           width: 70px;
           display: inline-block;
           margin-bottom: 20px;
-          background-image: url("../images/chris.jpg");
           background-size: cover;
           border-radius: 100px;
           margin-right: 10px; }
@@ -2788,7 +2786,6 @@ button {
       #browse .author .left .profile-pic {
         height: 125px;
         width: 125px;
-        background-image: url("../images/chris.jpg");
         background-size: cover;
         border-radius: 100px;
         vertical-align: middle; }
@@ -2907,7 +2904,6 @@ button {
         width: 70px;
         display: inline-block;
         margin-bottom: 20px;
-        background-image: url("../images/chris.jpg");
         background-size: cover;
         border-radius: 100px;
         margin-right: 10px; }
@@ -3029,11 +3025,20 @@ button {
 #write-blogpost .content .body {
   outline: none;
   max-width: 80vw; }
-  #write-blogpost .content .intro.intro,
-  #write-blogpost .content .body.intro {
+  #write-blogpost .content .intro.intro, #write-blogpost .content .intro.intro p,
+  #write-blogpost .content .body.intro,
+  #write-blogpost .content .body.intro p {
     padding: 10px 5px 5px 5px; }
-    #write-blogpost .content .intro.intro:not(:focus):hover,
-    #write-blogpost .content .body.intro:not(:focus):hover {
+    #write-blogpost .content .intro.intro::first-letter, #write-blogpost .content .intro.intro p::first-letter,
+    #write-blogpost .content .body.intro::first-letter,
+    #write-blogpost .content .body.intro p::first-letter {
+      color: #45C8F2;
+      font-family: RalewayRegular;
+      font-size: 24px;
+      line-height: normal; }
+    #write-blogpost .content .intro.intro:not(:focus):hover, #write-blogpost .content .intro.intro p:not(:focus):hover,
+    #write-blogpost .content .body.intro:not(:focus):hover,
+    #write-blogpost .content .body.intro p:not(:focus):hover {
       background-color: rgba(136, 136, 136, 0.11); }
   #write-blogpost .content .intro.body,
   #write-blogpost .content .body.body {
@@ -3041,6 +3046,14 @@ button {
     #write-blogpost .content .intro.body:not(:focus):hover,
     #write-blogpost .content .body.body:not(:focus):hover {
       background-color: rgba(136, 136, 136, 0.11); }
+
+#write-blogpost .banner .auth-name {
+  display: block; }
+  @media screen and (min-width: 650px) {
+    #write-blogpost .banner .auth-name {
+      display: inline-block; } }
+  #write-blogpost .banner .auth-name span:nth-child(1) {
+    white-space: pre; }
 
 #write-blogpost .banner .blogpost-info {
   z-index: 2; }

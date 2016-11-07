@@ -17,6 +17,11 @@
                     var date = '{{$blogpost->created_at}}';
                   </script>
                   <div class="profile"></div>
+                  <style>
+                    .banner .profile, .profile-pic {
+                      background-image: url("{{$blogpost->author->getPicUrl()}}");
+                    }
+                  </style>
                   <p>
                     <div class="fullname-div">
                       <span>By </span><span>{{$blogpost->author->fullname}}</span>

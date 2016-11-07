@@ -13,7 +13,12 @@ $hover-color: rgba(136, 136, 136, 0.11)
 			outline: none
 			max-width: 80vw
 			@extend .linear-transition
-			&.intro
+			&.intro, &.intro p
+				&::first-letter
+					color: #45C8F2
+					font-family: RalewayRegular
+					font-size: 24px
+					line-height: normal
 				padding: 10px 5px 5px 5px
 				&:not(:focus):hover
 					background-color: $hover-color
@@ -22,6 +27,12 @@ $hover-color: rgba(136, 136, 136, 0.11)
 				&:not(:focus):hover
 					background-color: $hover-color
 	.banner
+		.auth-name
+			display: block
+			@media screen and (min-width: 650px)
+				display: inline-block
+			span:nth-child(1)
+				white-space: pre
 		.blogpost-info
 			z-index: 2
 		img
