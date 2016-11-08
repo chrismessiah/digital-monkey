@@ -2178,9 +2178,9 @@ button {
   background-color: #1c2227;
   font-size: 0; }
   #index .categories::-webkit-scrollbar {
-    opacity: 0; }
+    display: none; }
   #index .categories::-webkit-scrollbar-corner {
-    opacity: 0; }
+    display: none; }
   @media screen and (min-width: 600px) {
     #index .categories {
       width: 100%; } }
