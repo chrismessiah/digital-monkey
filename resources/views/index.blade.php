@@ -73,7 +73,7 @@
             <div class="right">
                 <div class="container">    
                     <p>POPULAR POSTS</p>
-                    <?php $i = 1; ?>
+                    <?php $i = 2; ?>
                     @foreach($popular_posts as $blogpost)
                       <a href="{{ Helper::env_url('/blogposts/'.$blogpost->id) }}">
                           <style>

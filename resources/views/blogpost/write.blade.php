@@ -18,7 +18,13 @@
               </div>
               <p class="title editable-no-toolbar">{{$blogpost->title}}</p>
               <div>
-                  <div class="profile"></div><p>by <span>{{Auth::user()->fullname}}</span></p>
+                  <div class="profile"></div>
+                  <style>
+                    .profile {background-image: url("{{Auth::user()->getPicUrl()}}");}
+                  </style>
+                <div class="auth-name">  
+                  <span>by </span><span>{{Auth::user()->fullname}}</span>
+                </div>
               </div>
           </div>
       </div>

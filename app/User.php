@@ -45,6 +45,6 @@ class User extends Authenticatable
         if (file_exists('images/profile_pics/'.$this->id.'.jpg')) {
             return(Helper::env_asset('images/profile_pics/'.$this->id.'.jpg'));
         }
-        return(Helper::env_asset('images/profile_pics/example.jpg'));
+        return(Helper::env_asset('images/profile_pics/avatar2.jpg'));
     }
 }
