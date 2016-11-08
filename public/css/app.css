@@ -2177,6 +2177,10 @@ button {
   white-space: nowrap;
   background-color: #1c2227;
   font-size: 0; }
+  #index .categories::-webkit-scrollbar {
+    opacity: 0; }
+  #index .categories::-webkit-scrollbar-corner {
+    opacity: 0; }
   @media screen and (min-width: 600px) {
     #index .categories {
       width: 100%; } }
