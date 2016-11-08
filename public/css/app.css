@@ -2592,6 +2592,7 @@ button {
     height: 600px;
     width: inherit;
     background-size: cover;
+    background-position: center;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
@@ -2851,6 +2852,7 @@ button {
   height: 600px;
   width: inherit;
   background-size: cover;
+  background-position: center;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
