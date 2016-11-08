@@ -14,9 +14,11 @@ class ForceSSL
      * @return mixed
      */
     public function handle($request, Closure $next) {
+      if ( !(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ) {
         if ( (env('FORCE_SSL') === true) && ($request->header('x-forwarded-proto') != 'https') && (env('APP_ENV') === 'production') ) {
             return redirect()->secure($request->getRequestUri());
         }
-        return $next($request);
+      }
+      return $next($request);
     }
 }
