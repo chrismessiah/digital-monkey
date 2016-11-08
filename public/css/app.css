@@ -2172,7 +2172,7 @@ button {
 
 #index .categories {
   height: 60px;
-  width: 100%;
+  width: 100vw;
   overflow-x: auto;
   white-space: nowrap;
   background-color: #1c2227;
