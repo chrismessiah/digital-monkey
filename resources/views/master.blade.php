@@ -6,6 +6,7 @@
         <title>DigitalMonkey</title>
         <link rel="stylesheet" href="/css/app.css">
         <script src="{{ Helper::env_asset('/js/vendor.js') }}"></script>
+        @include('components.favicon')
         @yield('head')
     </head>
     <body>
