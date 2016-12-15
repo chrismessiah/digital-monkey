@@ -35,5 +35,7 @@ server {
 }
 
 upstream {{ .APP }}-{{ .NGINX_PORT }} {
+	{{ range .DOKKU_APP_LISTENERS | split " "}}
 	server {{ . }};
+	{{ end }}
 }
