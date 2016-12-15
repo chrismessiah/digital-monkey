@@ -19,7 +19,7 @@ server {
 	gzip_vary on;
 	gzip_comp_level  6;
 
-	location    /{{ .BASE_ROUTE }} {
+	location    /digitalmonkey {
 		proxy_pass  http://{{ .APP }}-{{ .NGINX_PORT }};
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
