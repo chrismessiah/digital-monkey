@@ -12,15 +12,6 @@ server {
 	access_log  /var/log/nginx/{{ .APP }}-access.log;
 	error_log   /var/log/nginx/{{ .APP }}-error.log;
 
-	ssl_certificate     {{ .APP_SSL_PATH }}/server.crt;
-	ssl_certificate_key {{ .APP_SSL_PATH }}/server.key;
-
-	keepalive_timeout   70;
-  add_header          Alternate-Protocol  {{ .NGINX_SSL_PORT }}:npn-spdy/2;
-
-	# set a custom header for requests
-	#add_header X-Served-By www-ec2-01;
-
 	gzip on;
 	gzip_min_length  1100;
 	gzip_buffers  4 32k;
