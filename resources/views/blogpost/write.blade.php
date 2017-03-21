@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('head')
+  <meta name="robots" content="noindex">
+@endsection
+
 @section('content')
   <div id="write-blogpost">
     <form role="form" method="POST" action="{{ Helper::env_url($form_route) }}" enctype="multipart/form-data">
@@ -22,7 +26,7 @@
                   <style>
                     .profile {background-image: url("{{Auth::user()->getPicUrl()}}");}
                   </style>
-                <div class="auth-name">  
+                <div class="auth-name">
                   <span>by </span><span>{{Auth::user()->fullname}}</span>
                 </div>
               </div>
@@ -40,13 +44,13 @@
       <input id="intro" placeholder="intro" type="text" name="intro" value="{{ (old('intro') != '') ? old('intro') : $blogpost->intro }}">
       <textarea id="body" placeholder="body" name="body" rows="8" cols="40">{{ (old('body') != '') ? old('body') : $blogpost->body }}</textarea>
      --}}
-     
+
       <input id="category" name="category" type="hidden">
       <input id="title" name="title" type="hidden">
       <input id="intro" name="intro" type="hidden">
       <input id="body" name="body" type="hidden">
-      
-      <button type="submit" class="btn-dark">{{$button_text}}</button>                
+
+      <button type="submit" class="btn-dark">{{$button_text}}</button>
     </form>
-  </div> 
+  </div>
 @endsection

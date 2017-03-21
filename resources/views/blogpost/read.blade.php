@@ -1,7 +1,10 @@
 @extends('master')
 
+@section('head')
+  <meta name="robots" content="noindex">
+@endsection
 
-@section('content')  
+@section('content')
   <div id="browse">
       <div class="banner">
         <style>
@@ -39,7 +42,7 @@
           <div class="facebook"></div>
           <div class="google-plus"></div>
         </div>
-            
+
         <p class="intro">{{$blogpost->intro}}</p>
         <div class="body">{!! $blogpost->body !!}</div>
         @if(!Auth::guest())
