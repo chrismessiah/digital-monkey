@@ -1,8 +1,8 @@
 # Digital Monkey - A Tech Blog
 
-This is a reworked version the my final project in [DM2517 XML for Publishing](https://www.kth.se/student/kurser/kurs/DM2517?l=en). It has been completely rebuilt using Laravel. It was previously built with vanilla PHP and is available in another repo [KTH-XMLForPublishing](https://github.com/chrismessiah/KTH-XMLForPublishing).
-
 **From this version I learnt responsive frontend design and how to use MVC frameworks such as Laravel, Ruby on Rails, etc to quickly develop sites multi-page sites.**
+
+This is a reworked version the my final project in [DM2517 XML for Publishing](https://www.kth.se/student/kurser/kurs/DM2517?l=en). It has been completely rebuilt using Laravel. It was previously built with vanilla PHP and is available in another repo [KTH-XMLForPublishing](https://github.com/chrismessiah/KTH-XMLForPublishing).
 
 ### Requirements
 
