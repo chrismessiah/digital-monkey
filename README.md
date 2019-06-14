@@ -7,7 +7,13 @@ This is a reworked version the my final project in [DM2517 XML for Publishing](h
 
 ### Preview 
 
+Home page
+
 ![Digital Monkey Preview 1](docs/digitalmonkey1.jpeg)
+
+---
+
+Reading a blogpost
 
 ![Digital Monkey Preview 2](docs/digitalmonkey2.jpeg)
 
