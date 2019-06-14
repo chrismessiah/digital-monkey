@@ -4,6 +4,19 @@
 
 This is a reworked version the my final project in [DM2517 XML for Publishing](https://www.kth.se/student/kurser/kurs/DM2517?l=en). It has been completely rebuilt using Laravel. It was previously built with vanilla PHP and is available in another repo [KTH-XMLForPublishing](https://github.com/chrismessiah/KTH-XMLForPublishing).
 
+
+### Preview 
+
+Home page
+
+![Digital Monkey Preview 1](docs/digitalmonkey1.jpeg)
+
+---
+
+Reading a blogpost
+
+![Digital Monkey Preview 2](docs/digitalmonkey2.jpeg)
+
 ### Requirements
 
 * Homebrew
